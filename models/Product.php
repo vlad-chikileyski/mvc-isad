@@ -12,7 +12,8 @@ class Product
 
         $result = $db->query('SELECT `id`, `category_id`, `title`, `price`, `img`, `status` FROM `q-property`'
         .' WHERE `status` = "1"'
-        .' ORDER BY id DESC LIMIT 1');
+        .' ORDER BY id DESC LIMIT 2');
+        //echo $count;
         $i = 0;
         while ($row = $result->fetch()){
             $productsList[$i]['id'] = $row['id'];

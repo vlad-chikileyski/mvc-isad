@@ -8,7 +8,7 @@ class SiteController
     public function actionIndex()
     {
         $latestProducts = array();
-        $latestProducts = Product::getLatestProducts(3);
+        $latestProducts = Product::getLatestProducts(2);
 
         require_once(ROOT.'/views/site/index.php');
         return true;

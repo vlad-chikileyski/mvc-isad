@@ -56,7 +56,7 @@
             <div class="inner">
                 <div class="app-logo">
                     <button class="mobile-control mob-menu-trigger"><i class="adicon-hamburger"></i></button>
-                    <a href="home-default.html"><img src="/template/assets/img/basic/logo.png" alt="adspot"></a>
+                    <a href="/"><img src="/template/assets/img/basic/logo.png" alt="adspot"></a>
                 </div>
                 <ul class="quick-actions">
                     <li class="dropdown-wrap">
