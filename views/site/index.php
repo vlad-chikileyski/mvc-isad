@@ -1,4 +1,4 @@
-<?php include  ROOT. '/views/layout/header.php'; ?>
+<?php include ROOT . '/views/layout/header.php'; ?>
     <div class="sliding-nav">
         <a class="close-sliding-nav" href="#">Close nav</a>
         <nav class="slide-nav-list">
@@ -23,7 +23,7 @@
                     </ul>
                 </li>
                 <li class="parent">
-                    <a  href="javascript:return;">Shop</a>
+                    <a href="javascript:return;">Shop</a>
                     <ul>
                         <li><a href="shop-index.html">Shop Home</a></li>
                         <li><a href="shop-listing.html">Archive</a></li>
@@ -33,7 +33,7 @@
                     </ul>
                 </li>
                 <li class="parent">
-                    <a  href="javascript:return;">Pages</a>
+                    <a href="javascript:return;">Pages</a>
                     <ul>
                         <li><a href="about.html">About</a></li>
                         <li><a href="blog.html">Blog</a></li>
@@ -43,11 +43,12 @@
                     </ul>
                 </li>
                 <li class="parent">
-                    <a  href="javascript:return;">Shortcodes</a>
+                    <a href="javascript:return;">Shortcodes</a>
                     <ul>
                         <li><a href="elements-shortcodes.html">Elements</a></li>
                         <li><a href="typography.html">Typography</a></li>
-                        <li><a href="elements-bootstrap.html">Bootstrap Components</a></li><li><a href="buttons.html">Buttons</a></li>
+                        <li><a href="elements-bootstrap.html">Bootstrap Components</a></li>
+                        <li><a href="buttons.html">Buttons</a></li>
                     </ul>
                 </li>
 
@@ -160,6 +161,7 @@
                 </a>
             </div>
         </div>
+
         <div class="section">
             <div class="container">
                 <div class="row">
@@ -167,7 +169,8 @@
                         <div class="text-widget">
                             <div class="inner">
                                 <h4>About Us</h4>
-                                <p>Morbi ut tellus ac leo molestie luctus nec vehicula sed justo ut varius onec tempor rhoncus volutpat ras lorem.</p>
+                                <p>Morbi ut tellus ac leo molestie luctus nec vehicula sed justo ut varius onec tempor
+                                    rhoncus volutpat ras lorem.</p>
                             </div>
                         </div>
                     </div>
@@ -175,7 +178,8 @@
                         <div class="text-widget">
                             <div class="inner">
                                 <h4>Sell Safely</h4>
-                                <p>Morbi ut tellus ac leo molestie luctus nec vehicula sed justo ut varius onec tempor rhoncus volutpat ras lorem.</p>
+                                <p>Morbi ut tellus ac leo molestie luctus nec vehicula sed justo ut varius onec tempor
+                                    rhoncus volutpat ras lorem.</p>
                             </div>
                         </div>
                     </div>
@@ -183,7 +187,8 @@
                         <div class="text-widget">
                             <div class="inner">
                                 <h4>Buy Safely</h4>
-                                <p>Morbi ut tellus ac leo molestie luctus nec vehicula sed justo ut varius onec tempor rhoncus volutpat ras lorem.</p>
+                                <p>Morbi ut tellus ac leo molestie luctus nec vehicula sed justo ut varius onec tempor
+                                    rhoncus volutpat ras lorem.</p>
                             </div>
                         </div>
                     </div>
@@ -231,4 +236,10 @@
             </div>
         </div>
     </div>
-    <?php include  ROOT. '/views/layout/footer.php'; ?>
+    <div>
+
+    </div>
+<?php foreach ($latestProducts as $product) : ?>
+    <a>test</a>
+<?php endforeach; ?>
+<?php include ROOT . '/views/layout/footer.php'; ?>
