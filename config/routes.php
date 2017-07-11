@@ -1,6 +1,5 @@
 <?php
-  return array(
-      ''=>'site/index', //SiteController and actionIndex
-      'news'=>'news/index', //NewsController and actionIndex
-      'product'=>'product/list'  //actionList in ProductController
-  );
+return array(
+    'product/([0-9+])' => 'product/view/$1',
+    '' => 'site/index' //SiteController and actionIndex
+);
