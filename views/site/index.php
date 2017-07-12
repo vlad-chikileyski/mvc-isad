@@ -239,7 +239,4 @@
     <div>
 
     </div>
-<?php foreach ($latestProducts as $product) : ?>
-    <a>test</a>
-<?php endforeach; ?>
 <?php include ROOT . '/views/layout/footer.php'; ?>

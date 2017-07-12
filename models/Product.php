@@ -2,26 +2,23 @@
 
 class Product
 {
-    const  SHOW_BY_DEFAULT = 10;
+    const SHOW_BY_DEFAULT = 10;
 
-    public static function getLatestProducts($count = self::SHOW_BY_DEFAULT)
+    public static function getProductsListByCategory($categoryName = false)
     {
-        $count = intval($count);
-        $db = Db::getConnection();
-        $productsList = array();
-
-        $result = $db->query('SELECT `id`, `category_id`, `title`, `price`, `img`, `status` FROM `q-property`'
-        .' WHERE `status` = "1"'
-        .' ORDER BY id DESC LIMIT 2');
-        //echo $count;
-        $i = 0;
-        while ($row = $result->fetch()){
-            $productsList[$i]['id'] = $row['id'];
-            $productsList[$i]['title'] = $row['title'];
-            $productsList[$i]['img'] = $row['img'];
-            $productsList[$i]['price'] = $row['price'];
-            $i++;
+        if ($categoryName) {
+            $db = Db::getConnection();
+            $products = array();
+            $result = $db->query('SELECT * FROM product WHERE status = 1 AND category_name = "'.$categoryName.'" ORDER BY id DESC LIMIT 10');
+            $i = 0;
+            while ($row = $result->fetch()) {
+                $products[$i]['id'] = $row['id'];
+                $products[$i]['name'] = $row['name'];
+                $products[$i]['image'] = $row['image'];
+                $products[$i]['price'] = $row['price'];
+                $i++;
+            }
+            return $products;
         }
-        return $productsList;
     }
 }
