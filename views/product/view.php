@@ -87,9 +87,7 @@
                     <li><a href="#">Home</a></li>
                     <li><a href="#">automobiles</a></li>
                     <li><a href="#">Cars</a></li>
-                    <li>
-                        Mercedes Benz 4MATIC S-Class Sedan
-                    </li>
+                    <li><?php echo $product['name']; ?></li>
                 </ul>
             </div>
 
@@ -110,7 +108,7 @@
                                         <span class="tooltip">save ad</span>
                                     </a></li>
                             </ul>
-                            <h1>Mercedes Benz 4MATIC S-Class Sedan</h1>
+                            <h1><?php echo $product['name']; ?></h1>
                             <ul class="info-list">
                                 <li><i class="fa fa-map-marker"></i><a href="#">Melbourne</a></li>
                                 <li><i class="fa fa-clock-o"></i>2:49 pm</li>
@@ -471,12 +469,12 @@
                     <div class="inner">
                         <div class="price-widget short-widget">
                             <i class="adicon-dollar"></i>
-                            <strong>$235.00</strong>
+                            <strong>£<?php echo $product['price']; ?></strong>
                             <span>Negotiable Price</span>
                         </div>
                         <div class="number-widget short-widget">
                             <i class="adicon-phone"></i>
-                            <strong>$235.00</strong>
+                            <strong>£<?php echo $product['price']; ?></strong>
                             <span>Negotiable Price</span>
                         </div>
                         <div class="user-widget text-center">

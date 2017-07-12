@@ -251,12 +251,12 @@
                     <div id="items-listing-area" class="items-list">
                         <?php foreach ($categoryProducts as $product) :?>
                         <article class="item-spot">
-                            <a href="<?php echo $product['id']; ?>" class="imgAsBg">
+                            <a href="/product/<?php echo $product['id']; ?>" class="imgAsBg">
                                 <img src="/template/assets/img/items/ad2.jpg" alt="dummy data">
                             </a>
                             <div class="item-content">
                                 <header>
-                                    <h4><a href="single.html"><?php echo $product['name']; ?></a></h4>
+                                    <h4><a href="/product/<?php echo $product['id']; ?>"><?php echo $product['name']; ?></a></h4>
                                     <div class="breadcrumb">
                                         <ul>
                                             <li><a href="#">Mobile Phones</a></li>
@@ -286,7 +286,7 @@
                                     <p>
                                         Lorem ipsum dolor sit amet consectetur adiscing das elited ultricies facilisis lacinia pell ...
                                     </p>
-                                    <a class="view-item" href="single.html">view ad</a>
+                                    <a class="view-item" href="/product/<?php echo $product['id']; ?>">view ad</a>
                                 </div>
                             </div>
                         </article>
