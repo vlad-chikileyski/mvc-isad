@@ -1,7 +1,7 @@
 <?php
 return array(
     'host' => 'localhost',
-    'dbname' => 'u823275475_isad' ,
-    'user' => 'u823275475_isadu',
-    'password' => '#SdGZ~:wS~mB3F~MGK'
+    'dbname' => 'u82327d5475_isad' ,
+    'user' => 'u8232754d75_isadu',
+    'password' => '#SdGZ~:32s%$^@&WK'
 );
