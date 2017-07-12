@@ -292,6 +292,7 @@
                         </article>
                         <?php endforeach;?>
 
+                        <?php echo $pagination->get(); ?>
                     </div>
 
                 </div>
@@ -340,4 +341,5 @@
             </div>
 
         </div>
+
 <?php include ROOT . '/views/layout/footer.php'; ?>
