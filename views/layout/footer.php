@@ -165,37 +165,54 @@ Modals
             <span class="split-opt">or</span>
         </div>
         <div class="modal-content">
-            <header>
-                <h4>Welcome Back!</h4>
-                <p>Please enter your details below</p>
-            </header>
-            <form action="/">
-                <div class="field-block">
-                    <div class="labeled-input">
-                        <label>Username</label>
-                        <input title="title here" type="text">
+            <?php if ($result): ?>
+                <p>You Are Successfully Registered!</p>
+            <?php else: ?>
+                <?php if (isset($errors) && is_array($errors)): ?>
+                    <ul>
+                        <?php foreach ($errors as $error): ?>
+                            <li> - <?php echo $error; ?></li>
+                        <?php endforeach; ?>
+                    </ul>
+                <?php endif; ?>
+                <header>
+                    <h4>Welcome Back!</h4>
+                    <p>Please enter your details below</p>
+                </header>
+                <form action="#" method="post">
+                    <div class="field-block">
+                        <div class="labeled-input">
+                            <label>Username</label>
+                            <input title="title here" name="name" type="text" value="<?php echo $name; ?>">
+                        </div>
                     </div>
-                </div>
-                <div class="field-block">
-                    <div class="labeled-input">
-                        <label>Password</label>
-                        <input title="title here" type="password">
+                    <div class="field-block">
+                        <div class="labeled-input">
+                            <label>Password</label>
+                            <input title="title here" name="password" type="password" value="<?php echo $password; ?>">
+                        </div>
                     </div>
-                </div>
-                <div class="field-block">
-                    <div class="icon-field">
-                        <span>+44</span>
-                        <input type="text" placeholder="Your Contact #">
+                    <div class="field-block">
+                        <div class="labeled-input">
+                            <label>Email</label>
+                            <input title="title here" name="email" type="email" value="<?php echo $email; ?>">
+                        </div>
                     </div>
-                </div>
+                    <div class="field-block">
+                        <div class="icon-field">
+                            <span>+44</span>
+                            <input type="text" name="phone" placeholder="Your Contact #">
+                        </div>
+                    </div>
 
 
-                <button class="btn btn-md btn-green block-element">Signup Now</button>
-                <div class="login-cta text-center"><br>
-                    By clicking Signup Now, you agree to <br>
-                    <a href="#">our Terms</a> and <a href="#">Privacy Policy</a>.
-                </div>
-            </form>
+                    <button type="submit" name="submit" class="btn btn-md btn-green block-element">Signup Now</button>
+                    <div class="login-cta text-center"><br>
+                        By clicking Signup Now, you agree to <br>
+                        <a href="#">our Terms</a> and <a href="#">Privacy Policy</a>.
+                    </div>
+                </form>
+            <?php endif; ?>
         </div>
     </div>
 </div>
