@@ -88,17 +88,25 @@ Modals
                 <h4>Welcome Back!</h4>
                 <p>Please enter your details below</p>
             </header>
-            <form action="/">
+            <?php if (isset($errors) && is_array($errors)): ?>
+                <ul>
+                    <?php foreach ($errors as $error): ?>
+                        <li> - <?php echo $error; ?></li>
+                    <?php endforeach; ?>
+                </ul>
+            <?php endif; ?>
+
+            <form action="/" method="post">
                 <div class="field-block">
                     <div class="labeled-input">
                         <label>Username</label>
-                        <input title="title here" type="text">
+                        <input title="title here" name="username" type="text">
                     </div>
                 </div>
                 <div class="field-block">
                     <div class="labeled-input">
                         <label>Password</label>
-                        <input title="title here" type="password">
+                        <input title="title here" name="password" type="password">
                     </div>
                 </div>
                 <div class="row login-actions field-block">
@@ -113,7 +121,7 @@ Modals
                     </div>
                 </div>
 
-                <button class="btn btn-md btn-green block-element">Login Now</button>
+                <button type="submit" name="signIn" class="btn btn-md btn-green block-element">Login Now</button>
                 <div class="login-cta text-center">
                     <p>Don't have an account?</p>
                     <a href="#">Register here FREE</a>
@@ -179,11 +187,11 @@ Modals
                     <h4>Welcome Back!</h4>
                     <p>Please enter your details below</p>
                 </header>
-                <form action="#" method="post">
+                <form action="/" method="post">
                     <div class="field-block">
                         <div class="labeled-input">
                             <label>Username</label>
-                            <input title="title here" name="name" type="text" value="<?php echo $name; ?>">
+                            <input title="title here" name="username" type="text" value="<?php echo $username; ?>">
                         </div>
                     </div>
                     <div class="field-block">
@@ -206,7 +214,7 @@ Modals
                     </div>
 
 
-                    <button type="submit" name="submit" class="btn btn-md btn-green block-element">Signup Now</button>
+                    <button type="submit" name="signUp" class="btn btn-md btn-green block-element">Signup Now</button>
                     <div class="login-cta text-center"><br>
                         By clicking Signup Now, you agree to <br>
                         <a href="#">our Terms</a> and <a href="#">Privacy Policy</a>.

@@ -1,7 +1,4 @@
 <?php
-include_once ROOT . '/models/Product.php';
-include_once ROOT . '/components/Pagination.php';
-
 
 class  CatalogController
 {

@@ -59,20 +59,20 @@
                     <a href="/"><img src="/template/assets/img/basic/logo.png" alt="adspot"></a>
                 </div>
                 <ul class="quick-actions">
-                    <li class="dropdown-wrap">
-                        <a href="#">English <i class="fa fa-caret-down"></i></a>
-                        <div class="basic-dropdown">
-                            <ul class="country-list">
-                                <li><a href="#"><img src="/template/assets/img/flags/ukflag.png" alt="dummy">English (UK)</a></li>
-                                <li><a href="#"><img src="/template/assets/img/flags/france.png" alt="dummy">France</a></li>
-                                <li><a href="#"><img src="/template/assets/img/flags/germany.png" alt="dummy">German</a></li>
-                                <li><a href="#"><img src="/template/assets/img/flags/russian.png" alt="dummy">Russian</a></li>
-                                <li><a href="#"><img src="/template/assets/img/flags/china.png" alt="dummy">Chinese</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li><a class="modal-trigger" href="#signInModal">Login</a></li>
-                    <li><a class="modal-trigger" href="#signUpModal">Register</a></li>
+                    <?php if (User::isGuest()): ?>
+                        <li class="dropdown-wrap">
+                            <a href="#">My account<i class="fa fa-caret-down"></i></a>
+                            <div class="basic-dropdown">
+                                <ul class="country-list">
+                                    <li><a href="/account/">My account</a></li>
+                                    <li><a href="/account/logout">Logout</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    <?php else: ?>
+                        <li><a class="modal-trigger" href="#signInModal">Login</a></li>
+                        <li><a class="modal-trigger" href="#signUpModal">Register</a></li>
+                    <?php endif; ?>
                     <li class="dropdown-wrap wide">
                         <a href="#"><i class="fa fa-shopping-cart"></i></a>
                         <div class="basic-dropdown wide">
