@@ -5,5 +5,7 @@ return array(
     'catalog/([a-z]+)'=>'catalog/index/$1', //CatalogController and actionIndex
     'account/logout'=>'user/logout', //AccountController and actionLogout
     'account'=>'account/index', //AccountController and actionIndex
+    'new-ads'=>'post/index', //PostController and  actionIndex
+    'terms'=>'terms/index',
     '' => 'site/index' //SiteController and actionIndex
 );

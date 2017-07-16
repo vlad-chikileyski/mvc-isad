@@ -17,8 +17,8 @@
             </div>
             <div class="col-xs-12 col-sm-4">
                 <ul>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="/Privacy Policy">Privacy Policy</a></li>
+                    <li><a href="/terms">Terms of Service</a></li>
                     <li><a href="#">Cookie Policy</a></li>
                 </ul>
             </div>
