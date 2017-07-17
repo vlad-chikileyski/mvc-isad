@@ -9,14 +9,14 @@ class Product
         if ($categoryName) {
             $page = intval($page);
             $offset = ($page - 1) * self::SHOW_BY_DEFAULT;
-            $db = Db::getConnection();
+            $db = Db::getConnectionOnCatics();
             $products = array();
-            $result = $db->query('SELECT * FROM product WHERE status = 1 AND category_name = "' . $categoryName . '" ORDER BY id DESC LIMIT 30 OFFSET '. $offset);
+            $result = $db->query('SELECT * FROM '.$categoryName.' WHERE status = 1 ORDER BY id DESC LIMIT 30 OFFSET '. $offset);
             $i = 0;
             while ($row = $result->fetch()) {
                 $products[$i]['id'] = $row['id'];
-                $products[$i]['name'] = $row['name'];
-                $products[$i]['image'] = $row['image'];
+                $products[$i]['title'] = $row['title'];
+                $products[$i]['description'] = $row['description'];
                 $products[$i]['price'] = $row['price'];
                 $i++;
             }
@@ -43,10 +43,10 @@ class Product
      */
     public static function getTotalProductsInCategory($categoryName)
     {
-        $db = Db::getConnection();
+        $db = Db::getConnectionOnCatics();
 
-        $result = $db->query('SELECT count(id) AS count FROM product '
-            . 'WHERE status="1" AND category_name ="'.$categoryName.'"');
+        $result = $db->query('SELECT count(id) AS count FROM '.$categoryName.' '
+            . 'WHERE status="1"');
         $result->setFetchMode(PDO::FETCH_ASSOC);
         $row = $result->fetch();
 

@@ -170,6 +170,8 @@
                                 </div>
                             </div>
                             <script type='text/javascript' src='https://code.jquery.com/jquery-1.10.2.min.js'></script>
+                            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+                            <script src="/template/assets/js/script.js"></script
                             <hr>
                             <div class="row field-block">
                                 <div class="col-xs-12 col-md-3">
@@ -186,8 +188,9 @@
                                     <label class="required" for="image-block">Image</label>
                                 </div>
                                 <div class="col-xs-12 col-md-9">
-                                    <input type="file" id="image-block">
-                                </div>
+                                    <div id="filediv"><input name="file[]" type="file" id="file"/></div>
+                                    <input type="button" id="add_more" class="upload-image" value="Add More Files"/>
+                                    <input type="submit" value="Upload File" name="submit" id="upload-image" class="upload-image"/>                                </div>
                             </div>
                             <hr>
                             <div class="row field-block">

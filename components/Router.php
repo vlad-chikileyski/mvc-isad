@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Класс Router
  * Компонент для работы с маршрутами
@@ -10,6 +11,7 @@ class Router
      * @var array
      */
     private $routes;
+
     /**
      * Конструктор
      */
@@ -20,6 +22,7 @@ class Router
         // Получаем роуты из файла
         $this->routes = include($routesPath);
     }
+
     /**
      * Возвращает строку запроса
      */
@@ -29,6 +32,7 @@ class Router
             return trim($_SERVER['REQUEST_URI'], '/');
         }
     }
+
     /**
      * Метод для обработки запроса
      */
@@ -63,6 +67,9 @@ class Router
                 // Если метод контроллера успешно вызван, завершаем работу роутера
                 if ($result != null) {
                     break;
+                } else {
+                    header("HTTP/1.0 404 Not Found");
+                    require_once(ROOT . '/views/error/404.php');
                 }
             }
         }

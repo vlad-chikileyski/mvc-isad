@@ -257,7 +257,7 @@
                         </a>
                         <div class="item-content">
                             <header>
-                                <h4><a href="/product/<?php echo $product['id']; ?>"><?php echo $product['name']; ?></a>
+                                <h4><a href="/product/<?php echo $product['id']; ?>"><?php echo $product['title']; ?></a>
                                 </h4>
                                 <div class="breadcrumb">
                                     <ul>
