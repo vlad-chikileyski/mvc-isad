@@ -11,6 +11,9 @@ class  CatalogController
             header("HTTP/1.0 404 Not Found");
             require_once(ROOT . '/views/error/404.php');
         } else {
+            $subCategoryListMenu = array();
+            $subCategoryListMenu = Category::getSubcategyListByCategory($categoryName);
+            
             $categoryProducts = array();
             $categoryProducts = Product::getProductsListByCategory($categoryChecker, $page);
 
@@ -36,7 +39,7 @@ class  CatalogController
             $total = Product::getTotalProductsInCategory($categoryChecker);
             $pagination = new Pagination($total, $page, Product::SHOW_BY_DEFAULT, 'page-');
 
-            require_once(ROOT . '/views/catalog/catalog.php');
+            require_once(ROOT . '/views/catalog/sub-catalog.php');
             return true;
         }
     }

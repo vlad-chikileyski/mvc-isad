@@ -2,6 +2,28 @@
 
 class Category
 {
+    /**
+     * Get sub-category list ?
+     * @return array
+     */
+    public static function getSubcategyListByCategory($categoryName = false)
+    {
+        if ($categoryName) {
+            $db = Db::getConnectionOnCatics();
+            $subcategory = array();
+            $result = $db->query('SELECT * FROM `category-menu` WHERE category = "'.$categoryName.'" '
+                .'AND status = 1 ORDER BY position');
+            $i = 0;
+            while ($row = $result->fetch()) {
+                $subcategory[$i]['menu-title'] = $row['menu-title'];
+                $subcategory[$i]['url-title'] = $row['url-title'];
+                $subcategory[$i]['category'] = $row['category'];
+                $i++;
+            }
+            return $subcategory;
+        }
+    }
+
 
     /**
      * Check - category exists ?
