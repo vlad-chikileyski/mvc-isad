@@ -136,14 +136,10 @@
             <div class="listing-filters">
                     <div class="listing-filter-block">
                         <header>
-                            <h6>Brand Name</h6>
-                            <a class="trigger-filter-block" href="#"><i class="fa fa-navicon"></i></a>
+                            <h6>Subcategory</h6>
+                            <a class="trigger-filter-block" href="/"><i class="fa fa-reply fa-rotate-90"></i></a>
                         </header>
                         <div class="inner">
-                            <div class="search-widget">
-                                <input type="text" placeholder="search">
-                                <button type="submit"><i class="fa fa-search"></i></button>
-                            </div>
                             <div class="filter-options-widget">
                                 <ul>
                                     <?php foreach ($subCategoryListMenu as $subcategory) : ?>
