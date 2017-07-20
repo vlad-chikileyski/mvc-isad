@@ -1,39 +1,78 @@
-<footer class="doc-footer">
+<footer class="doc-footer style4">
     <div class="container">
         <div class="row">
-            <div class="col-xs-12 col-sm-4">
-                <ul>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                    <li><a href="#">Feedback</a></li>
-                </ul>
+            <div class="col-xs-12 col-sm-6 col-md-7">
+                <a href="#"><img src="/template/assets/img/basic/logo.png" alt="adspotlogo"></a>
             </div>
-            <div class="col-xs-12 col-sm-4">
-                <ul>
-                    <li><a href="#">Community</a></li>
-                    <li><a href="#">Trust &amp; Safety</a></li>
-                    <li><a href="#">Help &amp; Support</a></li>
-                </ul>
-            </div>
-            <div class="col-xs-12 col-sm-4">
-                <ul>
-                    <li><a href="/Privacy Policy">Privacy Policy</a></li>
-                    <li><a href="/terms">Terms of Service</a></li>
-                    <li><a href="#">Cookie Policy</a></li>
-                </ul>
+            <div class="col-xs-12 col-sm-6 col-md-5">
+                <form action="/" class="widget-subscribe-2">
+                    <div class="labeled-input">
+                        <label>Enter your email address</label>
+                        <input title="title here" type="email">
+                    </div>
+                    <button class="btn btn-blue">subscribe</button>
+                </form>
             </div>
         </div>
-        <div class="social-links">
-            <ul>
-                <li><a href="#" target="_blank" class="fa fa-twitter"></a></li>
-                <li><a href="#" target="_blank" class="fa fa-facebook"></a></li>
-                <li><a href="#" target="_blank" class="fa fa-linkedin"></a></li>
-                <li><a href="#" target="_blank" class="fa fa-youtube-play"></a></li>
-            </ul>
+        <hr>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-4">
+                <div class="text-widget">
+                    <p>Fusce aliquet quam eget neque ultrices lla posuere felis id arcu blandit sagittis ellen ender purus.</p>
+                    <div class="widget-social">
+                        <div class="social-links">
+                            <ul>
+                                <li><a href="#" class="fa fa-facebook"></a></li>
+                                <li><a href="#" class="fa fa-twitter"></a></li>
+                                <li><a href="#" class="fa fa-google-plus"></a></li>
+                                <li><a href="#" class="fa fa-instagram"></a></li>
+                                <li><a href="#" class="fa fa-dribbble"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-8">
+                <div class="grid-list">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6 col-md-3">
+                            <ul>
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">Contact Us</a></li>
+                                <li><a href="#">Feedback</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-3">
+                            <ul>
+                                <li><a href="#">Community</a></li>
+                                <li><a href="#">Trust &amp; Safety</a></li>
+                                <li><a href="#">Help &amp; Support</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-3">
+                            <ul>
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Terms of Service</a></li>
+                                <li><a href="#">Cookie Policy</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-3">
+                            <ul>
+                                <li><a href="#">Community</a></li>
+                                <li><a href="#">Trust &amp; Safety</a></li>
+                                <li><a href="#">Help &amp; Support</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="text-center">
-            &copy; ADSPOT - Classified
+
+        <div class="text-center copyRights">
+            © ADSPOT - Classified
         </div>
+
     </div>
 </footer>
 </div>
@@ -173,7 +212,7 @@ Modals
             <span class="split-opt">or</span>
         </div>
         <div class="modal-content">
-            <?php if ($result): ?>
+            <?php if ($query_registration): ?>
                 <p>You Are Successfully Registered!</p>
             <?php else: ?>
                 <?php if (isset($errors) && is_array($errors)): ?>
@@ -229,6 +268,7 @@ Modals
 Javascript
 ===========================================-->
 <script src="/template/assets/lib/jquery/dist/jquery.min.js"></script>
+<script src="/template/assets/lib/slick-carousel/slick/slick.min.js"></script>
 <script src="/template/assets/js/app.js"></script>
 
 </body>

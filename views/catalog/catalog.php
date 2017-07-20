@@ -155,14 +155,14 @@
                     </div>
             </div>
             <div id="items-listing-area" class="items-list">
-                <?php foreach ($categoryProducts as $product) : ?>
+                <?php foreach ($categoriesProducts as $products) : ?>
                     <article class="item-spot">
-                        <a href="/product/<?php echo $product['id']; ?>" class="imgAsBg">
+                        <a href="/product/<?php echo $products['id']; ?>" class="imgAsBg">
                             <img src="/template/assets/img/items/ad2.jpg" alt="dummy data">
                         </a>
                         <div class="item-content">
                             <header>
-                                <h4><a href="/product/<?php echo $product['id']; ?>"><?php echo $product['title']; ?></a>
+                                <h4><a href="/product/<?php echo $products['id']; ?>"><?php echo $products['title']; ?></a>
                                 </h4>
                                 <div class="breadcrumb">
                                     <ul>
@@ -187,14 +187,14 @@
                                             <span class="tooltip">save ad</span>
                                         </a></li>
                                 </ul>
-                                <div class="price-tag">£<?php echo $product['price']; ?></div>
+                                <div class="price-tag">£<?php echo $products['price']; ?></div>
                             </div>
                             <div class="inner">
                                 <p>
                                     Lorem ipsum dolor sit amet consectetur adiscing das elited ultricies facilisis
                                     lacinia pell ...
                                 </p>
-                                <a class="view-item" href="/product/<?php echo $product['id']; ?>">view ad</a>
+                                <a class="view-item" href="/product/<?php echo $products['id']; ?>">view ad</a>
                             </div>
                         </div>
                     </article>

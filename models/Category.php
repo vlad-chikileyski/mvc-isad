@@ -72,7 +72,7 @@ class Category
                 switch ($urlSubParam){
                     case 'tablets': return 'electrTabletsNics'; break;
                     case 'phones': return 'electrPhonesNics'; break;
-                    case 'sprzet-dvd-blu-ray': return 'electrSprzetDvdBluRayNics'; break;
+                    case 'dvd-blu-ray': return 'electrDvdBluRayNics'; break;
                     case 'accessories': return 'electrAccessoriesNics'; break;
                     case 'tv': return 'electrTvNics'; break;
                     case 'photo': return 'electrPhotoNics'; break;

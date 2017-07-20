@@ -139,4 +139,21 @@ class User
             return $result->fetch();
         }
     }
+
+    public static function getUserListAdsById($id)
+    {
+        if ($id) {
+            $db = Db::getConnectionOnCatics();
+            $sql = 'SELECT * FROM user WHERE id=:id';
+
+            $result = $db->prepare($sql);
+            $result->bindParam(':id', $id, PDO::PARAM_INT);
+
+            $result->setFetchMode(PDO::FETCH_ASSOC);
+            $result->execute();
+
+            return $result->fetch();
+        }
+    }
+
 }

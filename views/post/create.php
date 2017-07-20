@@ -85,7 +85,7 @@
     <div class="container">
         <div class="breadcrumb">
             <ul>
-                <li><a href="#">Home</a></li>
+                <li><a href="/">Home</a></li>
                 <li>
                     Post your ad
                 </li>
@@ -98,135 +98,101 @@
                 <p class="text-uppercase">sell &amp; purchase anything</p>
             </header>
             <div class="form-wrapper">
-                <form action="/">
+                <form method="post">
                     <div class="elements-block">
                         <div class="inner">
                             <div class="row field-block">
                                 <div class="col-xs-12 col-md-3">
-                                    <label class="required" for="create001">Ad Title</label>
+                                    <label class="required" for="title">Ad Title</label>
                                 </div>
                                 <div class="col-xs-12 col-md-9">
-                                    <input type="text" id="create001">
+                                    <input type="text" id="title" name="title" required>
                                 </div>
                             </div>
                             <div class="row field-block">
                                 <div class="col-xs-12 col-md-3">
-                                    <span class="required label">Category</span>
+                                    <span class="required label">Subcategory</span>
                                 </div>
                                 <div class="col-xs-12 col-md-9">
                                     <div class="mega-dropdown-wrap">
                                         <div class="mega-dropdown">
-                                            <button>Select Category</button>
+                                            <button>Select Subcategory</button>
                                             <i class="fa fa-navicon"></i>
                                             <div class="mega-content">
-                                                <ul class="category-list">
-                                                    <li><a href="https://vechicle.adtoday.co.uk/new"><i class="adicon-car"></i>Vehicles</a>
-                                                    </li>
-                                                    <li><a><i class="adicon-tablet"></i>Mobiles</a>
-                                                        <ul>
-                                                            <li><a>Iphone</a></li>
-                                                            <li><a>Android</a></li>
-                                                            <li><a>Q mobile</a></li>
-                                                            <li><a>Black berry</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li><a><i class="adicon-tv"></i>Electronics</a>
-                                                        <ul>
-                                                            <li><a>Washing Machine</a></li>
-                                                            <li><a>Television</a></li>
-                                                            <li><a>Air conditioner</a></li>
-                                                            <li><a>Computers and Laptops</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li><a><i class="adicon-sofa"></i>Furniture</a></li>
-                                                    <li><a href="https://jobs.adtoday.co.uk/new"><i class="adicon-briefcase"></i>Jobs</a>
-                                                    </li>
-                                                    <li><a><i class="adicon-buildings"></i>Real Estate</a>
-                                                        <ul>
-                                                            <li><a href="https://property.adtoday.co.uk/new/flat">Flat</a></li>
-                                                            <li><a href="https://property.adtoday.co.uk/new/house">House</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li><a><i class="adicon-bell"></i>Services</a></li>
-                                                    <li><a><i class="adicon-hat"></i>Education</a></li>
-                                                    <li><a><i class="adicon-dog"></i>Animals</a></li>
-                                                    <li><a><i class="adicon-heal"></i>Fashion</a></li>
-                                                    <li><a><i class="adicon-smile"></i>Baby Products</a></li>
-                                                    <li><a><i class="adicon-hearts"></i>Adult</a>
-                                                        <ul>
-                                                            <li><a href="https://property.adtoday.co.uk/new/flat">Adult dating</a></li>
-                                                            <li><a href="https://property.adtoday.co.uk/new/flat">Escorts & Massages</a></li>
-                                                            <li><a href="https://property.adtoday.co.uk/new/flat">Swingers</a></li>
-                                                            <li><a href="https://property.adtoday.co.uk/new/flat">Webcams</a></li>
-                                                            <li><a href="https://property.adtoday.co.uk/new/flat">Adult jobs</a></li>
-                                                            <li><a href="https://property.adtoday.co.uk/new/flat">Adult entertainment</a></li>
-                                                            <li><a href="https://property.adtoday.co.uk/new/flat">Gay escorts</a></li>
-                                                        </ul>
-                                                    </li>
+                                                <ul class="sub-category">
+                                                    <?php foreach ($subCategoryListMenu as $subcategory) : ?>
+                                                        <li><a href="#"><?php echo $subcategory['menu-title']; ?></a>
+                                                        </li>
+                                                    <?php endforeach; ?>
                                                 </ul>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <script type='text/javascript' src='https://code.jquery.com/jquery-1.10.2.min.js'></script>
-                            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-                            <script src="/template/assets/js/script.js"></script
+                            <input id="subcategory" size="40" name="subcategory" type="hidden"/>
+                            <!--                            <script type='text/javascript' src='https://code.jquery.com/jquery-1.10.2.min.js'></script>
+                                                        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+                                                        <script src="/template/assets/js/script.js"></script-->
                             <hr>
                             <div class="row field-block">
                                 <div class="col-xs-12 col-md-3">
-                                    <label class="required" for="create201">Ad Description</label>
+                                    <label class="required" for="description">Ad Description</label>
                                 </div>
                                 <div class="col-xs-12 col-md-9">
-                                    <textarea id="create201"
-                                              placeholder="Include the brand, model, age and any included accessories."></textarea>
+                                    <textarea id="description"
+                                              placeholder="Include the brand, model, age and any included accessories."
+                                              name="description"></textarea>
+                                </div>
+                            </div>
+                            <!--   <div class="row field-block">
+                                   <div class="col-xs-12 col-md-3">
+                                       <label class="required" for="image-block">Image</label>
+                                   </div>
+                                   <div class="col-xs-12 col-md-9">
+                                       <div id="filediv"><input name="file[]" type="file" id="file"/></div>
+                               </div>-->
+                            <hr>
+                            <div class="row field-block">
+                                <div class="col-xs-12 col-md-3">
+                                    <label class="required" for="postcode">Post Code</label>
+                                </div>
+                                <div class="col-xs-12 col-md-9">
+                                    <input class="input-sm" type="text" id="postcode" name="postcode"
+                                           placeholder="e.g. OX49 5NU" required>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row field-block">
+                                <div class="col-xs-12 col-md-3">
+                                    <label class="required" for="name">Your Name</label>
+                                </div>
+                                <div class="col-xs-12 col-md-9">
+                                    <input class="input-sm" type="text" id="name" name="name"
+                                           placeholder="e.g. Jhone Doe" required>
+                                </div>
+                            </div>
+                            <div class="row field-block">
+                                <div class="col-xs-12 col-md-3">
+                                    <label class="required" for="email">Your email</label>
+                                </div>
+                                <div class="col-xs-12 col-md-9">
+                                    <input class="input-sm" type="email" id="email" name="email"
+                                           placeholder="e.g. jon@got.com"
+                                           required>
                                 </div>
                             </div>
 
                             <div class="row field-block">
                                 <div class="col-xs-12 col-md-3">
-                                    <label class="required" for="image-block">Image</label>
-                                </div>
-                                <div class="col-xs-12 col-md-9">
-                                    <div id="filediv"><input name="file[]" type="file" id="file"/></div>
-                                    <input type="button" id="add_more" class="upload-image" value="Add More Files"/>
-                                    <input type="submit" value="Upload File" name="submit" id="upload-image" class="upload-image"/>                                </div>
-                            </div>
-                            <hr>
-                            <div class="row field-block">
-                                <div class="col-xs-12 col-md-3">
-                                    <label class="required" for="postcode-block">Post Code</label>
-                                </div>
-                                <div class="col-xs-12 col-md-9">
-                                    <input class="input-sm" type="text" id="postcode-block" placeholder="e.g. OX49 5NU">
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="row field-block">
-                                <div class="col-xs-12 col-md-3">
-                                    <label class="required" for="create401">Your Name</label>
-                                </div>
-                                <div class="col-xs-12 col-md-9">
-                                    <input class="input-sm" type="text" id="create401" placeholder="e.g. Jhone Doe">
-                                </div>
-                            </div>
-                            <div class="row field-block">
-                                <div class="col-xs-12 col-md-3">
-                                    <label class="required" for="create501">Your email</label>
-                                </div>
-                                <div class="col-xs-12 col-md-9">
-                                    <input class="input-sm" type="email" id="create501" placeholder="e.g. jon@got.com">
-                                </div>
-                            </div>
-
-                            <div class="row field-block">
-                                <div class="col-xs-12 col-md-3">
-                                    <label class="required" for="create451">Phone number</label>
+                                    <label class="required" for="phone">Phone number</label>
                                 </div>
                                 <div class="col-xs-12 col-md-9">
                                     <div class="icon-field">
                                         <span>+44</span>
-                                        <input class="input-sm" type="tel" id="create451" placeholder="e.g. 123456789">
+                                        <input class="input-sm" type="tel" id="phone" name="phone"
+                                               placeholder="e.g. 123456789"
+                                               required>
                                     </div>
                                 </div>
                             </div>
@@ -292,7 +258,7 @@
                             <br>
                             <br>
                             <div>
-                                <a class="btn btn-green btn-md" href="#">Create ad</a>&emsp;&emsp;
+                                <button type="submit" name="submit" class="btn btn-green btn-md">Create ad</button>
                                 <span class="termStatement">
                                             By clicking 'Create Ad' you agree to <a class="link" href="/terms/">our  Terms & Condition</a> and
                                         <a class="link" href="#">Posting Rules</a>.

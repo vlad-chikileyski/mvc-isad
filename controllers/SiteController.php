@@ -29,7 +29,7 @@ class SiteController
                 $errors[] = 'This email already exists!';
             }
             if ($errors == false) {
-                $result = User::register($username, $email, $password);
+                $query_registration = User::register($username, $email, $password);
             }
         } else if (isset($_POST['signIn'])) {
             $username = $_POST['username'];

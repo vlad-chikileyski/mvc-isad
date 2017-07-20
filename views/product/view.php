@@ -80,15 +80,16 @@
         </ul>
     </div>
 </div>
+<?php foreach ($categoryProduct as $product) : ?>
 
 <div class="app-canvas">
     <div class="container">
         <div class="breadcrumb">
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">automobiles</a></li>
-                <li><a href="#">Cars</a></li>
-                <li><?php echo $product['name']; ?></li>
+                <li><a href="/">Home</a></li>
+                <li><?php echo $product['category']; ?></li>
+                <li><?php echo $product['subcategory']; ?></li>
+                <li><?php echo $product['title']; ?></li>
             </ul>
         </div>
 
@@ -109,7 +110,7 @@
                                     <span class="tooltip">save ad</span>
                                 </a></li>
                         </ul>
-                        <h1><?php echo $product['name']; ?></h1>
+                        <h1><?php echo $product['title'];?></h1>
                         <ul class="info-list">
                             <li><i class="fa fa-map-marker"></i><a href="#">Melbourne</a></li>
                             <li><i class="fa fa-clock-o"></i>2:49 pm</li>
@@ -580,4 +581,6 @@
         </div>
     </div>
 </div>
+<?php endforeach; ?>
+
 <?php include ROOT . '/views/layout/footer.php'; ?>

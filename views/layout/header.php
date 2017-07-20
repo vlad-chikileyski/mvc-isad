@@ -110,7 +110,7 @@
                     <li><a class="nav-trigger" href="#"><i class="fa fa-navicon"></i></a></li>
                 </ul>
                 <div class="clearfix">
-                    <a href="/new-ads/" class="btn btn-green pull-right quick-post">Post your ad</a>
+                    <a href="/add/" class="btn btn-green pull-right quick-post">Post your ad</a>
                     <div class="pull-right search-filters">
                         <div class="mega-dropdown pull-left">
                             <button>Select City</button>

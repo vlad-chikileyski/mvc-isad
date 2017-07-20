@@ -83,116 +83,81 @@
     <div class="app-canvas">
         <div class="container">
             <header class="heading big text-center">
-                <h1>World’s <strong>Biggest</strong> Classified Marketplace</h1>
-                <p class="text-uppercase">sell &amp; purchase anything</p>
+                <h3>Select the category to which you want to add your listing!</h3>
             </header>
             <div class="cat-boxes">
-                <a href="http://vehicle.adtoday.co.uk/" class="cat-box">
+                <a href="http://vehicle.adtoday.co.uk/new-ads/" class="cat-box">
                     <div class="inner">
                         <div class="adicon-car bg1"></div>
                         <span>Vehicle</span>
                     </div>
                 </a>
-                <a href="http://property.adtoday.co.uk/" class="cat-box">
+                <a href="http://property.adtoday.co.uk/new-ads/" class="cat-box">
                     <div class="inner">
                         <div class="adicon-buildings bg6"></div>
                         <span>Property</span>
                     </div>
                 </a>
-                <a href="http://jobs.adtoday.co.uk/" class="cat-box">
+                <a href="http://jobs.adtoday.co.uk/new-ads/" class="cat-box">
                     <div class="inner">
                         <div class="adicon-briefcase bg5"></div>
                         <span>Jobs</span>
                     </div>
                 </a>
-                <a href="/catalog/mobiles/" class="cat-box">
+                <a href="/new-ads/mobiles/" class="cat-box">
                     <div class="inner">
                         <div class="adicon-tablet bg2"></div>
                         <span>Mobiles</span>
                     </div>
                 </a>
-                <a href="/catalog/electronics/" class="cat-box">
+                <a href="/new-ads/electronics/" class="cat-box">
                     <div class="inner">
                         <div class="adicon-tv bg3"></div>
                         <span>Electronics</span>
                     </div>
                 </a>
-                <a href="/catalog/furniture/" class="cat-box">
+                <a href="/new-ads/furniture/" class="cat-box">
                     <div class="inner">
                         <div class="adicon-sofa bg4"></div>
                         <span>Furniture</span>
                     </div>
                 </a>
-                <a href="/catalog/services/" class="cat-box">
+                <a href="/new-ads/services/" class="cat-box">
                     <div class="inner">
                         <div class="adicon-bell bg7"></div>
                         <span>Services</span>
                     </div>
                 </a>
-                <a href="/catalog/education/" class="cat-box">
+                <a href="/new-ads/education/" class="cat-box">
                     <div class="inner">
                         <div class="adicon-hat bg8"></div>
                         <span>Education</span>
                     </div>
                 </a>
-                <a href="/catalog/animals/" class="cat-box">
+                <a href="/new-ads/animals/" class="cat-box">
                     <div class="inner">
                         <div class="adicon-dog bg9"></div>
                         <span>animals</span>
                     </div>
                 </a>
-                <a href="/catalog/fashion/" class="cat-box">
+                <a href="/new-ads/fashion/" class="cat-box">
                     <div class="inner">
                         <div class="adicon-heal bg10"></div>
                         <span>Fashion</span>
                     </div>
                 </a>
-                <a href="/catalog/baby-products/" class="cat-box">
+                <a href="/new-ads/baby-products/" class="cat-box">
                     <div class="inner">
                         <div class="adicon-smile bg11"></div>
                         <span>Baby products</span>
                     </div>
                 </a>
-                <a href="http://adult.adtoday.co.uk/" class="cat-box">
+                <a href="http://adult.adtoday.co.uk/new-ads/" class="cat-box">
                     <div class="inner">
                         <div class="adicon-hearts bg12"></div>
                         <span>adult</span>
                     </div>
                 </a>
-            </div>
-        </div>
-
-        <div class="section">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xs-12 col-md-4">
-                        <div class="text-widget">
-                            <div class="inner">
-                                <h4>About Us</h4>
-                                <p>Morbi ut tellus ac leo molestie luctus nec vehicula sed justo ut varius onec tempor
-                                    rhoncus volutpat ras lorem.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-md-4">
-                        <div class="text-widget">
-                            <div class="inner">
-                                <h4>Sell Safely</h4>
-                                <p>Morbi ut tellus ac leo molestie luctus nec vehicula sed justo ut varius onec tempor
-                                    rhoncus volutpat ras lorem.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-md-4">
-                        <div class="text-widget">
-                            <div class="inner">
-                                <h4>Buy Safely</h4>
-                                <p>Morbi ut tellus ac leo molestie luctus nec vehicula sed justo ut varius onec tempor
-                                    rhoncus volutpat ras lorem.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
