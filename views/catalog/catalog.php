@@ -157,12 +157,12 @@
             <div id="items-listing-area" class="items-list">
                 <?php foreach ($categoriesProducts as $products) : ?>
                     <article class="item-spot">
-                        <a href="/product/<?php echo $products['id']; ?>" class="imgAsBg">
+                        <a href="/ads/<?php echo $products['category'];?>/<?php echo $products['sub-category'];?>/<?php echo $products['id']; ?>" class="imgAsBg">
                             <img src="/template/assets/img/items/ad2.jpg" alt="dummy data">
                         </a>
                         <div class="item-content">
                             <header>
-                                <h4><a href="/product/<?php echo $products['id']; ?>"><?php echo $products['title']; ?></a>
+                                <h4><a href="/ads/<?php echo $products['category'];?>/<?php echo $products['sub-category'];?>/<?php echo $products['id']; ?>"><?php echo $products['title']; ?></a>
                                 </h4>
                                 <div class="breadcrumb">
                                     <ul>
@@ -194,7 +194,7 @@
                                     Lorem ipsum dolor sit amet consectetur adiscing das elited ultricies facilisis
                                     lacinia pell ...
                                 </p>
-                                <a class="view-item" href="/product/<?php echo $products['id']; ?>">view ad</a>
+                                <a class="view-item" href="/ads/<?php echo $products['category'];?>/<?php echo $products['sub-category'];?>/<?php echo $products['id']; ?>">view ad</a>
                             </div>
                         </div>
                     </article>

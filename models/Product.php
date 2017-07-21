@@ -4,41 +4,26 @@ class Product
 {
     const SHOW_BY_DEFAULT = 30;
 
-    public static function getProductsListByCategory($tableCategoryName = false, $page = 1, $categoryParam, $subCategoryParam)
+    public static function getProductsListByCategory($categoryExistName = false, $page = 1)
     {
-        $db = Db::getConnectionOnCatics();
-
-        $sql = 'SELECT 
-          *
-        FROM 
-          `electronicsTablets` AS `cnt`                 
-        INNER JOIN 
-          `electrPhonesNics` AS `cit`';
-
-        $stmt = $db->query($sql);
-        $res = $stmt->fetchAll(PDO::FETCH_GROUP|PDO::FETCH_ASSOC);
-
-        echo '<pre>';
-        print_r( $res );
-        echo '</pre>';
-        /*if ($tableCategoryName) {
+        if ($categoryExistName) {
             $page = intval($page);
             $offset = ($page - 1) * self::SHOW_BY_DEFAULT;
             $db = Db::getConnectionOnCatics();
             $products = array();
-            $result = $db->query('SELECT * FROM ' . $tableCategoryName . ' WHERE status = 1 ORDER BY id DESC LIMIT 30 OFFSET ' . $offset);
+            $result = $db->query('SELECT * FROM electrTabletsNics UNION ALL SELECT * FROM electrPhotoNics ORDER BY id DESC LIMIT 30 OFFSET ' . $offset);
             $i = 0;
             while ($row = $result->fetch()) {
                 $products[$i]['id'] = $row['id'];
                 $products[$i]['title'] = $row['title'];
                 $products[$i]['description'] = $row['description'];
                 $products[$i]['price'] = $row['price'];
-                $products[$i]['category'] = $categoryParam;
-                $products[$i]['subcategory'] = $subCategoryParam;
+                $products[$i]['sub-category'] = $row['sub-category'];
+                $products[$i]['category'] = $categoryExistName;
                 $i++;
             }
             return $products;
-        }*/
+        }
     }
 
     /**
@@ -72,11 +57,41 @@ class Product
     public static function getTotalProductsInCategory($categoryName)
     {
         $db = Db::getConnectionOnCatics();
-
-        $result = $db->query('SELECT count(id) AS count FROM ' . $categoryName . ' '
-            . 'WHERE status="1"');
-        $result->setFetchMode(PDO::FETCH_ASSOC);
+        $sql = 'SELECT `count-val` FROM `category-count`'
+            . 'WHERE `sub-category`=:subCategory';
+        $result = $db->prepare($sql);
+        $result->bindParam(':subCategory', $categoryName, PDO::PARAM_STR);
+        $result->execute();
         $row = $result->fetch();
-        return $row['count'];
+        $row['count-val'];
+        return $row['count-val'];
+    }
+
+    /**
+     * @param $urlParam
+     * @param bool $categoryExistDoubleParamName
+     * @param int $page
+     * @return array
+     */
+    public static function getProductListByCategory($urlParam, $categoryExistDoubleParamName = false, $page = 1)
+    {
+        if ($categoryExistDoubleParamName) {
+            $page = intval($page);
+            $offset = ($page - 1) * self::SHOW_BY_DEFAULT;
+            $db = Db::getConnectionOnCatics();
+            $products = array();
+            $result = $db->query('SELECT * FROM '.$categoryExistDoubleParamName.' WHERE status = 1 ORDER BY id DESC LIMIT 30 OFFSET ' . $offset);
+            $i = 0;
+            while ($row = $result->fetch()) {
+                $products[$i]['id'] = $row['id'];
+                $products[$i]['title'] = $row['title'];
+                $products[$i]['description'] = $row['description'];
+                $products[$i]['price'] = $row['price'];
+                $products[$i]['sub-category'] = $row['sub-category'];
+                $products[$i]['category'] = $urlParam;
+                $i++;
+            }
+            return $products;
+        }
     }
 }

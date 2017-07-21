@@ -4,7 +4,7 @@ class ProductController
 {
     public function actionView($categoryParam, $subcategoryParam, $productId)
     {
-        $getTableNameProduct = Category::categoryCheckTree($categoryParam, $subcategoryParam);
+        $getTableNameProduct = Category::categoryCheckDoubleParam($categoryParam, $subcategoryParam);
         if ($getTableNameProduct == false) {
             header("HTTP/1.0 404 Not Found");
             require_once(ROOT . '/views/error/404.php');
