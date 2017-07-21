@@ -17,7 +17,7 @@ class  CatalogController
             $categoriesProducts = array();
             $categoriesProducts = Product::getProductsListByCategory($categoryExistName, $page);
 
-            $total = Product::getTotalProductsInCategory($categoryExistName);
+            $total = Product::getTotalProductsInAllCategory($categoryExistName);
             $pagination = new Pagination($total, $page, Product::SHOW_BY_DEFAULT, 'page-');
 
             require_once(ROOT . '/views/catalog/catalog.php');

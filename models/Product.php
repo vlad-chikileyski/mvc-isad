@@ -11,7 +11,7 @@ class Product
             $offset = ($page - 1) * self::SHOW_BY_DEFAULT;
             $db = Db::getConnectionOnCatics();
             $products = array();
-            $result = $db->query('SELECT * FROM electrTabletsNics UNION ALL SELECT * FROM electrPhotoNics ORDER BY id DESC LIMIT 30 OFFSET ' . $offset);
+            $result = $db->query('SELECT * FROM electrTabletsNics UNION ALL SELECT * FROM electrPhonesNics UNION ALL SELECT * FROM electrDvdBluRayNics UNION ALL SELECT * FROM electrAccessoriesNics UNION ALL SELECT * FROM electrTvNics UNION ALL SELECT * FROM electrPhotoNics UNION ALL SELECT * FROM electrComputersNics UNION ALL SELECT * FROM electrGamesAndConsolesNics UNION ALL SELECT * FROM electrMp3AndAudioNics ORDER BY id DESC LIMIT 30 OFFSET ' . $offset);
             $i = 0;
             while ($row = $result->fetch()) {
                 $products[$i]['id'] = $row['id'];
@@ -54,17 +54,32 @@ class Product
     /**
      * Returns total products
      */
-    public static function getTotalProductsInCategory($categoryName)
+    public static function getTotalProductsInCategory($subCategoryName)
     {
         $db = Db::getConnectionOnCatics();
         $sql = 'SELECT `count-val` FROM `category-count`'
             . 'WHERE `sub-category`=:subCategory';
         $result = $db->prepare($sql);
-        $result->bindParam(':subCategory', $categoryName, PDO::PARAM_STR);
+        $result->bindParam(':subCategory', $subCategoryName, PDO::PARAM_STR);
         $result->execute();
         $row = $result->fetch();
-        $row['count-val'];
         return $row['count-val'];
+    }
+
+    /**
+     * Returns total products
+     */
+    public static function getTotalProductsInAllCategory($categoryName)
+    {
+        $db = Db::getConnectionOnCatics();
+        $sql = 'SELECT  SUM(`count-val`) FROM `category-count`'
+            . 'WHERE `category`= :category';
+        $result = $db->prepare($sql);
+        $result->bindParam(':category', $categoryName, PDO::PARAM_STR);
+        $result->execute();
+        $row = $result->fetch();
+        $page = intval($row[0]);
+        return $page;
     }
 
     /**
@@ -80,7 +95,7 @@ class Product
             $offset = ($page - 1) * self::SHOW_BY_DEFAULT;
             $db = Db::getConnectionOnCatics();
             $products = array();
-            $result = $db->query('SELECT * FROM '.$categoryExistDoubleParamName.' WHERE status = 1 ORDER BY id DESC LIMIT 30 OFFSET ' . $offset);
+            $result = $db->query('SELECT * FROM ' . $categoryExistDoubleParamName . ' WHERE status = 1 ORDER BY id DESC LIMIT 30 OFFSET ' . $offset);
             $i = 0;
             while ($row = $result->fetch()) {
                 $products[$i]['id'] = $row['id'];
