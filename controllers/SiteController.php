@@ -8,7 +8,7 @@ class SiteController
         $username = '';
         $password = '';
         $email = '';
-        $result = false;
+        $query_registration = false;
         if (isset($_POST['signUp'])) {
             $username = $_POST['username'];
             $password = $_POST['password'];

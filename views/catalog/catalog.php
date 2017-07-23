@@ -82,22 +82,7 @@
 
 <div class="app-canvas">
     <div class="container">
-        <div class="breadcrumb">
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Mobiles</a></li>
-                <li><a href="#">Smart Phones</a></li>
-                <li>
-                    <span>Apple Iphone <a href="#"><i class="fa fa-close"></i></a></span>
-                    <span>Iphone 6 <a href="#"><i class="fa fa-close"></i></a></span>
-                    <span>Clear All <a href="#"><i class="fa fa-close"></i></a></span>
-                </li>
-            </ul>
-        </div>
-        <header class="heading text-bold">
-            <h2>Used Iphone 6 Plus 16GB In Melbourne</h2>
-            <h4>482 Ads found in Melbourne</h4>
-        </header>
+
         <div class="listing-actions text-right clearfix" data-target="#items-listing-area">
             <div class="inner">
                 <div class="button-action">
@@ -131,7 +116,13 @@
                 </div>
             </div>
         </div>
-
+        <div class="breadcrumb">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Mobiles</a></li>
+                <li><a href="#">Smart Phones</a></li>
+            </ul>
+        </div>
         <div class="listing-area clearfix">
             <div class="listing-filters">
                     <div class="listing-filter-block">
@@ -145,7 +136,6 @@
                                     <?php foreach ($subCategoryListMenu as $subcategory) : ?>
 
                                         <li><a href="<?php echo $subcategory['url-title']; ?>/">
-                                                <i></i>
                                                 <span><?php echo $subcategory['menu-title']; ?></span>
                                             </a></li>
                                     <?php endforeach; ?>
@@ -188,13 +178,6 @@
                                         </a></li>
                                 </ul>
                                 <div class="price-tag">£<?php echo $products['price']; ?></div>
-                            </div>
-                            <div class="inner">
-                                <p>
-                                    Lorem ipsum dolor sit amet consectetur adiscing das elited ultricies facilisis
-                                    lacinia pell ...
-                                </p>
-                                <a class="view-item" href="/product/<?php echo $products['id']; ?>">view ad</a>
                             </div>
                         </div>
                     </article>
