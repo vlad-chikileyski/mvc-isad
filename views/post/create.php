@@ -157,9 +157,22 @@
                                 <div class="col-xs-12 col-md-3">
                                     <label class="required" for="postcode">Post Code</label>
                                 </div>
-                                <div class="col-xs-12 col-md-9">
-                                    <input class="input-sm" type="text" id="postcode" name="postcode"
+                                <div class="col-xs-12 col-md-4">
+                                    <input class="input-sm" type="text" id="search_postcode" name="postcode"
                                            placeholder="e.g. OX49 5NU" required>
+                                    <div id="result"></div>
+                                </div>
+
+                                <div class="col-xs-12 col-md-3">
+                                    <div class="ajax-loader" style="">
+                                        <img src="/template/assets/img/Reload.gif" class="img-responsive"/>
+                                    </div>
+                                    <div class="ajax-loader-status">
+                                        <i class="fa fa-check" aria-hidden="true" style="color: green;"></i>
+                                    </div>
+                                    <div class="ajax-loader-error">
+                                        <i class="fa fa-times" aria-hidden="true" style="color: red;"></i>
+                                    </div>
                                 </div>
                             </div>
                             <hr>
@@ -314,4 +327,41 @@
         </div>
     </div>
 </div>
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        //load_data();
+
+        function load_data(query) {
+            $.ajax({
+                beforeSend: function () {
+                    $('.ajax-loader').css("visibility", "visible");
+                    $('.ajax-loader-status').css("visibility", "hidden");
+                },
+                url: "/request/validate.php",
+                method: "POST",
+                data: {query: query},
+                success: function (data) {
+                    $('#result').html(data);
+                    $('.ajax-loader-status').css("visibility", "visible");
+                    $('.ajax-loader-error').css("visibility", "hidden");
+                }, complete: function () {
+                    $('.ajax-loader').css("visibility", "hidden");
+                },error: function () {
+                    $('.ajax-loader-error').css("visibility", "visible");
+                }
+            });
+        }
+
+        $('#search_postcode').keyup(function () {
+            var search = $(this).val();
+            if (search != '') {
+                load_data(search);
+            }else {
+                $('.ajax-loader-status').css("visibility", "hidden");
+            }
+        });
+    });
+</script>
 <?php include ROOT . '/views/layout/footer.php'; ?>

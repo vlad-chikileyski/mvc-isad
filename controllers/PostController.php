@@ -10,6 +10,7 @@ class PostController
             header("HTTP/1.0 404 Not Found");
             require_once(ROOT . '/views/error/404.php');
         } else {
+
             $title = '';
             $subcategory = '';
             $description = '';
