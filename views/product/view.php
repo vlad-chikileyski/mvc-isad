@@ -305,19 +305,8 @@
                     <div class="text-widget">
                         <header><h4>Product Description</h4></header>
                         <div class="inner">
-                            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Chasellus porttitor non lectus ut
-                                lacinia ras in metus est. Proin non orci massa roin auctor ultricies mauris nec
-                                tincidunt mi imperdiet pendisse id tempor nisi nec laoreet lorem tiam congue tempus
-                                convallis.</p>
-                            <p>Condition 10/10<br>
-                                White color<br>
-                                32gb internal memory<br>
-                                3gb RAM<br>
-                                Model SM-N9005 (4G/LTE)<br>
-                                All accessories (box, hands-free, charger, data cable)<br>
-                                Not refurb, Not copy, original samsung phone</p>
-                            <p>Proin non orci massa roin auctor ultricies mauris nec tincidunt mi imperdiet uspendisse
-                                id tempor nisi nec laoreet lorem tiam congue tempus convallis.</p>
+                            <?php echo $product['description']; ?>
+
                         </div>
                     </div>
                     <footer>
