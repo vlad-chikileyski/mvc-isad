@@ -278,38 +278,26 @@
                         <ul class="clearfix">
                             <li>
                                 <div class="inner clearfix">
-                                    <span class="label">Brand Name</span>
-                                    <span class="desc">Apple</span>
+                                    <span class="label">Postcode</span>
+                                    <span class="desc">{ADDRESS}</span>
                                 </div>
                             </li>
                             <li>
                                 <div class="inner clearfix">
-                                    <span class="label">Product Model</span>
-                                    <span class="desc">iphone se</span>
+                                    <span class="label">Type of ad:</span>
+                                    <span class="desc">{Type of ad}</span>
                                 </div>
                             </li>
                             <li>
                                 <div class="inner clearfix">
-                                    <span class="label">Release Year</span>
-                                    <span class="desc">2016</span>
+                                    <span class="label">Posted by:</span>
+                                    <span class="desc">{Posted by}</span>
                                 </div>
                             </li>
                             <li>
                                 <div class="inner clearfix">
-                                    <span class="label">Condition</span>
-                                    <span class="desc">Used</span>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="inner clearfix">
-                                    <span class="label">Color</span>
-                                    <span class="desc">silver</span>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="inner clearfix">
-                                    <span class="label">Located In</span>
-                                    <span class="desc">2016</span>
+                                    <span class="label">Member since:</span>
+                                    <span class="desc">{Member since}</span>
                                 </div>
                             </li>
                         </ul>
@@ -338,7 +326,7 @@
                                 <span class="item-views"> <i class="fa fa-eye"></i> Ad Views: 4698</span>
                             </div>
                             <div class="col-xs-12 col-md-8 text-right-md">
-                                Do you have something to sell? <a href="#">Post Your FREE Ad Today</a>
+                                Do you have something to sell? <a href="/add/">Post Your FREE AdToday</a>
                             </div>
 
 

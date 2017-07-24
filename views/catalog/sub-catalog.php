@@ -82,22 +82,6 @@
 
 <div class="app-canvas">
     <div class="container">
-        <div class="breadcrumb">
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Mobiles</a></li>
-                <li><a href="#">Smart Phones</a></li>
-                <li>
-                    <span>Apple Iphone <a href="#"><i class="fa fa-close"></i></a></span>
-                    <span>Iphone 6 <a href="#"><i class="fa fa-close"></i></a></span>
-                    <span>Clear All <a href="#"><i class="fa fa-close"></i></a></span>
-                </li>
-            </ul>
-        </div>
-        <header class="heading text-bold">
-            <h2>Used Iphone 6 Plus 16GB In Melbourne</h2>
-            <h4>482 Ads found in Melbourne</h4>
-        </header>
         <div class="listing-actions text-right clearfix" data-target="#items-listing-area">
             <div class="inner">
                 <div class="button-action">
@@ -131,6 +115,13 @@
                 </div>
             </div>
         </div>
+        <div class="breadcrumb">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/catalog/<?php echo $urlParam; ?>/"><?php echo $urlParam; ?></a></li>
+                <li><a href="/catalog/<?php echo $urlParam; ?>/<?php echo $urlSubParam; ?>/"><?php echo $urlSubParam; ?></a></li>
+            </ul>
+        </div>
 
         <div class="listing-area clearfix">
             <div class="listing-filters">
@@ -140,61 +131,33 @@
                         <a class="trigger-filter-block" href="#"><i class="fa fa-navicon"></i></a>
                     </header>
                     <div class="inner">
-                        <div class="search-widget">
-                            <input type="text" placeholder="search">
-                            <button type="submit"><i class="fa fa-search"></i></button>
-                        </div>
                         <div class="filter-options-widget">
                             <ul>
                                 <li class="active"><a href="#">
-                                        <i></i>
                                         <span>All Models</span>
                                     </a></li>
                                 <li><a href="#">
-                                        <i></i>
                                         <span>Samsung</span>
                                     </a></li>
                                 <li><a href="#">
-                                        <i></i>
                                         <span>Apple</span>
                                     </a></li>
                                 <li><a href="#">
-                                        <i></i>
                                         <span>Nokia</span>
                                     </a></li>
                                 <li><a href="#">
-                                        <i></i>
                                         <span>Blackberry</span>
                                     </a></li>
                                 <li><a href="#">
-                                        <i></i>
                                         <span>Sony Ericsson</span>
                                     </a></li>
                                 <li><a href="#">
-                                        <i></i>
                                         <span>HTC</span>
                                     </a></li>
                                 <li><a href="#">
-                                        <i></i>
                                         <span>Motorola</span>
                                     </a></li>
                             </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="listing-filter-block">
-                    <header>
-                        <h6>Price Range</h6>
-                        <a class="trigger-filter-block" href="#"><i class="fa fa-navicon"></i></a>
-                    </header>
-                    <div class="inner">
-                        <div class="range-widget">
-                            <div class="range-inputs">
-                                <input type="text" placeholder="From">
-                                <input type="text" placeholder="To">
-                            </div>
-                            <button type="submit"><i class="fa fa-search"></i></button>
                         </div>
                     </div>
                 </div>
@@ -203,25 +166,23 @@
             <div id="items-listing-area" class="items-list">
                 <?php foreach ($categoryProducts as $product) : ?>
                     <article class="item-spot">
-                        <a href="/ads/<?php echo $product['category']; ?>/<?php echo $product['sub-category']; ?>/<?php echo $product['id']; ?>" class="imgAsBg">
+                        <a href="/ads/<?php echo $product['category']; ?>/<?php echo $product['sub-category']; ?>/<?php echo $product['id']; ?>"
+                           class="imgAsBg">
                             <img src="/template/assets/img/items/ad2.jpg" alt="dummy data">
                         </a>
                         <div class="item-content">
                             <header>
-                                <h4><a href="/ads/<?php echo $product['category']; ?>/<?php echo $product['sub-category']; ?>/<?php echo $product['id']; ?>"><?php echo $product['title']; ?></a>
+                                <h4>
+                                    <a href="/ads/<?php echo $product['category']; ?>/<?php echo $product['sub-category']; ?>/<?php echo $product['id']; ?>"><?php echo $product['title']; ?></a>
                                 </h4>
-                                <div class="breadcrumb">
-                                    <ul>
-                                        <li><a href="#">Mobile Phones</a></li>
-                                        <li><a href="#">Apple</a></li>
-                                    </ul>
-                                </div>
+
                                 <ul class="item-info">
                                     <li><i class="fa fa-map-marker"></i><a href="#">Melbourne</a></li>
-                                    <li><i class="fa fa-clock-o"></i>2:49 pm</li>
+                                    <li><i class="fa fa-clock-o"></i><?php echo $product['date']; ?></li>
                                 </ul>
                             </header>
                             <div class="item-actions text-center">
+                                <div class="price-tag">£<?php echo $product['price']; ?></div>
                                 <ul class="contact-options">
                                     <li><a href="#" class="fa fa-envelope tooltip-parent">
                                             <span class="tooltip">Send Message</span>
@@ -233,14 +194,17 @@
                                             <span class="tooltip">save ad</span>
                                         </a></li>
                                 </ul>
-                                <div class="price-tag">£<?php echo $product['price']; ?></div>
                             </div>
                             <div class="inner">
                                 <p>
-                                    Lorem ipsum dolor sit amet consectetur adiscing das elited ultricies facilisis
-                                    lacinia pell ...
+                                    <?php echo $product['description']; ?>
                                 </p>
-                                <a class="view-item" href="/ads/<?php echo $product['category']; ?>/<?php echo $product['sub-category']; ?>/<?php echo $product['id']; ?>">view ad</a>
+                            </div>
+                            <div class="breadcrumb">
+                                <ul>
+                                    <li><a href="/catalog/<?php echo $product['category']; ?>"><?php echo ucfirst($product['category']); ?></a></li>
+                                    <li><a href="/catalog/<?php echo $product['category']; ?>/<?php echo $product['sub-category']; ?>"><?php echo ucfirst($product['sub-category']); ?></a></li>
+                                </ul>
                             </div>
                         </div>
                     </article>

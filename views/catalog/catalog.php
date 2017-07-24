@@ -118,54 +118,51 @@
         </div>
         <div class="breadcrumb">
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Mobiles</a></li>
-                <li><a href="#">Smart Phones</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="<?php echo $categoryExistName; ?>"><?php echo ucfirst($categoryExistName); ?></a></li>
             </ul>
         </div>
         <div class="listing-area clearfix">
             <div class="listing-filters">
-                    <div class="listing-filter-block">
-                        <header>
-                            <h6>Subcategory</h6>
-                            <a class="trigger-filter-block" href="/"><i class="fa fa-reply fa-rotate-90"></i></a>
-                        </header>
-                        <div class="inner">
-                            <div class="filter-options-widget">
-                                <ul>
-                                    <?php foreach ($subCategoryListMenu as $subcategory) : ?>
+                <div class="listing-filter-block">
+                    <header>
+                        <h6>Subcategory</h6>
+                        <a class="trigger-filter-block" href="/"><i class="fa fa-reply fa-rotate-90"></i></a>
+                    </header>
+                    <div class="inner">
+                        <div class="filter-options-widget">
+                            <ul>
+                                <?php foreach ($subCategoryListMenu as $subcategory) : ?>
 
-                                        <li><a href="<?php echo $subcategory['url-title']; ?>/">
-                                                <span><?php echo $subcategory['menu-title']; ?></span>
-                                            </a></li>
-                                    <?php endforeach; ?>
-                                </ul>
-                            </div>
+                                    <li><a href="<?php echo $subcategory['url-title']; ?>/">
+                                            <span><?php echo $subcategory['menu-title']; ?></span>
+                                        </a></li>
+                                <?php endforeach; ?>
+                            </ul>
                         </div>
                     </div>
+                </div>
             </div>
             <div id="items-listing-area" class="items-list">
                 <?php foreach ($categoriesProducts as $products) : ?>
                     <article class="item-spot">
-                        <a href="/ads/<?php echo $products['category'];?>/<?php echo $products['sub-category'];?>/<?php echo $products['id']; ?>" class="imgAsBg">
+                        <a href="/ads/<?php echo $products['category']; ?>/<?php echo $products['sub-category']; ?>/<?php echo $products['id']; ?>"
+                           class="imgAsBg">
                             <img src="/template/assets/img/items/ad2.jpg" alt="dummy data">
                         </a>
                         <div class="item-content">
                             <header>
-                                <h4><a href="/ads/<?php echo $products['category'];?>/<?php echo $products['sub-category'];?>/<?php echo $products['id']; ?>"><?php echo $products['title']; ?></a>
+                                <h4>
+                                    <a href="/ads/<?php echo $products['category']; ?>/<?php echo $products['sub-category']; ?>/<?php echo $products['id']; ?>"><?php echo $products['title']; ?></a>
                                 </h4>
-                                <div class="breadcrumb">
-                                    <ul>
-                                        <li><a href="#">Mobile Phones</a></li>
-                                        <li><a href="#">Apple</a></li>
-                                    </ul>
-                                </div>
+
                                 <ul class="item-info">
                                     <li><i class="fa fa-map-marker"></i><a href="#">Melbourne</a></li>
-                                    <li><i class="fa fa-clock-o"></i>2:49 pm</li>
+                                    <li><i class="fa fa-clock-o"></i><?php echo $products['date']; ?></li>
                                 </ul>
                             </header>
                             <div class="item-actions text-center">
+                                <div class="price-tag">£<?php echo $products['price']; ?></div>
                                 <ul class="contact-options">
                                     <li><a href="#" class="fa fa-envelope tooltip-parent">
                                             <span class="tooltip">Send Message</span>
@@ -177,9 +174,24 @@
                                             <span class="tooltip">save ad</span>
                                         </a></li>
                                 </ul>
-                                <div class="price-tag">£<?php echo $products['price']; ?></div>
+                            </div>
+                            <div class="inner">
+                                <p>
+                                    <?php echo $products['description']; ?>
+                                </p>
+                            </div>
+                            <div class="breadcrumb">
+                                <ul>
+                                    <li>
+                                        <a href="/catalog/<?php echo $products['category']; ?>"><?php echo ucfirst($products['category']); ?></a>
+                                    </li>
+                                    <li>
+                                        <a href="/catalog/<?php echo $products['category']; ?>/<?php echo $products['sub-category']; ?>"><?php echo ucfirst($products['sub-category']); ?></a>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
+
                     </article>
                 <?php endforeach; ?>
 

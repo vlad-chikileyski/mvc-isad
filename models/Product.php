@@ -20,6 +20,7 @@ class Product
                 $products[$i]['price'] = $row['price'];
                 $products[$i]['sub-category'] = $row['sub-category'];
                 $products[$i]['category'] = $categoryExistName;
+                $products[$i]['date'] = $row['date'];
                 $i++;
             }
             return $products;
@@ -45,6 +46,7 @@ class Product
                 $product[$i]['price'] = $row['price'];
                 $product[$i]['category'] = $categoryParam;
                 $product[$i]['subcategory'] = $subCategoryParam;
+                $products[$i]['date'] = $row['date'];
                 $i++;
             }
             return $product;
@@ -104,6 +106,7 @@ class Product
                 $products[$i]['price'] = $row['price'];
                 $products[$i]['sub-category'] = $row['sub-category'];
                 $products[$i]['category'] = $urlParam;
+                $products[$i]['date'] = $row['date'];
                 $i++;
             }
             return $products;
