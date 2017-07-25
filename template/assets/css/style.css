@@ -6745,9 +6745,7 @@ a.view-item, .contact-options li a, .listing-actions a, .listing-actions .fa,
 }
 
 .listing-filters {
-    /*
-    width: 300px;
-    */
+    width: 230px;
     padding-right: 30px;
     float: left;
 }
@@ -6921,7 +6919,7 @@ a.view-item, .contact-options li a, .listing-actions a, .listing-actions .fa,
 .item-spot .inner {
     padding-right: 135px;
     position: relative;
-    padding-top: 30px;
+    max-width: 720px;
 }
 
 @media (max-width: 992px) {
@@ -6943,9 +6941,8 @@ a.view-item, .contact-options li a, .listing-actions a, .listing-actions .fa,
 }
 
 .item-spot header {
-    padding-bottom: 25px;
+    padding-bottom: 0px;
     padding-right: 130px;
-    border-bottom: 1px solid #e5e5e5;
 }
 
 .item-spot header a {
@@ -7063,7 +7060,7 @@ a.view-item, .contact-options li a, .listing-actions a, .listing-actions .fa,
 }
 
 .item-spot .item-actions .price-tag {
-    padding: 30px 0 0;
+margin-bottom: 20px;
 }
 
 @media (max-width: 479px) {
