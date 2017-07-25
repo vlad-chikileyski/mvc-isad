@@ -109,6 +109,13 @@ class User
         header("Location: /");
     }
 
+    public static function checkId()
+    {
+        if (isset($_SESSION['user'])) {
+            return $_SESSION['user'];
+        }
+    }
+
     /**
      * Check users guest?
      */

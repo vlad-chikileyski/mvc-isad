@@ -16,10 +16,12 @@ class PostController
             $description = '';
             $postcode = '';
             $name = '';
-            $email = '';
+            $veryfyEmail = '';
+            $notVerifyEmail = '';
             $phone = '';
-            $userId = '666';
             $result = false;
+            $userId = User::checkId();
+            $userInfo = User::getUserById($userId);
 
             /**
              * Validate & save in DB
@@ -29,26 +31,34 @@ class PostController
             if (isset($_POST['submit'])) {
 
                 $title = $_POST['title'];
-                $subcategory = $_POST['subcategory'];
                 $description = $_POST['description'];
                 $postcode = $_POST['postcode'];
                 $name = $_POST['name'];
-                $email = $_POST['email'];
+                $notVerifyEmail = $_POST['email'];
                 $phone = $_POST['phone'];
-                $subcategory = lcfirst($subcategory);
+                $subcategory = lcfirst($_POST['subcategory']);
                 $getTableName = Category::categoryCheckTree($categoryName, $subcategory);
                 if ($getTableName == false) {
                     header("HTTP/1.0 404 Not Found");
                     require_once(ROOT . '/views/error/404.php');
                 } else {
                     $errors = false;
-                    if (!Post::checkEmail($email)) {
+                    if (!Post::checkEmail($notVerifyEmail)) {
                         $errors[] = 'Invalid email type!';
                     }
+                    
                     if ($errors == false) {
+                        $emailSecurityFilter = Post::checkEqualUserEmailAndPostData($notVerifyEmail, $userInfo['email']);
+                        if ($emailSecurityFilter) {
+                            $veryfyEmail = $_POST['email'];
+                        } else {
+                            $veryfyEmail = $userInfo['email'];
+                        }
                         $query = Post::save($getTableName, $title, $description, $userId);
                     }
                 }
+
+
             }
 
             /**

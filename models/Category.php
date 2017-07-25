@@ -33,28 +33,28 @@ class Category
     {
         switch ($urlParam) {
             case 'electronics':
-                return 'electronicsTablets';
+                return 'electronics';
                 break;
             case 'mobiles':
-                return 'mobilesTablets';
+                return 'mobiles';
                 break;
             case 'furniture':
-                return 'furnitureTablets';
+                return 'furniture';
                 break;
             case 'services':
-                return 'servicesTablets';
+                return 'services';
                 break;
             case 'education':
-                return 'servicesTablets';
+                return 'education';
                 break;
             case 'animals':
-                return 'servicesTablets';
+                return 'animals';
                 break;
             case 'fashion':
-                return 'servicesTablets';
+                return 'fashion';
                 break;
             case 'baby-products':
-                return 'servicesTablets';
+                return 'baby-products';
                 break;
         }
         return false;
@@ -64,7 +64,7 @@ class Category
      * Check - category exists ?
      * @return bool
      */
-    public static function categoryCheckTree($urlParam, $urlSubParam)
+    public static function categoryCheckDoubleParam($urlParam, $urlSubParam)
     {
         switch ($urlParam) {
             /*electronics*/

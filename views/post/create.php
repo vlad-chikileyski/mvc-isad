@@ -185,17 +185,29 @@
                                            placeholder="e.g. Jhone Doe" required>
                                 </div>
                             </div>
+                            <?php if (User::isGuest()): ?>
                             <div class="row field-block">
                                 <div class="col-xs-12 col-md-3">
                                     <label class="required" for="email">Your email</label>
                                 </div>
                                 <div class="col-xs-12 col-md-9">
                                     <input class="input-sm" type="email" id="email" name="email"
-                                           placeholder="e.g. jon@got.com"
-                                           required>
+                                           placeholder="e.g. jon@got.com" value="<?php echo $userInfo['email']; ?>"
+                                           required readonly="readonly">
                                 </div>
                             </div>
-
+                            <?php else: ?>
+                                <div class="row field-block">
+                                    <div class="col-xs-12 col-md-3">
+                                        <label class="required" for="email">Your email</label>
+                                    </div>
+                                    <div class="col-xs-12 col-md-9">
+                                        <input class="input-sm" type="email" id="email" name="email"
+                                               placeholder="e.g. jon@got.com"
+                                               required>
+                                    </div>
+                                </div>
+                            <?php endif; ?>
                             <div class="row field-block">
                                 <div class="col-xs-12 col-md-3">
                                     <label class="required" for="phone">Phone number</label>

@@ -237,6 +237,11 @@ input::-moz-focus-inner {
 input {
     line-height: normal;
 }
+input[type="email"]:read-only {
+     border-color: #009ee0;
+
+    background-color: rgb(235, 235, 228);
+}
 
 input[type="checkbox"],
 input[type="radio"] {

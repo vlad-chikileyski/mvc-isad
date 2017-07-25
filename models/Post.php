@@ -25,4 +25,14 @@ class Post
         }
         return false;
     }
+
+    public static function checkEqualUserEmailAndPostData($notVerifyEmail, $userImail)
+    {
+
+        if (strtolower($notVerifyEmail)==strtolower($userImail)) {
+            return true;
+        }
+        return false;
+    }
+
 }
