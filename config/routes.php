@@ -10,5 +10,6 @@ return array(
     'add'=>'post/categoryList', // PostController and actionCategoryList
     'new-ads/([a-z]+)'=>'post/index/$1', //PostController and  actionIndex
     'terms'=>'terms/index',
+    'activate-ad/([0-9+])'=>'activate/index/$1',
     '' => 'site/index' //SiteController and actionIndex
 );

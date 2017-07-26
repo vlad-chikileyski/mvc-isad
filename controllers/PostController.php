@@ -37,7 +37,7 @@ class PostController
                 $notVerifyEmail = $_POST['email'];
                 $phone = $_POST['phone'];
                 $subcategory = lcfirst($_POST['subcategory']);
-                $getTableName = Category::categoryCheckTree($categoryName, $subcategory);
+                $getTableName = Category::categoryCheckDoubleParam($categoryName, $subcategory);
                 if ($getTableName == false) {
                     header("HTTP/1.0 404 Not Found");
                     require_once(ROOT . '/views/error/404.php');
@@ -55,6 +55,10 @@ class PostController
                             $veryfyEmail = $userInfo['email'];
                         }
                         $query = Post::save($getTableName, $title, $description, $userId);
+                        $sendStatus = Mail::sendEmail($query, $veryfyEmail);
+                        if($sendStatus){
+                            header("Location: /activate-ad/200");
+                        }
                     }
                 }
 
