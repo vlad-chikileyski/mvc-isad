@@ -48,7 +48,7 @@ class PostController
                     if ($errors == false) {
                         /*$emailSecurityFilter = Post::checkEqualUserEmailAndPostData($notVerifyEmail, $userInfo['email']);*/
                         $query = Post::save($getTableName, $title, $description, $userId);
-                        if (Mail::sendActivateEmail($_POST['email'])) {
+                        if (Mail::sendQuestionOfPayerEmail($_POST['email'])) {
                             header("Location: /activate-ad/200");
                         }
 
