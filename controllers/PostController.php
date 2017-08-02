@@ -10,7 +10,6 @@ class PostController
             header("HTTP/1.0 404 Not Found");
             require_once(ROOT . '/views/error/404.php');
         } else {
-
             $title = '';
             $subcategory = '';
             $description = '';
@@ -46,19 +45,13 @@ class PostController
                     if (!Post::checkEmail($notVerifyEmail)) {
                         $errors[] = 'Invalid email type!';
                     }
-                    
                     if ($errors == false) {
-                        $emailSecurityFilter = Post::checkEqualUserEmailAndPostData($notVerifyEmail, $userInfo['email']);
-                        if ($emailSecurityFilter) {
-                            $veryfyEmail = $_POST['email'];
-                        } else {
-                            $veryfyEmail = $userInfo['email'];
-                        }
+                        /*$emailSecurityFilter = Post::checkEqualUserEmailAndPostData($notVerifyEmail, $userInfo['email']);*/
                         $query = Post::save($getTableName, $title, $description, $userId);
-                        $sendStatus = Mail::sendEmail($query, $veryfyEmail);
-                        if($sendStatus){
+                        if (Mail::sendActivateEmail($_POST['email'])) {
                             header("Location: /activate-ad/200");
                         }
+
                     }
                 }
 
