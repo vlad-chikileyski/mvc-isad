@@ -19,8 +19,21 @@ class PostController
             $notVerifyEmail = '';
             $phone = '';
             $result = false;
-            $userId = User::checkId();
-            $userInfo = User::getUserById($userId);
+            /**
+             * check userIsLogged?
+             * START
+             */
+            $userInfo = '';
+            $userId = '';
+            if (User::getUserById(User::checkId()) != null) {
+                $userId = User::checkId();
+                $userInfo = User::getUserById($userId);
+            } else {
+
+            }
+            /*
+             * END
+             */
 
             /**
              * Validate & save in DB
@@ -41,14 +54,15 @@ class PostController
                     header("HTTP/1.0 404 Not Found");
                     require_once(ROOT . '/views/error/404.php');
                 } else {
+
                     $errors = false;
                     if (!Post::checkEmail($notVerifyEmail)) {
                         $errors[] = 'Invalid email type!';
                     }
                     if ($errors == false) {
-                        /*$emailSecurityFilter = Post::checkEqualUserEmailAndPostData($notVerifyEmail, $userInfo['email']);*/
-                        $query = Post::save($getTableName, $title, $description, $userId);
-                        if (Mail::sendQuestionOfPayerEmail($_POST['email'])) {
+                        $emailSecurityFilter = Post::checkEqualUserEmailAndPostData($notVerifyEmail, $userInfo['email']);
+                        $query = Post::save($getTableName, $title, $description, $userId, $postcode, $name, $veryfyEmail, $phone, $subcategory);
+                        if (Mail::sendQuestionOfPayerEmail($veryfyEmail)) {
                             header("Location: /activate-ad/200");
                         }
 

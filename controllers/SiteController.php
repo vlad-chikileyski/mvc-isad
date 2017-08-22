@@ -5,6 +5,13 @@ class SiteController
 
     public function actionIndex()
     {
+        // These lines are mandatory.
+        require_once(ROOT . '/moduls/Mobile-Detect-2.8.25/Mobile_Detect.php');
+        $detect = new Mobile_Detect;
+        // Redirect the user to your mobile version of the site.
+        if( $detect->is('Chrome')){
+            header('http://m.adtoday.co.uk', true, 301);
+        }
         $username = '';
         $password = '';
         $email = '';
@@ -30,6 +37,9 @@ class SiteController
             }
             if ($errors == false) {
                 $query_registration = User::register($username, $email, $password);
+                if ($query_registration && Mail::sendQuestionOfPayerEmail($email)) {
+                    header("Location: /activate-account/200");
+                }
             }
         } else if (isset($_POST['signIn'])) {
             $username = $_POST['username'];

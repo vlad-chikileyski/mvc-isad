@@ -87,7 +87,7 @@
                 <div class="uzr-sidebar">
                     <div class="dp-widget">
                         <a href="#"><i class="fa fa-camera"></i> Change Photo</a>
-                        <img src="/template/assets/img/user-dp.jpg" alt="user">
+                        <img src="<?php echo $user['img']; ?>" alt="user-twink-photo">
                     </div>
                     <div class="nt-tab-triggers">
                         <ul data-target="#tabs-dashboard-01">

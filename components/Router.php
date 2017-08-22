@@ -19,7 +19,9 @@ class Router
     {
         // Путь к файлу с роутами
         $routesPath = ROOT . '/config/routes.php';
-        // Получаем роуты из файла
+        /*
+         * Get routes 
+         **/
         $this->routes = include($routesPath);
     }
 
