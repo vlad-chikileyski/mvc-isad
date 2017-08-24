@@ -43,7 +43,8 @@ class Product
                 $product[$i]['price'] = $row['price'];
                 $product[$i]['category'] = $categoryParam;
                 $product[$i]['subcategory'] = $subCategoryParam;
-                $products[$i]['date'] = $row['date'];
+                $product[$i]['date'] = $row['date'];
+                $product[$i]['user_id'] = $row['user_id'];
                 $i++;
             }
             return $product;

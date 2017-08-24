@@ -83,79 +83,160 @@
 <?php foreach ($categoryProduct as $product) : ?>
 
     <div class="app-canvas">
-        <div class="container">
-            <div class="breadcrumb">
-                <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><?php echo $product['category']; ?></li>
-                    <li><?php echo $product['subcategory']; ?></li>
-                    <li><?php echo $product['title']; ?></li>
+    <div class="container">
+    <div class="breadcrumb">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><?php echo $product['category']; ?></li>
+            <li><?php echo $product['subcategory']; ?></li>
+            <li><?php echo $product['title']; ?></li>
+        </ul>
+    </div>
+
+    <div class="item-single row">
+
+    <div class="item-content col-xs-12 col-sm-7 col-md-8">
+
+        <article class="inner">
+            <header>
+                <ul class="info-icons">
+                    <li><a href="#" class="fa fa-envelope tooltip-parent">
+                            <span class="tooltip">Send Message</span>
+                        </a></li>
+                    <li><a href="#" class="fa fa-phone tooltip-parent">
+                            <span class="tooltip">Mobile Number</span>
+                        </a></li>
+                    <li><a href="#" class="fa fa-heart tooltip-parent">
+                            <span class="tooltip">save ad</span>
+                        </a></li>
                 </ul>
+                <h1><?php echo $product['title']; ?></h1>
+                <ul class="info-list">
+                    <li><i class="fa fa-map-marker"></i><a href="#">Melbourne</a></li>
+                    <li><i class="fa fa-clock-o"></i>2:49 pm</li>
+                    <li><i class="fa fa-bookmark"></i>ID: 13030978</li>
+                </ul>
+            </header>
+            <div class="item-gallery-slider">
+                <div class="item-lg-images">
+                    <a href="#" class="trigger-gallery"><i class="adicon-expand"></i></a>
+                    <div class="slick-carousel slick-lg-images" data-asnav=".slick-sm-images"
+                         data-fade="true"
+                         data-slides-scroll="1" data-dots="false" data-nav="false" data-slides="1"
+                         data-slides-lg="1" data-slides-md="1" data-slides-sm="1" data-loop="true"
+                         data-auto="true">
+                        <div class="item-lg-thumb imgAsBg">
+                            <img src="/template/assets/img/lg1.jpg" alt="dummy">
+                        </div>
+                        <div class="item-lg-thumb imgAsBg">
+                            <img src="/template/assets/img/lg2.jpg" alt="dummy">
+                        </div>
+                        <div class="item-lg-thumb imgAsBg">
+                            <img src="/template/assets/img/lg3.jpg" alt="dummy">
+                        </div>
+                        <div class="item-lg-thumb imgAsBg">
+                            <img src="/template/assets/img/lg4.jpg" alt="dummy">
+                        </div>
+                        <div class="item-lg-thumb imgAsBg">
+                            <img src="/template/assets/img/lg5.jpg" alt="dummy">
+                        </div>
+                        <div class="item-lg-thumb imgAsBg">
+                            <img src="/template/assets/img/lg6.jpg" alt="dummy">
+                        </div>
+                        <div class="item-lg-thumb imgAsBg">
+                            <img src="/template/assets/img/lg7.jpg" alt="dummy">
+                        </div>
+                    </div>
+                </div>
+                <div class="item-sm-images">
+                    <div class="slick-carousel slick-sm-images" data-focus="true"
+                         data-asnav=".slick-lg-images"
+                         data-slides-scroll="1" data-dots="false" data-nav="true"
+                         data-prev="fa fa-chevron-left"
+                         data-next="fa fa-chevron-right" data-slides="6" data-slides-lg="4"
+                         data-slides-md="4"
+                         data-slides-sm="2" data-loop="true" data-auto="false">
+                        <div class="item-sm-thumb">
+                            <div class="imgAsBg">
+                                <img src="/template/assets/img/lg1.jpg" alt="dummy">
+                            </div>
+                        </div>
+                        <div class="item-sm-thumb">
+                            <div class="imgAsBg">
+                                <img src="/template/assets/img/lg2.jpg" alt="dummy">
+                            </div>
+                        </div>
+                        <div class="item-sm-thumb">
+                            <div class="imgAsBg">
+                                <img src="/template/assets/img/lg3.jpg" alt="dummy">
+                            </div>
+                        </div>
+                        <div class="item-sm-thumb">
+                            <div class="imgAsBg">
+                                <img src="/template/assets/img/lg4.jpg" alt="dummy">
+                            </div>
+                        </div>
+                        <div class="item-sm-thumb">
+                            <div class="imgAsBg">
+                                <img src="/template/assets/img/lg5.jpg" alt="dummy">
+                            </div>
+                        </div>
+                        <div class="item-sm-thumb">
+                            <div class="imgAsBg">
+                                <img src="/template/assets/img/lg6.jpg" alt="dummy">
+                            </div>
+                        </div>
+                        <div class="item-sm-thumb">
+                            <div class="imgAsBg">
+                                <img src="/template/assets/img/lg7.jpg" alt="dummy">
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <div class="item-single row">
-
-                <div class="item-content col-xs-12 col-sm-7 col-md-8">
-
-                    <article class="inner">
-                        <header>
-                            <ul class="info-icons">
-                                <li><a href="#" class="fa fa-envelope tooltip-parent">
-                                        <span class="tooltip">Send Message</span>
-                                    </a></li>
-                                <li><a href="#" class="fa fa-phone tooltip-parent">
-                                        <span class="tooltip">Mobile Number</span>
-                                    </a></li>
-                                <li><a href="#" class="fa fa-heart tooltip-parent">
-                                        <span class="tooltip">save ad</span>
-                                    </a></li>
-                            </ul>
-                            <h1><?php echo $product['title']; ?></h1>
-                            <ul class="info-list">
-                                <li><i class="fa fa-map-marker"></i><a href="#">Melbourne</a></li>
-                                <li><i class="fa fa-clock-o"></i>2:49 pm</li>
-                                <li><i class="fa fa-bookmark"></i>ID: 13030978</li>
-                            </ul>
-                        </header>
-                        <div class="item-gallery-slider">
-                            <div class="item-lg-images">
-                                <a href="#" class="trigger-gallery"><i class="adicon-expand"></i></a>
-                                <div class="slick-carousel slick-lg-images" data-asnav=".slick-sm-images"
-                                     data-fade="true"
-                                     data-slides-scroll="1" data-dots="false" data-nav="false" data-slides="1"
-                                     data-slides-lg="1" data-slides-md="1" data-slides-sm="1" data-loop="true"
-                                     data-auto="true">
-                                    <div class="item-lg-thumb imgAsBg">
-                                        <img src="/template/assets/img/lg1.jpg" alt="dummy">
-                                    </div>
-                                    <div class="item-lg-thumb imgAsBg">
-                                        <img src="/template/assets/img/lg2.jpg" alt="dummy">
-                                    </div>
-                                    <div class="item-lg-thumb imgAsBg">
-                                        <img src="/template/assets/img/lg3.jpg" alt="dummy">
-                                    </div>
-                                    <div class="item-lg-thumb imgAsBg">
-                                        <img src="/template/assets/img/lg4.jpg" alt="dummy">
-                                    </div>
-                                    <div class="item-lg-thumb imgAsBg">
-                                        <img src="/template/assets/img/lg5.jpg" alt="dummy">
-                                    </div>
-                                    <div class="item-lg-thumb imgAsBg">
-                                        <img src="/template/assets/img/lg6.jpg" alt="dummy">
-                                    </div>
-                                    <div class="item-lg-thumb imgAsBg">
-                                        <img src="/template/assets/img/lg7.jpg" alt="dummy">
-                                    </div>
+            <div class="full-width-gallery">
+                <div class="inner">
+                    <div class="container">
+                        <div class="gallery-lg-area">
+                            <a href="#" class="close-lg-gallery"><i class="fa fa-close"></i></a>
+                            <div class="slick-carousel slick-gallery-lg-images"
+                                 data-asnav=".slick-gallery-thumbs" data-fade="true" data-slides-scroll="1"
+                                 data-dots="false" data-nav="false" data-slides="1" data-slides-lg="1"
+                                 data-slides-md="1" data-slides-sm="1" data-loop="true" data-auto="false">
+                                <div class="item-lg-thumb">
+                                    <img src="/template/assets/img/lg1.jpg" alt="dummy">
+                                </div>
+                                <div class="item-lg-thumb">
+                                    <img src="/template/assets/img/lg2.jpg" alt="dummy">
+                                </div>
+                                <div class="item-lg-thumb">
+                                    <img src="/template/assets/img/lg3.jpg" alt="dummy">
+                                </div>
+                                <div class="item-lg-thumb">
+                                    <img src="/template/assets/img/lg4.jpg" alt="dummy">
+                                </div>
+                                <div class="item-lg-thumb">
+                                    <img src="/template/assets/img/lg5.jpg" alt="dummy">
+                                </div>
+                                <div class="item-lg-thumb ">
+                                    <img src="/template/assets/img/lg6.jpg" alt="dummy">
+                                </div>
+                                <div class="item-lg-thumb ">
+                                    <img src="/template/assets/img/lg7.jpg" alt="dummy">
                                 </div>
                             </div>
-                            <div class="item-sm-images">
-                                <div class="slick-carousel slick-sm-images" data-focus="true"
-                                     data-asnav=".slick-lg-images"
-                                     data-slides-scroll="1" data-dots="false" data-nav="true"
-                                     data-prev="fa fa-chevron-left"
+                        </div>
+                    </div>
+                    <div class="gallery-thumbs">
+                        <div class="container">
+                            <div class="gallery-thumbs-inner">
+                                <div class="slick-carousel slick-gallery-thumbs" data-focus="true"
+                                     data-asnav=".slick-gallery-lg-images" data-slides-scroll="1"
+                                     data-dots="false" data-nav="true" data-prev="fa fa-chevron-left"
                                      data-next="fa fa-chevron-right" data-slides="6" data-slides-lg="4"
-                                     data-slides-md="4"
-                                     data-slides-sm="2" data-loop="true" data-auto="false">
+                                     data-slides-md="4" data-slides-sm="2" data-loop="true"
+                                     data-auto="false">
                                     <div class="item-sm-thumb">
                                         <div class="imgAsBg">
                                             <img src="/template/assets/img/lg1.jpg" alt="dummy">
@@ -194,375 +275,293 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
 
-                        <div class="full-width-gallery">
-                            <div class="inner">
-                                <div class="container">
-                                    <div class="gallery-lg-area">
-                                        <a href="#" class="close-lg-gallery"><i class="fa fa-close"></i></a>
-                                        <div class="slick-carousel slick-gallery-lg-images"
-                                             data-asnav=".slick-gallery-thumbs" data-fade="true" data-slides-scroll="1"
-                                             data-dots="false" data-nav="false" data-slides="1" data-slides-lg="1"
-                                             data-slides-md="1" data-slides-sm="1" data-loop="true" data-auto="false">
-                                            <div class="item-lg-thumb">
-                                                <img src="/template/assets/img/lg1.jpg" alt="dummy">
-                                            </div>
-                                            <div class="item-lg-thumb">
-                                                <img src="/template/assets/img/lg2.jpg" alt="dummy">
-                                            </div>
-                                            <div class="item-lg-thumb">
-                                                <img src="/template/assets/img/lg3.jpg" alt="dummy">
-                                            </div>
-                                            <div class="item-lg-thumb">
-                                                <img src="/template/assets/img/lg4.jpg" alt="dummy">
-                                            </div>
-                                            <div class="item-lg-thumb">
-                                                <img src="/template/assets/img/lg5.jpg" alt="dummy">
-                                            </div>
-                                            <div class="item-lg-thumb ">
-                                                <img src="/template/assets/img/lg6.jpg" alt="dummy">
-                                            </div>
-                                            <div class="item-lg-thumb ">
-                                                <img src="/template/assets/img/lg7.jpg" alt="dummy">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="gallery-thumbs">
-                                    <div class="container">
-                                        <div class="gallery-thumbs-inner">
-                                            <div class="slick-carousel slick-gallery-thumbs" data-focus="true"
-                                                 data-asnav=".slick-gallery-lg-images" data-slides-scroll="1"
-                                                 data-dots="false" data-nav="true" data-prev="fa fa-chevron-left"
-                                                 data-next="fa fa-chevron-right" data-slides="6" data-slides-lg="4"
-                                                 data-slides-md="4" data-slides-sm="2" data-loop="true"
-                                                 data-auto="false">
-                                                <div class="item-sm-thumb">
-                                                    <div class="imgAsBg">
-                                                        <img src="/template/assets/img/lg1.jpg" alt="dummy">
-                                                    </div>
-                                                </div>
-                                                <div class="item-sm-thumb">
-                                                    <div class="imgAsBg">
-                                                        <img src="/template/assets/img/lg2.jpg" alt="dummy">
-                                                    </div>
-                                                </div>
-                                                <div class="item-sm-thumb">
-                                                    <div class="imgAsBg">
-                                                        <img src="/template/assets/img/lg3.jpg" alt="dummy">
-                                                    </div>
-                                                </div>
-                                                <div class="item-sm-thumb">
-                                                    <div class="imgAsBg">
-                                                        <img src="/template/assets/img/lg4.jpg" alt="dummy">
-                                                    </div>
-                                                </div>
-                                                <div class="item-sm-thumb">
-                                                    <div class="imgAsBg">
-                                                        <img src="/template/assets/img/lg5.jpg" alt="dummy">
-                                                    </div>
-                                                </div>
-                                                <div class="item-sm-thumb">
-                                                    <div class="imgAsBg">
-                                                        <img src="/template/assets/img/lg6.jpg" alt="dummy">
-                                                    </div>
-                                                </div>
-                                                <div class="item-sm-thumb">
-                                                    <div class="imgAsBg">
-                                                        <img src="/template/assets/img/lg7.jpg" alt="dummy">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="quick-info">
-                            <ul class="clearfix">
-                                <li>
-                                    <div class="inner clearfix">
-                                        <span class="label">Postcode</span>
-                                        <span class="desc">{ADDRESS}</span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="inner clearfix">
-                                        <span class="label">Type of ad:</span>
-                                        <span class="desc">{Type of ad}</span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="inner clearfix">
-                                        <span class="label">Posted by:</span>
-                                        <span class="desc">{Posted by}</span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="inner clearfix">
-                                        <span class="label">Member since:</span>
-                                        <span class="desc">{Member since}</span>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="text-widget">
-                            <header><h4>Product Description</h4></header>
-                            <div class="inner">
-                                <?php echo $product['description']; ?>
-
-                            </div>
-                        </div>
-                        <footer>
-                            <div class="inner row">
-                                <div class="col-xs-12 col-md-4">
-                                    <span class="item-views"> <i class="fa fa-eye"></i> Ad Views: 4698</span>
-                                </div>
-                                <div class="col-xs-12 col-md-8 text-right-md">
-                                    Do you have something to sell? <a href="/add/">Post Your FREE AdToday</a>
-                                </div>
-
-
-                            </div>
-                        </footer>
-                    </article>
-
-                    <div class="email-alerts">
+            <div class="quick-info">
+                <ul class="clearfix">
+                    <li>
                         <div class="inner clearfix">
-                            <div class="col-xs-12 col-md-7">
-                                <h4>Create Ad Alert</h4>
-                                <p>Set your Alerts for Iphone City in United Kingdom
-                                    and we will email you relevant ads.</p>
-                            </div>
-                            <div class="col-xs-12 col-md-5">
-                                <form action="/">
-                                    <div class="field-block-md">
-                                        <div class="labeled-input">
-                                            <label>Email address</label>
-                                            <input title="enter your email" type="email">
-                                        </div>
-                                    </div>
-                                    <div class="field-block-md">
-                                        <div class="radio-dropdown wide">
-                                            <i class="fa fa-bars"></i>
-                                            <button>Frequency</button>
-                                            <ul>
-                                                <li class="custom-radio">
-                                                    <input type="radio" id="create0021" name="item-brand-name">
-                                                    <label for="create0021">Once a day</label>
-                                                </li>
-                                                <li class="custom-radio">
-                                                    <input type="radio" id="create0031" name="item-brand-name">
-                                                    <label for="create0031">Once a week</label>
-                                                </li>
-                                                <li class="custom-radio">
-                                                    <input type="radio" id="create0041" name="item-brand-name">
-                                                    <label for="create0041">Twice a month</label>
-                                                </li>
-                                                <li class="custom-radio">
-                                                    <input type="radio" id="create0051" name="item-brand-name">
-                                                    <label for="create0051">Once a month</label>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="field-block-md">
-                                        <button class="btn btn-small btn-blue block-element danger-hover">Create Alert
-                                        </button>
-                                    </div>
-                                </form>
-                            </div>
+                            <span class="label">Postcode</span>
+                            <span class="desc">{ADDRESS}</span>
                         </div>
-                    </div>
-
-                    <div class="items-list-md single-similar-items">
-                        <h4>Similar ads</h4>
-                        <div class="items-list">
-                            <article class="item-spot">
-                                <a href="#" class="imgAsBg">
-                                    <img src="/template/assets/img/items/ad1.png" alt="dummy data">
-                                </a>
-                                <div class="item-content">
-                                    <header>
-                                        <h5><a href="single.html">Canon SX Powershot A Great D-SLR</a></h5>
-                                        <span class="item-info-short">2:49 pm in Melbourne</span>
-                                    </header>
-                                    <div class="price-tag">$229.9</div>
-                                    <div class="item-actions text-center">
-                                        <ul class="contact-options">
-                                            <li><a href="#" class="fa fa-envelope tooltip-parent">
-                                                    <span class="tooltip">Send Message</span>
-                                                </a></li>
-                                            <li><a href="#" class="fa fa-phone tooltip-parent">
-                                                    <span class="tooltip">Mobile Number</span>
-                                                </a></li>
-                                            <li><a href="#" class="fa fa-heart tooltip-parent">
-                                                    <span class="tooltip">save ad</span>
-                                                </a></li>
-                                        </ul>
-                                        <a class="view-item" href="single.html">view ad</a>
-
-                                    </div>
-
-                                </div>
-                            </article>
-                            <article class="item-spot">
-                                <a href="#" class="imgAsBg">
-                                    <img src="/template/assets/img/items/ad2.jpg" alt="dummy data">
-                                </a>
-                                <div class="item-content">
-                                    <header>
-                                        <h5><a href="single.html">Canon SX Powershot A Great D-SLR</a></h5>
-                                        <span class="item-info-short">2:49 pm in Melbourne</span>
-                                    </header>
-                                    <div class="price-tag">$229.9</div>
-                                    <div class="item-actions text-center">
-                                        <ul class="contact-options">
-                                            <li><a href="#" class="fa fa-envelope tooltip-parent">
-                                                    <span class="tooltip">Send Message</span>
-                                                </a></li>
-                                            <li><a href="#" class="fa fa-phone tooltip-parent">
-                                                    <span class="tooltip">Mobile Number</span>
-                                                </a></li>
-                                            <li><a href="#" class="fa fa-heart tooltip-parent">
-                                                    <span class="tooltip">save ad</span>
-                                                </a></li>
-                                        </ul>
-                                        <a class="view-item" href="single.html">view ad</a>
-
-                                    </div>
-
-                                </div>
-                            </article>
-                            <article class="item-spot">
-                                <a href="#" class="imgAsBg">
-                                    <img src="/template/assets/img/items/ad3.jpg" alt="dummy data">
-                                </a>
-                                <div class="item-content">
-                                    <header>
-                                        <h5><a href="single.html">Canon SX Powershot A Great D-SLR</a></h5>
-                                        <span class="item-info-short">2:49 pm in Melbourne</span>
-                                    </header>
-                                    <div class="price-tag">$229.9</div>
-                                    <div class="item-actions text-center">
-                                        <ul class="contact-options">
-                                            <li><a href="#" class="fa fa-envelope tooltip-parent">
-                                                    <span class="tooltip">Send Message</span>
-                                                </a></li>
-                                            <li><a href="#" class="fa fa-phone tooltip-parent">
-                                                    <span class="tooltip">Mobile Number</span>
-                                                </a></li>
-                                            <li><a href="#" class="fa fa-heart tooltip-parent">
-                                                    <span class="tooltip">save ad</span>
-                                                </a></li>
-                                        </ul>
-                                        <a class="view-item" href="single.html">view ad</a>
-
-                                    </div>
-
-                                </div>
-                            </article>
+                    </li>
+                    <li>
+                        <div class="inner clearfix">
+                            <span class="label">Type of ad:</span>
+                            <span class="desc">{Type of ad}</span>
                         </div>
-                    </div>
+                    </li>
+                    <li>
+                        <div class="inner clearfix">
+                            <span class="label">Posted by:</span>
+                            <span class="desc">{Posted by}</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="inner clearfix">
+                            <span class="label">Member since:</span>
+                            <span class="desc">{Member since}</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="text-widget">
+                <header><h4>Product Description</h4></header>
+                <div class="inner">
+                    <?php echo $product['description']; ?>
 
                 </div>
-                <aside class="sidebar col-xs-12 col-sm-5 col-md-4">
-                    <div class="inner">
-                        <div class="price-widget short-widget">
-                            <i class="adicon-dollar"></i>
-                            <strong>£<?php echo $product['price']; ?></strong>
-                            <span>Negotiable Price</span>
+            </div>
+            <footer>
+                <div class="inner row">
+                    <div class="col-xs-12 col-md-4">
+                        <span class="item-views"> <i class="fa fa-eye"></i> Ad Views: 4698</span>
+                    </div>
+                    <div class="col-xs-12 col-md-8 text-right-md">
+                        Do you have something to sell? <a href="/add/">Post Your FREE AdToday</a>
+                    </div>
+
+
+                </div>
+            </footer>
+        </article>
+
+        <div class="email-alerts">
+            <div class="inner clearfix">
+                <div class="col-xs-12 col-md-7">
+                    <h4>Create Ad Alert</h4>
+                    <p>Set your Alerts for Iphone City in United Kingdom
+                        and we will email you relevant ads.</p>
+                </div>
+                <div class="col-xs-12 col-md-5">
+                    <form action="/">
+                        <div class="field-block-md">
+                            <div class="labeled-input">
+                                <label>Email address</label>
+                                <input title="enter your email" type="email">
+                            </div>
                         </div>
-                        <div class="number-widget short-widget">
-                            <i class="adicon-phone"></i>
-                            <strong>£<?php echo $product['price']; ?></strong>
-                            <span>Negotiable Price</span>
-                        </div>
-                        <div class="user-widget text-center">
-                            <img src="/template/assets/img/basic/user-thumb.png" alt="asd">
-                            <h4><a href="#">William Martin</a></h4>
-                            <div>Member Since 2013</div>
-                            <a href="#" class="link">More Ads</a>
-                            <ul class="clearfix">
-                                <li><a class="btn btn-transparent" href="#">Send Message</a></li>
-                                <li><a class="btn btn-transparent" href="#">Report Ad</a></li>
-                            </ul>
-                        </div>
-                        <div class="share-widget">
-                            <span>Share This Ad</span>
-                            <div class="social-links social-bg">
+                        <div class="field-block-md">
+                            <div class="radio-dropdown wide">
+                                <i class="fa fa-bars"></i>
+                                <button>Frequency</button>
                                 <ul>
-                                    <li><a href="#" target="_blank" class="fa fa-twitter"></a></li>
-                                    <li><a href="#" target="_blank" class="fa fa-facebook"></a></li>
-                                    <li><a href="#" target="_blank" class="fa fa-google-plus"></a></li>
-                                    <li><a href="#" target="_blank" class="fa fa-instagram"></a></li>
+                                    <li class="custom-radio">
+                                        <input type="radio" id="create0021" name="item-brand-name">
+                                        <label for="create0021">Once a day</label>
+                                    </li>
+                                    <li class="custom-radio">
+                                        <input type="radio" id="create0031" name="item-brand-name">
+                                        <label for="create0031">Once a week</label>
+                                    </li>
+                                    <li class="custom-radio">
+                                        <input type="radio" id="create0041" name="item-brand-name">
+                                        <label for="create0041">Twice a month</label>
+                                    </li>
+                                    <li class="custom-radio">
+                                        <input type="radio" id="create0051" name="item-brand-name">
+                                        <label for="create0051">Once a month</label>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
-                        <div class="map-widget">
-                            <img src="/template/assets/img/map.jpg" alt="map">
-                            <button class="btn btn-white">Get directions</button>
+                        <div class="field-block-md">
+                            <button class="btn btn-small btn-blue block-element danger-hover">Create Alert
+                            </button>
                         </div>
-                        <div class="check-list-widget">
-                            <h4>Safety Tips</h4>
-                            <ul>
-                                <li>Morbi ut tellus ac leo molestie</li>
-                                <li>Luctus nec vehicula seded justo</li>
-                                <li>Varius onec tempor rhons</li>
-                                <li>Polutpat ras lorem</li>
-                            </ul>
-                        </div>
-                        <div class="sponsor-widget">
-                            <img src="/template/assets/img/spon.jpg" alt="sponsor">
-                        </div>
-                    </div>
-                </aside>
-
+                    </form>
+                </div>
             </div>
-
         </div>
-        <div class="call-to-action">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xs-12 col-sm-8 col-md-7 pull-right">
+
+        <div class="items-list-md single-similar-items">
+            <h4>Similar ads</h4>
+            <div class="items-list">
+                <article class="item-spot">
+                    <a href="#" class="imgAsBg">
+                        <img src="/template/assets/img/items/ad1.png" alt="dummy data">
+                    </a>
+                    <div class="item-content">
                         <header>
-                            <span class="text-uppercase">Make Your Phone a classified machine</span>
-                            <h2>Download Free Classified App</h2>
+                            <h5><a href="single.html">Canon SX Powershot A Great D-SLR</a></h5>
+                            <span class="item-info-short">2:49 pm in Melbourne</span>
                         </header>
-                        <div class="row inner">
-                            <div class="col-xs-4">
-                                <a href="#" class="app-store">
-                                    <img src="/template/assets/img/android.png" alt="Google play">
-                                    <span>download on</span>
-                                    <h4>Google Play</h4>
-                                </a>
-                            </div>
-                            <div class="col-xs-4">
-                                <a href="#" class="app-store">
-                                    <img src="/template/assets/img/apple.png" alt="Apple store">
-                                    <span>download on</span>
-                                    <h4>Apple Store</h4>
-                                </a>
-                            </div>
-                            <div class="col-xs-4">
-                                <a href="#" class="app-store">
-                                    <img src="/template/assets/img/win.png" alt="windows store">
-                                    <span>download on</span>
-                                    <h4>Windows Store</h4>
-                                </a>
-                            </div>
+                        <div class="price-tag">$229.9</div>
+                        <div class="item-actions text-center">
+                            <ul class="contact-options">
+                                <li><a href="#" class="fa fa-envelope tooltip-parent">
+                                        <span class="tooltip">Send Message</span>
+                                    </a></li>
+                                <li><a href="#" class="fa fa-phone tooltip-parent">
+                                        <span class="tooltip">Mobile Number</span>
+                                    </a></li>
+                                <li><a href="#" class="fa fa-heart tooltip-parent">
+                                        <span class="tooltip">save ad</span>
+                                    </a></li>
+                            </ul>
+                            <a class="view-item" href="single.html">view ad</a>
+
+                        </div>
+
+                    </div>
+                </article>
+                <article class="item-spot">
+                    <a href="#" class="imgAsBg">
+                        <img src="/template/assets/img/items/ad2.jpg" alt="dummy data">
+                    </a>
+                    <div class="item-content">
+                        <header>
+                            <h5><a href="single.html">Canon SX Powershot A Great D-SLR</a></h5>
+                            <span class="item-info-short">2:49 pm in Melbourne</span>
+                        </header>
+                        <div class="price-tag">$229.9</div>
+                        <div class="item-actions text-center">
+                            <ul class="contact-options">
+                                <li><a href="#" class="fa fa-envelope tooltip-parent">
+                                        <span class="tooltip">Send Message</span>
+                                    </a></li>
+                                <li><a href="#" class="fa fa-phone tooltip-parent">
+                                        <span class="tooltip">Mobile Number</span>
+                                    </a></li>
+                                <li><a href="#" class="fa fa-heart tooltip-parent">
+                                        <span class="tooltip">save ad</span>
+                                    </a></li>
+                            </ul>
+                            <a class="view-item" href="single.html">view ad</a>
+
+                        </div>
+
+                    </div>
+                </article>
+                <article class="item-spot">
+                    <a href="#" class="imgAsBg">
+                        <img src="/template/assets/img/items/ad3.jpg" alt="dummy data">
+                    </a>
+                    <div class="item-content">
+                        <header>
+                            <h5><a href="single.html">Canon SX Powershot A Great D-SLR</a></h5>
+                            <span class="item-info-short">2:49 pm in Melbourne</span>
+                        </header>
+                        <div class="price-tag">$229.9</div>
+                        <div class="item-actions text-center">
+                            <ul class="contact-options">
+                                <li><a href="#" class="fa fa-envelope tooltip-parent">
+                                        <span class="tooltip">Send Message</span>
+                                    </a></li>
+                                <li><a href="#" class="fa fa-phone tooltip-parent">
+                                        <span class="tooltip">Mobile Number</span>
+                                    </a></li>
+                                <li><a href="#" class="fa fa-heart tooltip-parent">
+                                        <span class="tooltip">save ad</span>
+                                    </a></li>
+                            </ul>
+                            <a class="view-item" href="single.html">view ad</a>
+
+                        </div>
+
+                    </div>
+                </article>
+            </div>
+        </div>
+
+    </div>
+    <aside class="sidebar col-xs-12 col-sm-5 col-md-4">
+    <div class="inner">
+    <div class="price-widget short-widget">
+        <i class="adicon-dollar"></i>
+        <strong>£<?php echo $product['price']; ?></strong>
+        <span>Negotiable Price</span>
+    </div>
+    <div class="number-widget short-widget">
+        <i class="adicon-phone"></i>
+        <strong>£<?php echo $product['price']; ?></strong>
+        <span>Negotiable Price</span>
+    </div>
+<?php endforeach; ?>
+    <div class="user-widget text-center">
+        <img src="/template/assets/img/basic/user-thumb.png" alt="asd">
+        <h4><a href="#"><?php echo $user['username']; ?></a></h4>
+        <div>Member Since 2013</div>
+        <a href="#" class="link">More Ads</a>
+        <ul class="clearfix">
+            <li><a class="btn btn-transparent" href="#">Send Message</a></li>
+            <li><a class="btn btn-transparent" href="#">Report Ad</a></li>
+        </ul>
+    </div>
+    <div class="share-widget">
+        <span>Share This Ad</span>
+        <div class="social-links social-bg">
+            <ul>
+                <li><a href="#" target="_blank" class="fa fa-twitter"></a></li>
+                <li><a href="#" target="_blank" class="fa fa-facebook"></a></li>
+                <li><a href="#" target="_blank" class="fa fa-google-plus"></a></li>
+                <li><a href="#" target="_blank" class="fa fa-instagram"></a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="map-widget">
+        <img src="/template/assets/img/map.jpg" alt="map">
+        <button class="btn btn-white">Get directions</button>
+    </div>
+    <div class="check-list-widget">
+        <h4>Safety Tips</h4>
+        <ul>
+            <li>Morbi ut tellus ac leo molestie</li>
+            <li>Luctus nec vehicula seded justo</li>
+            <li>Varius onec tempor rhons</li>
+            <li>Polutpat ras lorem</li>
+        </ul>
+    </div>
+    <div class="sponsor-widget">
+        <img src="/template/assets/img/spon.jpg" alt="sponsor">
+    </div>
+    </div>
+    </aside>
+
+    </div>
+
+    </div>
+    <div class="call-to-action">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-8 col-md-7 pull-right">
+                    <header>
+                        <span class="text-uppercase">Make Your Phone a classified machine</span>
+                        <h2>Download Free Classified App</h2>
+                    </header>
+                    <div class="row inner">
+                        <div class="col-xs-4">
+                            <a href="#" class="app-store">
+                                <img src="/template/assets/img/android.png" alt="Google play">
+                                <span>download on</span>
+                                <h4>Google Play</h4>
+                            </a>
+                        </div>
+                        <div class="col-xs-4">
+                            <a href="#" class="app-store">
+                                <img src="/template/assets/img/apple.png" alt="Apple store">
+                                <span>download on</span>
+                                <h4>Apple Store</h4>
+                            </a>
+                        </div>
+                        <div class="col-xs-4">
+                            <a href="#" class="app-store">
+                                <img src="/template/assets/img/win.png" alt="windows store">
+                                <span>download on</span>
+                                <h4>Windows Store</h4>
+                            </a>
                         </div>
                     </div>
-                    <div class="hidden-xs col-sm-4 col-md-5 pull-right">
-                        <div class="action-mock">
-                            <img src="/template/assets/img/app-mock.png" alt="download apps">
-                        </div>
+                </div>
+                <div class="hidden-xs col-sm-4 col-md-5 pull-right">
+                    <div class="action-mock">
+                        <img src="/template/assets/img/app-mock.png" alt="download apps">
                     </div>
                 </div>
             </div>
         </div>
     </div>
-<?php endforeach; ?>
-
+    </div>
 <?php include ROOT . '/views/layout/footer.php'; ?>
