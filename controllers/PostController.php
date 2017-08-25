@@ -21,7 +21,7 @@ class PostController
             if (User::getUserById(User::checkId()) != null) {
                 $userId = User::checkId();
                 $userInfo = User::getUserById($userId);
-            } else{
+            } else {
                 $userInfo = false;
                 $userId = false;
             }
@@ -64,10 +64,8 @@ class PostController
                         $errors[] = 'Invalid email type!';
                     }
                     if ($errors == false) {
-                        if ($userInfo!=false && $userInfo['email'] != '') { //logged User
+                        if ($userInfo != false && $userInfo['email'] != '') { //logged User
                             if (Mail::sendQuestionOfPayerEmail($userInfo['email'])) { //send {activate your ads}
-                                echo $getTableName . "<br>" .  $title . "<br>" . $description . "<br>" . $userId . "<br>" .$postcode. "<br>" .
-                                    $subcategory . "<br>" .'0' . "<br>" .$price;
                                 $query = Post::save($getTableName, $title, $description, $userId, $postcode, $subcategory, '0', $price);
                                 echo 'user logged!';
                                 var_dump($query);
@@ -82,8 +80,8 @@ class PostController
                                 $newPassword = User::generatePassword();
                                 $newUserRegister = User::register($name, $notVerifyEmail, $newPassword);
                                 $newUserData = User::getUserByEmail($notVerifyEmail);
-                                if ($newUserRegister && Mail::sendQuestionOfPayerEmail($notVerifyEmail)) {//send some mail_template {Thanks for register - your password and url ads}
-                                    $query = Post::save($getTableName, $title, $description, $newUserData['id'], $postcode, $subcategory, '0',$price);
+                                if ($newUserRegister && MailBuilder::configureMailForActivateAccount($notVerifyEmail)) {//send some mail_template {Thanks for register - your password and url ads}
+                                    $query = Post::save($getTableName, $title, $description, $newUserData['id'], $postcode, $subcategory, '0', $price);
                                     echo 'user success register!';
                                     if ($query) {
                                         header("Location: /activate-account/200");

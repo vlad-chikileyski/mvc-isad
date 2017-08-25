@@ -9,7 +9,7 @@ class SiteController
         require_once(ROOT . '/moduls/Mobile-Detect-2.8.25/Mobile_Detect.php');
         $detect = new Mobile_Detect;
         // Redirect the user to your mobile version of the site.
-        if( $detect->is('Chrome')){
+        if ($detect->is('Chrome')) {
             header('http://m.adtoday.co.uk', true, 301);
         }
         $username = '';
