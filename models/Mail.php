@@ -2,7 +2,7 @@
 
 class Mail
 {
-    public static function sendEmail($toAddress, $message)
+    public static function sendEmail($toAddress, $message, $messageTitle)
     {
         require_once(ROOT . '/moduls/PHPMailer-master/PHPMailerAutoload.php');
         $mail = new PHPMailer();
@@ -18,7 +18,7 @@ class Mail
         $mail->FromName = 'Adtoday.co.uk';
         $mail->addAddress($toAddress, $toAddress);
         $mail->isHTML(true);
-        $mail->Subject = 'Message title';
+        $mail->Subject = $messageTitle;
         $mail->MsgHTML($message);
         $mail->AltBody = (strip_tags($message));
         if ($mail->send()) {

@@ -273,6 +273,7 @@
                             <div class="inner">
                                 <div class="items-list-md style2 pad-top-0">
                                     <div class="items-list">
+<!--                                        --><?php /*foreach ($getAdsIdByUserCreateId as $ads) : */?>
                                         <article class="item-spot">
                                             <a href="#" class="imgAsBg">
                                                 <img src="/template/assets/img/items/ad1.png" alt="dummy data">
@@ -306,6 +307,7 @@
 
                                             </div>
                                         </article>
+<!--                                        --><?php /*endforeach; */?>
                                         <article class="item-spot item-moderated">
                                             <a href="#" class="imgAsBg">
                                                 <img src="/template/assets/img/items/ad2.jpg" alt="dummy data">

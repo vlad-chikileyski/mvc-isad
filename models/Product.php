@@ -1,7 +1,9 @@
 <?php
+
 class Product
 {
     const SHOW_BY_DEFAULT = 30;
+
     public static function getProductsListByCategory($categoryExistName = false, $page = 1)
     {
         if ($categoryExistName) {
@@ -24,6 +26,7 @@ class Product
             return $products;
         }
     }
+
     /**
      * @returns product item by id
      * @param integer $id
@@ -50,6 +53,7 @@ class Product
             return $product;
         }
     }
+
     /**
      * Returns total products
      */
@@ -64,6 +68,20 @@ class Product
         $row = $result->fetch();
         return $row['count-val'];
     }
+
+    public static function getAdsIdByUserId($userId)
+    {
+        $db = Db::getConnection();
+        $ads = array();
+        $result = $db->query('SELECT * FROM dashboard_user_ads WHERE userId=' . $userId);
+        $i = 0;
+        while ($row = $result->fetch()) {
+            $ads[$i]['adsId'] = $row['adsId'];
+            $i++;
+        }
+        return $ads;
+    }
+
     /**
      * Returns total products
      */
@@ -79,6 +97,7 @@ class Product
         $page = intval($row[0]);
         return $page;
     }
+
     /**
      * @param $urlParam
      * @param bool $categoryExistDoubleParamName

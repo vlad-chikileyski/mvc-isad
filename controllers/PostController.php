@@ -80,7 +80,7 @@ class PostController
                                 $newPassword = User::generatePassword();
                                 $newUserRegister = User::register($name, $notVerifyEmail, $newPassword);
                                 $newUserData = User::getUserByEmail($notVerifyEmail);
-                                if ($newUserRegister && MailBuilder::configureMailForActivateAccount($notVerifyEmail)) {//send some mail_template {Thanks for register - your password and url ads}
+                                if ($newUserRegister && MailBuilder::configureMailForActivateAccount($notVerifyEmail, $name)) {//send some mail_template {Thanks for register - your password and url ads}
                                     $query = Post::save($getTableName, $title, $description, $newUserData['id'], $postcode, $subcategory, '0', $price);
                                     echo 'user success register!';
                                     if ($query) {
