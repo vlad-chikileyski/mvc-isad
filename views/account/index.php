@@ -273,21 +273,21 @@
                             <div class="inner">
                                 <div class="items-list-md style2 pad-top-0">
                                     <div class="items-list">
-<!--                                        --><?php /*foreach ($getAdsIdByUserCreateId as $ads) : */?>
-                                        <article class="item-spot">
-                                            <a href="#" class="imgAsBg">
+                                        <?php foreach ($userProduct as $ads) : ?>
+                                        <article class="item-spot <!--item-moderated-->">
+                                            <a href="/ads/<?php echo $ads[0]['category']; ?>/<?php echo $ads[0]['subcategory']; ?>/<?php echo $ads[0]['id']; ?>" class="imgAsBg">
                                                 <img src="/template/assets/img/items/ad1.png" alt="dummy data">
                                             </a>
                                             <div class="item-content">
                                                 <header>
-                                                    <h6><a href="single.html">Canon SX Powershot A Great D-SLR</a></h6>
+                                                    <h6><a href="single.html"><?php echo $ads[0]['title'];?></a></h6>
                                                     <ul class="item-info">
                                                         <li><i class="fa fa-clock-o"></i>From: 26 Oct - To: 23 Nov</li>
                                                         <li><i class="fa fa-eye"></i>4,226</li>
 
                                                     </ul>
                                                 </header>
-                                                <div class="price-tag">$229.9</div>
+                                                <div class="price-tag">£<?php echo $ads[0]['price'];?></div>
                                                 <div class="item-admin-actions text-center">
                                                     <ul>
                                                         <li><a class="tc" href="#"><i class="adicon-eye"></i></a></li>
@@ -307,175 +307,7 @@
 
                                             </div>
                                         </article>
-<!--                                        --><?php /*endforeach; */?>
-                                        <article class="item-spot item-moderated">
-                                            <a href="#" class="imgAsBg">
-                                                <img src="/template/assets/img/items/ad2.jpg" alt="dummy data">
-                                            </a>
-                                            <div class="item-content">
-                                                <header>
-                                                    <h6><a href="single.html">Canon SX Powershot A Great D-SLR</a></h6>
-                                                    <ul class="item-info">
-                                                        <li><i class="fa fa-clock-o"></i>From: 26 Oct - To: 23 Nov</li>
-                                                        <li><i class="fa fa-eye"></i>4,226</li>
-
-                                                    </ul>
-                                                </header>
-                                                <div class="price-tag">$229.9</div>
-                                                <div class="item-admin-actions text-center">
-                                                    <ul>
-                                                        <li><a class="tc" href="#"><i class="adicon-eye"></i></a></li>
-                                                        <li><a class="tc6-hover" href="#"><i
-                                                                    class="adicon-edit"></i></a></li>
-                                                        <li><a href="#"><i class="adicon-activate"></i></a></li>
-                                                        <li><a class="tc12-hover" href="#"><i
-                                                                    class="adicon-recyclebin"></i></a></li>
-                                                        <li>
-                                                            <div class="custom-check">
-                                                                <input id="select004" type="checkbox">
-                                                                <label for="select004"></label>
-                                                            </div>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-
-                                            </div>
-                                        </article>
-                                        <article class="item-spot item-moderated">
-                                            <a href="#" class="imgAsBg">
-                                                <img src="/template/assets/img/items/ad2.jpg" alt="dummy data">
-                                            </a>
-                                            <div class="item-content">
-                                                <header>
-                                                    <h6><a href="single.html">Canon SX Powershot A Great D-SLR</a></h6>
-                                                    <ul class="item-info">
-                                                        <li><i class="fa fa-clock-o"></i>From: 26 Oct - To: 23 Nov</li>
-                                                        <li><i class="fa fa-eye"></i>4,226</li>
-
-                                                    </ul>
-                                                </header>
-                                                <div class="price-tag">$229.9</div>
-                                                <div class="item-admin-actions text-center">
-                                                    <ul>
-                                                        <li><a class="tc" href="#"><i class="adicon-eye"></i></a></li>
-                                                        <li><a class="tc6-hover" href="#"><i
-                                                                    class="adicon-edit"></i></a></li>
-                                                        <li><a href="#"><i class="adicon-activate"></i></a></li>
-                                                        <li><a class="tc12-hover" href="#"><i
-                                                                    class="adicon-recyclebin"></i></a></li>
-                                                        <li>
-                                                            <div class="custom-check">
-                                                                <input id="select003" type="checkbox">
-                                                                <label for="select003"></label>
-                                                            </div>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-
-                                            </div>
-                                        </article>
-                                        <article class="item-spot">
-                                            <a href="#" class="imgAsBg">
-                                                <img src="/template/assets/img/items/ad4.jpg" alt="dummy data">
-                                            </a>
-                                            <div class="item-content">
-                                                <header>
-                                                    <h6><a href="single.html">Canon SX Powershot A Great D-SLR</a></h6>
-                                                    <ul class="item-info">
-                                                        <li><i class="fa fa-clock-o"></i>From: 26 Oct - To: 23 Nov</li>
-                                                        <li><i class="fa fa-eye"></i>4,226</li>
-
-                                                    </ul>
-                                                </header>
-                                                <div class="price-tag">$229.9</div>
-                                                <div class="item-admin-actions text-center">
-                                                    <ul>
-                                                        <li><a class="tc" href="#"><i class="adicon-eye"></i></a></li>
-                                                        <li><a class="tc6-hover" href="#"><i
-                                                                    class="adicon-edit"></i></a></li>
-                                                        <li><a href="#"><i class="adicon-activate"></i></a></li>
-                                                        <li><a class="tc12-hover" href="#"><i
-                                                                    class="adicon-recyclebin"></i></a></li>
-                                                        <li>
-                                                            <div class="custom-check">
-                                                                <input id="select002444" type="checkbox">
-                                                                <label for="select002444"></label>
-                                                            </div>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-
-                                            </div>
-                                        </article>
-
-                                        <article class="item-spot">
-                                            <a href="#" class="imgAsBg">
-                                                <img src="/template/assets/img/items/ad5.jpg" alt="dummy data">
-                                            </a>
-                                            <div class="item-content">
-                                                <header>
-                                                    <h6><a href="single.html">Canon SX Powershot A Great D-SLR</a></h6>
-                                                    <ul class="item-info">
-                                                        <li><i class="fa fa-clock-o"></i>From: 26 Oct - To: 23 Nov</li>
-                                                        <li><i class="fa fa-eye"></i>4,226</li>
-
-                                                    </ul>
-                                                </header>
-                                                <div class="price-tag">$229.9</div>
-                                                <div class="item-admin-actions text-center">
-                                                    <ul>
-                                                        <li><a class="tc" href="#"><i class="adicon-eye"></i></a></li>
-                                                        <li><a class="tc6-hover" href="#"><i
-                                                                    class="adicon-edit"></i></a></li>
-                                                        <li><a href="#"><i class="adicon-activate"></i></a></li>
-                                                        <li><a class="tc12-hover" href="#"><i
-                                                                    class="adicon-recyclebin"></i></a></li>
-                                                        <li>
-                                                            <div class="custom-check">
-                                                                <input id="select0024445" type="checkbox">
-                                                                <label for="select0024445"></label>
-                                                            </div>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </article>
-
-                                        <article class="item-spot">
-                                            <a href="#" class="imgAsBg">
-                                                <img src="/template/assets/img/items/ad6.jpg" alt="dummy data">
-                                            </a>
-                                            <div class="item-content">
-                                                <header>
-                                                    <h6><a href="single.html">Canon SX Powershot A Great D-SLR</a></h6>
-                                                    <ul class="item-info">
-                                                        <li><i class="fa fa-clock-o"></i>From: 26 Oct - To: 23 Nov</li>
-                                                        <li><i class="fa fa-eye"></i>4,226</li>
-
-                                                    </ul>
-                                                </header>
-                                                <div class="price-tag">$229.9</div>
-                                                <div class="item-admin-actions text-center">
-                                                    <ul>
-                                                        <li><a class="tc" href="#"><i class="adicon-eye"></i></a></li>
-                                                        <li><a class="tc6-hover" href="#"><i
-                                                                    class="adicon-edit"></i></a></li>
-                                                        <li><a href="#"><i class="adicon-activate"></i></a></li>
-                                                        <li><a class="tc12-hover" href="#"><i
-                                                                    class="adicon-recyclebin"></i></a></li>
-                                                        <li>
-                                                            <div class="custom-check">
-                                                                <input id="select00244456" type="checkbox">
-                                                                <label for="select00244456"></label>
-                                                            </div>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-
-                                            </div>
-                                        </article>
-
-
+                                        <?php endforeach; ?>
                                     </div>
                                 </div>
                                 <br>

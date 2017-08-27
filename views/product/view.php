@@ -113,8 +113,8 @@
                 <h1><?php echo $product['title']; ?></h1>
                 <ul class="info-list">
                     <li><i class="fa fa-map-marker"></i><a href="#">Melbourne</a></li>
-                    <li><i class="fa fa-clock-o"></i>2:49 pm</li>
-                    <li><i class="fa fa-bookmark"></i>ID: 13030978</li>
+                    <li><i class="fa fa-clock-o"></i><?php echo $product['date']; ?></li>
+                    <li><i class="fa fa-bookmark"></i>ID: <?php echo $product['id']; ?></li>
                 </ul>
             </header>
             <div class="item-gallery-slider">
@@ -284,7 +284,7 @@
                     <li>
                         <div class="inner clearfix">
                             <span class="label">Postcode</span>
-                            <span class="desc">{ADDRESS}</span>
+                            <span class="desc"><?php echo $product['postcode']; ?></span>
                         </div>
                     </li>
                     <li>
@@ -296,7 +296,7 @@
                     <li>
                         <div class="inner clearfix">
                             <span class="label">Posted by:</span>
-                            <span class="desc">{Posted by}</span>
+                            <span class="desc"><?php echo $product['date']; ?></span>
                         </div>
                     </li>
                     <li>

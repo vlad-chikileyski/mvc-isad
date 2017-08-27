@@ -48,6 +48,8 @@ class Product
                 $product[$i]['subcategory'] = $subCategoryParam;
                 $product[$i]['date'] = $row['date'];
                 $product[$i]['user_id'] = $row['user_id'];
+                $product[$i]['postcode'] = $row['postcode'];
+                $product[$i]['date'] = $row['date'];
                 $i++;
             }
             return $product;
@@ -77,9 +79,30 @@ class Product
         $i = 0;
         while ($row = $result->fetch()) {
             $ads[$i]['adsId'] = $row['adsId'];
+            $ads[$i]['category_name'] = $row['category_name'];
+            $ads[$i]['subcategory_name'] = $row['subcategory_name'];
             $i++;
         }
         return $ads;
+    }
+
+    public static function getProductListByTableNameAndAdsId($table_name, $adsId, $category)
+    {
+        $db = Db::getConnectionOnCatics();
+        $products = array();
+        $result = $db->query('SELECT * FROM ' . $table_name . ' WHERE id = '.$adsId);
+        $i = 0;
+        while ($row = $result->fetch()) {
+            $products[$i]['id'] = $row['id'];
+            $products[$i]['title'] = $row['title'];
+            $products[$i]['description'] = $row['description'];
+            $products[$i]['price'] = $row['price'];
+            $products[$i]['subcategory'] = $row['subcategory'];
+            $products[$i]['category'] = $category;
+            $products[$i]['date'] = $row['date'];
+            $i++;
+        }
+        return $products;
     }
 
     /**
