@@ -18,7 +18,7 @@ class Product
                 $products[$i]['title'] = $row['title'];
                 $products[$i]['description'] = $row['description'];
                 $products[$i]['price'] = $row['price'];
-                $products[$i]['sub-category'] = $row['sub-category'];
+                $products[$i]['subcategory'] = $row['subcategory'];
                 $products[$i]['category'] = $categoryExistName;
                 $products[$i]['date'] = $row['date'];
                 $i++;
@@ -31,6 +31,7 @@ class Product
      * @returns product item by id
      * @param integer $id
      */
+
     public static function getProductById($tableNameProduct, $productId, $categoryParam, $subCategoryParam)
     {
         $productId = intval($productId);

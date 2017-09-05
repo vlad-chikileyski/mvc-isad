@@ -103,12 +103,10 @@ class PostController
 
 
             }
-
             /**
              * !submit only simple loading
              * @return page
              */
-
             $subCategoryListMenu = array();
             $subCategoryListMenu = Category::getSubcategyListByCategory($categoryName);
             require_once(ROOT . '/views/post/create.php');
