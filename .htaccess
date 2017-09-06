@@ -5,6 +5,7 @@ RewriteBase /
 
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
+php_value session.cookie_domain .adtoday.co.uk
 
 RewriteRule ^(.*)$ index.php
 # DO NOT REMOVE THIS LINE AND THE LINES BELOW ERRORPAGEID:WateJa

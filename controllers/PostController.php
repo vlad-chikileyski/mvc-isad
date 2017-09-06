@@ -65,11 +65,11 @@ class PostController
                     }
                     if ($errors == false) {
                         if ($userInfo != false && $userInfo['email'] != '') { //logged User
-                            if (Mail::sendQuestionOfPayerEmail($userInfo['email'])) { //send {activate your ads}
+                            $incrementStatus = Catalog::incrementCountFromCategory($getTableName);
+                            if (MailBuilder::configureMailForActivateAccount($notVerifyEmail, $name)) { //send {activate your ads}
                                 $query = Post::save($getTableName, $title, $description, $userId, $postcode, $subcategory, '0', $price);
                                 echo 'user logged!';
-                                var_dump($query);
-                                if ($query) {
+                                if ($query && $incrementStatus) {
                                     header("Location: /activate-ad/200");
                                 }
                             }
@@ -80,19 +80,21 @@ class PostController
                                 $newPassword = User::generatePassword();
                                 $newUserRegister = User::register($name, $notVerifyEmail, $newPassword);
                                 $newUserData = User::getUserByEmail($notVerifyEmail);
+                                $incrementStatus = Catalog::incrementCountFromCategory($getTableName);
                                 if ($newUserRegister && MailBuilder::configureMailForActivateAccount($notVerifyEmail, $name)) {//send some mail_template {Thanks for register - your password and url ads}
                                     $query = Post::save($getTableName, $title, $description, $newUserData['id'], $postcode, $subcategory, '0', $price);
                                     echo 'user success register!';
-                                    if ($query) {
+                                    if ($query && $incrementStatus) {
                                         header("Location: /activate-account/200");
                                     }
                                 }
                             } else { //user exists !
                                 $userData = User::getUserByEmail($notVerifyEmail);
-                                if (Mail::sendQuestionOfPayerEmail($userData['email'])) { //send {activate your ads}
+                                $incrementStatus = Catalog::incrementCountFromCategory($getTableName);
+                                if (MailBuilder::configureMailForActivateAccount($notVerifyEmail, $name)) { //send {activate your ads}
                                     $query = Post::save($getTableName, $title, $description, $userData['id'], $postcode, $subcategory, '0', $price);
                                     echo 'user exists but not logged!';
-                                    if ($query) {
+                                    if ($query && $incrementStatus) {
                                         header("Location: /activate-ad/200");
                                     }
                                 }
