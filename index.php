@@ -12,8 +12,6 @@ ini_set('session.cookie_domain', '.adtoday.co.uk' );
 session_start();
 
 
-print_r($_SESSION);
-
 //2. Include files system
 define('ROOT', dirname(__FILE__));
 require_once(ROOT.'/components/Autoload.php');
