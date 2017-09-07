@@ -314,10 +314,13 @@
                             <div class="mega-content">
                                 <ul class="sub-category">
                                     <li><a href="#">Arabic</a>
-                                    <li><a href="#">Female</a>
-                                    <li><a href="#">Transgender</a>
-                                    <li><a href="#">TS</a>
-                                    <li><a href="#">TV</a>
+                                    <li><a href="#">Asian</a>
+                                    <li><a href="#">African/Caribbean</a>
+                                    <li><a href="#">Caucasian</a>
+                                    <li><a href="#">Indian</a>
+                                    <li><a href="#">Latina</a>
+                                    <li><a href="#">Mixed</a>
+                                    <li><a href="#">Other</a>
                                     </li>
                                 </ul>
                             </div>
@@ -325,87 +328,202 @@
                     </div>
                 </div>
             </div>
-            <select name="form_search_service_type_label"
-                    class="{validate:{required: true}} kiwii-input kiwii-flat-input kiwii-input-small"
-                    onchange="document.body.focus();" id="id_form_search_service_type_label">
-                <option value="">Select an option</option>
-                <option value="Arabic">Arabic</option>
-                <option value="Asian">Asian</option>
-                <option value="African/Caribbean">African/Caribbean</option>
-                <option value="Caucasian">Caucasian</option>
-                <option value="Indian">Indian</option>
-                <option value="Latina/o">Latina/o</option>
-                <option value="Mixed">Mixed</option>
-                <option value="Other">Other</option>
-            </select>
             <div class="row field-block">
                 <div class="col-xs-12 col-md-3">
-                    <label class="required" for="postcode">Post Code</label>
+                    <span class="required label">Condition</span>
                 </div>
-                <div class="col-xs-12 col-md-4">
-                    <input class="input-sm" type="text" id="search_postcode" name="postcode"
-                           placeholder="e.g. OX49 5NU" required>
-                    <div id="result"></div>
-                </div>
-
-                <div class="col-xs-12 col-md-3">
-                    <div class="ajax-loader" style="">
-                        <img src="/template/assets/img/Reload.gif" class="img-responsive"/>
+                <div class="col-xs-12 col-md-6">
+                    <div class="custom-checkbox">
+                        <input type="checkbox" name="english" value="english" id="english">
+                        <label for="english">English</label>
                     </div>
-                    <div class="ajax-loader-status">
-                        <i class="fa fa-check" aria-hidden="true" style="color: green;"></i>
+                    <div class="custom-checkbox">
+                        <input type="checkbox" name="spanish" value="spanish" id="spanish">
+                        <label for="spanish">Spanish</label>
                     </div>
-                    <div class="ajax-loader-error">
-                        <i class="fa fa-times" aria-hidden="true" style="color: red;"></i>
+                    <div class="custom-checkbox">
+                        <input type="checkbox" name="french" value="french" id="french">
+                        <label for="french">French</label>
+                    </div>
+                    <div class="custom-checkbox">
+                        <input type="checkbox" name="option2" value="a2" id="create4221">
+                        <label for="create4221">Italian</label>
+                    </div>
+                    <div class="custom-checkbox">
+                        <input type="checkbox" name="portugese" value="portugese" id="portugese">
+                        <label for="portugese">Portugese</label>
+                    </div>
+                    <div class="custom-checkbox">
+                        <input type="checkbox" name="german" value="german" id="german">
+                        <label for="german">German</label>
+                    </div>
+                    <div class="custom-checkbox">
+                        <input type="checkbox" name="russian" value="russian" id="russian">
+                        <label for="russian">Russian</label>
+                    </div>
+                    <div class="custom-checkbox">
+                        <input type="checkbox" name="chinese" value="chinese" id="chinese">
+                        <label for="chinese">Chinese</label>
+                    </div>
+                    <div class="custom-checkbox">
+                        <input type="checkbox" name="other" value="other" id="other">
+                        <label for="other">Other</label>
                     </div>
                 </div>
             </div>
             <hr>
             <div class="row field-block">
                 <div class="col-xs-12 col-md-3">
-                    <label class="required" for="name">Your Name</label>
+                    <span class="required label">Likes/Interests</span>
                 </div>
-                <div class="col-xs-12 col-md-9">
-                    <input class="input-sm" type="text" id="name" name="name"
-                           placeholder="e.g. Jhone Doe" required>
-                </div>
-            </div>
-            <?php if (User::isGuest()): ?>
-            <div class="row field-block">
-                <div class="col-xs-12 col-md-3">
-                    <label class="required" for="email">Your email</label>
-                </div>
-                <div class="col-xs-12 col-md-9">
-                    <input class="input-sm" type="email" id="email" name="email"
-                           placeholder="e.g. jon@got.com" value="<?php echo $userInfo['email']; ?>"
-                           required readonly="readonly">
-                </div>
-            </div>
-            <?php else: ?>
-            <div class="row field-block">
-                <div class="col-xs-12 col-md-3">
-                    <label class="required" for="email">Your email</label>
-                </div>
-                <div class="col-xs-12 col-md-9">
-                    <input class="input-sm" type="email" id="email" name="email"
-                           placeholder="e.g. jon@got.com"
-                           required>
-                </div>
-            </div>
-            <?php endif; ?>
-            <div class="row field-block">
-                <div class="col-xs-12 col-md-3">
-                    <label class="required" for="phone">Phone number</label>
-                </div>
-                <div class="col-xs-12 col-md-9">
-                    <div class="icon-field">
-                        <span>+44</span>
-                        <input class="input-sm" type="tel" id="phone" name="phone"
-                               placeholder="e.g. 123456789"
-                               required>
+                <div class="col-xs-12 col-md-7">
+                    <div class="custom-checkbox">
+                        <input type="checkbox" name="Massage" value="Massage" id="Massage">
+                        <label for="Massage">Massage</label>
+                    </div>
+                    <div class="custom-checkbox">
+                        <input type="checkbox" name="escorting" value="escorting" id="escorting">
+                        <label for="escorting">Escorting</label>
+                    </div>
+                    <div class="custom-checkbox">
+                        <input type="checkbox" name="role-play-fantasy" value="role-play-fantasy"
+                               id="role-play-fantasy">
+                        <label for="role-play-fantasy">Role play & Fantasy</label>
+                    </div>
+                    <div class="custom-checkbox">
+                        <input type="checkbox" name="dinner-date" value="dinner-date" id="dinner-date">
+                        <label for="dinner-date">Dinner Date</label>
+                    </div>
+                    <div class="custom-checkbox">
+                        <input type="checkbox" name="tantric-massage" value="tantric-massage" id="tantric-massage">
+                        <label for="tantric-massage">Tantric Massage</label>
+                    </div>
+                    <div class="custom-checkbox">
+                        <input type="checkbox" name="stress-relief" value="stress-relief" id="stress-relief">
+                        <label for="stress-relief">Stress relief</label>
+                    </div>
+                    <div class="custom-checkbox">
+                        <input type="checkbox" name="travel-companion" value="travel-companion" id="travel-companion">
+                        <label for="travel-companion">Travel companion</label>
+                    </div>
+                    <div class="custom-checkbox">
+                        <input type="checkbox" name="modelling" value="modelling" id="modelling">
+                        <label for="modelling">Modelling</label>
                     </div>
                 </div>
             </div>
+            <hr>
+            <div class="row field-block">
+                <div class="col-xs-12 col-md-3">
+                    <span class="required label">My service is for</span>
+                </div>
+                <div class="col-xs-12 col-md-7">
+                    <div class="custom-checkbox">
+                        <input type="checkbox" name="men" value="men" id="men">
+                        <label for="men">Men</label>
+                    </div>
+                    <div class="custom-checkbox">
+                        <input type="checkbox" name="women" value="women" id="women">
+                        <label for="women">Women</label>
+                    </div>
+                    <div class="custom-checkbox">
+                        <input type="checkbox" name="couples" value="couples"
+                               id="couples">
+                        <label for="couples">Couples</label>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="row field-block">
+                <div class="col-xs-12 col-md-3">
+                    <span class="required label">Rates</span>
+                </div>
+                <div class="col-xs-12 col-md-4">
+                    <table class="browserref notranslate"
+                           style="border-collapse: collapse; width: 100%; background-color: rgba(232, 232, 232, 0.73)">
+                        <tbody style="    display: table-row-group;vertical-align: middle;border-color: inherit;">
+                        <tr>
+                            <td style="border: 0px solid #d4d4d4;text-align: center;padding: 8px;vertical-align: top; background-color: white">
+                                x
+                            </td>
+                            <td style="border: 1px solid #d4d4d4;text-align: center;padding: 8px;vertical-align: top; background-color: white">
+                                incall
+                            </td>
+                            <td style="border: 1px solid #d4d4d4;text-align: center;padding: 8px;vertical-align: top; background-color: white">
+                                outcall
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #d4d4d4;padding: 0px;border-left: 0px; background-color: white">
+                                15 minutes
+                            </td>
+                            <td style="border: 1px solid #d4d4d4;text-align: center;padding: 0px;vertical-align: top; max-width: 10px;">
+                                <input type="text" placeholder="£" style="width:100%;">
+                            </td>
+                            <td style="border: 1px solid #d4d4d4;text-align: center;padding: 0px;vertical-align: top; max-width: 10px;">
+                                <input type="text" placeholder="£" style="width:100%;">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #d4d4d4;padding: 0px;border-left: 0px; background-color: white">
+                                30 minutes
+                            </td>
+                            <td style="border: 1px solid #d4d4d4;text-align: center;padding: 0px;vertical-align: top; max-width: 10px;">
+                                <input type="text" placeholder="£" style="width:100%;">
+                            </td>
+                            <td style="border: 1px solid #d4d4d4;text-align: center;padding: 0px;vertical-align: top; max-width: 10px;">
+                                <input type="text" placeholder="£" style="width:100%;">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #d4d4d4;padding: 0px;border-left: 0px; background-color: white">
+                                1 hour <a style="color: red">*</a>
+                            </td>
+                            <td style="border: 1px solid #d4d4d4;text-align: center;padding: 0px;vertical-align: top; max-width: 10px;">
+                                <input type="text" placeholder="£" style="width:100%;">
+                            </td>
+                            <td style="border: 1px solid #d4d4d4;text-align: center;padding: 0px;vertical-align: top; max-width: 10px;">
+                                <input type="text" placeholder="£" style="width:100%;">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #d4d4d4;padding: 0px;border-left: 0px; background-color: white">
+                                2 hours
+                            </td>
+                            <td style="border: 1px solid #d4d4d4;text-align: center;padding: 0px;vertical-align: top; max-width: 10px;">
+                                <input type="text" placeholder="£" style="width:100%;">
+                            </td>
+                            <td style="border: 1px solid #d4d4d4;text-align: center;padding: 0px;vertical-align: top; max-width: 10px;">
+                                <input type="text" placeholder="£" style="width:100%;">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #d4d4d4;padding: 0px;border-left: 0px;background-color: white">
+                                4 hours
+                            </td>
+                            <td style="border: 1px solid #d4d4d4;text-align: center;padding: 0px;vertical-align: top; max-width: 10px;">
+                                <input type="text" placeholder="£" style="width:100%;">
+                            </td>
+                            <td style="border: 1px solid #d4d4d4;text-align: center;padding: 0px;vertical-align: top; max-width: 10px;">
+                                <input type="text" placeholder="£" style="width:100%;">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #d4d4d4;padding: 0px;border-left: 0px;background-color: white">
+                                overnight
+                            </td>
+                            <td style="border: 1px solid #d4d4d4;text-align: center;padding: 0px;vertical-align: top; max-width: 10px;">
+                                <input type="text" placeholder="£" style="width:100%;">
+                            </td>
+                            <td style="border: 1px solid #d4d4d4;text-align: center;padding: 0px;vertical-align: top; max-width: 10px;">
+                                <input type="text" placeholder="£" style="width:100%;">
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <hr>
 
         </div>
     </div>
