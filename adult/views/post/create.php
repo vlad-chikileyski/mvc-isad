@@ -99,51 +99,191 @@
             </header>
             <div class="form-wrapper">
                 <?php echo $FORM_PAGE_HTML; ?>
-            </div>
+                <div class="row field-block">
+                    <div class="col-xs-12 col-md-3">
+                        <label class="required" for="postcode">Post Code</label>
+                    </div>
+                    <div class="col-xs-12 col-md-4">
+                        <input class="input-sm" type="text" id="search_postcode" name="postcode"
+                               placeholder="e.g. OX49 5NU" required>
+                        <div id="result"></div>
+                    </div>
 
-        </div>
-
-    </div>
-    <div class="call-to-action">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12 col-sm-8 col-md-7 pull-right">
-                    <header>
-                        <span class="text-uppercase">Make Your Phone a classified machine</span>
-                        <h2>Download Free Classified App</h2>
-                    </header>
-                    <div class="row inner">
-                        <div class="col-xs-4">
-                            <a href="#" class="app-store">
-                                <img src="/template/assets/img/android.png" alt="Google play">
-                                <span>download on</span>
-                                <h4>Google Play</h4>
-                            </a>
+                    <div class="col-xs-12 col-md-3">
+                        <div class="ajax-loader" style="">
+                            <img src="/template/assets/img/Reload.gif" class="img-responsive"/>
                         </div>
-                        <div class="col-xs-4">
-                            <a href="#" class="app-store">
-                                <img src="/template/assets/img/apple.png" alt="Apple store">
-                                <span>download on</span>
-                                <h4>Apple Store</h4>
-                            </a>
+                        <div class="ajax-loader-status">
+                            <i class="fa fa-check" aria-hidden="true" style="color: green;"></i>
                         </div>
-                        <div class="col-xs-4">
-                            <a href="#" class="app-store">
-                                <img src="/template/assets/img/win.png" alt="windows store">
-                                <span>download on</span>
-                                <h4>Windows Store</h4>
-                            </a>
+                        <div class="ajax-loader-error">
+                            <i class="fa fa-times" aria-hidden="true" style="color: red;"></i>
                         </div>
                     </div>
                 </div>
-                <div class="hidden-xs col-sm-4 col-md-5 pull-right">
-                    <div class="action-mock">
-                        <img src="/template/assets/img/app-mock.png" alt="download apps">
+                <div class="row field-block">
+                    <div class="col-xs-12 col-md-3">
+                        <label class="required" for="name">Your Name</label>
                     </div>
+                    <div class="col-xs-12 col-md-9">
+                        <input class="input-sm" type="text" id="name" name="name"
+                               placeholder="e.g. Jhone Doe" required>
+                    </div>
+                </div>
+                <?php if (User::isGuest()): ?>
+                    <div class="row field-block">
+                        <div class="col-xs-12 col-md-3">
+                            <label class="required" for="email">Your email</label>
+                        </div>
+                        <div class="col-xs-12 col-md-9">
+                            <input class="input-sm" type="email" id="email" name="email"
+                                   placeholder="e.g. jon@got.com" value="<?php echo $userInfo['email']; ?>"
+                                   required readonly="readonly">
+                        </div>
+                    </div>
+                <?php else: ?>
+                    <div class="row field-block">
+                        <div class="col-xs-12 col-md-3">
+                            <label class="required" for="email">Your email</label>
+                        </div>
+                        <div class="col-xs-12 col-md-9">
+                            <input class="input-sm" type="email" id="email" name="email"
+                                   placeholder="e.g. jon@got.com"
+                                   required>
+                        </div>
+                    </div>
+                <?php endif; ?>
+                <div class="row field-block">
+                    <div class="col-xs-12 col-md-3">
+                        <label class="required" for="phone">Phone number</label>
+                    </div>
+                    <div class="col-xs-12 col-md-9">
+                        <div class="icon-field">
+                            <span>+44</span>
+                            <input class="input-sm" type="tel" id="phone" name="phone"
+                                   placeholder="e.g. 123456789"
+                                   required>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="elements-block style-gray">
+            <div class="inner">
+                <table class="table table-responsive">
+                    <thead>
+                    <tr>
+                        <td>
+                            <h4>Make Your Ad Featured</h4>
+                        </td>
+                        <td class="text-right">
+                            <a href="#" class="link">What is a Featured Ad?</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="custom-checkbox">
+                                <input checked="checked" class="showHideTarget"
+                                       data-target="#featured-paymentOptions" type="checkbox"
+                                       id="create42213" name="item-condition">
+                                <label class="big-font" for="create42213"> Featured Ad</label>
+                            </div>
+                        </td>
+                        <td class="text-right">
+                            <strong>$2.90 per ad</strong>
+                        </td>
+                    </tr>
+                    </thead>
+                    <tbody id="featured-paymentOptions">
+                    <tr>
+                        <td>
+                            <h5>Please select the preferred payment method.</h5>
+                            <div class="custom-radio block-element">
+                                <input type="radio" id="create422131" name="payment-method-opt">
+                                <label for="create422131"> Direct Bank Transfer</label>
+                            </div>
+                            <div class="custom-radio block-element">
+                                <input type="radio" id="create422132" name="payment-method-opt">
+                                <label for="create422132"> Cheque Payment</label>
+                            </div>
+                            <div class="custom-radio block-element">
+                                <input type="radio" id="create422133" name="payment-method-opt">
+                                <label for="create422133"> Paypal</label>
+                            </div>
+                            <div class="custom-radio block-element">
+                                <input type="radio" id="create422134" name="payment-method-opt">
+                                <label for="create422134"> Credit Card</label>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                    <tfoot>
+                    <tr>
+                        <td>&emsp;</td>
+                        <td class="text-right"><strong>Total : $2.90</strong></td>
+                    </tr>
+                    </tfoot>
+                </table>
+                <br>
+                <br>
+                <div>
+                    <button type="submit" name="submit" class="btn btn-green btn-md">Create ad</button>
+                                <span class="termStatement">
+                                            By clicking 'Create Ad' you agree to <a class="link" href="/terms/">our  Terms & Condition</a> and
+                                        <a class="link" href="#">Posting Rules</a>.
+                                        </span>
+                </div>
+
+            </div>
+        </div>
+        </form>
+
+    </div>
+
+</div>
+
+</div>
+<div class="call-to-action">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-8 col-md-7 pull-right">
+                <header>
+                    <span class="text-uppercase">Make Your Phone a classified machine</span>
+                    <h2>Download Free Classified App</h2>
+                </header>
+                <div class="row inner">
+                    <div class="col-xs-4">
+                        <a href="#" class="app-store">
+                            <img src="/template/assets/img/android.png" alt="Google play">
+                            <span>download on</span>
+                            <h4>Google Play</h4>
+                        </a>
+                    </div>
+                    <div class="col-xs-4">
+                        <a href="#" class="app-store">
+                            <img src="/template/assets/img/apple.png" alt="Apple store">
+                            <span>download on</span>
+                            <h4>Apple Store</h4>
+                        </a>
+                    </div>
+                    <div class="col-xs-4">
+                        <a href="#" class="app-store">
+                            <img src="/template/assets/img/win.png" alt="windows store">
+                            <span>download on</span>
+                            <h4>Windows Store</h4>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="hidden-xs col-sm-4 col-md-5 pull-right">
+                <div class="action-mock">
+                    <img src="/template/assets/img/app-mock.png" alt="download apps">
                 </div>
             </div>
         </div>
     </div>
+</div>
 </div>
 <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
 <script type="text/javascript">
