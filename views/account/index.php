@@ -630,109 +630,24 @@
                                 <div class="items-list-md style2 style3 pad-top-0">
 
                                     <div id="items-listing-area" class="items-list clearfix">
-
+                                        <?php foreach ($userFavAd as $favAd) : ?>
                                         <article class="item-spot">
                                             <a href="#" class="imgAsBg">
                                                 <img src="/template/assets/img/items/ad1.png" alt="dummy data">
                                             </a>
                                             <div class="item-content">
                                                 <header>
-                                                    <h6><a href="single.html">Canon SX Powershot A Great D-SLR</a></h6>
-                                                    <span class="item-info-short">2:49 pm in Melbourne</span>
+                                                    <h6><a href="single.html"><?php echo $favAd[0]['title']; ?></a></h6>
+                                                    <span class="item-info-short"><?php echo $favAd[0]['date']; ?></span>
                                                 </header>
-                                                <div class="price-tag">$229.9</div>
+                                                <div class="price-tag">£ <?php echo $favAd[0]['price']; ?></div>
                                                 <div class="dashboard-btn-actions">
                                                     <a href="#" class="btn btn-transparent">unfaourite</a>
                                                     <a href="#" class="btn btn-transparent">view ad</a>
                                                 </div>
                                             </div>
                                         </article>
-
-                                        <article class="item-spot">
-                                            <a href="#" class="imgAsBg">
-                                                <img src="/template/assets/img/items/ad2.jpg" alt="dummy data">
-                                            </a>
-                                            <div class="item-content">
-                                                <header>
-                                                    <h6><a href="single.html">Canon SX Powershot A Great D-SLR</a></h6>
-                                                    <span class="item-info-short">2:49 pm in Melbourne</span>
-                                                </header>
-                                                <div class="price-tag">$229.9</div>
-                                                <div class="dashboard-btn-actions">
-                                                    <a href="#" class="btn btn-transparent">unfaourite</a>
-                                                    <a href="#" class="btn btn-transparent">view ad</a>
-                                                </div>
-                                            </div>
-                                        </article>
-
-                                        <article class="item-spot">
-                                            <a href="#" class="imgAsBg">
-                                                <img src="/template/assets/img/items/ad3.jpg" alt="dummy data">
-                                            </a>
-                                            <div class="item-content">
-                                                <header>
-                                                    <h6><a href="single.html">Canon SX Powershot A Great D-SLR</a></h6>
-                                                    <span class="item-info-short">2:49 pm in Melbourne</span>
-                                                </header>
-                                                <div class="price-tag">$229.9</div>
-                                                <div class="dashboard-btn-actions">
-                                                    <a href="#" class="btn btn-transparent">unfaourite</a>
-                                                    <a href="#" class="btn btn-transparent">view ad</a>
-                                                </div>
-                                            </div>
-                                        </article>
-
-                                        <article class="item-spot">
-                                            <a href="#" class="imgAsBg">
-                                                <img src="/template/assets/img/items/ad4.jpg" alt="dummy data">
-                                            </a>
-                                            <div class="item-content">
-                                                <header>
-                                                    <h6><a href="single.html">Canon SX Powershot A Great D-SLR</a></h6>
-                                                    <span class="item-info-short">2:49 pm in Melbourne</span>
-                                                </header>
-                                                <div class="price-tag">$229.9</div>
-                                                <div class="dashboard-btn-actions">
-                                                    <a href="#" class="btn btn-transparent">unfaourite</a>
-                                                    <a href="#" class="btn btn-transparent">view ad</a>
-                                                </div>
-                                            </div>
-                                        </article>
-
-                                        <article class="item-spot">
-                                            <a href="#" class="imgAsBg">
-                                                <img src="/template/assets/img/items/ad5.jpg" alt="dummy data">
-                                            </a>
-                                            <div class="item-content">
-                                                <header>
-                                                    <h6><a href="single.html">Canon SX Powershot A Great D-SLR</a></h6>
-                                                    <span class="item-info-short">2:49 pm in Melbourne</span>
-                                                </header>
-                                                <div class="price-tag">$229.9</div>
-                                                <div class="dashboard-btn-actions">
-                                                    <a href="#" class="btn btn-transparent">unfaourite</a>
-                                                    <a href="#" class="btn btn-transparent">view ad</a>
-                                                </div>
-                                            </div>
-                                        </article>
-
-                                        <article class="item-spot">
-                                            <a href="#" class="imgAsBg">
-                                                <img src="/template/assets/img/items/ad6.jpg" alt="dummy data">
-                                            </a>
-                                            <div class="item-content">
-                                                <header>
-                                                    <h6><a href="single.html">Canon SX Powershot A Great D-SLR</a></h6>
-                                                    <span class="item-info-short">2:49 pm in Melbourne</span>
-                                                </header>
-                                                <div class="price-tag">$229.9</div>
-                                                <div class="dashboard-btn-actions">
-                                                    <a href="#" class="btn btn-transparent">unfaourite</a>
-                                                    <a href="#" class="btn btn-transparent">view ad</a>
-                                                </div>
-                                            </div>
-                                        </article>
-
+                                        <?php endforeach; ?>
                                     </div>
 
                                 </div>

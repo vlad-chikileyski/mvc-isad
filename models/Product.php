@@ -86,7 +86,24 @@ class Product
         }
         return $ads;
     }
-
+    /*
+     *
+     * return FavAds by userId
+     */
+    public static function getFavAdsByCreatedUserId($userId)
+    {
+        $db = Db::getConnection();
+        $favAds = array();
+        $result = $db->query('SELECT * FROM dashboard_favorite_ads WHERE user_id=' . $userId);
+        $i = 0;
+        while ($row = $result->fetch()) {
+            $favAds[$i]['ads_id'] = $row['ads_id'];
+            $favAds[$i]['subcategory_name'] = $row['subcategory_name'];
+            $favAds[$i]['category_name'] = $row['category_name'];
+            $i++;
+        }
+        return $favAds;
+    }
     public static function getProductListByTableNameAndAdsId($table_name, $adsId, $category)
     {
         $db = Db::getConnectionOnCatics();
@@ -104,6 +121,25 @@ class Product
             $i++;
         }
         return $products;
+    }
+
+    public static function getFavAdsListByTableNameAndAdsId($table_name, $adsId, $category)
+    {
+        $db = Db::getConnectionOnCatics();
+        $favAds = array();
+        $result = $db->query('SELECT * FROM ' . $table_name . ' WHERE id = '.$adsId);
+        $i = 0;
+        while ($row = $result->fetch()) {
+            $favAds[$i]['id'] = $row['id'];
+            $favAds[$i]['title'] = $row['title'];
+            $favAds[$i]['description'] = $row['description'];
+            $favAds[$i]['price'] = $row['price'];
+            $favAds[$i]['subcategory'] = $row['subcategory'];
+            $favAds[$i]['category'] = $category;
+            $favAds[$i]['date'] = $row['date'];
+            $i++;
+        }
+        return $favAds;
     }
 
     /**
