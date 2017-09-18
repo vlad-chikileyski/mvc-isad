@@ -35,6 +35,12 @@ class Category
             case 'adult-dating':
                 return 'adult-dating';
                 break;
+            case 'swingers':
+                return 'swingers';
+                break;
+            case 'escorts-and-massages':
+                return 'escorts-and-massages';
+                break;
             case 'gay-escorts':
                 return 'gay-escorts';
                 break;
@@ -44,14 +50,14 @@ class Category
             case 'adult-jobs':
                 return 'adult-jobs';
                 break;
-            case 'swingers':
-                return 'swingers';
+            case 'gay-and-lesbian':
+                return 'gay-and-lesbian';
                 break;
-            /* case 'webcams':
-                 return 'webcams';
-                 break;*/
-            case 'escorts-massages':
-                return 'escorts-assages';
+             case 'friendship-friends':
+                 return 'friendship-friends';
+                 break;
+            case 'straight-relationships':
+                return 'straight-relationships';
                 break;
         }
         return false;

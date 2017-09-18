@@ -86,15 +86,55 @@
                 <h3>Select the category to which you want to add your listing!</h3>
             </header>
             <div class="cat-boxes">
-                <a href="http://adult.adtoday.co.uk/new-ads/adult-jobs" class="cat-box">
+                <a href="http://adult.adtoday.co.uk/new-ads/escorts-and-massages" class="cat-box">
                     <div class="inner">
                         <div class="adicon-hearts bg12"></div>
-                        <span>Adult jobs</span>
+                        <span>Escort & Massage</span>
+                    </div>
+                </a>
+            </div>
+            <div class="cat-boxes">
+                <a href="http://adult.adtoday.co.uk/new-ads/friendship-friends" class="cat-box">
+                    <div class="inner">
+                        <div class="adicon-hearts bg12"></div>
+                        <span>Friendship  Friends</span>
+                    </div>
+                </a>
+            </div>
+            <div class="cat-boxes">
+                <a href="http://adult.adtoday.co.uk/new-ads/straight-relationships" class="cat-box">
+                    <div class="inner">
+                        <div class="adicon-hearts bg12"></div>
+                        <span>Straight Relationships</span>
+                    </div>
+                </a>
+            </div>
+            <div class="cat-boxes">
+                <a href="http://adult.adtoday.co.uk/new-ads/gay-escorts" class="cat-box">
+                    <div class="inner">
+                        <div class="adicon-hearts bg12"></div>
+                        <span>Gay escorts</span>
+                    </div>
+                </a>
+            </div>
+            <div class="cat-boxes">
+                <a href="http://adult.adtoday.co.uk/new-ads/straight-relationships" class="cat-box">
+                    <div class="inner">
+                        <div class="adicon-hearts bg12"></div>
+                        <span>Straight Relationships</span>
+                    </div>
+                </a>
+            </div>
+            <div class="cat-boxes">
+                <a href="http://adult.adtoday.co.uk/new-ads/adult-dating" class="cat-box">
+                    <div class="inner">
+                        <div class="adicon-hearts bg12"></div>
+                        <span>Adult dating</span>
                     </div>
                 </a>
             </div>
         </div>
-    </div>
+        </div>
     <div>
 
     </div>
