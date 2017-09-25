@@ -8,9 +8,9 @@
 	<meta content="yes" name="apple-mobile-web-app-capable">
 	<meta content="yes" name="apple-touch-fullscreen">
 	
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link rel="stylesheet" type="text/css" href="css/responsive.css">
-	<link rel="shortcut icon" href="images/favicon.png">
+	<link rel="stylesheet" type="text/css" href="/template/css/style.css">
+	<link rel="stylesheet" type="text/css" href="/template/css/responsive.css">
+	<link rel="shortcut icon" href="/template/images/favicon.png">
 </head>
 
 <body>
@@ -150,7 +150,7 @@
 				<ol class="cart-item">
 					<li>
 						<div class="thumb">
-							<img src="images/80x80.png" alt="">
+							<img src="/template/images/80x80.png" alt="">
 						</div>
 						<div class="cart-delete">
 							<a href="#">
@@ -169,7 +169,7 @@
 					</li>
 					<li>
 						<div class="thumb">
-							<img src="images/80x80.png" alt="">
+							<img src="/template/images/80x80.png" alt="">
 						</div>
 						<div class="cart-delete">
 							<a href="#">
@@ -188,7 +188,7 @@
 					</li>
 					<li>
 						<div class="thumb">
-							<img src="images/80x80.png" alt="">
+							<img src="/template/images/80x80.png" alt="">
 						</div>
 						<div class="cart-delete">
 							<a href="#">
@@ -231,7 +231,7 @@
 				
 				<div class="latest-blog-featured">
 					<div class="thumb">
-						<img src="images/500x400-white.jpg" alt="">
+						<img src="/template/images/500x400-white.jpg" alt="">
 					</div>
 					<span class="meta">05.10.2016 - Natalie Amyllia</span>
 					<h3 class="blog-title"><a href="#">End of year great discount at Shofy</a></h3>
@@ -300,7 +300,7 @@
 
 			<div class="featured-item"><!-- 1. Featured Slider Item -->
 				<div class="thumb">
-					<img src="images/500x400-white.jpg" alt="">
+					<img src="/template/images/500x400-white.jpg" alt="">
 				</div>
 				<div class="overlay"></div>
 				<div class="caption">
@@ -312,7 +312,7 @@
 
 			<div class="featured-item"><!-- 2. Featured Slider Item -->
 				<div class="thumb">
-					<img src="images/500x400-white.jpg" alt="">
+					<img src="/template/images/500x400-white.jpg" alt="">
 				</div>
 				<div class="overlay"></div>
 				<div class="caption">
@@ -325,7 +325,7 @@
 
 			<div class="featured-item"><!-- 3. Featured Slider Item -->
 				<div class="thumb">
-					<img src="images/500x400-white.jpg" alt="">
+					<img src="/template/images/500x400-white.jpg" alt="">
 				</div>
 				<div class="overlay"></div>
 				<div class="caption">
@@ -337,7 +337,7 @@
 					
 			<div class="featured-item"><!-- 4. Featured Slider Item -->
 				<div class="thumb">
-					<img src="images/500x400-white.jpg" alt="">
+					<img src="/template/images/500x400-white.jpg" alt="">
 				</div>
 				<div class="overlay"></div>
 				<div class="caption">
@@ -352,7 +352,92 @@
 
 		<!-- CONTENT CONTAINER -->
 		<div class="content-container animated fadeInUp">
-			
+
+			<!-- Category Section -->	
+			<div class="page-block margin-bottom">
+
+				<h2 class="block-title">
+					<span>Main Category</span><!-- <span> tag to make blue border on this text only -->
+					<a href="#" class="list-all">
+						<i class="fa fa-th-list"></i>
+					</a>
+				</h2>
+
+				<!-- Category Listing -->
+				<ol class="category-list">
+
+					
+					<li><!-- Category list item #1 -->
+						<div class="thumb">
+							<a href="product-list.html">
+								<img src="/template/images/240x240.png" alt="">
+							</a>
+						</div>
+						<div class="category-ctn">
+							<div class="cat-name">
+								<a href="product-list.html">Handphone & Tablet</a>
+							</div>
+							<div class="cat-desc">
+								Gress and Up to date gadget
+							</div>
+						</div>
+					</li><!-- End Category list item #1 -->
+
+					<li><!-- Category list item #2 -->
+						<div class="thumb">
+							<a href="product-list.html">
+								<img src="/template/images/240x240.png" alt="">
+							</a>
+						</div>
+						<div class="category-ctn">
+							<div class="cat-name">
+								<a href="product-list.html">Otomotive</a>
+							</div>
+							<div class="cat-desc">
+								Best choice for you, king of street
+							</div>
+						</div>
+					</li><!-- End Category list item #2 -->
+
+					<li><!-- Category list item #3 -->
+						<div class="thumb">
+							<a href="product-list.html">
+								<img src="/template/images/240x240.png" alt="">
+							</a>
+						</div>
+						<div class="category-ctn">
+							<div class="cat-name">
+								<a href="product-list.html">Fashion</a>
+							</div>
+							<div class="cat-desc">
+								Fullfill your style with only the best item
+							</div>
+						</div>
+					</li><!-- End Category list item #3 -->
+
+					<li><!-- Category list item #4 -->
+						<div class="thumb">
+							<a href="product-list.html">
+								<img src="/template/images/240x240.png" alt="">
+							</a>
+						</div>
+						<div class="category-ctn">
+							<div class="cat-name">
+								<a href="product-list.html">Computer & Laptop</a>
+							</div>
+							<div class="cat-desc">
+								High quality assistant for your job
+							</div>
+						</div>
+					</li><!-- End Category list item #4 -->
+
+				</ol>
+
+				<div class="clear"></div><!-- Use this class (.clear) to clearing float -->
+
+			</div>
+			<!-- End Category Section -->
+
 			<!-- Top Product Section -->
 			<div class="page-block margin-bottom">
 
@@ -371,7 +456,7 @@
 					<li><!-- 1. Product Slider item -->
 						<div class="thumb">
 							<a href="product.html">
-								<img src="images/240x240.png" alt="">
+								<img src="/template/images/240x240.png" alt="">
 							</a>
 						</div>
 						<div class="product-ctn">
@@ -396,7 +481,7 @@
 					<li><!-- 2. Product Slider item -->
 						<div class="thumb">
 							<a href="product.html">
-								<img src="images/240x240.png" alt="">
+								<img src="/template/images/240x240.png" alt="">
 							</a>
 						</div>
 						<div class="product-ctn">
@@ -421,7 +506,7 @@
 					<li><!-- 3. Product Slider item -->
 						<div class="thumb">
 							<a href="product.html">
-								<img src="images/240x240.png" alt="">
+								<img src="/template/images/240x240.png" alt="">
 							</a>
 						</div>
 						<div class="product-ctn">
@@ -445,7 +530,7 @@
 					<li><!-- 4. Product Slider item -->
 						<div class="thumb">
 							<a href="product.html">
-								<img src="images/240x240.png" alt="">
+								<img src="/template/images/240x240.png" alt="">
 							</a>
 						</div>
 						<div class="product-ctn">
@@ -470,7 +555,7 @@
 					<li><!-- 5. Product Slider item -->
 						<div class="thumb">
 							<a href="product.html">
-								<img src="images/240x240.png" alt="">
+								<img src="/template/images/240x240.png" alt="">
 							</a>
 						</div>
 						<div class="product-ctn">
@@ -501,90 +586,6 @@
 			</div>
 			<!-- End Top Product Section -->
 
-			<!-- Category Section -->	
-			<div class="page-block margin-bottom">
-
-				<h2 class="block-title">
-					<span>Main Category</span><!-- <span> tag to make blue border on this text only -->
-					<a href="#" class="list-all">
-						<i class="fa fa-th-list"></i>
-					</a>
-				</h2>
-
-				<!-- Category Listing -->
-				<ol class="category-list">
-
-					
-					<li><!-- Category list item #1 -->
-						<div class="thumb">
-							<a href="product-list.html">
-								<img src="images/240x240.png" alt="">
-							</a>
-						</div>
-						<div class="category-ctn">
-							<div class="cat-name">
-								<a href="product-list.html">Handphone & Tablet</a>
-							</div>
-							<div class="cat-desc">
-								Gress and Up to date gadget
-							</div>
-						</div>
-					</li><!-- End Category list item #1 -->
-
-					<li><!-- Category list item #2 -->
-						<div class="thumb">
-							<a href="product-list.html">
-								<img src="images/240x240.png" alt="">
-							</a>
-						</div>
-						<div class="category-ctn">
-							<div class="cat-name">
-								<a href="product-list.html">Otomotive</a>
-							</div>
-							<div class="cat-desc">
-								Best choice for you, king of street
-							</div>
-						</div>
-					</li><!-- End Category list item #2 -->
-
-					<li><!-- Category list item #3 -->
-						<div class="thumb">
-							<a href="product-list.html">
-								<img src="images/240x240.png" alt="">
-							</a>
-						</div>
-						<div class="category-ctn">
-							<div class="cat-name">
-								<a href="product-list.html">Fashion</a>
-							</div>
-							<div class="cat-desc">
-								Fullfill your style with only the best item
-							</div>
-						</div>
-					</li><!-- End Category list item #3 -->
-
-					<li><!-- Category list item #4 -->
-						<div class="thumb">
-							<a href="product-list.html">
-								<img src="images/240x240.png" alt="">
-							</a>
-						</div>
-						<div class="category-ctn">
-							<div class="cat-name">
-								<a href="product-list.html">Computer & Laptop</a>
-							</div>
-							<div class="cat-desc">
-								High quality assistant for your job
-							</div>
-						</div>
-					</li><!-- End Category list item #4 -->
-
-				</ol>
-
-				<div class="clear"></div><!-- Use this class (.clear) to clearing float -->
-
-			</div>
-			<!-- End Category Section -->
 
 			<!-- Product (Static) Section -->	
 			<div class="page-block">
@@ -600,7 +601,7 @@
 					<li>
 						<div class="thumb">
 							<a href="product.html">
-								<img src="images/240x240.png" alt="">
+								<img src="/template/images/240x240.png" alt="">
 							</a>
 						</div>
 						<div class="product-ctn">
@@ -625,7 +626,7 @@
 					<li>
 						<div class="thumb">
 							<a href="product.html">
-								<img src="images/240x240.png" alt="">
+								<img src="/template/images/240x240.png" alt="">
 							</a>
 						</div>
 						<div class="product-ctn">
@@ -649,7 +650,7 @@
 					<li>
 						<div class="thumb">
 							<a href="product.html">
-								<img src="images/240x240.png" alt="">
+								<img src="/template/images/240x240.png" alt="">
 							</a>
 						</div>
 						<div class="product-ctn">
@@ -673,7 +674,7 @@
 					<li>
 						<div class="thumb">
 							<a href="product.html">
-								<img src="images/240x240.png" alt="">
+								<img src="/template/images/240x240.png" alt="">
 							</a>
 						</div>
 						<div class="product-ctn">
@@ -756,12 +757,12 @@
 
 </div><!-- #main -->
 
-<script type="text/javascript" src="js/jquery-3.1.1.js"></script>
-<script type="text/javascript" src="js/materialize.min.js"></script>
-<script type="text/javascript" src="js/slick.min.js"></script>
-<script type="text/javascript" src="js/jquery.slicknav.js"></script>
-<script type="text/javascript" src="js/jquery.swipebox.js"></script>
-<script type="text/javascript" src="js/custom.js"></script>
+<script type="text/javascript" src="/template/js/jquery-3.1.1.js"></script>
+<script type="text/javascript" src="/template/js/materialize.min.js"></script>
+<script type="text/javascript" src="/template/js/slick.min.js"></script>
+<script type="text/javascript" src="/template/js/jquery.slicknav.js"></script>
+<script type="text/javascript" src="/template/js/jquery.swipebox.js"></script>
+<script type="text/javascript" src="/template/js/custom.js"></script>
 
 </body>
 </html>

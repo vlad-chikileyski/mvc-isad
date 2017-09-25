@@ -200,20 +200,20 @@
                         <td>
                             <h5>Please select the preferred payment method.</h5>
                             <div class="custom-radio block-element">
-                                <input type="radio" id="create422131" name="payment-method-opt">
-                                <label for="create422131"> Direct Bank Transfer</label>
+                                <input type="radio" id="payment-method-test" name="payment-method-test" value="no">
+                                <label for="payment-method-test"> Payment method test</label>
                             </div>
                             <div class="custom-radio block-element">
-                                <input type="radio" id="create422132" name="payment-method-opt">
-                                <label for="create422132"> Cheque Payment</label>
+                                <input type="radio" id="payment-method-test2" name="payment-method-test" value="test">
+                                <label for="payment-method-test2"> Cheque Payment</label>
                             </div>
                             <div class="custom-radio block-element">
-                                <input type="radio" id="create422133" name="payment-method-opt">
-                                <label for="create422133"> Paypal</label>
+                                <input type="radio" id="payment-method-test3" name="payment-method-test" value="test">
+                                <label for="payment-method-test3"> Paypal</label>
                             </div>
                             <div class="custom-radio block-element">
-                                <input type="radio" id="create422134" name="payment-method-opt">
-                                <label for="create422134"> Credit Card</label>
+                                <input type="radio" id="payment-method-test4" name="payment-method-test" value="test">
+                                <label for="payment-method-test4"> Credit Card</label>
                             </div>
                         </td>
                     </tr>

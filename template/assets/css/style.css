@@ -4705,7 +4705,7 @@ a.view-item, .contact-options li a, .listing-actions a, .listing-actions .fa,
 }
 
 .doc-header a.quick-post {
-    padding: 18px;
+    /*padding: 18px;*/
     margin-left: 10px;
 }
 
@@ -5521,11 +5521,13 @@ a.view-item, .contact-options li a, .listing-actions a, .listing-actions .fa,
     left: 100%;
     z-index: -1;
     width: 100%;
-    top: -2px;
-    bottom: -2px;
+    /* top: -2px; */
+    margin-top: -43px;
+    /* vertical-align: top; */
+    /* bottom: -2px; */
     overflow-y: auto;
     background: #0083c9;
-    padding: 20px 0;
+    padding: 5px 0 0 10px;
 }
 
 .sub-category > li > ul {
@@ -11049,7 +11051,9 @@ a.tab-accordion-trigger span i {
     height: 84px;
     position: relative;
     background: #ffffff;
+    /*
     z-index: 20;
+    */
     color: #686868;
     -moz-box-shadow: 1px 0px 1px rgba(0, 0, 0, 0.2);
     -webkit-box-shadow: 1px 0px 1px rgba(0, 0, 0, 0.2);
@@ -11058,6 +11062,7 @@ a.tab-accordion-trigger span i {
 
 .category-search-tabbed .search-widget input {
     padding-left: 30px;
+    font-size: larger;
 }
 
 .category-search-tabbed .search-widget button {
@@ -12947,4 +12952,29 @@ a.tab-accordion-trigger span i {
 
 b {
     color: red
+}
+/* Adding CSS manually is only necessary in JSFiddle,
+   where CSS can't be inserted into the <head> */
+.typed-cursor{
+    opacity: 1;
+    font-weight: 100;
+    -webkit-animation: blink 0.7s infinite;
+    -moz-animation: blink 0.7s infinite;
+    -ms-animation: blink 0.7s infinite;
+    -o-animation: blink 0.7s infinite;
+    animation: blink 0.7s infinite;
+}
+@keyframes typedjsBlink{
+    50% { opacity: 0.0; }
+}
+@-webkit-keyframes typedjsBlink{
+    0% { opacity: 1; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1; }
+}
+.typed-fade-out{
+    opacity: 0;
+    transition: opacity .25s;
+    -webkit-animation: 0;
+    animation: 0;
 }

@@ -255,20 +255,8 @@
                                     <td>
                                         <h5>Please select the preferred payment method.</h5>
                                         <div class="custom-radio block-element">
-                                            <input type="radio" id="create422131" name="payment-method-opt">
-                                            <label for="create422131"> Direct Bank Transfer</label>
-                                        </div>
-                                        <div class="custom-radio block-element">
-                                            <input type="radio" id="create422132" name="payment-method-opt">
-                                            <label for="create422132"> Cheque Payment</label>
-                                        </div>
-                                        <div class="custom-radio block-element">
-                                            <input type="radio" id="create422133" name="payment-method-opt">
-                                            <label for="create422133"> Paypal</label>
-                                        </div>
-                                        <div class="custom-radio block-element">
-                                            <input type="radio" id="create422134" name="payment-method-opt">
-                                            <label for="create422134"> Credit Card</label>
+                                            <input type="radio" id="test-pay" name="payment-method-opt">
+                                            <label for="create422131"> Test-pay</label>
                                         </div>
                                     </td>
                                 </tr>

@@ -62,7 +62,7 @@ class SiteController
                 header("Location: /");
             }
         }
-        require_once(ROOT . '/views/site/index.php');
+        require_once(ROOT . '/views/site/index-new.php');
         return true;
     }
 }

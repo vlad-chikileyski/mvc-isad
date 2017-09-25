@@ -56,7 +56,7 @@
             <div class="inner">
                 <div class="app-logo">
                     <button class="mobile-control mob-menu-trigger"><i class="adicon-hamburger"></i></button>
-                    <a href="/"><img src="/template/assets/img/basic/logo.png" alt="adspot"></a>
+                    <a href="/"><img src="/template/assets/img/basic/logo.png" alt="adtoday"></a>
                 </div>
                 <ul class="quick-actions">
                     <?php if (User::isGuest()): ?>
