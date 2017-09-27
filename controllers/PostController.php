@@ -10,7 +10,6 @@ class PostController
             header("HTTP/1.0 404 Not Found");
             require_once(ROOT . '/views/error/404.php');
         } else {
-
             /**
              * check userIsLogged?
              * START
@@ -44,7 +43,6 @@ class PostController
              */
 
             if (isset($_POST['submit'])) {
-
                 $title = $_POST['title'];
                 $description = $_POST['description'];
                 $postcode = $_POST['postcode'];

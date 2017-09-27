@@ -12,6 +12,22 @@ class PostController
         } else {
             $FORM_PAGE_HTML = Form::getFormByCategoryName($formType);
             if ($FORM_PAGE_HTML != false) {
+                /**
+                 * postMethod
+                 */
+                if (isset($_POST['submit'])) {
+                    $paymentMethod = $_POST['payment-method-test'];
+                    $paymentType = DictionaryItem::checkPaymentType($paymentMethod);
+                    /**
+                     * Update DataBase and Generate
+                     * id=*********&key**********
+                     * CREATE SECURITY FILTER!!!
+                     */
+                    $paymentOperationId = "908765";
+                    $keyOperationId = "874654";
+                    header('Location: /payment/pay/' . $paymentOperationId . '/' . $keyOperationId);
+                    exit;
+                }
                 require_once(ROOT . '/views/post/create.php');
                 return true;
             } else {

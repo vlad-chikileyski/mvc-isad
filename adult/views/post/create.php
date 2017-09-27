@@ -200,20 +200,20 @@
                         <td>
                             <h5>Please select the preferred payment method.</h5>
                             <div class="custom-radio block-element">
-                                <input type="radio" id="payment-method-test" name="payment-method-test" value="no">
-                                <label for="payment-method-test"> Payment method test</label>
+                                <input type="radio" id="payment-method-test" name="payment-method-test" value="free">
+                                <label for="payment-method-test"> Free Ad * </label>
                             </div>
                             <div class="custom-radio block-element">
-                                <input type="radio" id="payment-method-test2" name="payment-method-test" value="test">
-                                <label for="payment-method-test2"> Cheque Payment</label>
+                                <input type="radio" id="payment-method-test2" name="payment-method-test" value="payment-method-test2">
+                                <label for="payment-method-test2"> Payment type 2 - 6.99£</label>
                             </div>
                             <div class="custom-radio block-element">
-                                <input type="radio" id="payment-method-test3" name="payment-method-test" value="test">
-                                <label for="payment-method-test3"> Paypal</label>
+                                <input type="radio" id="payment-method-test3" name="payment-method-test" value="payment-method-test3">
+                                <label for="payment-method-test3">  Payment type 3 - 15.00£</label>
                             </div>
                             <div class="custom-radio block-element">
-                                <input type="radio" id="payment-method-test4" name="payment-method-test" value="test">
-                                <label for="payment-method-test4"> Credit Card</label>
+                                <input type="radio" id="payment-method-test4" name="payment-method-test" value="payment-method-test4">
+                                <label for="payment-method-test4">  Payment type 4 - 30.00£</label>
                             </div>
                         </td>
                     </tr>
