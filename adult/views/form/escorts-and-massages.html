@@ -17,11 +17,11 @@
                     <div class="mega-dropdown-wrap">
                         <div class="mega-dropdown">
                             <button>Select an option</button>
-                            <i class="fa fa-navicon"></i>
+                            <i class="fa fa-nafffffffff vicon"></i>
                             <div class="mega-content">
-                                <ul class="sub-category">
-                                    <li><a href="#" id="test">Independent</a></li>
-                                    <li><a href="#">Agency</a>
+                                <ul class="sub-category" id="adtype-list">
+                                    <li data-value="independent"><a href="#">Independent</a></li>
+                                    <li data-value="agency"><a href="#">Agency</a>
                                     </li>
                                 </ul>
                             </div>
@@ -29,8 +29,7 @@
                     </div>
                 </div>
             </div>
-
-            <input id="subcategory" size="40" name="subcategory" type="hidden"/>
+            <input id="adtype" name="adtype" type="hidden"/>
             <hr>
             <div class="row field-block">
                 <div class="col-xs-12 col-md-3">
@@ -52,12 +51,12 @@
                             <button>Select an option</button>
                             <i class="fa fa-navicon"></i>
                             <div class="mega-content">
-                                <ul class="sub-category">
-                                    <li><a href="#">Male</a>
-                                    <li><a href="#">Female</a>
-                                    <li><a href="#">Transgender</a>
-                                    <li><a href="#">TS</a>
-                                    <li><a href="#">TV</a>
+                                <ul class="sub-category" id="gender-list">
+                                    <li data-value="male"><a href="#">Male</a>
+                                    <li data-value="female"><a href="#">Female</a>
+                                    <li data-value="transgender"><a href="#">Transgender</a>
+                                    <li data-value="ts"><a href="#">TS</a>
+                                    <li data-value="tv"><a href="#">TV</a>
                                     </li>
                                 </ul>
                             </div>
@@ -65,6 +64,7 @@
                     </div>
                 </div>
             </div>
+            <input id="gender" name="gender" type="hidden"/>
 
             <div class="row field-block">
                 <div class="col-xs-12 col-md-3">
@@ -76,15 +76,15 @@
                             <button>Select an option</button>
                             <i class="fa fa-navicon"></i>
                             <div class="mega-content">
-                                <ul class="sub-category">
-                                    <li><a href="#">Arabic</a>
-                                    <li><a href="#">Asian</a>
-                                    <li><a href="#">African/Caribbean</a>
-                                    <li><a href="#">Caucasian</a>
-                                    <li><a href="#">Indian</a>
-                                    <li><a href="#">Latina</a>
-                                    <li><a href="#">Mixed</a>
-                                    <li><a href="#">Other</a>
+                                <ul class="sub-category" id="ethnicity-list">
+                                    <li data-value="arabic"><a href="#">Arabic</a>
+                                    <li data-value="asian"><a href="#">Asian</a>
+                                    <li data-value="african-caribbean"><a href="#">African/Caribbean</a>
+                                    <li data-value="caucasian"><a href="#">Caucasian</a>
+                                    <li data-value="indian"><a href="#">Indian</a>
+                                    <li data-value="latina"><a href="#">Latina</a>
+                                    <li data-value="mixed"><a href="#">Mixed</a>
+                                    <li data-value="other"><a href="#">Other</a>
                                     </li>
                                 </ul>
                             </div>
@@ -92,6 +92,8 @@
                     </div>
                 </div>
             </div>
+            <input id="ethnicity" name="ethnicity" type="hidden"/>
+
             <div class="row field-block">
                 <div class="col-xs-12 col-md-3">
                     <span class="required label">Age</span>
@@ -102,175 +104,175 @@
                         <button>Select an option</button>
                         <ul>
                             <li class="custom-radio">
-                                <input name="item-age-value" type="radio" id="age-18">
+                                <input name="item-age-value" type="radio" value="18" id="age-18">
                                 <label for="age-18">18</label>
                             </li>
                             <li class="custom-radio">
-                                <input name="item-age-value" type="radio" id="age-19">
+                                <input name="item-age-value" type="radio" value="19" id="age-19">
                                 <label for="age-19">19</label>
                             </li>
                             <li class="custom-radio">
-                                <input name="item-age-value" type="radio" id="age-20">
+                                <input name="item-age-value" type="radio" value="20" id="age-20">
                                 <label for="age-20">20</label>
                             </li>
                             <li class="custom-radio">
-                                <input name="item-age-value" type="radio" id="age-21">
+                                <input name="item-age-value" type="radio" value="21" id="age-21">
                                 <label for="age-21">21</label>
                             </li>
                             <li class="custom-radio">
-                                <input name="item-age-value" type="radio" id="age-22">
+                                <input name="item-age-value" type="radio" value="22" id="age-22">
                                 <label for="age-22">22</label>
                             </li>
                             <li class="custom-radio">
-                                <input name="item-age-value" type="radio" id="age-23">
+                                <input name="item-age-value" type="radio" value="23" id="age-23">
                                 <label for="age-23">23</label>
                             </li>
                             <li class="custom-radio">
-                                <input name="item-age-value" type="radio" id="age-24">
+                                <input name="item-age-value" type="radio" value="24" id="age-24">
                                 <label for="age-24">24</label>
                             </li>
                             <li class="custom-radio">
-                                <input name="item-age-value" type="radio" id="age-25">
+                                <input name="item-age-value" type="radio" value="25" id="age-25">
                                 <label for="age-25">25</label>
                             </li>
                             <li class="custom-radio">
-                                <input name="item-age-value" type="radio" id="age-26">
+                                <input name="item-age-value" type="radio" value="26" id="age-26">
                                 <label for="age-26">26</label>
                             </li>
                             <li class="custom-radio">
-                                <input name="item-age-value" type="radio" id="age-27">
+                                <input name="item-age-value" type="radio" value="27" id="age-27">
                                 <label for="age-27">27</label>
                             </li>
                             <li class="custom-radio">
-                                <input name="item-age-value" type="radio" id="age-28">
+                                <input name="item-age-value" type="radio" value="28" id="age-28">
                                 <label for="age-28">28</label>
                             </li>
                             <li class="custom-radio">
-                                <input name="item-age-value" type="radio" id="age-29">
+                                <input name="item-age-value" type="radio" value="29" id="age-29">
                                 <label for="age-29">29</label>
                             </li>
                             <li class="custom-radio">
-                                <input name="item-age-value" type="radio" id="age-30">
+                                <input name="item-age-value" type="radio" value="30" id="age-30">
                                 <label for="age-30">30</label>
                             </li>
                             <li class="custom-radio">
-                                <input name="item-age-value" type="radio" id="age-31">
+                                <input name="item-age-value" type="radio" value="31" id="age-31">
                                 <label for="age-31">31</label>
                             </li>
                             <li class="custom-radio">
-                                <input name="item-age-value" type="radio" id="age-32">
+                                <input name="item-age-value" type="radio" value="32" id="age-32">
                                 <label for="age-32">32</label>
                             </li>
                             <li class="custom-radio">
-                                <input name="item-age-value" type="radio" id="age-33">
+                                <input name="item-age-value" type="radio" value="33" id="age-33">
                                 <label for="age-33">33</label>
                             </li>
                             <li class="custom-radio">
-                                <input name="item-age-value" type="radio" id="age-34">
+                                <input name="item-age-value" type="radio" value="34" id="age-34">
                                 <label for="age-34">34</label>
                             </li>
                             <li class="custom-radio">
-                                <input name="item-age-value" type="radio" id="age-35">
+                                <input name="item-age-value" type="radio" value="35" id="age-35">
                                 <label for="age-35">35</label>
                             </li>
                             <li class="custom-radio">
-                                <input name="item-age-value" type="radio" id="age-36">
+                                <input name="item-age-value" type="radio" value="36" id="age-36">
                                 <label for="age-36">36</label>
                             </li>
                             <li class="custom-radio">
-                                <input name="item-age-value" type="radio" id="age-37">
+                                <input name="item-age-value" type="radio" value="37" id="age-37">
                                 <label for="age-37">37</label>
                             </li>
                             <li class="custom-radio">
-                                <input name="item-age-value" type="radio" id="age-38">
+                                <input name="item-age-value" type="radio" value="38" id="age-38">
                                 <label for="age-38">38</label>
                             </li>
                             <li class="custom-radio">
-                                <input name="item-age-value" type="radio" id="age-39">
+                                <input name="item-age-value" type="radio" value="39" id="age-39">
                                 <label for="age-39">39</label>
                             </li>
                             <li class="custom-radio">
-                                <input name="item-age-value" type="radio" id="age-40">
+                                <input name="item-age-value" type="radio" value="40" id="age-40">
                                 <label for="age-40">40</label>
                             </li>
                             <li class="custom-radio">
-                                <input name="item-age-value" type="radio" id="age-41">
+                                <input name="item-age-value" type="radio" value="41" id="age-41">
                                 <label for="age-41">41</label>
                             </li>
                             <li class="custom-radio">
-                                <input name="item-age-value" type="radio" id="age-42">
+                                <input name="item-age-value" type="radio" value="42" id="age-42">
                                 <label for="age-42">42</label>
                             </li>
                             <li class="custom-radio">
-                                <input name="item-age-value" type="radio" id="age-43">
+                                <input name="item-age-value" type="radio" value="43" id="age-43">
                                 <label for="age-43">43</label>
                             </li>
                             <li class="custom-radio">
-                                <input name="item-age-value" type="radio" id="age-44">
+                                <input name="item-age-value" type="radio" value="44" id="age-44">
                                 <label for="age-44">44</label>
                             </li>
                             <li class="custom-radio">
-                                <input name="item-age-value" type="radio" id="age-45">
+                                <input name="item-age-value" type="radio" value="45" id="age-45">
                                 <label for="age-45">45</label>
                             </li>
                             <li class="custom-radio">
-                                <input name="item-age-value" type="radio" id="age-46">
+                                <input name="item-age-value" type="radio" value="46" id="age-46">
                                 <label for="age-46">46</label>
                             </li>
                             <li class="custom-radio">
-                                <input name="item-age-value" type="radio" id="age-47">
+                                <input name="item-age-value" type="radio" value="47" id="age-47">
                                 <label for="age-47">47</label>
                             </li>
                             <li class="custom-radio">
-                                <input name="item-age-value" type="radio" id="age-48">
+                                <input name="item-age-value" type="radio" value="48" id="age-48">
                                 <label for="age-48">48</label>
                             </li>
                             <li class="custom-radio">
-                                <input name="item-age-value" type="radio" id="age-49">
+                                <input name="item-age-value" type="radio" value="49" id="age-49">
                                 <label for="age-49">49</label>
                             </li>
                             <li class="custom-radio">
-                                <input name="item-age-value" type="radio" id="age-50">
+                                <input name="item-age-value" type="radio" value="50" id="age-50">
                                 <label for="age-50">50</label>
                             </li>
                             <li class="custom-radio">
-                                <input name="item-age-value" type="radio" id="age-51">
+                                <input name="item-age-value" type="radio" value="51" id="age-51">
                                 <label for="age-51">51</label>
                             </li>
                             <li class="custom-radio">
-                                <input name="item-age-value" type="radio" id="age-52">
+                                <input name="item-age-value" type="radio" value="52" id="age-52">
                                 <label for="age-52">52</label>
                             </li>
                             <li class="custom-radio">
-                                <input name="item-age-value" type="radio" id="age-53">
+                                <input name="item-age-value" type="radio" value="53" id="age-53">
                                 <label for="age-53">53</label>
                             </li>
                             <li class="custom-radio">
-                                <input name="item-age-value" type="radio" id="age-54">
+                                <input name="item-age-value" type="radio" value="54" id="age-54">
                                 <label for="age-54">54</label>
                             </li>
                             <li class="custom-radio">
-                                <input name="item-age-value" type="radio" id="age-55">
+                                <input name="item-age-value" type="radio" value="55" id="age-55">
                                 <label for="age-55">55</label>
                             </li>
                             <li class="custom-radio">
-                                <input name="item-age-value" type="radio" id="age-56">
+                                <input name="item-age-value" type="radio" value="56" id="age-56">
                                 <label for="age-56">56</label>
                             </li>
                             <li class="custom-radio">
-                                <input name="item-age-value" type="radio" id="age-57">
+                                <input name="item-age-value" type="radio" value="57" id="age-57">
                                 <label for="age-57">57</label>
                             </li>
                             <li class="custom-radio">
-                                <input name="item-age-value" type="radio" id="age-58">
+                                <input name="item-age-value" type="radio" value="58" id="age-58">
                                 <label for="age-58">58</label>
                             </li>
                             <li class="custom-radio">
-                                <input name="item-age-value" type="radio" id="age-59">
+                                <input name="item-age-value" type="radio" value="59" id="age-59">
                                 <label for="age-59">59</label>
                             </li>
                             <li class="custom-radio">
-                                <input name="item-age-value" type="radio" id="age-60">
+                                <input name="item-age-value" type="radio" value="60" id="age-60">
                                 <label for="age-60">60+</label>
                             </li>
 
@@ -284,39 +286,39 @@
                 </div>
                 <div class="col-xs-12 col-md-6">
                     <div class="custom-checkbox">
-                        <input type="checkbox" name="english" value="english" id="english">
+                        <input type="checkbox" name="language[]" value="english" id="english">
                         <label for="english">English</label>
                     </div>
                     <div class="custom-checkbox">
-                        <input type="checkbox" name="spanish" value="spanish" id="spanish">
+                        <input type="checkbox" name="language[]" value="spanish" id="spanish">
                         <label for="spanish">Spanish</label>
                     </div>
                     <div class="custom-checkbox">
-                        <input type="checkbox" name="french" value="french" id="french">
+                        <input type="checkbox" name="language[]" value="french" id="french">
                         <label for="french">French</label>
                     </div>
                     <div class="custom-checkbox">
-                        <input type="checkbox" name="option2" value="a2" id="create4221">
-                        <label for="create4221">Italian</label>
+                        <input type="checkbox" name="language[]" value="italian" id="italian">
+                        <label for="italian">Italian</label>
                     </div>
                     <div class="custom-checkbox">
-                        <input type="checkbox" name="portugese" value="portugese" id="portugese">
+                        <input type="checkbox" name="language[]" value="portugese" id="portugese">
                         <label for="portugese">Portugese</label>
                     </div>
                     <div class="custom-checkbox">
-                        <input type="checkbox" name="german" value="german" id="german">
+                        <input type="checkbox" name="language[]" value="german" id="german">
                         <label for="german">German</label>
                     </div>
                     <div class="custom-checkbox">
-                        <input type="checkbox" name="russian" value="russian" id="russian">
+                        <input type="checkbox" name="language[]" value="russian" id="russian">
                         <label for="russian">Russian</label>
                     </div>
                     <div class="custom-checkbox">
-                        <input type="checkbox" name="chinese" value="chinese" id="chinese">
+                        <input type="checkbox" name="language[]" value="chinese" id="chinese">
                         <label for="chinese">Chinese</label>
                     </div>
                     <div class="custom-checkbox">
-                        <input type="checkbox" name="other" value="other" id="other">
+                        <input type="checkbox" name="language[]" value="other" id="other">
                         <label for="other">Other</label>
                     </div>
                 </div>
@@ -328,36 +330,36 @@
                 </div>
                 <div class="col-xs-12 col-md-7">
                     <div class="custom-checkbox">
-                        <input type="checkbox" name="Massage" value="Massage" id="Massage">
-                        <label for="Massage">Massage</label>
+                        <input type="checkbox" name="interests[]" value="massage" id="massage">
+                        <label for="massage">Massage</label>
                     </div>
                     <div class="custom-checkbox">
-                        <input type="checkbox" name="escorting" value="escorting" id="escorting">
+                        <input type="checkbox" name="interests[]" value="escorting" id="escorting">
                         <label for="escorting">Escorting</label>
                     </div>
                     <div class="custom-checkbox">
-                        <input type="checkbox" name="role-play-fantasy" value="role-play-fantasy"
+                        <input type="checkbox" name="interests[]" value="role-play-fantasy"
                                id="role-play-fantasy">
                         <label for="role-play-fantasy">Role play & Fantasy</label>
                     </div>
                     <div class="custom-checkbox">
-                        <input type="checkbox" name="dinner-date" value="dinner-date" id="dinner-date">
+                        <input type="checkbox" name="interests[]" value="dinner-date" id="dinner-date">
                         <label for="dinner-date">Dinner Date</label>
                     </div>
                     <div class="custom-checkbox">
-                        <input type="checkbox" name="tantric-massage" value="tantric-massage" id="tantric-massage">
+                        <input type="checkbox" name="interests[]" value="tantric-massage" id="tantric-massage">
                         <label for="tantric-massage">Tantric Massage</label>
                     </div>
                     <div class="custom-checkbox">
-                        <input type="checkbox" name="stress-relief" value="stress-relief" id="stress-relief">
+                        <input type="checkbox" name="interests[]" value="stress-relief" id="stress-relief">
                         <label for="stress-relief">Stress relief</label>
                     </div>
                     <div class="custom-checkbox">
-                        <input type="checkbox" name="travel-companion" value="travel-companion" id="travel-companion">
+                        <input type="checkbox" name="interests[]" value="travel-companion" id="travel-companion">
                         <label for="travel-companion">Travel companion</label>
                     </div>
                     <div class="custom-checkbox">
-                        <input type="checkbox" name="modelling" value="modelling" id="modelling">
+                        <input type="checkbox" name="interests[]" value="modelling" id="modelling">
                         <label for="modelling">Modelling</label>
                     </div>
                 </div>
@@ -369,15 +371,15 @@
                 </div>
                 <div class="col-xs-12 col-md-7">
                     <div class="custom-checkbox">
-                        <input type="checkbox" name="men" value="men" id="men">
+                        <input type="checkbox" name="servfor[]" value="men" id="men">
                         <label for="men">Men</label>
                     </div>
                     <div class="custom-checkbox">
-                        <input type="checkbox" name="women" value="women" id="women">
+                        <input type="checkbox" name="servfor[]" value="women" id="women">
                         <label for="women">Women</label>
                     </div>
                     <div class="custom-checkbox">
-                        <input type="checkbox" name="couples" value="couples"
+                        <input type="checkbox" name="servfor[]" value="couples"
                                id="couples">
                         <label for="couples">Couples</label>
                     </div>
@@ -408,10 +410,10 @@
                                 15 minutes
                             </td>
                             <td style="border: 1px solid #d4d4d4;text-align: center;padding: 0px;vertical-align: top; max-width: 10px;">
-                                <input type="text" placeholder="£" style="width:100%;">
+                                <input type="text" name="col-1-incall-row-1" placeholder="£" style="width:100%;">
                             </td>
                             <td style="border: 1px solid #d4d4d4;text-align: center;padding: 0px;vertical-align: top; max-width: 10px;">
-                                <input type="text" placeholder="£" style="width:100%;">
+                                <input type="text" name="col-2-outcall-row-1" placeholder="£" style="width:100%;">
                             </td>
                         </tr>
                         <tr>
@@ -419,10 +421,10 @@
                                 30 minutes
                             </td>
                             <td style="border: 1px solid #d4d4d4;text-align: center;padding: 0px;vertical-align: top; max-width: 10px;">
-                                <input type="text" placeholder="£" style="width:100%;">
+                                <input type="text" name="col-1-incall-row-2" placeholder="£" style="width:100%;">
                             </td>
                             <td style="border: 1px solid #d4d4d4;text-align: center;padding: 0px;vertical-align: top; max-width: 10px;">
-                                <input type="text" placeholder="£" style="width:100%;">
+                                <input type="text" name="col-2-outcall-row-2" placeholder="£" style="width:100%;">
                             </td>
                         </tr>
                         <tr>
@@ -430,10 +432,10 @@
                                 1 hour <a style="color: red">*</a>
                             </td>
                             <td style="border: 1px solid #d4d4d4;text-align: center;padding: 0px;vertical-align: top; max-width: 10px;">
-                                <input type="text" placeholder="£" style="width:100%;">
+                                <input type="text" name="col-1-incall-row-3" placeholder="£" style="width:100%;">
                             </td>
                             <td style="border: 1px solid #d4d4d4;text-align: center;padding: 0px;vertical-align: top; max-width: 10px;">
-                                <input type="text" placeholder="£" style="width:100%;">
+                                <input type="text" name="col-2-outcall-row-3" placeholder="£" style="width:100%;">
                             </td>
                         </tr>
                         <tr>
@@ -441,10 +443,10 @@
                                 2 hours
                             </td>
                             <td style="border: 1px solid #d4d4d4;text-align: center;padding: 0px;vertical-align: top; max-width: 10px;">
-                                <input type="text" placeholder="£" style="width:100%;">
+                                <input type="text" name="col-1-incall-row-4" placeholder="£" style="width:100%;">
                             </td>
                             <td style="border: 1px solid #d4d4d4;text-align: center;padding: 0px;vertical-align: top; max-width: 10px;">
-                                <input type="text" placeholder="£" style="width:100%;">
+                                <input type="text" name="col-2-outcall-row-4" placeholder="£" style="width:100%;">
                             </td>
                         </tr>
                         <tr>
@@ -452,10 +454,10 @@
                                 4 hours
                             </td>
                             <td style="border: 1px solid #d4d4d4;text-align: center;padding: 0px;vertical-align: top; max-width: 10px;">
-                                <input type="text" placeholder="£" style="width:100%;">
+                                <input type="text" name="col-1-incall-row-5" placeholder="£" style="width:100%;">
                             </td>
                             <td style="border: 1px solid #d4d4d4;text-align: center;padding: 0px;vertical-align: top; max-width: 10px;">
-                                <input type="text" placeholder="£" style="width:100%;">
+                                <input type="text" name="col-2-outcall-row-5" placeholder="£" style="width:100%;">
                             </td>
                         </tr>
                         <tr>
@@ -463,10 +465,10 @@
                                 overnight
                             </td>
                             <td style="border: 1px solid #d4d4d4;text-align: center;padding: 0px;vertical-align: top; max-width: 10px;">
-                                <input type="text" placeholder="£" style="width:100%;">
+                                <input type="text" name="col-1-incall-row-6" placeholder="£" style="width:100%;">
                             </td>
                             <td style="border: 1px solid #d4d4d4;text-align: center;padding: 0px;vertical-align: top; max-width: 10px;">
-                                <input type="text" placeholder="£" style="width:100%;">
+                                <input type="text" name="col-2-outcall-row-6" placeholder="£" style="width:100%;">
                             </td>
                         </tr>
                         </tbody>
