@@ -25,6 +25,6 @@ class DictionaryItem
                 break;
             default: 1;
         }
-        return false;
+        return 1;
     }
 }

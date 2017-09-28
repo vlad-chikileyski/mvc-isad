@@ -72,6 +72,7 @@ class PostController
                     $language = $_POST['language'];
                     $interests = $_POST['interests'];
                     $servfor = $_POST['servfor'];
+
                     /**
                      * Array End
                      */
@@ -92,9 +93,7 @@ class PostController
                     $email = $_POST['email'];
                     $phone = $_POST['phone'];
                     $paymentMethod = $_POST['payment-method'];
-
-
-                    $subcategory = lcfirst($_POST['subcategory']);
+                    $paymentType = DictionaryItem::checkPaymentType($paymentMethod);
                     $tableName = Category::categoryGetTableName($formType);
                     if ($tableName == false) {
                         header("HTTP/1.0 404 Not Found");
@@ -109,7 +108,12 @@ class PostController
                             if ($userInfo != false && $userInfo['email'] != '') { //logged User
                                 $incrementStatus = Catalog::incrementCountFromCategory($tableName);
                                 if (MailBuilder::configureMailForActivateAccount($userInfo['email'], $name)) { //send {activate your ads}
-                                    $query = Post::save($tableName, $title, $description, $userId, $postcode, $subcategory, '0');
+                                    $query = Post::save($userId, $tableName, $title, $adtype, $description, $gender, $ethnicity,
+                                        $itemAgeValue, $postcode, $name, $userInfo['email'],
+                                        $phone, $paymentType, "test"/*json_encode($language)*/, "test"/*json_encode($interests)*/, "test"/*json_encode($servfor)*/, $col1incallrow1, $col2outcallrow1, $col1incallrow2,
+                                        $col2outcallrow2, $col1incallrow3, $col2outcallrow3, $col1incallrow4, $col2outcallrow4,
+                                        $col1incallrow5, $col2outcallrow5, $col1incallrow6, $col2outcallrow6);
+                                    print_r($query);
                                     echo 'user logged!';
                                     if ($query && $incrementStatus) {
                                         header("Location: /activate-ad/200");
@@ -124,7 +128,13 @@ class PostController
                                     $newUserData = User::getUserByEmail($email);
                                     $incrementStatus = Catalog::incrementCountFromCategory($tableName);
                                     if ($newUserRegister && MailBuilder::configureMailForActivateAccount($email, $name)) {//send some mail_template {Thanks for register - your password and url ads}
-                                        $query = Post::save($tableName, $title, $description, $newUserData['id'], $postcode, $subcategory, '0');
+
+                                        $query = Post::save($newUserData['id'], $tableName, $title, $adtype, $description, $gender, $ethnicity,
+                                            $itemAgeValue, $postcode, $name, $email,
+                                            $phone, $paymentType, $language, $interests, $servfor, $col1incallrow1, $col2outcallrow1, $col1incallrow2,
+                                            $col2outcallrow2, $col1incallrow3, $col2outcallrow3, $col1incallrow4, $col2outcallrow4,
+                                            $col1incallrow5, $col2outcallrow5, $col1incallrow6, $col2outcallrow6);
+
                                         echo 'user success register!';
                                         if ($query && $incrementStatus) {
                                             header("Location: /activate-account/200");
@@ -134,7 +144,11 @@ class PostController
                                     $userData = User::getUserByEmail($email);
                                     $incrementStatus = Catalog::incrementCountFromCategory($tableName);
                                     if (MailBuilder::configureMailForActivateAccount($email, $name)) { //send {activate your ads}
-                                        $query = Post::save($tableName, $title, $description, $userData['id'], $postcode, $subcategory, '0');
+                                        $query = Post::save($userData['id'], $tableName, $title, $adtype, $description, $gender, $ethnicity,
+                                            $itemAgeValue, $postcode, $name, $email,
+                                            $phone, $paymentType, $language, $interests, $servfor, $col1incallrow1, $col2outcallrow1, $col1incallrow2,
+                                            $col2outcallrow2, $col1incallrow3, $col2outcallrow3, $col1incallrow4, $col2outcallrow4,
+                                            $col1incallrow5, $col2outcallrow5, $col1incallrow6, $col2outcallrow6);
                                         echo 'user exists but not logged!';
                                         if ($query && $incrementStatus) {
                                             header("Location: /activate-ad/200");
@@ -146,7 +160,7 @@ class PostController
                     }
 
 
-                    $paymentType = DictionaryItem::checkPaymentType($paymentMethod);
+                    //$paymentType = DictionaryItem::checkPaymentType($paymentMethod);
                     /**
                      * Update DataBase and Generate
                      * id=*********&key**********
