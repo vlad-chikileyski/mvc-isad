@@ -56,7 +56,7 @@
             <div class="inner">
                 <div class="app-logo">
                     <button class="mobile-control mob-menu-trigger"><i class="adicon-hamburger"></i></button>
-                    <a href="https://adtoday.co.uk/"><img src="/template/assets/img/basic/logo.png" alt="adspot"></a>
+                    <a href="/"><img src="/template/assets/img/basic/logo.png" alt="adtoday"></a>
                 </div>
                 <ul class="quick-actions">
                     <?php if (User::isGuest()): ?>
@@ -73,41 +73,6 @@
                         <li><a class="modal-trigger" href="#signInModal">Login</a></li>
                         <li><a class="modal-trigger" href="#signUpModal">Register</a></li>
                     <?php endif; ?>
-                    <li class="dropdown-wrap wide">
-                        <a href="#"><i class="fa fa-shopping-cart"></i></a>
-                        <div class="basic-dropdown wide">
-                            <div class="short-cart">
-                                <ul>
-                                    <li>
-                                        <figure><img src="/template/assets/img/items/ad1.png" alt="dummy"></figure>
-                                        <a href="#" class="item-title">Iphone 6 Plus 16GB</a>
-                                        <span>$229.00</span>
-                                        <a href="#" class="remove-item"><i class="fa fa-close"></i></a>
-                                    </li>
-                                    <li>
-                                        <figure><img src="/template/assets/img/items/ad2.jpg" alt="dummy"></figure>
-                                        <a href="#" class="item-title">Iphone 6 Plus 16GB</a>
-                                        <span>$229.00</span>
-                                        <a href="#" class="remove-item"><i class="fa fa-close"></i></a>
-                                    </li>
-                                    <li>
-                                        <figure><img src="/template/assets/img/items/ad3.jpg" alt="dummy"></figure>
-                                        <a href="#" class="item-title">Iphone 6 Plus 16GB</a>
-                                        <span>$229.00</span>
-                                        <a href="#" class="remove-item"><i class="fa fa-close"></i></a>
-                                    </li>
-                                </ul>
-                                <table>
-                                    <tr>
-                                        <td>Total Price</td>
-                                        <td><strong>885.00 USD</strong></td>
-                                    </tr>
-                                </table>
-                                <a href="cart.html" class="btn btn-transparent block-element">View Cart</a>
-                            </div>
-                        </div>
-                    </li>
-                    <li><a class="nav-trigger" href="#"><i class="fa fa-navicon"></i></a></li>
                 </ul>
                 <div class="clearfix">
                     <a href="/add/" class="btn btn-green pull-right quick-post">Post your ad</a>

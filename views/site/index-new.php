@@ -70,7 +70,6 @@
                 <div class="col-sm-3">
                     <div class="mega-menu0-1" style="border: 2px solid #0083c9;">
                         <ul class="category-list" style="background-color: white;">
-                            <li><a href="#"><i class="adicon-grid"></i>All Categories</a></li>
                             <li><a href="#"><i class="adicon-car"></i>Vehicles</a>
                                 <ul>
                                     <li><a href="#">Cars</a></li>
@@ -216,7 +215,7 @@
                 <div class="container">
                     <header class="text-normal">
                         <h2>Buy &amp; Sell <strong>Anything</strong></h2>
-                        <p class="text-uppercase">World’s Biggest Classified Marketplace</p>
+                        <p class="text-uppercase">UK Biggest Classified Marketplace</p>
                     </header>
                 </div>
             </div>

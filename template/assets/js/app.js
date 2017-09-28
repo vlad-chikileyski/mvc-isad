@@ -51,6 +51,8 @@ jQuery(function($) {
         var $this = $(this),
             newText = $this.text(),
             p = $this.parents(".mega-dropdown");
+
+        Console.log("12");
         p.children("button").text(newText);
         $("#subcategory").val(newText);
         p.removeClass("active");

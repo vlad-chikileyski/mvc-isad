@@ -4238,7 +4238,7 @@ a.link.link-pink {
 
 .app-canvas, .section.style2 {
     background: url("../img/basic/bd-pattern.jpg") repeat-x;
-    padding: 50px 0;
+    padding: 10px 0 40px 0;
 }
 
 @media (max-width: 1199px) {
@@ -4756,8 +4756,9 @@ a.view-item, .contact-options li a, .listing-actions a, .listing-actions .fa,
     text-decoration: none;
     display: block;
     color: #686868;
-    font-size: 11px;
-    text-transform: uppercase;
+    font-size: 14px;
+    text-transform: lowercase;
+    color: #ffffff;
 }
 
 .doc-header .quick-actions > li > a.nav-trigger {
@@ -5416,7 +5417,7 @@ a.view-item, .contact-options li a, .listing-actions a, .listing-actions .fa,
 
 .category-list {
     margin: 0;
-    padding: 20px 0;
+    padding: 10px 0 10px 0;
     position: relative;
     z-index: 10;
 }
@@ -10757,6 +10758,9 @@ a.tab-accordion-trigger span i {
 .blog-nav {
     padding-top: 30px;
 }
+.fa-search{
+    color:white;
+}
 
 @media (max-width: 767px) {
     .blog-nav {
@@ -11071,6 +11075,14 @@ a.tab-accordion-trigger span i {
     right: 0;
     color: inherit;
     font-size: 20px;
+    background-color:#0081c9;
+}
+
+.category-search-tabbed .search-widget:hover {
+    z-index: 45;
+    -webkit-box-shadow: 0 0 21px 9px rgba(0, 0, 0, 0.14);
+    -moz-box-shadow: 0 0 21px 9px rgba(0, 0, 0, 0.14);
+    box-shadow: 0 0 21px 9px rgba(0, 0, 0, 0.14);
 }
 
 .main-banner-2 {
