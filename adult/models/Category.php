@@ -53,9 +53,9 @@ class Category
             case 'gay-and-lesbian':
                 return 'gay-and-lesbian';
                 break;
-             case 'friendship-friends':
-                 return 'friendship-friends';
-                 break;
+            case 'friendship-friends':
+                return 'friendship-friends';
+                break;
             case 'straight-relationships':
                 return 'straight-relationships';
                 break;
@@ -67,91 +67,35 @@ class Category
      * Check - category exists ?
      * @return bool
      */
-    public static function categoryCheckDoubleParam($urlParam, $urlSubParam)
+    public static function categoryGetTableName($subcategory)
     {
-        switch ($urlParam) {
-            /*electronics*/
-            case 'electronics':
-                switch ($urlSubParam) {
-                    case 'tablets':
-                        return 'electrTabletsNics';
-                        break;
-                    case 'phones':
-                        return 'electrPhonesNics';
-                        break;
-                    case 'dvd-blu-ray':
-                        return 'electrDvdBluRayNics';
-                        break;
-                    case 'accessories':
-                        return 'electrAccessoriesNics';
-                        break;
-                    case 'tv':
-                        return 'electrTvNics';
-                        break;
-                    case 'photo':
-                        return 'electrPhotoNics';
-                        break;
-                    case 'computers':
-                        return 'electrComputersNics';
-                        break;
-                    case 'games-and-consoles':
-                        return 'electrGamesAndConsolesNics';
-                        break;
-                    case 'mp3-and-audio':
-                        return 'electrMp3AndAudioNics';
-                        break;
-                    default:
-                        return false;
-                }
+        switch ($subcategory) {
+            case 'adult-dating':
+                return 'adultAdultDating';
                 break;
-            case 'mobiles':
-                switch ($urlSubParam) {
-
-
-                }
-                return 'mobilesTablets';
+            case 'swingers':
+                return 'adultSwingers';
                 break;
-            case 'furniture':
-                switch ($urlSubParam) {
-
-
-                }
-                return 'furnitureTablets';
+            case 'escorts-and-massages':
+                return 'adultEscortsAndMassages';
                 break;
-            case 'services':
-                switch ($urlSubParam) {
-
-
-                }
-                return 'servicesTablets';
+            case 'gay-escorts':
+                return 'adultGayEscorts';
                 break;
-            case 'education':
-                switch ($urlSubParam) {
-
-
-                }
-                return 'servicesTablets';
+            case 'adult-entertainment':
+                return 'adultAdultEntertainment';
                 break;
-            case 'animals':
-                switch ($urlSubParam) {
-
-
-                }
-                return 'servicesTablets';
+            case 'adult-jobs':
+                return 'adultAdultJobs';
                 break;
-            case 'fashion':
-                switch ($urlSubParam) {
-
-
-                }
-                return 'servicesTablets';
+            case 'gay-and-lesbian':
+                return 'adultGayAndLesbian';
                 break;
-            case 'baby-products':
-                switch ($urlSubParam) {
-
-
-                }
-                return 'servicesTablets';
+            case 'friendship-friends':
+                return 'adultFriendshipFriends';
+                break;
+            case 'straight-relationships':
+                return 'adultStraightRelationships';
                 break;
         }
         return false;

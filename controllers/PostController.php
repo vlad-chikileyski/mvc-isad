@@ -64,7 +64,7 @@ class PostController
                     if ($errors == false) {
                         if ($userInfo != false && $userInfo['email'] != '') { //logged User
                             $incrementStatus = Catalog::incrementCountFromCategory($getTableName);
-                            if (MailBuilder::configureMailForActivateAccount($notVerifyEmail, $name)) { //send {activate your ads}
+                            if (MailBuilder::configureMailForActivateAccount($userInfo['email'], $name)) { //send {activate your ads}
                                 $query = Post::save($getTableName, $title, $description, $userId, $postcode, $subcategory, '0', $price);
                                 echo 'user logged!';
                                 if ($query && $incrementStatus) {

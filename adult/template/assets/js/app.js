@@ -72,9 +72,9 @@ jQuery(function ($) {
             }, complete: function () {
                 $('.ajax-loader').css("visibility", "hidden");
             }, error: function () {
-/*
-                $("#result").remove();
-*/
+                /*
+                 $("#result").remove();
+                 */
                 $('.ajax-loader-error').css("visibility", "visible");
                 $('#search_postcode').css("border", "1px solid #ff000f");
             }
@@ -562,7 +562,27 @@ jQuery(function ($) {
             qtyMsg(msginvalid, p);
         }
     });
+    /*================================
+     Typed JS
+     ================================*/
+    var typed = new Typed('#typed4', {
+        /*
+         strings: ['Some strings without', 'Some HTML', 'Chars'],
+         */
+        stringsElement: '#typed-strings',
+        typeSpeed: 56,
+        backSpeed: 79,
+        attr: 'placeholder',
+        bindInputFocusEvents: true,
+        loop: true,
+        showCursor: true,
+        cursorChar: '|',
+        contentType: 'text'
+    });
+    /*================================
 
+
+     */
     /*================================
      Google Maps
      ================================*/

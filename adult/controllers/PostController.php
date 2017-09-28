@@ -12,6 +12,24 @@ class PostController
         } else {
             $FORM_PAGE_HTML = Form::getFormByCategoryName($formType);
             if ($FORM_PAGE_HTML != false) {
+
+                /**
+                 * check userIsLogged?
+                 * START
+                 */
+                $userInfo = '';
+                $userId = '';
+                $newUserEmail = '';
+                if (User::getUserById(User::checkId()) != null) {
+                    $userId = User::checkId();
+                    $userInfo = User::getUserById($userId);
+                } else {
+                    $userInfo = false;
+                    $userId = false;
+                }
+                /*
+                 * END
+                 */
                 /**
                  * postMethod
                  */
@@ -74,10 +92,58 @@ class PostController
                     $email = $_POST['email'];
                     $phone = $_POST['phone'];
                     $paymentMethod = $_POST['payment-method'];
-                    var_dump($servfor);
 
 
+                    $subcategory = lcfirst($_POST['subcategory']);
+                    $tableName = Category::categoryGetTableName($formType);
+                    if ($tableName == false) {
+                        header("HTTP/1.0 404 Not Found");
+                        require_once(ROOT . '/views/error/404.php');
+                    } else {
 
+                        $errors = false;
+                        if (!Post::checkEmail($email)) {
+                            $errors[] = 'Invalid email type!';
+                        }
+                        if ($errors == false) {
+                            if ($userInfo != false && $userInfo['email'] != '') { //logged User
+                                $incrementStatus = Catalog::incrementCountFromCategory($tableName);
+                                if (MailBuilder::configureMailForActivateAccount($userInfo['email'], $name)) { //send {activate your ads}
+                                    $query = Post::save($tableName, $title, $description, $userId, $postcode, $subcategory, '0');
+                                    echo 'user logged!';
+                                    if ($query && $incrementStatus) {
+                                        header("Location: /activate-ad/200");
+                                    }
+                                }
+
+                            } else { // Not logged
+                                $thisUserExists = User::checkEmailExists($email);
+                                if ($thisUserExists != true) { //if NOT exists
+                                    $newPassword = User::generatePassword();
+                                    $newUserRegister = User::register($name, $email, $newPassword);
+                                    $newUserData = User::getUserByEmail($email);
+                                    $incrementStatus = Catalog::incrementCountFromCategory($tableName);
+                                    if ($newUserRegister && MailBuilder::configureMailForActivateAccount($email, $name)) {//send some mail_template {Thanks for register - your password and url ads}
+                                        $query = Post::save($tableName, $title, $description, $newUserData['id'], $postcode, $subcategory, '0');
+                                        echo 'user success register!';
+                                        if ($query && $incrementStatus) {
+                                            header("Location: /activate-account/200");
+                                        }
+                                    }
+                                } else { //user exists !
+                                    $userData = User::getUserByEmail($email);
+                                    $incrementStatus = Catalog::incrementCountFromCategory($tableName);
+                                    if (MailBuilder::configureMailForActivateAccount($email, $name)) { //send {activate your ads}
+                                        $query = Post::save($tableName, $title, $description, $userData['id'], $postcode, $subcategory, '0');
+                                        echo 'user exists but not logged!';
+                                        if ($query && $incrementStatus) {
+                                            header("Location: /activate-ad/200");
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
 
 
                     $paymentType = DictionaryItem::checkPaymentType($paymentMethod);
