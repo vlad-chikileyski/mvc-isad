@@ -4,6 +4,7 @@ class PostController
 {
     public function actionIndex($categoryName)
     {
+        $keyspace = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
         $formType = Category::categoryCheck($categoryName);
 
         if ($formType == false) {
@@ -105,18 +106,19 @@ class PostController
                             $errors[] = 'Invalid email type!';
                         }
                         if ($errors == false) {
+                            $token = random_str(7);
                             if ($userInfo != false && $userInfo['email'] != '') { //logged User
                                 $incrementStatus = Catalog::incrementCountFromCategory($tableName);
                                 if (MailBuilder::configureMailForActivateAccount($userInfo['email'], $name)) { //send {activate your ads}
-                                    $query = Post::save($userId, $tableName, $title, $adtype, $description, $gender, $ethnicity,
+                                    $recordId = Post::save($userId, $tableName, $title, $adtype, $description, $gender, $ethnicity,
                                         $itemAgeValue, $postcode, $name, $userInfo['email'],
-                                        $phone, $paymentType, "test"/*json_encode($language)*/, "test"/*json_encode($interests)*/, "test"/*json_encode($servfor)*/, $col1incallrow1, $col2outcallrow1, $col1incallrow2,
+                                        $phone, $paymentType, json_encode($language), json_encode($interests), json_encode($servfor), $col1incallrow1, $col2outcallrow1, $col1incallrow2,
                                         $col2outcallrow2, $col1incallrow3, $col2outcallrow3, $col1incallrow4, $col2outcallrow4,
                                         $col1incallrow5, $col2outcallrow5, $col1incallrow6, $col2outcallrow6);
-                                    print_r($query);
-                                    echo 'user logged!';
-                                    if ($query && $incrementStatus) {
-                                        header("Location: /activate-ad/200");
+                                    if ($recordId != '' && $incrementStatus) {
+                                        echo $recordId;
+                                        Payment::updatePaymentInfo($userId, $recordId, $token, rand(1000000, 9999999));
+                                        //header("Location: /activate-ad/200");
                                     }
                                 }
 
@@ -178,6 +180,15 @@ class PostController
                 require_once(ROOT . '/views/error/404.php');
             }
         }
+    }
+    public function random_str($length, $keyspace = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ')
+    {
+        $str = '';
+        $max = mb_strlen($keyspace, '8bit') - 1;
+        for ($i = 0; $i < $length; ++$i) {
+            $str .= $keyspace[random_int(0, $max)];
+        }
+        return $str;
     }
 
     /**

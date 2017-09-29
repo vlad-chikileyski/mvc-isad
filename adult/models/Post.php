@@ -47,7 +47,9 @@ class Post
         $result->bindParam(':col2outcallrow5', $col2outcallrow5, PDO::PARAM_STR);
         $result->bindParam(':col1incallrow6', $col1incallrow6, PDO::PARAM_STR);
         $result->bindParam(':col2outcallrow6', $col2outcallrow6, PDO::PARAM_STR);
-        return $result->execute();
+        $result->execute();
+        $id = $db->lastInsertId();
+        return $id;
     }
 
     /**
