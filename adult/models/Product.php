@@ -12,7 +12,7 @@ class Product
             $db = Db::getConnectionOnCatics();
             $products = array();
             /*SELECT * FROM electrTabletsNics UNION ALL*/
-            $result = $db->query(' SELECT * FROM electrAccessoriesNics ORDER BY id DESC LIMIT 30 OFFSET ' . $offset);
+            $result = $db->query(' SELECT * FROM adultEscortsAndMassages ORDER BY id DESC LIMIT 30 OFFSET ' . $offset);
             $i = 0;
             while ($row = $result->fetch()) {
                 $products[$i]['id'] = $row['id'];

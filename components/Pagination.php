@@ -79,8 +79,32 @@ class Pagination
 
         # Получаем ограничения для цикла
         $limits = $this->limits();
-
-        $html = '<ul class="pagination">';
+/*
+        <div class="col-xs-12 col-md-6">
+                            <nav aria-label="Page navigation" class="pull-right">
+                                <ul class="pagination mt-0">
+                                    <li>
+                                        <a href="#" aria-label="Previous">
+                                            <span aria-hidden="true">«</span>
+                                        </a>
+                                    </li>
+                                    <li><a href="#">1</a></li>
+                                    <li><a href="#">2</a></li>
+                                    <li><a href="#">3</a></li>
+                                    <li><a href="#">4</a></li>
+                                    <li><a href="#">5</a></li>
+                                    <li>
+                                        <a href="#" aria-label="Next">
+                                            <span aria-hidden="true">»</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>*/
+        
+        
+        
+        $html = '<ul class="pagination mt-0">';
         # Генерируем ссылки
         for ($page = $limits[0]; $page <= $limits[1]; $page++) {
             # Если текущая это текущая страница, ссылки нет и добавляется класс active

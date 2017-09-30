@@ -121,7 +121,6 @@ class PostController
                                         //header("Location: /activate-ad/200");
                                     }
                                 }
-
                             } else { // Not logged
                                 $thisUserExists = User::checkEmailExists($email);
                                 if ($thisUserExists != true) { //if NOT exists

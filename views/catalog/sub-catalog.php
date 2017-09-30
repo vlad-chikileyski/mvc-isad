@@ -119,7 +119,9 @@
                 <ul>
                     <li><a href="/">Home</a></li>
                     <li><a href="/catalog/<?php echo $urlParam; ?>/"><?php echo $urlParam; ?></a></li>
-                    <li><a href="/catalog/<?php echo $urlParam; ?>/<?php echo $urlSubParam; ?>/"><?php echo $urlSubParam; ?></a></li>
+                    <li>
+                        <a href="/catalog/<?php echo $urlParam; ?>/<?php echo $urlSubParam; ?>/"><?php echo $urlSubParam; ?></a>
+                    </li>
                 </ul>
             </div>
 
@@ -202,15 +204,22 @@
                                 </div>
                                 <div class="breadcrumb">
                                     <ul>
-                                        <li><a href="/catalog/<?php echo $product['category']; ?>"><?php echo ucfirst($product['category']); ?></a></li>
-                                        <li><a href="/catalog/<?php echo $product['category']; ?>/<?php echo $product['subcategory']; ?>"><?php echo ucfirst($product['subcategory']); ?></a></li>
+                                        <li>
+                                            <a href="/catalog/<?php echo $product['category']; ?>"><?php echo ucfirst($product['category']); ?></a>
+                                        </li>
+                                        <li>
+                                            <a href="/catalog/<?php echo $product['category']; ?>/<?php echo $product['subcategory']; ?>"><?php echo ucfirst($product['subcategory']); ?></a>
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
                         </article>
                     <?php endforeach; ?>
-
-                    <?php echo $pagination->get(); ?>
+                    <div class="col-xs-12 col-md-6">
+                        <nav aria-label="Page navigation" class="pull-right">
+                            <?php echo $pagination->get(); ?>
+                        </nav>
+                    </div>
                 </div>
 
             </div>
