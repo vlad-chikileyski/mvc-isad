@@ -134,7 +134,7 @@
                                 <ul>
                                     <?php foreach ($subCategoryListMenu as $subcategory) : ?>
 
-                                        <li><a href="<?php echo $subcategory['url-title']; ?>/">
+                                        <li><a href="<?php echo $subcategory['category']. '/'.$subcategory['url-title']; ?>/">
                                                 <span><?php echo $subcategory['menu-title']; ?></span>
                                             </a></li>
                                     <?php endforeach; ?>
@@ -186,7 +186,7 @@
                                             <a href="/catalog/<?php echo $products['category']; ?>"><?php echo ucfirst($products['category']); ?></a>
                                         </li>
                                         <li>
-                                            <a href="/catalog/<?php echo $products['category']; ?>/<?php echo $products['sub-category']; ?>"><?php echo ucfirst($products['sub-category']); ?></a>
+                                            <a href="/catalog/<?php echo $products['category']; ?>/<?php echo $products['subcategory']; ?>"><?php echo ucfirst($products['subcategory']); ?></a>
                                         </li>
                                     </ul>
                                 </div>

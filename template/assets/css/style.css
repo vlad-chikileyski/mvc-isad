@@ -6878,6 +6878,13 @@ a.view-item, .contact-options li a, .listing-actions a, .listing-actions .fa,
     margin-bottom: 10px;
 }
 
+.items-list .item-spot:hover {
+    z-index: 45;
+    -webkit-box-shadow: 0 0 21px 9px rgba(0, 0, 0, 0.14);
+    -moz-box-shadow: 0 0 21px 9px rgba(0, 0, 0, 0.14);
+    box-shadow: 0 0 21px 9px rgba(0, 0, 0, 0.14);
+}
+
 @media (max-width: 1020px) {
     .item-spot {
         padding-left: 15px;

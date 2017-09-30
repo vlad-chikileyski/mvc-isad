@@ -70,7 +70,7 @@
                 <div class="col-sm-3">
                     <div class="mega-menu0-1" style="border: 2px solid #0083c9;">
                         <ul class="category-list" style="background-color: white;">
-                            <li><a href="#"><i class="adicon-car"></i>Vehicles</a>
+                            <!--<li><a href="#"><i class="adicon-car"></i>Vehicles</a>
                                 <ul>
                                     <li><a href="#">Cars</a></li>
                                     <li><a href="#">Motorcycles</a></li>
@@ -80,32 +80,47 @@
                                     <li><a href="#">Spare Parts &amp; Accessories</a></li>
                                     <li><a href="#">Other Vehicles</a></li>
                                 </ul>
-                            </li>
-                            <li><a href="#"><i class="adicon-tablet"></i>Mobiles</a>
+                            </li>-->
+<!--                            <li><a href="#"><i class="adicon-tablet"></i>Mobiles</a>
                                 <ul>
                                     <li><a href="#">Iphone</a></li>
                                     <li><a href="#">Android</a></li>
                                     <li><a href="#">Q mobile</a></li>
                                     <li><a href="#">Black berry</a></li>
                                 </ul>
-                            </li>
-                            <li><a href="#"><i class="adicon-tv"></i>Electronics</a>
+                            </li>-->
+                            <li><a href="/catalog/electronics"><i class="adicon-tv"></i>Electronics</a>
                                 <ul>
-                                    <li><a href="#">Washing Machine</a></li>
-                                    <li><a href="#">Television</a></li>
-                                    <li><a href="#">Air conditioner</a></li>
-                                    <li><a href="#">Computers and Laptops</a></li>
+                                    <li><a href="https://adtoday.co.uk/catalog/electronics/accessories/">Accessories</a></li>
                                 </ul>
                             </li>
-                            <li><a href="#"><i class="adicon-sofa"></i>Furniture</a></li>
+<!--                            <li><a href="#"><i class="adicon-sofa"></i>Furniture</a></li>
                             <li><a href="#"><i class="adicon-briefcase"></i>Jobs</a></li>
                             <li><a href="#"><i class="adicon-buildings"></i>Real Estate</a></li>
                             <li><a href="#"><i class="adicon-bell"></i>Services</a></li>
                             <li><a href="#"><i class="adicon-hat"></i>Education</a></li>
                             <li><a href="#"><i class="adicon-dog"></i>Animals</a></li>
                             <li><a href="#"><i class="adicon-heal"></i>Fashion</a></li>
-                            <li><a href="#"><i class="adicon-smile"></i>Baby Products</a></li>
-                            <li><a href="#"><i class="adicon-hearts"></i>Matrimony</a></li>
+                            <li><a href="#"><i class="adicon-smile"></i>Baby Products</a></li>-->
+                            <li><a href="#"><i class="adicon-hearts"></i>Matrimony</a>
+                                <ul>
+                                    <li><a href="https://adult.adtoday.co.uk/catalog/adult-dating/">Adult dating</a>
+                                    </li>
+                                    <li><a href="https://adult.adtoday.co.uk/catalog/swingers/">Swingers</a></li>
+                                    <li><a href="https://adult.adtoday.co.uk/catalog/gay-escorts/">Gay escorts</a></li>
+                                    <li><a href="https://adult.adtoday.co.uk/catalog/escorts-and-massages/">Escorts and
+                                            massages</a></li>
+                                    <li><a href="https://adult.adtoday.co.uk/catalog/adult-entertainment/">Adult
+                                            entertainment</a></li>
+                                    <li><a href="https://adult.adtoday.co.uk/catalog/adult-jobs/">Adult jobs</a></li>
+                                    <li><a href="https://adult.adtoday.co.uk/catalog/gay-and-lesbian/">Gay and
+                                            lesbian</a></li>
+                                    <li><a href="https://adult.adtoday.co.uk/catalog/friendship-friends/">Friendship
+                                            friends</a></li>
+                                    <li><a href="https://adult.adtoday.co.uk/catalog/straight-relationships/">Straight
+                                            relationships</a></li>
+                                </ul>
+                            </li>
                         </ul>
                     </div>
                 </div>

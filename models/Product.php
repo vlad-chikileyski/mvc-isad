@@ -11,7 +11,8 @@ class Product
             $offset = ($page - 1) * self::SHOW_BY_DEFAULT;
             $db = Db::getConnectionOnCatics();
             $products = array();
-            $result = $db->query('SELECT * FROM electrTabletsNics UNION ALL SELECT * FROM electrPhonesNics UNION ALL SELECT * FROM electrDvdBluRayNics UNION ALL SELECT * FROM electrAccessoriesNics UNION ALL SELECT * FROM electrTvNics UNION ALL SELECT * FROM electrPhotoNics UNION ALL SELECT * FROM electrComputersNics UNION ALL SELECT * FROM electrGamesAndConsolesNics UNION ALL SELECT * FROM electrMp3AndAudioNics ORDER BY id DESC LIMIT 30 OFFSET ' . $offset);
+            /*SELECT * FROM electrTabletsNics UNION ALL*/
+            $result = $db->query(' SELECT * FROM electrAccessoriesNics ORDER BY id DESC LIMIT 30 OFFSET ' . $offset);
             $i = 0;
             while ($row = $result->fetch()) {
                 $products[$i]['id'] = $row['id'];
@@ -86,6 +87,7 @@ class Product
         }
         return $ads;
     }
+
     /*
      *
      * return FavAds by userId
@@ -104,11 +106,12 @@ class Product
         }
         return $favAds;
     }
+
     public static function getProductListByTableNameAndAdsId($table_name, $adsId, $category)
     {
         $db = Db::getConnectionOnCatics();
         $products = array();
-        $result = $db->query('SELECT * FROM ' . $table_name . ' WHERE id = '.$adsId);
+        $result = $db->query('SELECT * FROM ' . $table_name . ' WHERE id = ' . $adsId);
         $i = 0;
         while ($row = $result->fetch()) {
             $products[$i]['id'] = $row['id'];
@@ -127,7 +130,7 @@ class Product
     {
         $db = Db::getConnectionOnCatics();
         $favAds = array();
-        $result = $db->query('SELECT * FROM ' . $table_name . ' WHERE id = '.$adsId);
+        $result = $db->query('SELECT * FROM ' . $table_name . ' WHERE id = ' . $adsId);
         $i = 0;
         while ($row = $result->fetch()) {
             $favAds[$i]['id'] = $row['id'];

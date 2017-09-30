@@ -166,14 +166,14 @@
                 <div id="items-listing-area" class="items-list">
                     <?php foreach ($categoryProducts as $product) : ?>
                         <article class="item-spot">
-                            <a href="/ads/<?php echo $product['category']; ?>/<?php echo $product['sub-category']; ?>/<?php echo $product['id']; ?>"
+                            <a href="/ads/<?php echo $product['category']; ?>/<?php echo $product['subcategory']; ?>/<?php echo $product['id']; ?>"
                                class="imgAsBg">
                                 <img src="/template/assets/img/items/ad2.jpg" alt="dummy data">
                             </a>
                             <div class="item-content">
                                 <header>
                                     <h4>
-                                        <a href="/ads/<?php echo $product['category']; ?>/<?php echo $product['sub-category']; ?>/<?php echo $product['id']; ?>"><?php echo $product['title']; ?></a>
+                                        <a href="/ads/<?php echo $product['category']; ?>/<?php echo $product['subcategory']; ?>/<?php echo $product['id']; ?>"><?php echo $product['title']; ?></a>
                                     </h4>
 
                                     <ul class="item-info">
@@ -203,7 +203,7 @@
                                 <div class="breadcrumb">
                                     <ul>
                                         <li><a href="/catalog/<?php echo $product['category']; ?>"><?php echo ucfirst($product['category']); ?></a></li>
-                                        <li><a href="/catalog/<?php echo $product['category']; ?>/<?php echo $product['sub-category']; ?>"><?php echo ucfirst($product['sub-category']); ?></a></li>
+                                        <li><a href="/catalog/<?php echo $product['category']; ?>/<?php echo $product['subcategory']; ?>"><?php echo ucfirst($product['subcategory']); ?></a></li>
                                     </ul>
                                 </div>
                             </div>
