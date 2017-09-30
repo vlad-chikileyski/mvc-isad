@@ -18,10 +18,10 @@ class Product
                 $products[$i]['id'] = $row['id'];
                 $products[$i]['title'] = $row['title'];
                 $products[$i]['description'] = $row['description'];
-                $products[$i]['price'] = $row['price'];
-                $products[$i]['subcategory'] = $row['subcategory'];
+/*                $products[$i]['price'] = $row['price'];*/
+/*                $products[$i]['subcategory'] = $row['subcategory'];*/
                 $products[$i]['category'] = $categoryExistName;
-                $products[$i]['date'] = $row['date'];
+/*                $products[$i]['date'] = $row['date'];*/
                 $i++;
             }
             return $products;
