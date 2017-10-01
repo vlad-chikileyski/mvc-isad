@@ -12,5 +12,5 @@ return array(
     'terms'=>'terms/index',
     'activate-account/([0-9+])'=>'activate/successregister/$1',
     'activate-ad/([0-9+])'=>'activate/index/$1',
-    '' => 'site/index' //SiteController and actionIndex
+    '(^\s*$)'=> 'site/index' //SiteController and actionIndex
 );

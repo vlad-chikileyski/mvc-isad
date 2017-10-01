@@ -35,7 +35,9 @@ class PostController
                     $name = $_POST['name'];
                     $email = $_POST['email'];
                     $phone = $_POST['phone'];
-                    $paymentMethod = $_POST['payment-method'];
+                    if (isset($_POST['payment-method'])) {
+                        $paymentMethod = $_POST['payment-method'];
+                    }
                     $paymentType = DictionaryItem::checkPaymentType($paymentMethod);
                     $tableName = Category::categoryGetTableName($formType);
                     if ($tableName == false) {

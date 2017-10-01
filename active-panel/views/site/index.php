@@ -9,25 +9,25 @@
     <meta http-equiv=”X-UA-Compatible” content=”IE=EmulateIE9”>
     <meta http-equiv=”X-UA-Compatible” content=”IE=9”>
 
-    <link rel="shortcut icon" href="images/favicon.png">
+    <link rel="shortcut icon" href="/template/images/favicon.png">
     <title>BucketAdmin</title>
     <!--Core CSS -->
-    <link href="bs3/css/bootstrap.min.css" rel="stylesheet">
-    <link href="js/jquery-ui/jquery-ui-1.10.1.custom.min.css" rel="stylesheet">
-    <link href="css/bootstrap-reset.css" rel="stylesheet">
-    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
-    <link href="js/jvector-map/jquery-jvectormap-1.2.2.css" rel="stylesheet">
-    <link href="css/clndr.css" rel="stylesheet">
+    <link href="/template/bs3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/template/js/jquery-ui/jquery-ui-1.10.1.custom.min.css" rel="stylesheet">
+    <link href="/template/css/bootstrap-reset.css" rel="stylesheet">
+    <link href="/template/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="/template/js/jvector-map/jquery-jvectormap-1.2.2.css" rel="stylesheet">
+    <link href="/template/css/clndr.css" rel="stylesheet">
     <!--clock css-->
-    <link href="js/css3clock/css/style.css" rel="stylesheet">
+    <link href="/template/js/css3clock/css/style.css" rel="stylesheet">
     <!--Morris Chart CSS -->
-    <link rel="stylesheet" href="js/morris-chart/morris.css">
+    <link rel="stylesheet" href="/template/js/morris-chart/morris.css">
     <!-- Custom styles for this template -->
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/style-responsive.css" rel="stylesheet"/>
+    <link href="/template/css/style.css" rel="stylesheet">
+    <link href="/template/css/style-responsive.css" rel="stylesheet"/>
     <!-- Just for debugging purposes. Don't actually copy this line! -->
     <!--[if lt IE 9]>
-    <script src="js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="/template/js/ie8-responsive-file-warning.js"></script><![endif]-->
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -42,7 +42,7 @@
 <div class="brand">
 
     <a href="index.html" class="logo">
-        <img src="images/logo.png" alt="">
+        <img src="/template/images/logo.png" alt="">
     </a>
     <div class="sidebar-toggle-box">
         <div class="fa fa-bars"></div>
@@ -134,7 +134,7 @@
                 </li>
                 <li>
                     <a href="#">
-                        <span class="photo"><img alt="avatar" src="images/avatar-mini.jpg"></span>
+                        <span class="photo"><img alt="avatar" src="/template//template/images/avatar-mini.jpg"></span>
                                 <span class="subject">
                                 <span class="from">Jonathan Smith</span>
                                 <span class="time">Just now</span>
@@ -146,7 +146,7 @@
                 </li>
                 <li>
                     <a href="#">
-                        <span class="photo"><img alt="avatar" src="images/avatar-mini-2.jpg"></span>
+                        <span class="photo"><img alt="avatar" src="/template/images/avatar-mini-2.jpg"></span>
                                 <span class="subject">
                                 <span class="from">Jane Doe</span>
                                 <span class="time">2 min ago</span>
@@ -158,7 +158,7 @@
                 </li>
                 <li>
                     <a href="#">
-                        <span class="photo"><img alt="avatar" src="images/avatar-mini-3.jpg"></span>
+                        <span class="photo"><img alt="avatar" src="/template/images/avatar-mini-3.jpg"></span>
                                 <span class="subject">
                                 <span class="from">Tasi sam</span>
                                 <span class="time">2 days ago</span>
@@ -170,7 +170,7 @@
                 </li>
                 <li>
                     <a href="#">
-                        <span class="photo"><img alt="avatar" src="images/avatar-mini.jpg"></span>
+                        <span class="photo"><img alt="avatar" src="/template/images/avatar-mini.jpg"></span>
                                 <span class="subject">
                                 <span class="from">Mr. Perfect</span>
                                 <span class="time">2 hour ago</span>
@@ -237,7 +237,7 @@
         <!-- user login dropdown start-->
         <li class="dropdown">
             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                <img alt="" src="images/avatar1_small.jpg">
+                <img alt="" src="/template/images/avatar1_small.jpg">
                 <span class="username">John Doe</span>
                 <b class="caret"></b>
             </a>
@@ -663,7 +663,7 @@
                     <ul class="conversation-list">
                         <li class="clearfix">
                             <div class="chat-avatar">
-                                <img src="images/chat-user-thumb.png" alt="male">
+                                <img src="/template/images/chat-user-thumb.png" alt="male">
                                 <i>10:00</i>
                             </div>
                             <div class="conversation-text">
@@ -677,7 +677,7 @@
                         </li>
                         <li class="clearfix odd">
                             <div class="chat-avatar">
-                                <img src="images/chat-user-thumb-f.png" alt="female">
+                                <img src="/template/images/chat-user-thumb-f.png" alt="female">
                                 <i>10:00</i>
                             </div>
                             <div class="conversation-text">
@@ -691,7 +691,7 @@
                         </li>
                         <li class="clearfix">
                             <div class="chat-avatar">
-                                <img src="images/chat-user-thumb.png" alt="male">
+                                <img src="/template/images/chat-user-thumb.png" alt="male">
                                 <i>10:00</i>
                             </div>
                             <div class="conversation-text">
@@ -705,7 +705,7 @@
                         </li>
                         <li class="clearfix odd">
                             <div class="chat-avatar">
-                                <img src="images/chat-user-thumb-f.png" alt="female">
+                                <img src="/template/images/chat-user-thumb-f.png" alt="female">
                                 <i>10:00</i>
                             </div>
                             <div class="conversation-text">
@@ -736,7 +736,7 @@
     <div class="col-md-8">
         <section class="panel">
             <div class="wdgt-row">
-                <img src="images/weather_image.jpg" height="243" alt="">
+                <img src="/template/images/weather_image.jpg" height="243" alt="">
                 <div class="wdt-head">
                     weather forecast
                 </div>
@@ -1153,7 +1153,7 @@
         <li>
             <div class="prog-row">
                 <div class="user-thumb">
-                    <a href="#"><img src="images/avatar1_small.jpg" alt=""></a>
+                    <a href="#"><img src="/template/images/avatar1_small.jpg" alt=""></a>
                 </div>
                 <div class="user-details">
                     <h4><a href="#">Jonathan Smith</a></h4>
@@ -1167,7 +1167,7 @@
             </div>
             <div class="prog-row">
                 <div class="user-thumb">
-                    <a href="#"><img src="images/avatar1.jpg" alt=""></a>
+                    <a href="#"><img src="/template/images/avatar1.jpg" alt=""></a>
                 </div>
                 <div class="user-details">
                     <h4><a href="#">Anjelina Joe</a></h4>
@@ -1181,7 +1181,7 @@
             </div>
             <div class="prog-row">
                 <div class="user-thumb">
-                    <a href="#"><img src="images/chat-avatar2.jpg" alt=""></a>
+                    <a href="#"><img src="/template/images/chat-avatar2.jpg" alt=""></a>
                 </div>
                 <div class="user-details">
                     <h4><a href="#">John Doe</a></h4>
@@ -1195,7 +1195,7 @@
             </div>
             <div class="prog-row">
                 <div class="user-thumb">
-                    <a href="#"><img src="images/avatar1_small.jpg" alt=""></a>
+                    <a href="#"><img src="/template/images/avatar1_small.jpg" alt=""></a>
                 </div>
                 <div class="user-details">
                     <h4><a href="#">Mark Henry</a></h4>
@@ -1209,7 +1209,7 @@
             </div>
             <div class="prog-row">
                 <div class="user-thumb">
-                    <a href="#"><img src="images/avatar1.jpg" alt=""></a>
+                    <a href="#"><img src="/template/images/avatar1.jpg" alt=""></a>
                 </div>
                 <div class="user-details">
                     <h4><a href="#">Shila Jones</a></h4>
@@ -1317,44 +1317,44 @@
 </section>
 <!-- Placed js at the end of the document so the pages load faster -->
 <!--Core js-->
-<script src="js/jquery.js"></script>
-<script src="js/jquery-ui/jquery-ui-1.10.1.custom.min.js"></script>
+<script src="/template/js/jquery.js"></script>
+<script src="/template/js/jquery-ui/jquery-ui-1.10.1.custom.min.js"></script>
 <script src="bs3/js/bootstrap.min.js"></script>
-<script src="js/jquery.dcjqaccordion.2.7.js"></script>
-<script src="js/jquery.scrollTo.min.js"></script>
-<script src="js/jQuery-slimScroll-1.3.0/jquery.slimscroll.js"></script>
-<script src="js/jquery.nicescroll.js"></script>
-<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="js/flot-chart/excanvas.min.js"></script><![endif]-->
-<script src="js/skycons/skycons.js"></script>
-<script src="js/jquery.scrollTo/jquery.scrollTo.js"></script>
+<script src="/template/js/jquery.dcjqaccordion.2.7.js"></script>
+<script src="/template/js/jquery.scrollTo.min.js"></script>
+<script src="/template/js/jQuery-slimScroll-1.3.0/jquery.slimscroll.js"></script>
+<script src="/template/js/jquery.nicescroll.js"></script>
+<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="/template/js/flot-chart/excanvas.min.js"></script><![endif]-->
+<script src="/template/js/skycons/skycons.js"></script>
+<script src="/template/js/jquery.scrollTo/jquery.scrollTo.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-<script src="js/calendar/clndr.js"></script>
+<script src="/template/js/calendar/clndr.js"></script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
-<script src="js/calendar/moment-2.2.1.js"></script>
-<script src="js/evnt.calendar.init.js"></script>
-<script src="js/jvector-map/jquery-jvectormap-1.2.2.min.js"></script>
-<script src="js/jvector-map/jquery-jvectormap-us-lcc-en.js"></script>
-<script src="js/gauge/gauge.js"></script>
+<script src="/template/js/calendar/moment-2.2.1.js"></script>
+<script src="/template/js/evnt.calendar.init.js"></script>
+<script src="/template/js/jvector-map/jquery-jvectormap-1.2.2.min.js"></script>
+<script src="/template/js/jvector-map/jquery-jvectormap-us-lcc-en.js"></script>
+<script src="/template/js/gauge/gauge.js"></script>
 <!--clock init-->
-<script src="js/css3clock/js/css3clock.js"></script>
+<script src="/template/js/css3clock/js/css3clock.js"></script>
 <!--Easy Pie Chart-->
-<script src="js/easypiechart/jquery.easypiechart.js"></script>
+<script src="/template/js/easypiechart/jquery.easypiechart.js"></script>
 <!--Sparkline Chart-->
-<script src="js/sparkline/jquery.sparkline.js"></script>
+<script src="/template/js/sparkline/jquery.sparkline.js"></script>
 <!--Morris Chart-->
-<script src="js/morris-chart/morris.js"></script>
-<script src="js/morris-chart/raphael-min.js"></script>
+<script src="/template/js/morris-chart/morris.js"></script>
+<script src="/template/js/morris-chart/raphael-min.js"></script>
 <!--jQuery Flot Chart-->
-<script src="js/flot-chart/jquery.flot.js"></script>
-<script src="js/flot-chart/jquery.flot.tooltip.min.js"></script>
-<script src="js/flot-chart/jquery.flot.resize.js"></script>
-<script src="js/flot-chart/jquery.flot.pie.resize.js"></script>
-<script src="js/flot-chart/jquery.flot.animator.min.js"></script>
-<script src="js/flot-chart/jquery.flot.growraf.js"></script>
-<script src="js/dashboard.js"></script>
-<script src="js/jquery.customSelect.min.js" ></script>
+<script src="/template/js/flot-chart/jquery.flot.js"></script>
+<script src="/template/js/flot-chart/jquery.flot.tooltip.min.js"></script>
+<script src="/template/js/flot-chart/jquery.flot.resize.js"></script>
+<script src="/template/js/flot-chart/jquery.flot.pie.resize.js"></script>
+<script src="/template/js/flot-chart/jquery.flot.animator.min.js"></script>
+<script src="/template/js/flot-chart/jquery.flot.growraf.js"></script>
+<script src="/template/js/dashboard.js"></script>
+<script src="/template/js/jquery.customSelect.min.js" ></script>
 <!--common script init for all pages-->
-<script src="js/scripts.js"></script>
+<script src="/template/js/scripts.js"></script>
 <!--script for this page-->
 </body>
 </html>

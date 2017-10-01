@@ -19,7 +19,8 @@
         <div class="row">
             <div class="col-xs-12 col-sm-4">
                 <div class="text-widget">
-                    <p>Fusce aliquet quam eget neque ultrices lla posuere felis id arcu blandit sagittis ellen ender purus.</p>
+                    <p>Fusce aliquet quam eget neque ultrices lla posuere felis id arcu blandit sagittis ellen ender
+                        purus.</p>
                     <div class="widget-social">
                         <div class="social-links">
                             <ul>
@@ -212,15 +213,17 @@ Modals
             <span class="split-opt">or</span>
         </div>
         <div class="modal-content">
-            <?php if ($query_registration): ?>
-                <p>You Are Successfully Registered!</p>
-            <?php else: ?>
-                <?php if (isset($errors) && is_array($errors)): ?>
-                    <ul>
-                        <?php foreach ($errors as $error): ?>
-                            <li> - <?php echo $error; ?></li>
-                        <?php endforeach; ?>
-                    </ul>
+            <?php if (isset($query_registration)): ?>
+                <?php if ($query_registration): ?>
+                    <p>You Are Successfully Registered!</p>
+                <?php else: ?>
+                    <?php if (isset($errors) && is_array($errors)): ?>
+                        <ul>
+                            <?php foreach ($errors as $error): ?>
+                                <li> - <?php echo $error; ?></li>
+                            <?php endforeach; ?>
+                        </ul>
+                    <?php endif; ?>
                 <?php endif; ?>
                 <header>
                     <h4>Welcome Back!</h4>
