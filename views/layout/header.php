@@ -59,7 +59,7 @@
                     <a href="/"><img src="/template/assets/img/basic/logo.png" alt="adtoday"></a>
                 </div>
                 <ul class="quick-actions">
-                    <?php if (User::isGuest()): ?>
+                    <?php if (User::isGuest()): ?> 
                         <li class="dropdown-wrap">
                             <a href="#">My account<i class="fa fa-caret-down"></i></a>
                             <div class="basic-dropdown">

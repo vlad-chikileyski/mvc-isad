@@ -1,11 +1,11 @@
 <?php
 
-class SiteController
+class PanelController
 {
 
     public function actionIndex()
     {
-        require_once(ROOT . '/views/site/lock.php');
+        require_once(ROOT . '/views/site/index.php');
         return true;
     }
 }

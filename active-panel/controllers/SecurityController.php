@@ -1,11 +1,10 @@
 <?php
 
-class SiteController
+class SecurityController
 {
 
     public function actionIndex()
     {
-        require_once(ROOT . '/views/site/lock.php');
         return true;
     }
 }

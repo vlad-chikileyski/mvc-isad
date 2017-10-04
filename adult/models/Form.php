@@ -75,7 +75,7 @@ class Form
         return false;
     }
 
-    public static function escortsAndMassages($userId, $tableName, $POST, $postcode, $name, $userInfoEmail, $phone, $paymentType)
+    public static function adultEscortsAndMassages($userId, $tableName, $POST, $postcode, $name, $userInfoEmail, $phone, $paymentType)
     {
         $title = '';
         $adtype = '';
@@ -136,7 +136,7 @@ class Form
         return $recordId;
     }
 
-    public static function friendshipFriends($userId, $tableName, $POST, $postcode, $name, $userInfoEmail, $phone, $paymentType)
+    public static function adultFriendshipFriends($userId, $tableName, $POST, $postcode, $name, $userInfoEmail, $phone, $paymentType)
     {
         $title = '';
         $description = '';
@@ -155,7 +155,7 @@ class Form
         return $recordId;
     }
 
-    public static function straightRelationships($userId, $tableName, $POST, $postcode, $name, $userInfoEmail, $phone, $paymentType)
+    public static function adultStraightRelationships($userId, $tableName, $POST, $postcode, $name, $userInfoEmail, $phone, $paymentType)
     {
         $title = '';
         $description = '';

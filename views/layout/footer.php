@@ -214,16 +214,14 @@ Modals
         </div>
         <div class="modal-content">
             <?php if (isset($query_registration)): ?>
-                <?php if ($query_registration): ?>
-                    <p>You Are Successfully Registered!</p>
-                <?php else: ?>
-                    <?php if (isset($errors) && is_array($errors)): ?>
-                        <ul>
-                            <?php foreach ($errors as $error): ?>
-                                <li> - <?php echo $error; ?></li>
-                            <?php endforeach; ?>
-                        </ul>
-                    <?php endif; ?>
+                <p>You Are Successfully Registered!</p>
+            <?php else: ?>
+                <?php if (isset($errors) && is_array($errors)): ?>
+                    <ul>
+                        <?php foreach ($errors as $error): ?>
+                            <li> - <?php echo $error; ?></li>
+                        <?php endforeach; ?>
+                    </ul>
                 <?php endif; ?>
                 <header>
                     <h4>Welcome Back!</h4>
@@ -233,19 +231,25 @@ Modals
                     <div class="field-block">
                         <div class="labeled-input">
                             <label>Username</label>
-                            <input title="title here" name="username" type="text" value="<?php echo $username; ?>">
+                            <input title="title here" name="username" type="text" value="<?php if (isset($username)) {
+                                echo $username;
+                            } ?>">
                         </div>
                     </div>
                     <div class="field-block">
                         <div class="labeled-input">
                             <label>Password</label>
-                            <input title="title here" name="password" type="password" value="<?php echo $password; ?>">
+                            <input title="title here" name="password" type="password" value="<?php if (isset($username)) {
+                                echo $password;
+                            } ?>">
                         </div>
                     </div>
                     <div class="field-block">
                         <div class="labeled-input">
                             <label>Email</label>
-                            <input title="title here" name="email" type="email" value="<?php echo $email; ?>">
+                            <input title="title here" name="email" type="email" value="<?php if (isset($username)) {
+                                echo $email;
+                            }?>">
                         </div>
                     </div>
                     <div class="field-block">

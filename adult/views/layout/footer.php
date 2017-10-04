@@ -19,7 +19,8 @@
         <div class="row">
             <div class="col-xs-12 col-sm-4">
                 <div class="text-widget">
-                    <p>Fusce aliquet quam eget neque ultrices lla posuere felis id arcu blandit sagittis ellen ender purus.</p>
+                    <p>Fusce aliquet quam eget neque ultrices lla posuere felis id arcu blandit sagittis ellen ender
+                        purus.</p>
                     <div class="widget-social">
                         <div class="social-links">
                             <ul>
@@ -212,7 +213,7 @@ Modals
             <span class="split-opt">or</span>
         </div>
         <div class="modal-content">
-            <?php if ($query_registration): ?>
+            <?php if (isset($query_registration)): ?>
                 <p>You Are Successfully Registered!</p>
             <?php else: ?>
                 <?php if (isset($errors) && is_array($errors)): ?>
@@ -230,19 +231,25 @@ Modals
                     <div class="field-block">
                         <div class="labeled-input">
                             <label>Username</label>
-                            <input title="title here" name="username" type="text" value="<?php echo $username; ?>">
+                            <input title="title here" name="username" type="text" value="<?php if (isset($username)) {
+                                echo $username;
+                            } ?>">
                         </div>
                     </div>
                     <div class="field-block">
                         <div class="labeled-input">
                             <label>Password</label>
-                            <input title="title here" name="password" type="password" value="<?php echo $password; ?>">
+                            <input title="title here" name="password" type="password" value="<?php if (isset($username)) {
+                                echo $password;
+                            } ?>">
                         </div>
                     </div>
                     <div class="field-block">
                         <div class="labeled-input">
                             <label>Email</label>
-                            <input title="title here" name="email" type="email" value="<?php echo $email; ?>">
+                            <input title="title here" name="email" type="email" value="<?php if (isset($username)) {
+                                echo $email;
+                            }?>">
                         </div>
                     </div>
                     <div class="field-block">
