@@ -80,46 +80,97 @@
         </div>
     </div>
 
-    <div class="app-canvas">
-        <div class="container">
-
-            <div class="listing-actions text-right clearfix" data-target="#items-listing-area">
-                <div class="inner">
-                    <div class="button-action">
-                        <span>Ads With Photos</span>
-                        <a href="#" class="active"><i class="fa"></i></a>
-                    </div>
-                    <div class="layout-action">
-                        <a href="#" class="active">
+    <div class="app-canvas app-canvas-modif">
+        <div class="category-search">
+            <div class="container">
+                <form action="/">
+                    <div class="search-filter">
+                        <div class="radio-dropdown">
                             <i class="fa fa-bars"></i>
-                            <span class="tooltip">List layout</span>
-                        </a>
-                        <a href="#">
-                            <i class="fa fa-th"></i>
-                            <span class="tooltip">Grid layout</span>
-                        </a>
+                            <button>Select city</button>
+                            <ul>
+                                <li class="custom-radio">
+                                    <input type="radio" id="create0221" name="item-brand-name">
+                                    <label for="create0221">Bradford</label>
+                                </li>
+                                <li class="custom-radio">
+                                    <input type="radio" id="create0231" name="item-brand-name">
+                                    <label for="create0231">Cambridge</label>
+                                </li>
+                                <li class="custom-radio">
+                                    <input type="radio" id="create0241" name="item-brand-name">
+                                    <label for="create0241">Chester</label>
+                                </li>
+                                <li class="custom-radio">
+                                    <input type="radio" id="create0251" name="item-brand-name">
+                                    <label for="create0251">Durham</label>
+                                </li>
+                                <li class="custom-radio">
+                                    <input type="radio" id="create0261" name="item-brand-name">
+                                    <label for="create0261">Glasgow</label>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="search-action">
-                        <a href="#"><i class="fa fa-star-o"></i>
-                            <span class="tooltip">Save search</span>
-                        </a>
+                    <div class="mega-filtered-search">
+                        <div class="mega-dropdown">
+                            <button>Select Category</button>
+                            <i class="fa fa-navicon"></i>
+                            <div class="mega-content">
+                                <ul class="category-list">
+                                    <li><a href="#"><i class="adicon-grid"></i>All Categories</a></li>
+                                    <li><a href="#"><i class="adicon-car"></i>Vehicles</a>
+                                        <ul>
+                                            <li><a href="#">Cars</a></li>
+                                            <li><a href="#">Motorcycles</a></li>
+                                            <li><a href="#">Scooters</a></li>
+                                            <li><a href="#">Bicycles</a></li>
+                                            <li><a href="#">Commercial Vehicles</a></li>
+                                            <li><a href="#">Spare Parts &amp; Accessories</a></li>
+                                            <li><a href="#">Other Vehicles</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#"><i class="adicon-tablet"></i>Mobiles</a>
+                                        <ul>
+                                            <li><a href="#">Iphone</a></li>
+                                            <li><a href="#">Android</a></li>
+                                            <li><a href="#">Q mobile</a></li>
+                                            <li><a href="#">Black berry</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#"><i class="adicon-tv"></i>Electronics</a>
+                                        <ul>
+                                            <li><a href="#">Washing Machine</a></li>
+                                            <li><a href="#">Television</a></li>
+                                            <li><a href="#">Air conditioner</a></li>
+                                            <li><a href="#">Computers and Laptops</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#"><i class="adicon-sofa"></i>Furniture</a></li>
+                                    <li><a href="#"><i class="adicon-briefcase"></i>Jobs</a></li>
+                                    <li><a href="#"><i class="adicon-buildings"></i>Real Estate</a></li>
+                                    <li><a href="#"><i class="adicon-bell"></i>Services</a></li>
+                                    <li><a href="#"><i class="adicon-hat"></i>Education</a></li>
+                                    <li><a href="#"><i class="adicon-dog"></i>Animals</a></li>
+                                    <li><a href="#"><i class="adicon-heal"></i>Fashion</a></li>
+                                    <li><a href="#"><i class="adicon-smile"></i>Baby Products</a></li>
+                                    <li><a href="#"><i class="adicon-hearts"></i>Matrimony</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="search-widget">
+                            <input type="text" placeholder="search">
+                            <button type="submit"><i class="fa fa-search"></i></button>
+                        </div>
                     </div>
-                    <div class="sort-action">
-                        <i class="fa"></i>
-                        <span>Recently Published</span>
-                        <ul>
-                            <li><a href="#">Price Low to High</a></li>
-                            <li><a href="#">Price High to Low</a></li>
-                            <li><a href="#">Price High to Low</a></li>
-                            <li><a href="#">Recently Published</a></li>
-                        </ul>
-                    </div>
-                </div>
+                </form>
             </div>
-            <div class="breadcrumb">
+        </div>
+        <div class="container">
+            <div class="breadcrumb catalog-shadow-style">
                 <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="<?php echo $categoryExistName; ?>"><?php echo ucfirst($categoryExistName); ?></a></li>
+                    <li><a href="https://adtoday.co.uk/">Home</a></li>
+                    <li><a href="https://adtoday.co.uk/<?php echo $categoryExistName; ?>"><?php echo ucfirst($categoryExistName); ?></a></li>
                 </ul>
             </div>
             <div class="listing-area clearfix">
@@ -133,8 +184,8 @@
                             <div class="filter-options-widget">
                                 <ul>
                                     <?php foreach ($subCategoryListMenu as $subcategory) : ?>
-
-                                        <li><a href="<?php echo $subcategory['category']. '/'.$subcategory['url-title']; ?>/">
+                                        <li>
+                                            <a href="https://adtoday.co.uk/catalog/<?php echo $subcategory['category'] . '/' . $subcategory['url-title']; ?>/">
                                                 <span><?php echo $subcategory['menu-title']; ?></span>
                                             </a></li>
                                     <?php endforeach; ?>
@@ -144,16 +195,48 @@
                     </div>
                 </div>
                 <div id="items-listing-area" class="items-list">
+                    <article class="main-filters-list">
+                        <div class="listing-actions text-right" data-target="#items-listing-area">
+                            <div class="inner">
+
+                                <div class="layout-action">
+                                    <a href="#" class="active">
+                                        <i class="fa fa-bars"></i>
+                                        <span class="tooltip">List layout</span>
+                                    </a>
+                                    <a href="#" class="">
+                                        <i class="fa fa-th"></i>
+                                        <span class="tooltip">Grid layout</span>
+                                    </a>
+                                </div>
+                                <div class="search-action">
+                                    <a href="#"><i class="fa fa-star-o"></i>
+                                        <span class="tooltip">Save search</span>
+                                    </a>
+                                </div>
+                                <div class="sort-action">
+                                    <i class="fa"></i>
+                                    <span>Price High to Low</span>
+                                    <ul>
+                                        <li><a href="#">Price Low to High</a></li>
+                                        <li><a href="#">Price High to Low</a></li>
+                                        <li><a href="#">Price High to Low</a></li>
+                                        <li><a href="#">Recently Published</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
                     <?php foreach ($categoriesProducts as $products) : ?>
                         <article class="item-spot">
-                            <a href="/ads/<?php echo $products['category']; ?>/<?php echo $products['sub-category']; ?>/<?php echo $products['id']; ?>"
+                            <a href="/ads/<?php echo $products['category']; ?>/<?php echo $products['subcategory']; ?>/<?php echo $products['id']; ?>"
                                class="imgAsBg">
                                 <img src="/template/assets/img/items/ad2.jpg" alt="dummy data">
                             </a>
                             <div class="item-content">
                                 <header>
                                     <h4>
-                                        <a href="/ads/<?php echo $products['category']; ?>/<?php echo $products['sub-category']; ?>/<?php echo $products['id']; ?>"><?php echo $products['title']; ?></a>
+                                        <a href="/ads/<?php echo $products['category']; ?>/<?php echo $products['subcategory']; ?>/<?php echo $products['id']; ?>"><?php echo $products['title']; ?></a>
                                     </h4>
 
                                     <ul class="item-info">

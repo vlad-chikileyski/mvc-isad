@@ -19,8 +19,16 @@ class User
         $sql = 'SELECT * FROM user';
         $result = $db->prepare($sql);
         $result->execute();
-
-        return $result->fetch();
+        $i = 0;
+        $user = array();
+        while ($row = $result->fetch()) {
+            $user[$i]['id'] = $row['id'];
+            $user[$i]['username'] = $row['username'];
+            $user[$i]['email'] = $row['email'];
+            $user[$i]['last_activity'] = $row['last_activity'];
+            $i++;
+        }
+        return $user;
     }
 
     public static function register($username, $email, $password)

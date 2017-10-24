@@ -80,47 +80,14 @@
         </div>
     </div>
 
-    <div class="app-canvas">
+    <div class="app-canvas app-canvas-modif">
         <div class="container">
-            <div class="listing-actions text-right clearfix" data-target="#items-listing-area">
-                <div class="inner">
-                    <div class="button-action">
-                        <span>Ads With Photos</span>
-                        <a href="#" class="active"><i class="fa"></i></a>
-                    </div>
-                    <div class="layout-action">
-                        <a href="#" class="active">
-                            <i class="fa fa-bars"></i>
-                            <span class="tooltip">List layout</span>
-                        </a>
-                        <a href="#">
-                            <i class="fa fa-th"></i>
-                            <span class="tooltip">Grid layout</span>
-                        </a>
-                    </div>
-                    <div class="search-action">
-                        <a href="#"><i class="fa fa-star-o"></i>
-                            <span class="tooltip">Save search</span>
-                        </a>
-                    </div>
-                    <div class="sort-action">
-                        <i class="fa"></i>
-                        <span>Recently Published</span>
-                        <ul>
-                            <li><a href="#">Price Low to High</a></li>
-                            <li><a href="#">Price High to Low</a></li>
-                            <li><a href="#">Price High to Low</a></li>
-                            <li><a href="#">Recently Published</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="breadcrumb">
+            <div class="breadcrumb catalog-shadow-style">
                 <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/catalog/<?php echo $urlParam; ?>/"><?php echo $urlParam; ?></a></li>
+                    <li><a href="https://adtoday.co.uk/">Home</a></li>
+                    <li><a href="https://adtoday.co.uk/catalog/<?php echo $urlParam; ?>/"><?php echo $urlParam; ?></a></li>
                     <li>
-                        <a href="/catalog/<?php echo $urlParam; ?>/<?php echo $urlSubParam; ?>/"><?php echo $urlSubParam; ?></a>
+                        <a href="https://adtoday.co.uk/catalog/<?php echo $urlParam; ?>/<?php echo $urlSubParam; ?>/"><?php echo $urlSubParam; ?></a>
                     </li>
                 </ul>
             </div>
@@ -166,6 +133,38 @@
 
                 </div>
                 <div id="items-listing-area" class="items-list">
+                    <article class="main-filters-list">
+                        <div class="listing-actions text-right" data-target="#items-listing-area">
+                            <div class="inner">
+
+                                <div class="layout-action">
+                                    <a href="#" class="active">
+                                        <i class="fa fa-bars"></i>
+                                        <span class="tooltip">List layout</span>
+                                    </a>
+                                    <a href="#" class="">
+                                        <i class="fa fa-th"></i>
+                                        <span class="tooltip">Grid layout</span>
+                                    </a>
+                                </div>
+                                <div class="search-action">
+                                    <a href="#"><i class="fa fa-star-o"></i>
+                                        <span class="tooltip">Save search</span>
+                                    </a>
+                                </div>
+                                <div class="sort-action">
+                                    <i class="fa"></i>
+                                    <span>Price High to Low</span>
+                                    <ul>
+                                        <li><a href="#">Price Low to High</a></li>
+                                        <li><a href="#">Price High to Low</a></li>
+                                        <li><a href="#">Price High to Low</a></li>
+                                        <li><a href="#">Recently Published</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
                     <?php foreach ($categoryProducts as $product) : ?>
                         <article class="item-spot">
                             <a href="/ads/<?php echo $product['category']; ?>/<?php echo $product['subcategory']; ?>/<?php echo $product['id']; ?>"

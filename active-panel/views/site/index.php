@@ -265,7 +265,7 @@
             <div class="leftside-navigation">
                 <ul class="sidebar-menu" id="nav-accordion">
                     <li>
-                        <a class="active" href="index.html">
+                        <a class="active" href="/panel">
                             <i class="fa fa-dashboard"></i>
                             <span>Dashboard</span>
                         </a>
@@ -299,14 +299,10 @@
                         </ul>
                     </li>
                     <li class="sub-menu">
-                        <a href="javascript:;">
+                        <a href="/users/all-users">
                             <i class="fa fa-user"></i>
                             <span>Users</span>
                         </a>
-                        <ul class="sub">
-                            <li><a href="basic_table.html">Create new User</a></li>
-                            <li><a href="responsive_table.html">All users</a></li>
-                        </ul>
                     </li>
                     <li class="sub-menu">
                         <a href="javascript:;">
@@ -314,9 +310,9 @@
                             <span>SEO - optimisation</span>
                         </a>
                         <ul class="sub">
-                            <li><a href="form_component.html">Title</a></li>
-                            <li><a href="advanced_form.html">Description</a></li>
-                            <li><a href="form_wizard.html">Keywords</a></li>
+                            <li><a href="/seo/title">Title</a></li>
+                            <li><a href="/seo/description">Description</a></li>
+                            <li><a href="/seo/keywords">Keywords</a></li>
                         </ul>
                     </li>
                     <li class="sub-menu">

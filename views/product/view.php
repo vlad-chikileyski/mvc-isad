@@ -82,7 +82,7 @@
     </div>
 <?php foreach ($categoryProduct as $product) : ?>
 
-    <div class="app-canvas">
+    <div class="app-canvas app-canvas-modif">
     <div class="container">
     <div class="breadcrumb">
         <ul>

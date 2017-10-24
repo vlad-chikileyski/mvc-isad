@@ -237,8 +237,9 @@ input::-moz-focus-inner {
 input {
     line-height: normal;
 }
+
 input[type="email"]:read-only {
-     border-color: #009ee0;
+    border-color: #009ee0;
 
     background-color: rgb(235, 235, 228);
 }
@@ -4241,6 +4242,10 @@ a.link.link-pink {
     padding: 10px 0 40px 0;
 }
 
+.app-canvas-modif {
+    padding: 130px 0 40px 0;
+}
+
 @media (max-width: 1199px) {
     .container {
         width: 100% !important;
@@ -4727,7 +4732,7 @@ a.view-item, .contact-options li a, .listing-actions a, .listing-actions .fa,
 }
 
 .doc-header .quick-actions {
-    margin: -10px 0 15px;
+    margin: 15px 0 15px;
     padding: 0;
     text-align: right;
 }
@@ -5393,6 +5398,12 @@ a.view-item, .contact-options li a, .listing-actions a, .listing-actions .fa,
     position: relative;
     margin-left: 10px;
     border: 2px solid #e0e0e0;
+}
+
+.mega-filtered-search:hover {
+    -webkit-box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.14);
+    -moz-box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.14);
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.14);
 }
 
 @media (max-width: 1199px) {
@@ -6405,6 +6416,11 @@ a.view-item, .contact-options li a, .listing-actions a, .listing-actions .fa,
     margin-bottom: 25px;
 }
 
+.catalog-shadow-style {
+    border-bottom: 1px solid #c8c8c8;
+    padding-top: 15px;
+}
+
 .breadcrumb ul, .breadcrumb ol {
     margin: 0;
     padding: 0;
@@ -6425,6 +6441,15 @@ a.view-item, .contact-options li a, .listing-actions a, .listing-actions .fa,
 
 .breadcrumb ul li a, .breadcrumb ol li a {
     color: inherit;
+    text-decoration: none;
+}
+
+.setbox {
+    padding-top: 150px;
+}
+
+.breadcrumb ul li a:hover, .breadcrumb ol li a:hover {
+    color: #77c04b;
 }
 
 .breadcrumb ul li span, .breadcrumb ol li span {
@@ -6465,7 +6490,6 @@ a.view-item, .contact-options li a, .listing-actions a, .listing-actions .fa,
     z-index: 100;
     padding-bottom: 30px;
     margin-bottom: 30px;
-    border-bottom: 1px solid #c8c8c8;
 }
 
 @media (max-width: 767px) {
@@ -6753,6 +6777,17 @@ a.view-item, .contact-options li a, .listing-actions a, .listing-actions .fa,
     float: left;
 }
 
+.main-filters-list {
+    position: relative;
+    /* background: #ffffff; */
+    height: 50px;
+    /* min-height: 262px; */
+    /* padding-left: 210px; */
+    /* padding-right: 30px; */
+    padding-top: 2px;
+    margin-bottom: 10px;
+}
+
 @media (max-width: 767px) {
     .listing-filters {
         display: none;
@@ -6964,6 +6999,12 @@ a.view-item, .contact-options li a, .listing-actions a, .listing-actions .fa,
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
+    text-decoration: none;
+    color: #006eae;
+}
+
+.item-spot header h2 a, .item-spot header h3 a, .item-spot header h4 a:hover {
+    color: #77c04b;
 }
 
 @media (max-width: 1020px) {
@@ -6980,6 +7021,11 @@ a.view-item, .contact-options li a, .listing-actions a, .listing-actions .fa,
 
 .item-spot .breadcrumb a {
     color: inherit;
+    text-decoration: none;
+}
+
+.item-spot .breadcrumb a:hover {
+    color: #77c04b;
 }
 
 .item-spot .imgAsBg {
@@ -7026,6 +7072,11 @@ a.view-item, .contact-options li a, .listing-actions a, .listing-actions .fa,
 
 .item-spot .item-info li a {
     color: inherit;
+    text-decoration: none;
+}
+
+.item-spot .item-info li a:hover {
+    color: #77c04b;
 }
 
 .item-spot.featured {
@@ -7070,7 +7121,7 @@ a.view-item, .contact-options li a, .listing-actions a, .listing-actions .fa,
 }
 
 .item-spot .item-actions .price-tag {
-margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 @media (max-width: 479px) {
@@ -8217,9 +8268,9 @@ margin-bottom: 20px;
     background: #ffffff;
     position: relative;
     z-index: 100;
-    -webkit-box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.14);
-    -moz-box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.14);
-    box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.14);
+    /*    -webkit-box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.14);
+        -moz-box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.14);
+        box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.14);*/
 }
 
 .category-search .radio-dropdown {
@@ -10765,8 +10816,9 @@ a.tab-accordion-trigger span i {
 .blog-nav {
     padding-top: 30px;
 }
-.fa-search{
-    color:white;
+
+.fa-search {
+    color: white;
 }
 
 @media (max-width: 767px) {
@@ -11082,7 +11134,7 @@ a.tab-accordion-trigger span i {
     right: 0;
     color: inherit;
     font-size: 20px;
-    background-color:#0081c9;
+    background-color: #0081c9;
 }
 
 .category-search-tabbed .search-widget:hover {
@@ -11245,7 +11297,6 @@ a.tab-accordion-trigger span i {
     width: 100%;
     height: 100%;
 }
-
 
 .ajax-loader-error {
     visibility: hidden;
@@ -12972,9 +13023,10 @@ a.tab-accordion-trigger span i {
 b {
     color: red
 }
+
 /* Adding CSS manually is only necessary in JSFiddle,
    where CSS can't be inserted into the <head> */
-.typed-cursor{
+.typed-cursor {
     opacity: 1;
     font-weight: 100;
     -webkit-animation: blink 0.7s infinite;
@@ -12983,98 +13035,123 @@ b {
     -o-animation: blink 0.7s infinite;
     animation: blink 0.7s infinite;
 }
-@keyframes typedjsBlink{
-    50% { opacity: 0.0; }
+
+@keyframes typedjsBlink {
+    50% {
+        opacity: 0.0;
+    }
 }
-@-webkit-keyframes typedjsBlink{
-    0% { opacity: 1; }
-    50% { opacity: 0.0; }
-    100% { opacity: 1; }
+
+@-webkit-keyframes typedjsBlink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
-.typed-fade-out{
+
+.typed-fade-out {
     opacity: 0;
     transition: opacity .25s;
     -webkit-animation: 0;
     animation: 0;
 }
 
-
 /*404 page*/
 .body-404 {
-    background:#35bcb5;
-    color:#fff;
+    background: #35bcb5;
+    color: #fff;
 }
+
 .error-head {
-    background:#fff;
-    height:280px;
+    background: #fff;
+    height: 280px;
 }
+
 .error-wrapper {
-    text-align:center;
+    text-align: center;
 }
+
 .error-wrapper h1 {
-    font-size:90px;
-    font-weight:300;
-    margin:-141px 0 0 0;
-    text-align:center;
+    font-size: 90px;
+    font-weight: 300;
+    margin: -141px 0 0 0;
+    text-align: center;
 }
+
 .error-wrapper h2 {
-    font-size:58px;
-    font-weight:300;
-    margin:0;
-    text-transform:uppercase;
+    font-size: 58px;
+    font-weight: 300;
+    margin: 0;
+    text-transform: uppercase;
 }
+
 .error-desk {
-    background:rgba(0,0,0,0.05);
-    margin-top:-27px;
-    padding:30px 0;
+    background: rgba(0, 0, 0, 0.05);
+    margin-top: -27px;
+    padding: 30px 0;
 }
-.error-wrapper p,.error-wrapper p a {
-    font-size:18px;
-    font-weight:300;
-    margin:0;
+
+.error-wrapper p, .error-wrapper p a {
+    font-size: 18px;
+    font-weight: 300;
+    margin: 0;
 }
+
 .error-wrapper p.nrml-txt {
-    color:#03f1e4;
-    font-size:40px;
-    margin:0;
+    color: #03f1e4;
+    font-size: 40px;
+    margin: 0;
 }
-.back-btn,.back-btn:hover {
-    border:1px solid rgba(255,255,255,.5);
-    padding:10px 15px;
-    margin-top:100px;
-    display:inline-block;
-    border-radius:5px;
-    -webkit-border-radius:5px;
-    color:#fff;
-    font-size:16px;
-    font-weight:300;
+
+.back-btn, .back-btn:hover {
+    border: 1px solid rgba(255, 255, 255, .5);
+    padding: 10px 15px;
+    margin-top: 100px;
+    display: inline-block;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 300;
 }
+
 .back-btn:hover {
-    background:#fff;
+    background: #fff;
     color: #02a9a0;
 }
+
 /*500 page*/
 .body-500 {
-    background:#a48ad4;
-    color:#fff;
+    background: #a48ad4;
+    color: #fff;
 }
+
 .error-wrapper p.page-500 {
-    color:#afa5f1;
+    color: #afa5f1;
 }
+
 .body-500 .back-btn:hover {
-    background:#fff;
-    color:#a48ad4;
+    background: #fff;
+    color: #a48ad4;
 }
+
 .error-wrapper p.nrml-txt-alt {
-    color:#fff;
-    font-size:34px;
-    margin:0;
-    text-transform:uppercase;
+    color: #fff;
+    font-size: 34px;
+    margin: 0;
+    text-transform: uppercase;
 }
-.sp-link,.sp-link:hover {
-    color:#ffef3b;
-    text-decoration:underline;
+
+.sp-link, .sp-link:hover {
+    color: #ffef3b;
+    text-decoration: underline;
 }
+
 .sp-link:hover {
     text-decoration: none;
 }

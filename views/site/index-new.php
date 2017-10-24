@@ -59,9 +59,27 @@
                     <a href="/"><img src="/template/assets/img/basic/logo.png" alt="adtoday"></a>
                 </div>
                 <ul class="quick-actions">
-                    <li><a class="modal-trigger" href="#signInModal"><i class="fa fa-user"></i> &nbsp; Login</a>
-                    </li>
-                    <li><a class="modal-trigger" href="#signUpModal">Register</a></li>
+
+
+                    <?php if (User::isGuest()): ?>
+                        <li class="dropdown-wrap">
+                            <a href="#">My account &nbsp;<i class="fa fa-caret-down"></i></a>
+                            <div class="basic-dropdown">
+                                <ul class="country-list">
+                                    <li><a href="/account/">My account</a></li>
+                                    <li><a href="/account/logout">Logout</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    <?php else: ?>
+                        <li><a class="modal-trigger" href="#signInModal"><i class="fa fa-user"></i> &nbsp; Login</a>
+                        </li>
+                        <li><a class="modal-trigger" href="#signUpModal">Register</a></li>
+                    <?php endif; ?>
+
+
+                    <!--  <li><a class="modal-trigger" href="#signInModal"><i class="fa fa-user"></i> &nbsp; Login</a></li>
+                      <li><a class="modal-trigger" href="#signUpModal">Register</a></li>-->
                     <a href="/add/" class="btn btn-green pull-right quick-post"> <i class="fa fa-plus"></i> Post
                         your ad </a>
                 </ul>
@@ -81,27 +99,28 @@
                                     <li><a href="#">Other Vehicles</a></li>
                                 </ul>
                             </li>-->
-<!--                            <li><a href="#"><i class="adicon-tablet"></i>Mobiles</a>
-                                <ul>
-                                    <li><a href="#">Iphone</a></li>
-                                    <li><a href="#">Android</a></li>
-                                    <li><a href="#">Q mobile</a></li>
-                                    <li><a href="#">Black berry</a></li>
-                                </ul>
-                            </li>-->
+                            <!--                            <li><a href="#"><i class="adicon-tablet"></i>Mobiles</a>
+                                                            <ul>
+                                                                <li><a href="#">Iphone</a></li>
+                                                                <li><a href="#">Android</a></li>
+                                                                <li><a href="#">Q mobile</a></li>
+                                                                <li><a href="#">Black berry</a></li>
+                                                            </ul>
+                                                        </li>-->
                             <li><a href="/catalog/electronics"><i class="adicon-tv"></i>Electronics</a>
                                 <ul>
-                                    <li><a href="https://adtoday.co.uk/catalog/electronics/accessories/">Accessories</a></li>
+                                    <li><a href="https://adtoday.co.uk/catalog/electronics/accessories/">Accessories</a>
+                                    </li>
                                 </ul>
                             </li>
-<!--                            <li><a href="#"><i class="adicon-sofa"></i>Furniture</a></li>
-                            <li><a href="#"><i class="adicon-briefcase"></i>Jobs</a></li>
-                            <li><a href="#"><i class="adicon-buildings"></i>Real Estate</a></li>
-                            <li><a href="#"><i class="adicon-bell"></i>Services</a></li>
-                            <li><a href="#"><i class="adicon-hat"></i>Education</a></li>
-                            <li><a href="#"><i class="adicon-dog"></i>Animals</a></li>
-                            <li><a href="#"><i class="adicon-heal"></i>Fashion</a></li>
-                            <li><a href="#"><i class="adicon-smile"></i>Baby Products</a></li>-->
+                            <!--                            <li><a href="#"><i class="adicon-sofa"></i>Furniture</a></li>
+                                                        <li><a href="#"><i class="adicon-briefcase"></i>Jobs</a></li>
+                                                        <li><a href="#"><i class="adicon-buildings"></i>Real Estate</a></li>
+                                                        <li><a href="#"><i class="adicon-bell"></i>Services</a></li>
+                                                        <li><a href="#"><i class="adicon-hat"></i>Education</a></li>
+                                                        <li><a href="#"><i class="adicon-dog"></i>Animals</a></li>
+                                                        <li><a href="#"><i class="adicon-heal"></i>Fashion</a></li>
+                                                        <li><a href="#"><i class="adicon-smile"></i>Baby Products</a></li>-->
                             <li><a href="#"><i class="adicon-hearts"></i>Matrimony</a>
                                 <ul>
                                     <li><a href="https://adult.adtoday.co.uk/catalog/adult-dating/">Adult dating</a>
@@ -440,17 +459,25 @@ Modals
                 <h4>Welcome Back!</h4>
                 <p>Please enter your details below</p>
             </header>
-            <form action="/">
+            <?php if (isset($errors) && is_array($errors)): ?>
+                <ul>
+                    <?php foreach ($errors as $error): ?>
+                        <li> - <?php echo $error; ?></li>
+                    <?php endforeach; ?>
+                </ul>
+            <?php endif; ?>
+
+            <form action="/" method="post">
                 <div class="field-block">
                     <div class="labeled-input">
                         <label>Username</label>
-                        <input title="title here" type="text">
+                        <input title="title here" name="username" type="text">
                     </div>
                 </div>
                 <div class="field-block">
                     <div class="labeled-input">
                         <label>Password</label>
-                        <input title="title here" type="password">
+                        <input title="title here" name="password" type="password">
                     </div>
                 </div>
                 <div class="row login-actions field-block">
@@ -465,7 +492,7 @@ Modals
                     </div>
                 </div>
 
-                <button class="btn btn-md btn-green block-element">Login Now</button>
+                <button type="submit" name="signIn" class="btn btn-md btn-green block-element">Login Now</button>
                 <div class="login-cta text-center">
                     <p>Don't have an account?</p>
                     <a href="#">Register here FREE</a>
@@ -517,37 +544,61 @@ Modals
             <span class="split-opt">or</span>
         </div>
         <div class="modal-content">
-            <header>
-                <h4>Welcome Back!</h4>
-                <p>Please enter your details below</p>
-            </header>
-            <form action="/">
-                <div class="field-block">
-                    <div class="labeled-input">
-                        <label>Username</label>
-                        <input title="title here" type="text">
+            <?php if ($query_registration): ?>
+                <p>You Are Successfully Registered!</p>
+            <?php else: ?>
+                <?php if (isset($errors) && is_array($errors)): ?>
+                    <ul>
+                        <?php foreach ($errors as $error): ?>
+                            <li> - <?php echo $error; ?></li>
+                        <?php endforeach; ?>
+                    </ul>
+                <?php endif; ?>
+                <header>
+                    <h4>Welcome Back!</h4>
+                    <p>Please enter your details below</p>
+                </header>
+                <form action="/" method="post">
+                    <div class="field-block">
+                        <div class="labeled-input">
+                            <label>Username</label>
+                            <input title="title here" name="username" type="text" value="<?php if (isset($username)) {
+                                echo $username;
+                            } ?>">
+                        </div>
                     </div>
-                </div>
-                <div class="field-block">
-                    <div class="labeled-input">
-                        <label>Password</label>
-                        <input title="title here" type="password">
+                    <div class="field-block">
+                        <div class="labeled-input">
+                            <label>Password</label>
+                            <input title="title here" name="password" type="password"
+                                   value="<?php if (isset($username)) {
+                                       echo $password;
+                                   } ?>">
+                        </div>
                     </div>
-                </div>
-                <div class="field-block">
-                    <div class="icon-field">
-                        <span>+44</span>
-                        <input type="text" placeholder="Your Contact #">
+                    <div class="field-block">
+                        <div class="labeled-input">
+                            <label>Email</label>
+                            <input title="title here" name="email" type="email" value="<?php if (isset($username)) {
+                                echo $email;
+                            } ?>">
+                        </div>
                     </div>
-                </div>
+                    <div class="field-block">
+                        <div class="icon-field">
+                            <span>+44</span>
+                            <input type="text" name="phone" placeholder="Your Contact #">
+                        </div>
+                    </div>
 
 
-                <button class="btn btn-md btn-green block-element">Signup Now</button>
-                <div class="login-cta text-center"><br>
-                    By clicking Signup Now, you agree to <br>
-                    <a href="#">our Terms</a> and <a href="#">Privacy Policy</a>.
-                </div>
-            </form>
+                    <button type="submit" name="signUp" class="btn btn-md btn-green block-element">Signup Now</button>
+                    <div class="login-cta text-center"><br>
+                        By clicking Signup Now, you agree to <br>
+                        <a href="#">our Terms</a> and <a href="#">Privacy Policy</a>.
+                    </div>
+                </form>
+            <?php endif; ?>
         </div>
     </div>
 </div>
