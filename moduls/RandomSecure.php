@@ -3,25 +3,26 @@
 
 class RandomSecure
 {
-    /**
-     * Generate a random string, using a cryptographically secure
-     * pseudorandom number generator (random_int)
-     *
-     * For PHP 7, random_int is a PHP core function
-     * For PHP 5.x, depends on https://github.com/paragonie/random_compat
-     *
-     * @param int $length How many characters do we want?
-     * @param string $keyspace A string of all possible characters
-     *                         to select from
-     * @return string
-     */
-    public static function random_str($length, $keyspace = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ')
+    public static function genID($min = 0, $max = 1000000000000000)
     {
-        $str = '';
-        $max = mb_strlen($keyspace, '8bit') - 1;
-        for ($i = 0; $i < $length; ++$i) {
-            $str .= $keyspace[random_int(0, $max)];
-        }
-        return $str;
+        $range = $max - $min;
+        if ($range == 0) return $min; // not so random...
+        $log = log($range, 2);
+        $bytes = (int)($log / 8) + 1; // length in bytes
+        $bits = (int)$log + 1; // length in bits
+        $filter = (int)(1 << $bits) - 1; // set all lower bits to 1
+        do {
+            $rnd = hexdec(bin2hex(openssl_random_pseudo_bytes($bytes, $s)));
+            $rnd = $rnd & $filter; // discard irrelevant bits
+        } while ($rnd >= $range);
+        return $min + $rnd;
+    }
+
+    public static function genKEY($length = 32)
+    {
+        $bytes = openssl_random_pseudo_bytes($length, $cstrong);
+        $hex = bin2hex($bytes);
+        $shuffled = str_shuffle($hex);
+        return $shuffled;
     }
 }

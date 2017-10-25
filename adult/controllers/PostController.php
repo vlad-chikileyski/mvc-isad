@@ -1,4 +1,5 @@
 <?php
+require_once(ROOT . '/models/Payment.php');
 
 class PostController
 {
@@ -39,6 +40,7 @@ class PostController
                         $paymentMethod = $_POST['payment-method'];
                     }
                     $paymentType = DictionaryItem::checkPaymentType($paymentMethod);
+
                     $tableName = Category::categoryGetTableName($formType);
                     if ($tableName == false) {
                         header("HTTP/1.0 404 Not Found");
@@ -50,13 +52,23 @@ class PostController
                             $errors[] = 'Invalid email type!';
                         }
                         if ($errors == false) {
+                            $ID_TOKEN = RandomSecure::genID();
+                            $KEY_TOKEN = RandomSecure::genKEY();
                             if ($userInfo != false && $userInfo['email'] != '') { //logged User
                                 $incrementStatus = Catalog::incrementCountFromCategory($tableName);
                                 if (MailBuilder::configureMailForActivateAccount($userInfo['email'], $name)) { //send {activate your ads}
                                     $recordId = Form::$POST_METHOD_NAME($userId, $tableName, $_POST, $postcode, $name, $userInfo['email'], $phone, $paymentType);
                                     if ($recordId != '' && $incrementStatus) {
-                                        echo $recordId;
-                                        //header("Location: /activate-ad/200");
+                                        if ($paymentType != 1) {
+                                           $paymentInsert =  Payment::updatePaymentInfo($userId, $recordId, $ID_TOKEN, $KEY_TOKEN);
+                                            var_dump($paymentInsert);
+                                            if ($paymentInsert) {
+                                                header("Location: https://adtoday.co.uk/payment/pay/". $ID_TOKEN. "/" . $KEY_TOKEN);
+                                            }
+                                        } else {
+                                            echo $recordId;
+                                            header("Location: https://adtoday.co.uk/add/activate-ad/200");
+                                        }
                                     }
                                 }
                             } else { // Not logged

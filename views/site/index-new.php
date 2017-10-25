@@ -611,5 +611,6 @@ Javascript
 <script src="template/assets/js/typed.js "></script>
 <script src="template/assets/lib/slick-carousel/slick/slick.min.js"></script>
 <script src="template/assets/js/app.js"></script>
+<script src="template/assets/js/setioppd.js"></script>
 </body>
 </html>

@@ -1,4 +1,92 @@
-<?php include ROOT . '/views/layout/header.php'; ?>
+<!doctype html>
+<html lang="en">
+<head>
+
+    <title>AdSpot - The Classified Web App</title>
+    <!--========================================
+    Meta
+    ===========================================-->
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Disable tap highlight on IE -->
+    <meta name="msapplication-tap-highlight" content="no">
+
+    <!-- Web Application Manifest -->
+
+    <!-- Add to home screen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="xDocs">
+    <link rel="icon" sizes="192x192" href="/template/assets/img/basic/chrome-touch-icon-192x192.png">
+
+    <!-- Add to home screen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Web Starter Kit">
+    <link rel="apple-touch-icon" href="/template/assets/img/basic/apple-touch-icon.png">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="/template/assets/img/basic/ms-touch-icon-144x144-precomposed.png">
+    <meta name="msapplication-TileColor" content="#55acee">
+    <!-- Color the status bar on mobile devices -->
+    <meta name="theme-color" content="#55acee">
+
+    <!--========================================
+    CSS
+    ===========================================-->
+    <!--3rd party plugins-->
+    <link href="/template/assets/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="/template/assets/lib/slick-carousel/slick/slick.css" rel="stylesheet" type="text/css">
+    <!--custom icons for classified website-->
+    <link href="/template/assets/css/adspoticons.css" rel="stylesheet" type="text/css">
+    <!--main styles for template-->
+    <link href="/template/assets/css/style.css" rel="stylesheet" type="text/css">
+    <!--put your custom css on the file below-->
+    <link href="/template/assets/css/custom.css" rel="stylesheet" type="text/css">
+    <script src="https://js.stripe.com/v3/"></script>
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-6641606365117202",
+            enable_page_level_ads: true
+        });
+    </script>
+</head>
+<body>
+<div class="web-app">
+
+    <div class="doc-header header-fixed">
+        <div class="container">
+            <div class="inner">
+                <div class="app-logo">
+                    <button class="mobile-control mob-menu-trigger"><i class="adicon-hamburger"></i></button>
+                    <a href="/"><img src="/template/assets/img/basic/logo.png" alt="adtoday"></a>
+                </div>
+                <ul class="quick-actions">
+                    <a href="/add/" class="btn btn-green pull-right quick-post">Post your ad</a>
+
+                    <?php if (User::isGuest()): ?>
+                        <li class="dropdown-wrap">
+                            <a href="#">My account<i class="fa fa-caret-down"></i></a>
+                            <div class="basic-dropdown">
+                                <ul class="country-list">
+                                    <li><a href="/account/">My account</a></li>
+                                    <li><a href="/account/logout">Logout</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    <?php else: ?>
+                        <li><a class="modal-trigger" href="#signInModal">Login</a></li>
+                        <li><a class="modal-trigger" href="#signUpModal">Register</a></li>
+                    <?php endif; ?>
+                </ul>
+            </div>
+        </div>
+    </div>
     <div class="sliding-nav">
         <a class="close-sliding-nav" href="#">Close nav</a>
         <nav class="slide-nav-list">
@@ -80,7 +168,7 @@
         </div>
     </div>
 
-    <div class="app-canvas">
+    <div class="app-canvas app-canvas-modif">
         <div class="container">
             <div class="breadcrumb">
                 <ul>
@@ -97,11 +185,103 @@
                         <div class="inner">
                             <div class="row">
                                 <div class="col-xs-12 col-md-12 col-lg-12">
-                                    
+                                    <form method="post" name="payment-form099" id="payment-form"
+                                          class="payment-form-onj123">
+                                        <div class="group-main001">
+                                            <label class="payment-label">
+                                                <span>Name</span>
+                                                <input name="cardholder-name" class="field-sub009"
+                                                       placeholder="Jane Doe"/>
+                                            </label>
+                                            <label class="payment-label">
+                                                <span>Phone</span>
+                                                <input class="field-sub009" placeholder="(123) 456-7890" type="tel"
+                                                       style="
+                                                       background: transparent;
+                                                       font-weight: 300;
+                                                       border: 0;
+                                                       color: #31325F;
+                                                       outline: none;
+                                                       padding-right: 10px;
+                                                       padding-left: 10px;
+                                                       cursor: text;
+                                                       width: 70%;
+                                                       height: 40px;
+                                                       float: right;
+                                                "/>
+                                            </label>
+                                        </div>
+                                        <div class="group-main001">
+                                            <label class="payment-label">
+                                                <span>Card</span>
+                                                <div id="card-element" class="field-sub009"></div>
+                                            </label>
+                                        </div>
+                                        <button class="form-btn-10923" type="submit">Pay $25</button>
+                                        <div class="outcome">
+                                            <div class="error" role="alert"></div>
+                                            <div class="success">
+                                                Success! Your Stripe token is <span class="token"></span>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <script type="text/javascript">
+                                        var stripe = Stripe('pk_test_KUOUDNnb1oF1TXDnLwG1Svg9');
+                                        var elements = stripe.elements();
+                                        var style = {
+                                            base: {
+                                                color: '#32325d',
+                                                lineHeight: '24px',
+                                                fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+                                                fontSmoothing: 'antialiased',
+                                                fontSize: '16px',
+                                                '::placeholder': {
+                                                    color: '#aab7c4'
+                                                }
+                                            },
+                                            invalid: {
+                                                color: '#fa755a',
+                                                iconColor: '#fa755a'
+                                            }
+                                        };
+                                        var card = elements.create('card', {style: style});
+                                        card.mount('#card-element');
+                                        card.addEventListener('change', function (event) {
+                                            var displayError = document.getElementById('card-errors');
+                                            if (event.error) {
+                                                displayError.textContent = event.error.message;
+                                            } else {
+                                                displayError.textContent = '';
+                                            }
+                                        });
+                                        var form = document.getElementById('payment-form');
+                                        form.addEventListener('submit', function (event) {
+                                            event.preventDefault();
+
+                                            stripe.createToken(card).then(function (result) {
+                                                if (result.error) {
+                                                    var errorElement = document.getElementById('card-errors');
+                                                    errorElement.textContent = result.error.message;
+                                                } else {
+                                                    stripeTokenHandler(result.token);
+                                                }
+
+                                                function stripeTokenHandler(token) {
+                                                    var form = document.getElementById('payment-form');
+                                                    var hiddenInput = document.createElement('input');
+                                                    hiddenInput.setAttribute('type', 'hidden');
+                                                    hiddenInput.setAttribute('name', 'stripeToken');
+                                                    hiddenInput.setAttribute('value', token.id);
+                                                    form.appendChild(hiddenInput);
+                                                    form.submit();
+                                                }
+                                            });
+                                        });
+                                    </script>
                                 </div>
                             </div>
-                        </div><!--inner-->
-                    </div><!--panel-block-->
+                        </div>
+                    </div>
                 </div>
 
                 <div class="col-xs-12 col-md-4">
