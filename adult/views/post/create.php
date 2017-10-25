@@ -191,7 +191,7 @@
                             </div>
                         </td>
                         <td class="text-right">
-                            <strong>$2.90 per ad</strong>
+                            <strong class="pricexs-s10948">Free</strong> <strong>per ad</strong>
                         </td>
                     </tr>
                     </thead>
@@ -199,29 +199,22 @@
                     <tr>
                         <td>
                             <h5>Please select the preferred payment method.</h5>
-                            <div class="custom-radio block-element">
-                                <input type="radio" id="payment-method-test" name="payment-method" value="free">
-                                <label for="payment-method-test"> Free Ad * </label>
-                            </div>
-                            <div class="custom-radio block-element">
-                                <input type="radio" id="payment-method-test2" name="payment-method" value="payment-method-test2">
-                                <label for="payment-method-test2"> Payment type 2 - 6.99£</label>
-                            </div>
-                            <div class="custom-radio block-element">
-                                <input type="radio" id="payment-method-test3" name="payment-method" value="payment-method-test3">
-                                <label for="payment-method-test3">  Payment type 3 - 15.00£</label>
-                            </div>
-                            <div class="custom-radio block-element">
-                                <input type="radio" id="payment-method-test4" name="payment-method" value="payment-method-test4">
-                                <label for="payment-method-test4">  Payment type 4 - 30.00£</label>
-                            </div>
+                            <?php foreach ($paymentsBoxInfo as $boxInfoPayments) : ?>
+                                <div class="custom-radio block-element">
+                                    <input type="radio" class="calculate-price"
+                                           id="<?php echo "p31y323n-" . $boxInfoPayments["id"]; ?>" name="payment-method" data-value="<?php echo " £" . $boxInfoPayments["price"]; ?>"
+                                           value="<?php echo "p31y323n-" . $boxInfoPayments["id"]; ?>">
+                                    <label
+                                        for="<?php echo "p31y323n-" . $boxInfoPayments["id"]; ?>"> <?php echo $boxInfoPayments["payment_title_name"] . " - " . $boxInfoPayments["price"] . "£"; ?> </label>
+                                </div>
+                            <?php endforeach; ?>
                         </td>
                     </tr>
                     </tbody>
                     <tfoot>
                     <tr>
                         <td>&emsp;</td>
-                        <td class="text-right"><strong>Total : $2.90</strong></td>
+                        <td class="text-right"><strong>Total : </strong><strong class="pricexs-s10948"> £2.90</strong></td>
                     </tr>
                     </tfoot>
                 </table>
@@ -286,4 +279,14 @@
 </div>
 </div>
 <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+    $("body").on("click", ".calculate-price", function () {
+       var $this = $(this),
+           datavalue = $this.attr("data-value");
+       if ($(this).is(":checked")) {
+           $(".pricexs-s10948").html(datavalue);
+        }
+        alert(target);
+    });
+</script>
 <?php include ROOT . '/views/layout/footer.php'; ?>

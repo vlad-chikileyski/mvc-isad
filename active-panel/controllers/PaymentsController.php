@@ -9,7 +9,7 @@ class PaymentsController
             $price = $_POST['price'];
             $url = $_POST['url'];
             $active = $_POST['active'];
-            $paymentSave = Payments::updatePayments($paymentsId, $title, $price, $url, $active);
+            $paymentSave = PaymentsActivePanel::updatePayments($paymentsId, $title, $price, $url, $active);
             if (isset($paymentSave) && $paymentSave == true) {
                 $userMessageOK = '<div class="alert alert-success alert-block fade in">
                     <button data-dismiss="alert" class="close close-sm" type="button">
@@ -32,7 +32,7 @@ class PaymentsController
             }
         }
         $getPaymentById = array();
-        $getPaymentById = Payments::getPaymentsByPId($paymentsId);
+        $getPaymentById = PaymentsActivePanel::getPaymentsByPId($paymentsId);
         require_once(ROOT . '/views/payments/single.php');
         return true;
 
@@ -43,7 +43,7 @@ class PaymentsController
     {
 
         $getAllPaymentsMethod = array();
-        $getAllPaymentsMethod = Payments::getAllPayments();
+        $getAllPaymentsMethod = PaymentsActivePanel::getAllPayments();
         require_once(ROOT . '/views/payments/all-payments.php');
         return true;
     }
@@ -55,7 +55,7 @@ class PaymentsController
             $price = $_POST['price'];
             $url = $_POST['url'];
             $active = $_POST['active'];
-            $paymentSave = Payments::saveNewPayments($title, $price, $url, $active);
+            $paymentSave = PaymentsActivePanel::saveNewPayments($title, $price, $url, $active);
             if (isset($paymentSave) && $paymentSave == true) {
                 $userMessageOK = '<div class="alert alert-success alert-block fade in">
                     <button data-dismiss="alert" class="close close-sm" type="button">

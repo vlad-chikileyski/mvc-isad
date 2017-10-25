@@ -1,5 +1,5 @@
 <?php
-require_once(ROOT . '/models/Payment.php');
+require_once(ROOT . '/models/PaymentAdult.php');
 require_once(ROOT . '/models/Catalog.php');
 
 class PostController
@@ -62,7 +62,7 @@ class PostController
                                         $incrementStatus = Catalog::incrementCountFromCategory($tableName);
                                         if ($incrementStatus) {
                                             if ($paymentType != 1) {
-                                                $paymentInsert = Payment::updatePaymentInfo($userId, $recordId, $ID_TOKEN, $KEY_TOKEN, $tableName, $paymentType);
+                                                $paymentInsert = PaymentAdult::updatePaymentInfo($userId, $recordId, $ID_TOKEN, $KEY_TOKEN, $tableName, $paymentType);
                                                 if ($paymentInsert) {
                                                     header("Location: https://adtoday.co.uk/payment/pay/" . $ID_TOKEN . "/" . $KEY_TOKEN);
                                                 }
@@ -101,19 +101,9 @@ class PostController
                             }
                         }
                     }
-
-
-                    //$paymentType = DictionaryItem::checkPaymentType($paymentMethod);
-                    /**
-                     * Update DataBase and Generate
-                     * id=*********&key**********
-                     * CREATE SECURITY FILTER!!!
-                     */
-                    $paymentOperationId = "908765";
-                    $keyOperationId = "874654";
-                    // header('Location: /payment/pay/' . $paymentOperationId . '/' . $keyOperationId);
-                    // exit;
                 }
+                $paymentsBoxInfo = array();
+                $paymentsBoxInfo = PaymentAdult::getAllPayments();
                 require_once(ROOT . '/views/post/create.php');
                 return true;
             } else {
