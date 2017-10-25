@@ -80,7 +80,7 @@
         </div>
     </div>
 
-    <div class="app-canvas">
+    <div class="breadcrumb catalog-shadow-style">
         <div class="container">
 
             <div class="listing-actions text-right clearfix" data-target="#items-listing-area">
@@ -180,7 +180,7 @@
                                         <?php echo $products['description']; ?>
                                     </p>
                                 </div>
-                                <div class="breadcrumb">
+                                <div class="breadcrumb catalog-shadow-style">
                                     <ul>
                                         <li>
                                             <a href="/catalog/<?php echo $products['category']; ?>"><?php echo ucfirst($products['category']); ?></a>

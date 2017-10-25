@@ -1,5 +1,6 @@
 <?php
 require_once(ROOT . '/models/Payment.php');
+require_once(ROOT . '/models/Catalog.php');
 
 class PostController
 {
@@ -55,19 +56,20 @@ class PostController
                             $ID_TOKEN = RandomSecure::genID();
                             $KEY_TOKEN = RandomSecure::genKEY();
                             if ($userInfo != false && $userInfo['email'] != '') { //logged User
-                                $incrementStatus = Catalog::incrementCountFromCategory($tableName);
                                 if (MailBuilder::configureMailForActivateAccount($userInfo['email'], $name)) { //send {activate your ads}
                                     $recordId = Form::$POST_METHOD_NAME($userId, $tableName, $_POST, $postcode, $name, $userInfo['email'], $phone, $paymentType);
-                                    if ($recordId != '' && $incrementStatus) {
-                                        if ($paymentType != 1) {
-                                           $paymentInsert =  Payment::updatePaymentInfo($userId, $recordId, $ID_TOKEN, $KEY_TOKEN);
-                                            var_dump($paymentInsert);
-                                            if ($paymentInsert) {
-                                                header("Location: https://adtoday.co.uk/payment/pay/". $ID_TOKEN. "/" . $KEY_TOKEN);
+                                    if ($recordId != '') {
+                                        $incrementStatus = Catalog::incrementCountFromCategory($tableName);
+                                        if ($incrementStatus) {
+                                            if ($paymentType != 1) {
+                                                $paymentInsert = Payment::updatePaymentInfo($userId, $recordId, $ID_TOKEN, $KEY_TOKEN, $tableName, $paymentType);
+                                                if ($paymentInsert) {
+                                                    header("Location: https://adtoday.co.uk/payment/pay/" . $ID_TOKEN . "/" . $KEY_TOKEN);
+                                                }
+                                            } else {
+                                                echo $recordId;
+                                                header("Location: https://adtoday.co.uk/activate-ad/200");
                                             }
-                                        } else {
-                                            echo $recordId;
-                                            header("Location: https://adtoday.co.uk/add/activate-ad/200");
                                         }
                                     }
                                 }

@@ -7,5 +7,8 @@ return array(
     'seo/title' => 'seo/title', //SeoController and actionTitle
     'seo/description' => 'seo/description', //SeoController and actionDescription
     'seo/keywords' => 'seo/keywords', //SeoController and actionKeywords
+    'payment/new' => 'payments/new', //SeoController and actionDescription
+    'payments/all' => 'payments/allpayments', //SeoController and actionDescription
+    'payment/edit/([0-9+])' => 'payments/single/$1', //SeoController and actionDescription
     '' => 'site/index' //SiteController and actionIndex
 );

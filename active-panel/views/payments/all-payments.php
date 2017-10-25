@@ -13,16 +13,16 @@
     <!--Core CSS -->
     <link href="/template/bs3/css/bootstrap.min.css" rel="stylesheet">
     <link href="/template/css/bootstrap-reset.css" rel="stylesheet">
-    <link href="/template/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="/template/font-awesome/css/font-awesome.css" rel="stylesheet"/>
 
     <!--dynamic table-->
-    <link href="/template/js/advanced-datatable/css/demo_page.css" rel="stylesheet" />
-    <link href="/template/js/advanced-datatable/css/demo_table.css" rel="stylesheet" />
-    <link rel="stylesheet" href="/template/js/data-tables/DT_bootstrap.css" />
+    <link href="/template/js/advanced-datatable/css/demo_page.css" rel="stylesheet"/>
+    <link href="/template/js/advanced-datatable/css/demo_table.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="/template/js/data-tables/DT_bootstrap.css"/>
 
     <!-- Custom styles for this template -->
     <link href="/template/css/style.css" rel="stylesheet">
-    <link href="/template/css/style-responsive.css" rel="stylesheet" />
+    <link href="/template/css/style-responsive.css" rel="stylesheet"/>
 
     <!-- Just for debugging purposes. Don't actually copy this line! -->
     <!--[if lt IE 9]>
@@ -290,17 +290,17 @@
                         </ul>
                     </li>
                     <li class="sub-menu">
-                        <a href="javascript:;">
+                        <a href="javascript:;" class="active" >
                             <i class="fa fa-bar-chart-o"></i>
                             <span>Payment</span>
                         </a>
                         <ul class="sub">
                             <li><a href="/payment/new">Create new Payment Method</a></li>
-                            <li><a href="/payments/all">Edit Payment Method</a></li>
+                            <li class="active" ><a href="/payments/all">Edit Payment Method</a></li>
                         </ul>
                     </li>
                     <li class="sub-menu">
-                        <a class="active" href="/users/all-users">
+                        <a href="/users/all-users">
                             <i class="fa fa-user"></i>
                             <span>Users</span>
                         </a>
@@ -338,33 +338,36 @@
                 <div class="col-sm-12">
                     <section class="panel">
                         <header class="panel-heading">
-                            All users Table
+                            All PAYMENTS METHOD
                         </header>
                         <div class="panel-body">
                             <div class="adv-table">
                                 <table class="display table table-bordered table-striped" id="dynamic-table">
                                     <thead>
                                     <tr>
-                                        <th>User ID</th>
-                                        <th>Name</th>
-                                        <th>Email</th>
-                                        <th class="hidden-phone">Last activity</th>
-                                        <th class="hidden-phone">Profile</th>
+                                        <th>Payment ID</th>
+                                        <th>Payment Title</th>
+                                        <th>Price</th>
+                                        <th class="hidden-phone">Description Url</th>
+                                        <th class="hidden-phone">Active flag</th>
+                                        <th class="hidden-phone">Edit</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <?php foreach ($getAllUsers as $users) : ?>
+                                    <?php foreach ($getAllPaymentsMethod as $payment) : ?>
                                         <tr class="gradeX">
-                                            <td><?php echo $users["id"] ?></td>
-                                            <td><?php echo $users["username"] ?></td>
-                                            <td><?php echo $users["email"] ?></td>
-                                            <td class="center"><?php if (isset($users["last_activity"])) {
-                                                    echo $users["last_activity"];
+                                            <td><?php echo $payment["id"] ?></td>
+                                            <td><?php echo $payment["payment_title_name"] ?></td>
+                                            <td><?php echo $payment["price"] ?></td>
+                                            <td><?php echo $payment["url"]; ?></td>
+                                            <td><?php
+                                                if (isset($payment["active_flag"]) && $payment["active_flag"] == '1') {
+                                                    echo "ACTIVE";
                                                 } else {
-                                                    echo "No";
+                                                    echo "NOT ACTIVE";
                                                 } ?></td>
                                             <td class="center"><a style="color: #003399 "
-                                                                  href="/user/profile/<?php echo $users["id"] ?>">Detail
+                                                                  href="/payment/edit/<?php echo $payment["id"] ?>">Edit
                                                     -></a></td>
                                         </tr>
                                     <?php endforeach; ?>
@@ -661,14 +664,14 @@
 <script src="/template/js/flot-chart/jquery.flot.pie.resize.js"></script>
 
 <!--dynamic table-->
-<script type="text/javascript" language="javascript" src="/template/js/advanced-datatable/js/jquery.dataTables.js"></script>
+<script type="text/javascript" language="javascript"
+        src="/template/js/advanced-datatable/js/jquery.dataTables.js"></script>
 <script type="text/javascript" src="/template/js/data-tables/DT_bootstrap.js"></script>
 <!--common script init for all pages-->
 <script src="/template/js/scripts.js"></script>
 
 <!--dynamic table initialization -->
 <script src="/template/js/dynamic_table_init.js"></script>
-
 
 
 </body>

@@ -115,7 +115,7 @@
                     </div>
                 </div>
             </div>
-            <div class="breadcrumb">
+            <div class="breadcrumb catalog-shadow-style">
                 <ul>
                     <li><a href="/">Home</a></li>
                     <li><a href="/catalog/<?php echo $urlParam; ?>/"><?php echo $urlParam; ?></a></li>

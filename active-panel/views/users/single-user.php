@@ -290,8 +290,8 @@
                             <span>Payment</span>
                         </a>
                         <ul class="sub">
-                            <li><a href="boxed_page.html">Create new Payment Method</a></li>
-                            <li><a href="boxed_page.html">Edit Payment Method</a></li>
+                            <li><a href="/payment/new">Create new Payment Method</a></li>
+                            <li><a href="/payments/all">Edit Payment Method</a></li>
                         </ul>
                     </li>
                     <li class="sub-menu">

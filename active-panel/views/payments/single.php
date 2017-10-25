@@ -13,16 +13,16 @@
     <!--Core CSS -->
     <link href="/template/bs3/css/bootstrap.min.css" rel="stylesheet">
     <link href="/template/css/bootstrap-reset.css" rel="stylesheet">
-    <link href="/template/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="/template/font-awesome/css/font-awesome.css" rel="stylesheet"/>
 
     <!--dynamic table-->
-    <link href="/template/js/advanced-datatable/css/demo_page.css" rel="stylesheet" />
-    <link href="/template/js/advanced-datatable/css/demo_table.css" rel="stylesheet" />
-    <link rel="stylesheet" href="/template/js/data-tables/DT_bootstrap.css" />
+    <link href="/template/js/advanced-datatable/css/demo_page.css" rel="stylesheet"/>
+    <link href="/template/js/advanced-datatable/css/demo_table.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="/template/js/data-tables/DT_bootstrap.css"/>
 
     <!-- Custom styles for this template -->
     <link href="/template/css/style.css" rel="stylesheet">
-    <link href="/template/css/style-responsive.css" rel="stylesheet" />
+    <link href="/template/css/style-responsive.css" rel="stylesheet"/>
 
     <!-- Just for debugging purposes. Don't actually copy this line! -->
     <!--[if lt IE 9]>
@@ -290,17 +290,17 @@
                         </ul>
                     </li>
                     <li class="sub-menu">
-                        <a href="javascript:;">
+                        <a href="javascript:;" class="active">
                             <i class="fa fa-bar-chart-o"></i>
                             <span>Payment</span>
                         </a>
                         <ul class="sub">
-                            <li><a href="/payment/new">Create new Payment Method</a></li>
+                            <li class="active"><a href="/payment/new">Create new Payment Method</a></li>
                             <li><a href="/payments/all">Edit Payment Method</a></li>
                         </ul>
                     </li>
                     <li class="sub-menu">
-                        <a class="active" href="/users/all-users">
+                        <a href="/users/all-users">
                             <i class="fa fa-user"></i>
                             <span>Users</span>
                         </a>
@@ -313,7 +313,7 @@
                         <ul class="sub">
                             <li><a href="/seo/title">Title</a></li>
                             <li><a href="/seo/description">Description</a></li>
-                            <li><a href="/seo/keywords">Keywords</a></li>
+                            <li><a href="/seo/keyswords">Keywords</a></li>
                         </ul>
                     </li>
                     <li class="sub-menu">
@@ -334,43 +334,84 @@
         <section class="wrapper">
             <!-- page start-->
 
+
             <div class="row">
-                <div class="col-sm-12">
+                <?php if(isset($userMessageOK)){
+                    echo $userMessageOK;
+                } else if(isset($userMessageERROR)){
+                    echo $userMessageERROR;
+                } ?>
+                <div class="col-lg-12">
                     <section class="panel">
                         <header class="panel-heading">
-                            All users Table
+                            NEW PAYMENT METHOD
                         </header>
                         <div class="panel-body">
-                            <div class="adv-table">
-                                <table class="display table table-bordered table-striped" id="dynamic-table">
-                                    <thead>
-                                    <tr>
-                                        <th>User ID</th>
-                                        <th>Name</th>
-                                        <th>Email</th>
-                                        <th class="hidden-phone">Last activity</th>
-                                        <th class="hidden-phone">Profile</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <?php foreach ($getAllUsers as $users) : ?>
-                                        <tr class="gradeX">
-                                            <td><?php echo $users["id"] ?></td>
-                                            <td><?php echo $users["username"] ?></td>
-                                            <td><?php echo $users["email"] ?></td>
-                                            <td class="center"><?php if (isset($users["last_activity"])) {
-                                                    echo $users["last_activity"];
-                                                } else {
-                                                    echo "No";
-                                                } ?></td>
-                                            <td class="center"><a style="color: #003399 "
-                                                                  href="/user/profile/<?php echo $users["id"] ?>">Detail
-                                                    -></a></td>
-                                        </tr>
-                                    <?php endforeach; ?>
-                                    </tbody>
-                                </table>
-                            </div>
+                            <form class="form-horizontal bucket-form" method="post">
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">Menu title name</label>
+                                    <div class="col-sm-6">
+                                        <input type="text" name="title-name" class="form-control" value="<?php echo $getPaymentById[0]["payment_title_name"]?>">
+                                        <span class="help-block">Please past here new title text.</span>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">New Price</label>
+
+                                    <div class="col-sm-6">
+                                    <div class="input-group m-bot15">
+                                        <span class="input-group-addon">£</span>
+                                        <input type="text" name="price" value="<?php echo $getPaymentById[0]["price"]?>" class="form-control">
+                                        <span class="input-group-addon ">.00</span>
+                                    </div>
+                                        <span class="help-block">Only integer value!</span>
+
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">User description url (about this pay-method)</label>
+
+                                    <div class="col-sm-6">
+                                    <div class="input-group m-bot15">
+                                        <span class="input-group-addon">https://</span>
+                                        <input type="text" name="url"  value="<?php echo $getPaymentById[0]["url"]?>" class="form-control">
+                                    </div>
+                                        <span class="help-block">For example: adtoday.co.uk/terms/</span>
+
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label col-lg-3" for="inputSuccess">Active
+                                        flag</label>
+                                    <div class="col-lg-6">
+                                        <div class="radio">
+                                            <label>
+                                                <input type="radio" name="active" id="optionsRadios1" value="1" <?php if(isset($getPaymentById[0]["active_flag"]) && $getPaymentById[0]["active_flag"]==1){
+                                                    echo "checked";
+                                                } ?>>
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label>
+                                                <input type="radio" name="active" id="optionsRadios2" value="0" <?php if(isset($getPaymentById[0]["active_flag"]) && $getPaymentById[0]["active_flag"]==0){
+                                                    echo "checked";
+                                                } ?>>
+                                                No
+                                            </label>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-lg-offset-3 col-lg-3">
+                                        <button type="submit" name="submit" class="btn btn-block btn-primary">Save</button>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
                     </section>
                 </div>
@@ -661,14 +702,14 @@
 <script src="/template/js/flot-chart/jquery.flot.pie.resize.js"></script>
 
 <!--dynamic table-->
-<script type="text/javascript" language="javascript" src="/template/js/advanced-datatable/js/jquery.dataTables.js"></script>
+<script type="text/javascript" language="javascript"
+        src="/template/js/advanced-datatable/js/jquery.dataTables.js"></script>
 <script type="text/javascript" src="/template/js/data-tables/DT_bootstrap.js"></script>
 <!--common script init for all pages-->
 <script src="/template/js/scripts.js"></script>
 
 <!--dynamic table initialization -->
 <script src="/template/js/dynamic_table_init.js"></script>
-
 
 
 </body>
