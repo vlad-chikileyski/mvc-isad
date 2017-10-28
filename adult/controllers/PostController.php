@@ -6,7 +6,7 @@ class PostController
 {
     public function actionIndex($categoryName)
     {
-        $keyspace = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $pattrenPaymentValue = "/(?<=-)[0-9]+$/";
         $formType = Category::categoryCheck($categoryName);
 
         if ($formType == false) {
@@ -39,9 +39,15 @@ class PostController
                     $phone = $_POST['phone'];
                     if (isset($_POST['payment-method'])) {
                         $paymentMethod = $_POST['payment-method'];
+                        preg_match($pattrenPaymentValue, $paymentMethod, $matches, PREG_OFFSET_CAPTURE);
+                        if (isset($matches[0][0])) {
+                            //CHANGE IT -> next release
+                            $paymentType = $matches[0][0];
+                            print_r($matches[0][0]);
+                        } else {
+                            $paymentType = false;
+                        }
                     }
-                    $paymentType = DictionaryItem::checkPaymentType($paymentMethod);
-
                     $tableName = Category::categoryGetTableName($formType);
                     if ($tableName == false) {
                         header("HTTP/1.0 404 Not Found");
@@ -61,7 +67,7 @@ class PostController
                                     if ($recordId != '') {
                                         $incrementStatus = Catalog::incrementCountFromCategory($tableName);
                                         if ($incrementStatus) {
-                                            if ($paymentType != 1) {
+                                            if (isset($paymentType) && $paymentType!=false) {
                                                 $paymentInsert = PaymentAdult::updatePaymentInfo($userId, $recordId, $ID_TOKEN, $KEY_TOKEN, $tableName, $paymentType);
                                                 if ($paymentInsert) {
                                                     header("Location: https://adtoday.co.uk/payment/pay/" . $ID_TOKEN . "/" . $KEY_TOKEN);

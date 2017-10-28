@@ -61,4 +61,13 @@ class PaymentsActivePanel
         $result->bindParam(':active_flag', $active, PDO::PARAM_STR);
         return $result->execute();
     }
+
+    public static function deletePayments($paymentsId)
+    {
+        $db = Db::getConnection();
+        $sql = 'DELETE FROM `ADMIN_PAYMENT_METHOD` WHERE `id`= :id';
+        $result = $db->prepare($sql);
+        $result->bindParam(':id', $paymentsId, PDO::PARAM_STR);
+        return $result->execute();
+    }
 }

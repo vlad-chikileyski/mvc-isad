@@ -30,6 +30,10 @@ class PaymentsController
                                 <strong>Oh no :(</strong> Change a few things up and try submitting again.
                             </div>';
             }
+        } else if (isset($_POST['delete-payment'])) {
+            echo "yes1 delete";
+            PaymentsActivePanel::deletePayments($paymentsId);
+            header("Location: /payments/all");
         }
         $getPaymentById = array();
         $getPaymentById = PaymentsActivePanel::getPaymentsByPId($paymentsId);

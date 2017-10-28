@@ -70,6 +70,7 @@ class Router
                 if ($result != null) {
                     break;
                 } else {
+                    echo $uri . "<___________________________________";
                     header("HTTP/1.0 404 Not Found");
                     require_once(ROOT . '/views/error/404.php');
                 }

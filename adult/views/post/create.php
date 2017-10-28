@@ -198,11 +198,13 @@
                     <tbody id="featured-paymentOptions">
                     <tr>
                         <td>
-                            <h5>Please select the preferred payment method.</h5>
+                            <h5>ENHANCE YOUR AD'S VISIBILITY (Optional)</h5>
                             <?php foreach ($paymentsBoxInfo as $boxInfoPayments) : ?>
                                 <div class="custom-radio block-element">
                                     <input type="radio" class="calculate-price"
-                                           id="<?php echo "p31y323n-" . $boxInfoPayments["id"]; ?>" name="payment-method" data-value="<?php echo " £" . $boxInfoPayments["price"]; ?>"
+                                           id="<?php echo "p31y323n-" . $boxInfoPayments["id"]; ?>"
+                                           name="payment-method"
+                                           data-value="<?php echo " £" . $boxInfoPayments["price"]; ?>"
                                            value="<?php echo "p31y323n-" . $boxInfoPayments["id"]; ?>">
                                     <label
                                         for="<?php echo "p31y323n-" . $boxInfoPayments["id"]; ?>"> <?php echo $boxInfoPayments["payment_title_name"] . " - " . $boxInfoPayments["price"] . "£"; ?> </label>
@@ -214,7 +216,8 @@
                     <tfoot>
                     <tr>
                         <td>&emsp;</td>
-                        <td class="text-right"><strong>Total : </strong><strong class="pricexs-s10948"> £2.90</strong></td>
+                        <td class="text-right"><strong>Total : </strong><strong class="pricexs-s10948"> £2.90</strong>
+                        </td>
                     </tr>
                     </tfoot>
                 </table>
@@ -227,7 +230,6 @@
                                         <a class="link" href="#">Posting Rules</a>.
                                         </span>
                 </div>
-
             </div>
         </div>
         </form>
@@ -281,10 +283,10 @@
 <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
 <script type="text/javascript">
     $("body").on("click", ".calculate-price", function () {
-       var $this = $(this),
-           datavalue = $this.attr("data-value");
-       if ($(this).is(":checked")) {
-           $(".pricexs-s10948").html(datavalue);
+        var $this = $(this),
+            datavalue = $this.attr("data-value");
+        if ($(this).is(":checked")) {
+            $(".pricexs-s10948").html(datavalue);
         }
         alert(target);
     });

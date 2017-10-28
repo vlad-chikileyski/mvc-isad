@@ -63,8 +63,6 @@ class PaymentController
                 $getUserIdInfoByPToken = array();
                 $getUserIdInfoByPToken = Payment::getUserAdsIdByTokenAndTokenId($id, $key);
                 $user_id = $getUserIdInfoByPToken["ads_id"];
-
-                var_dump($getUserIdInfoByPToken);
                 /*  $paymentInfo = array();
                   $paymentInfo = Payment::getPaymentInfoByTokenAndTokenId($id, $key);*/
 

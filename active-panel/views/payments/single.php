@@ -336,9 +336,9 @@
 
 
             <div class="row">
-                <?php if(isset($userMessageOK)){
+                <?php if (isset($userMessageOK)) {
                     echo $userMessageOK;
-                } else if(isset($userMessageERROR)){
+                } else if (isset($userMessageERROR)) {
                     echo $userMessageERROR;
                 } ?>
                 <div class="col-lg-12">
@@ -351,7 +351,8 @@
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label">Menu title name</label>
                                     <div class="col-sm-6">
-                                        <input type="text" name="title-name" class="form-control" value="<?php echo $getPaymentById[0]["payment_title_name"]?>">
+                                        <input type="text" name="title-name" class="form-control"
+                                               value="<?php echo $getPaymentById[0]["payment_title_name"] ?>">
                                         <span class="help-block">Please past here new title text.</span>
                                     </div>
                                 </div>
@@ -360,24 +361,28 @@
                                     <label class="col-sm-3 control-label">New Price</label>
 
                                     <div class="col-sm-6">
-                                    <div class="input-group m-bot15">
-                                        <span class="input-group-addon">£</span>
-                                        <input type="text" name="price" value="<?php echo $getPaymentById[0]["price"]?>" class="form-control">
-                                        <span class="input-group-addon ">.00</span>
-                                    </div>
+                                        <div class="input-group m-bot15">
+                                            <span class="input-group-addon">£</span>
+                                            <input type="text" name="price"
+                                                   value="<?php echo $getPaymentById[0]["price"] ?>"
+                                                   class="form-control">
+                                            <span class="input-group-addon ">.00</span>
+                                        </div>
                                         <span class="help-block">Only integer value!</span>
 
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="col-sm-3 control-label">User description url (about this pay-method)</label>
+                                    <label class="col-sm-3 control-label">User description url (about this
+                                        pay-method)</label>
 
                                     <div class="col-sm-6">
-                                    <div class="input-group m-bot15">
-                                        <span class="input-group-addon">https://</span>
-                                        <input type="text" name="url"  value="<?php echo $getPaymentById[0]["url"]?>" class="form-control">
-                                    </div>
+                                        <div class="input-group m-bot15">
+                                            <span class="input-group-addon">https://</span>
+                                            <input type="text" name="url"
+                                                   value="<?php echo $getPaymentById[0]["url"] ?>" class="form-control">
+                                        </div>
                                         <span class="help-block">For example: adtoday.co.uk/terms/</span>
 
                                     </div>
@@ -389,7 +394,8 @@
                                     <div class="col-lg-6">
                                         <div class="radio">
                                             <label>
-                                                <input type="radio" name="active" id="optionsRadios1" value="1" <?php if(isset($getPaymentById[0]["active_flag"]) && $getPaymentById[0]["active_flag"]==1){
+                                                <input type="radio" name="active" id="optionsRadios1"
+                                                       value="1" <?php if (isset($getPaymentById[0]["active_flag"]) && $getPaymentById[0]["active_flag"] == 1) {
                                                     echo "checked";
                                                 } ?>>
                                                 Yes
@@ -397,7 +403,8 @@
                                         </div>
                                         <div class="radio">
                                             <label>
-                                                <input type="radio" name="active" id="optionsRadios2" value="0" <?php if(isset($getPaymentById[0]["active_flag"]) && $getPaymentById[0]["active_flag"]==0){
+                                                <input type="radio" name="active" id="optionsRadios2"
+                                                       value="0" <?php if (isset($getPaymentById[0]["active_flag"]) && $getPaymentById[0]["active_flag"] == 0) {
                                                     echo "checked";
                                                 } ?>>
                                                 No
@@ -407,12 +414,56 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <div class="col-lg-offset-3 col-lg-3">
-                                        <button type="submit" name="submit" class="btn btn-block btn-primary">Save</button>
+                                    <div class="col-lg-offset-3 col-lg-12">
+                                        <div class="col-lg-3">
+                                            <button type="submit" name="submit" class="btn btn-block btn-primary">Save
+                                            </button>
+                                        </div>
+                                        <div class="col-lg-3"><a class="btn btn-danger btn-block btn-primary"
+                                                                 data-toggle="modal" href="#myModal">
+                                                Delete payment method
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </form>
                         </div>
+
+                        <div class="panel-body">
+                            <!-- Modal -->
+                            <div class="modal fade in" id="myModal" tabindex="-1" role="dialog"
+                                 aria-labelledby="myModalLabel" aria-hidden="false"
+                                 style="display: none; padding-right: 15px;">
+                                <div class="modal-backdrop fade in" style="height: 675px;"></div>
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                                ×
+                                            </button>
+                                            <h4 class="modal-title">Delete a payment method?</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            Are you sure that you want to permanently delete the selected payment type?
+                                        </div>
+                                        <div class="modal-footer">
+                                            <form class="form-horizontal bucket-form" method="post">
+                                                <button data-dismiss="modal" class="btn btn-default" type="button">
+                                                    Cancel
+                                                </button>
+
+                                                <button class="btn btn-danger" type="submit" name="delete-payment">Yes,
+                                                    Save changes
+                                                </button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- modal -->
+
+                        </div>
+
                     </section>
                 </div>
             </div>

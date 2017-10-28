@@ -80,7 +80,7 @@
         </nav>
     </div>
 
-    <div class="app-canvas">
+    <div class="app-canvas app-canvas-modif">
         <div class="container">
             <header class="heading big text-center">
                 <h3>Select the category to which you want to add your listing!</h3>
