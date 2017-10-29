@@ -71,6 +71,7 @@ class PostController
                                                 $paymentInsert = PaymentAdult::updatePaymentInfo($userId, $recordId, $ID_TOKEN, $KEY_TOKEN, $tableName, $paymentType);
                                                 if ($paymentInsert) {
                                                     header("Location: https://adtoday.co.uk/payment/pay/" . $ID_TOKEN . "/" . $KEY_TOKEN);
+                                                    exit();
                                                 }
                                             } else {
                                                 echo $recordId;

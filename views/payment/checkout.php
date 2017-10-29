@@ -208,7 +208,7 @@
                                                         <div id="example1-card"></div>
                                                     </div>
                                                 </fieldset>
-                                                <input type="submit" value="Pay $25">
+                                                <input type="submit" value="Pay <?php echo "£" . $paymentInfo[0]["price_value_text"]?>">
                                                 <div class="error" role="alert">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17"
                                                          viewBox="0 0 17 17">
@@ -234,9 +234,10 @@
                                                               stroke="#000" fill="none"></path>
                                                     </svg>
                                                 </div>
-                                                <h3 class="title">Payment successful</h3>
-                                                <p class="message"><span>Thanks for trying Stripe Elements. No money was charged, but we generated a token: </span><span
-                                                        class="token">tok_189gMN2eZvKYlo2CwTBv9KKh</span></p>
+                                                <h3 class="title">Payment session successful created!</h3>
+                                                <p class="message"><span>Redirecting . . . </span>
+                                                    <!--<span
+                                                        class="token"></span>--></p>
                                                 <a class="reset" href="#">
                                                     <svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1"
                                                          xmlns="http://www.w3.org/2000/svg"
@@ -253,12 +254,14 @@
                         </div>
                     </div>
                 </div>
+                <form method="post" action="https://adtoday.co.uk/payment/charge/<?php echo $id . "/" .$key; ?>/" id="payment-form">
+                </form>
 
                 <div class="col-xs-12 col-md-4">
                     <div class="panel-block">
                         <div class="price-widget short-widget bg1">
                             <i class="adicon-dollar"></i>
-                            <strong>$235.00</strong>
+                            <strong><?php echo "£" . $paymentInfo[0]["price_value_text"]?></strong>
                             <span>Order Total</span>
                         </div>
                         <div class="inner">
@@ -266,20 +269,8 @@
                                 <ul>
                                     <li>
                                         <figure><img alt="dummy" src="/template/assets/img/items/ad1.png"></figure>
-                                        <a class="item-title" href="#">Iphone 6 Plus 16GB</a>
-                                        <span>$229.00</span>
-                                        <a class="remove-item" href="#"><i class="fa fa-close"></i></a>
-                                    </li>
-                                    <li>
-                                        <figure><img alt="dummy" src="/template/assets/img/items/ad2.jpg"></figure>
-                                        <a class="item-title" href="#">Iphone 6 Plus 16GB</a>
-                                        <span>$229.00</span>
-                                        <a class="remove-item" href="#"><i class="fa fa-close"></i></a>
-                                    </li>
-                                    <li>
-                                        <figure><img alt="dummy" src="/template/assets/img/items/ad3.jpg"></figure>
-                                        <a class="item-title" href="#">Iphone 6 Plus 16GB</a>
-                                        <span>$229.00</span>
+                                        <a class="item-title" href="#"><?php echo  $paymentInfo[0]["payment_title_name"]?></a>
+                                        <span><?php echo "£" .  $paymentInfo[0]["price_value_text"]?></span>
                                         <a class="remove-item" href="#"><i class="fa fa-close"></i></a>
                                     </li>
                                 </ul>

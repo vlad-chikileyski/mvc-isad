@@ -1,6 +1,6 @@
 'use strict';
 
-var stripe = Stripe('pk_test_6pRNASCoBOKtIshFeQd4XMUh');
+var stripe = Stripe('pk_test_KUOUDNnb1oF1TXDnLwG1Svg9');
 
 function registerElements(elements, exampleName) {
   var formClass = '.' + exampleName;
@@ -78,7 +78,10 @@ function registerElements(elements, exampleName) {
 
       if (result.token) {
         // If we received a token, show the token ID.
+        stripeTokenHandler(result.token);
+/*
         example.querySelector('.token').innerText = result.token.id;
+*/
         example.classList.add('submitted');
       } else {
         // Otherwise, un-disable inputs.
@@ -86,6 +89,19 @@ function registerElements(elements, exampleName) {
       }
     });
   });
+
+  function stripeTokenHandler(token) {
+    // Insert the token ID into the form so it gets submitted to the server
+    var form = document.getElementById('payment-form');
+    var hiddenInput = document.createElement('input');
+    hiddenInput.setAttribute('type', 'hidden');
+    hiddenInput.setAttribute('name', 'stripeToken');
+    hiddenInput.setAttribute('value', token.id);
+    form.appendChild(hiddenInput);
+
+    // Submit the form
+    form.submit();
+  }
 
   resetButton.addEventListener('click', function(e) {
     e.preventDefault();

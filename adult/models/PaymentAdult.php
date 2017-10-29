@@ -21,13 +21,14 @@ class PaymentAdult
     {
         $db = Db::getConnection();
         $payments = array();
-        $result = $db->query('SELECT `id`,`payment_title_name`, `url`, `price` FROM ADMIN_PAYMENT_METHOD WHERE `active_flag`= 1');
+        $result = $db->query('SELECT `id`,`payment_title_name`, `url`, `price`, `price_value_text` FROM ADMIN_PAYMENT_METHOD WHERE `active_flag`= 1');
         $i = 0;
         while ($row = $result->fetch()) {
             $payments[$i]['id'] = $row['id'];
             $payments[$i]['price'] = $row['price'];
             $payments[$i]['url'] = $row['url'];
             $payments[$i]['payment_title_name'] = $row['payment_title_name'];
+            $payments[$i]['price_value_text'] = $row['price_value_text'];
             $i++;
         }
         return $payments;

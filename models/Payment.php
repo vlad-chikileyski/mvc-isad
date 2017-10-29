@@ -46,26 +46,19 @@ class Payment
         }
     }
 
-    /*public static function getPaymentInfoByTokenAndTokenId($tokenId, $tokenKey)
-       {
-           $db = Db::getConnectionOnCatics();
-           $product = array();
-           $result = $db->query('SELECT * FROM ' . $tableNameProduct . ' WHERE id=' . $productId);
-           $i = 0;
-           while ($row = $result->fetch()) {
-               $product[$i]['id'] = $row['id'];
-               $product[$i]['title'] = $row['title'];
-               $product[$i]['description'] = $row['description'];
-               $product[$i]['price'] = $row['price'];
-               $product[$i]['category'] = $categoryParam;
-               $product[$i]['subcategory'] = $subCategoryParam;
-               $product[$i]['date'] = $row['date'];
-               $product[$i]['user_id'] = $row['user_id'];
-               $product[$i]['postcode'] = $row['postcode'];
-               $product[$i]['date'] = $row['date'];
-               $i++;
-           }
-           return $product;
+    public static function getPaymentInfoByTokenAndTokenId($payment_type)
+    {
+        $db = Db::getConnection();
+        $product = array();
+        $result = $db->query('SELECT * FROM `ADMIN_PAYMENT_METHOD` WHERE id='.$payment_type.' AND active_flag=1');
+        $i = 0;
+        while ($row = $result->fetch()) {
+            $product[$i]['price'] = $row['price'];
+            $product[$i]['payment_title_name'] = $row['payment_title_name'];
+            $product[$i]['price_value_text'] = $row['price_value_text'];
+           $i++;
+        }
+        return $product;
 
-       }*/
+    }
 }

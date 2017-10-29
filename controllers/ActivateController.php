@@ -14,4 +14,10 @@ class ActivateController
         return true;
     }
 
+    public function actionSuccesspayments($idAds)
+    {
+        require_once(ROOT . '/views/post/success_payments.php');
+        return true;
+    }
+
 }

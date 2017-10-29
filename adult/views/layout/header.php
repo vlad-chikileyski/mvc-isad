@@ -46,12 +46,18 @@
     <link href="/template/assets/css/style.css" rel="stylesheet" type="text/css">
     <!--put your custom css on the file below-->
     <link href="/template/assets/css/custom.css" rel="stylesheet" type="text/css">
-
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-6641606365117202",
+            enable_page_level_ads: true
+        });
+    </script>
 </head>
 <body>
 <div class="web-app">
 
-    <div class="doc-header">
+    <div class="doc-header header-fixed">
         <div class="container">
             <div class="inner">
                 <div class="app-logo">
@@ -59,6 +65,8 @@
                     <a href="/"><img src="/template/assets/img/basic/logo.png" alt="adtoday"></a>
                 </div>
                 <ul class="quick-actions">
+                    <a href="/add/" class="btn btn-green pull-right quick-post">Post your ad</a>
+
                     <?php if (User::isGuest()): ?>
                         <li class="dropdown-wrap">
                             <a href="#">My account<i class="fa fa-caret-down"></i></a>
@@ -74,101 +82,6 @@
                         <li><a class="modal-trigger" href="#signUpModal">Register</a></li>
                     <?php endif; ?>
                 </ul>
-                <div class="clearfix">
-                    <a href="/add/" class="btn btn-green pull-right quick-post">Post your ad</a>
-                    <div class="pull-right search-filters">
-                        <div class="mega-dropdown pull-left">
-                            <button>Select City</button>
-                            <i class="fa fa-navicon"></i>
-                            <div class="mega-content">
-                                <div class="inner">
-                                    <div class="search-widget">
-                                        <input type="text" placeholder="search">
-                                        <button type="submit"><i class="fa fa-search"></i></button>
-                                    </div>
-
-                                    <div class="mega-list">
-                                        <header>
-                                            <i class="adicon-buildings"></i> Popular Cities
-                                        </header>
-                                        <ul class="clearfix">
-                                            <li><a href="#">Bradford</a></li>
-                                            <li><a href="#">Cambridge</a></li>
-                                            <li><a href="#">Chester</a></li>
-                                            <li><a href="#">Durham</a></li>
-                                            <li><a href="#">Scotland</a></li>
-                                            <li><a href="#">Lancaster</a></li>
-                                            <li><a href="#">Liverpool</a></li>
-                                            <li><a href="#">City of london</a></li>
-                                            <li><a href="#">Bradford</a></li>
-                                            <li><a href="#">Cambridge</a></li>
-                                            <li><a href="#">Chester</a></li>
-                                            <li><a href="#">Durham</a></li>
-                                            <li><a href="#">Scotland</a></li>
-                                            <li><a href="#">Lancaster</a></li>
-                                            <li><a href="#">Liverpool</a></li>
-                                            <li><a href="#">City of london</a></li>
-                                        </ul>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="mega-filtered-search">
-                            <div class="mega-dropdown">
-                                <button>Select Category</button>
-                                <i class="fa fa-navicon"></i>
-                                <div class="mega-content">
-                                    <ul class="category-list">
-                                        <li><a href="#"><i class="adicon-grid"></i>All Categories</a></li>
-                                        <li><a href="#"><i class="adicon-car"></i>Vehicles</a>
-                                            <ul>
-                                                <li><a href="#">Cars</a></li>
-                                                <li><a href="#">Motorcycles</a></li>
-                                                <li><a href="#">Scooters</a></li>
-                                                <li><a href="#">Bicycles</a></li>
-                                                <li><a href="#">Commercial Vehicles</a></li>
-                                                <li><a href="#">Spare Parts & Accessories</a></li>
-                                                <li><a href="#">Other Vehicles</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="#"><i class="adicon-tablet"></i>Mobiles</a>
-                                            <ul>
-                                                <li><a href="#">Iphone</a></li>
-                                                <li><a href="#">Android</a></li>
-                                                <li><a href="#">Q mobile</a></li>
-                                                <li><a href="#">Black berry</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="#"><i class="adicon-tv"></i>Electronics</a>
-                                            <ul>
-                                                <li><a href="#">Washing Machine</a></li>
-                                                <li><a href="#">Television</a></li>
-                                                <li><a href="#">Air conditioner</a></li>
-                                                <li><a href="#">Computers and Laptops</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="#"><i class="adicon-sofa"></i>Furniture</a></li>
-                                        <li><a href="#"><i class="adicon-briefcase"></i>Jobs</a></li>
-                                        <li><a href="#"><i class="adicon-buildings"></i>Real Estate</a></li>
-                                        <li><a href="#"><i class="adicon-bell"></i>Services</a></li>
-                                        <li><a href="#"><i class="adicon-hat"></i>Education</a></li>
-                                        <li><a href="#"><i class="adicon-dog"></i>Animals</a></li>
-                                        <li><a href="#"><i class="adicon-heal"></i>Fashion</a></li>
-                                        <li><a href="#"><i class="adicon-smile"></i>Baby Products</a></li>
-                                        <li><a href="#"><i class="adicon-hearts"></i>Matrimony</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="search-widget">
-                                <input type="text" placeholder="search">
-                                <button type="submit"><i class="fa fa-search"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </div>
     </div>

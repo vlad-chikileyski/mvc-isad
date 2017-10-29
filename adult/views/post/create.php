@@ -184,7 +184,7 @@
                     <tr>
                         <td>
                             <div class="custom-checkbox">
-                                <input checked="checked" class="showHideTarget"
+                                <input class="showHideTarget"
                                        data-target="#featured-paymentOptions" type="checkbox"
                                        id="create42213" name="item-condition">
                                 <label class="big-font" for="create42213"> Featured Ad</label>
@@ -195,7 +195,7 @@
                         </td>
                     </tr>
                     </thead>
-                    <tbody id="featured-paymentOptions">
+                    <tbody id="featured-paymentOptions" style="display: none">
                     <tr>
                         <td>
                             <h5>ENHANCE YOUR AD'S VISIBILITY (Optional)</h5>
@@ -204,10 +204,10 @@
                                     <input type="radio" class="calculate-price"
                                            id="<?php echo "p31y323n-" . $boxInfoPayments["id"]; ?>"
                                            name="payment-method"
-                                           data-value="<?php echo " £" . $boxInfoPayments["price"]; ?>"
+                                           data-value="<?php echo " £" . $boxInfoPayments["price_value_text"]; ?>"
                                            value="<?php echo "p31y323n-" . $boxInfoPayments["id"]; ?>">
                                     <label
-                                        for="<?php echo "p31y323n-" . $boxInfoPayments["id"]; ?>"> <?php echo $boxInfoPayments["payment_title_name"] . " - " . $boxInfoPayments["price"] . "£"; ?> </label>
+                                        for="<?php echo "p31y323n-" . $boxInfoPayments["id"]; ?>"> <?php echo $boxInfoPayments["payment_title_name"] . " - £" . $boxInfoPayments["price_value_text"] ; ?> </label>
                                 </div>
                             <?php endforeach; ?>
                         </td>
@@ -216,7 +216,7 @@
                     <tfoot>
                     <tr>
                         <td>&emsp;</td>
-                        <td class="text-right"><strong>Total : </strong><strong class="pricexs-s10948"> £2.90</strong>
+                        <td class="text-right"><strong>Total : </strong><strong class="pricexs-s10948"> £0</strong>
                         </td>
                     </tr>
                     </tfoot>
@@ -288,7 +288,16 @@
         if ($(this).is(":checked")) {
             $(".pricexs-s10948").html(datavalue);
         }
-        alert(target);
+    });
+</script>
+
+<script type="text/javascript">
+    $("body").on("click", ".showHideTarget", function () {
+        var $this = $(this),
+            datavalue = $this.attr("data-value");
+        if (!$(this).is(":checked")) {
+            $(".pricexs-s10948").html("£0");
+        }
     });
 </script>
 <?php include ROOT . '/views/layout/footer.php'; ?>
