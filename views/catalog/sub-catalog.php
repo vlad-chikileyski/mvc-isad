@@ -166,7 +166,9 @@
                         </div>
                     </article>
                     <?php foreach ($categoryProducts as $product) : ?>
-                        <article class="item-spot">
+                        <article class="item-spot <?php if ($product['highlight'] == 1) {
+                            echo "clad-setd";
+                        } ?>">
                             <a href="/ads/<?php echo $product['category']; ?>/<?php echo $product['subcategory']; ?>/<?php echo $product['id']; ?>"
                                class="imgAsBg">
                                 <img src="/template/assets/img/items/ad2.jpg" alt="dummy data">

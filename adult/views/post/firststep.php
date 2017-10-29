@@ -118,14 +118,6 @@
                 </a>
             </div>
             <div class="cat-boxes">
-                <a href="http://adult.adtoday.co.uk/new-ads/straight-relationships" class="cat-box">
-                    <div class="inner">
-                        <div class="adicon-hearts bg12"></div>
-                        <span>Straight Relationships</span>
-                    </div>
-                </a>
-            </div>
-            <div class="cat-boxes">
                 <a href="http://adult.adtoday.co.uk/new-ads/adult-dating" class="cat-box">
                     <div class="inner">
                         <div class="adicon-hearts bg12"></div>

@@ -20,6 +20,7 @@ class Product
                 $products[$i]['description'] = $row['description'];
                 $products[$i]['price'] = $row['price'];
                 $products[$i]['subcategory'] = $row['subcategory'];
+                $products[$i]['highlight'] = $row['highlight'];
                 $products[$i]['category'] = $categoryExistName;
                 $products[$i]['date'] = $row['date'];
                 $i++;
@@ -181,6 +182,7 @@ class Product
                 $products[$i]['title'] = $row['title'];
                 $products[$i]['description'] = $row['description'];
                 $products[$i]['price'] = $row['price'];
+                $products[$i]['highlight'] = $row['highlight'];
                 $products[$i]['subcategory'] = $row['subcategory'];
                 $products[$i]['category'] = $urlParam;
                 $products[$i]['date'] = $row['date'];

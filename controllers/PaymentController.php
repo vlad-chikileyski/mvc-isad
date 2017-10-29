@@ -56,6 +56,8 @@ class PaymentController
                     "statement_descriptor" => "Custom descriptor",
                     "source" => $token,
                 ));
+
+                //ВЫСТАВИТЬ 1 если пэймент Highlight
                 $userInfo = array();
                 $userInfo = User::getUserById($userId);
                 $userEmail = $userInfo["email"];

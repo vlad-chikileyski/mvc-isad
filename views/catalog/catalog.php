@@ -84,34 +84,6 @@
         <div class="category-search">
             <div class="container">
                 <form action="/">
-                    <div class="search-filter">
-                        <div class="radio-dropdown">
-                            <i class="fa fa-bars"></i>
-                            <button>Select city</button>
-                            <ul>
-                                <li class="custom-radio">
-                                    <input type="radio" id="create0221" name="item-brand-name">
-                                    <label for="create0221">Bradford</label>
-                                </li>
-                                <li class="custom-radio">
-                                    <input type="radio" id="create0231" name="item-brand-name">
-                                    <label for="create0231">Cambridge</label>
-                                </li>
-                                <li class="custom-radio">
-                                    <input type="radio" id="create0241" name="item-brand-name">
-                                    <label for="create0241">Chester</label>
-                                </li>
-                                <li class="custom-radio">
-                                    <input type="radio" id="create0251" name="item-brand-name">
-                                    <label for="create0251">Durham</label>
-                                </li>
-                                <li class="custom-radio">
-                                    <input type="radio" id="create0261" name="item-brand-name">
-                                    <label for="create0261">Glasgow</label>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
                     <div class="mega-filtered-search">
                         <div class="mega-dropdown">
                             <button>Select Category</button>
@@ -170,7 +142,9 @@
             <div class="breadcrumb catalog-shadow-style">
                 <ul>
                     <li><a href="https://adtoday.co.uk/">Home</a></li>
-                    <li><a href="https://adtoday.co.uk/<?php echo $categoryExistName; ?>"><?php echo ucfirst($categoryExistName); ?></a></li>
+                    <li>
+                        <a href="https://adtoday.co.uk/<?php echo $categoryExistName; ?>"><?php echo ucfirst($categoryExistName); ?></a>
+                    </li>
                 </ul>
             </div>
             <div class="listing-area clearfix">
@@ -228,7 +202,9 @@
                         </div>
                     </article>
                     <?php foreach ($categoriesProducts as $products) : ?>
-                        <article class="item-spot">
+                        <article class="item-spot <?php if ($products['highlight'] == 1) {
+                            echo "clad-setd";
+                        } ?>">
                             <a href="/ads/<?php echo $products['category']; ?>/<?php echo $products['subcategory']; ?>/<?php echo $products['id']; ?>"
                                class="imgAsBg">
                                 <img src="/template/assets/img/items/ad2.jpg" alt="dummy data">

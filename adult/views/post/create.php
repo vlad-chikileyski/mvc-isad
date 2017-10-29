@@ -81,9 +81,9 @@
     </div>
 </div>
 
-<div class="app-canvas">
+<div class="app-app-canvas app-canvas-modif">
     <div class="container">
-        <div class="breadcrumb">
+        <div class="breadcrumb catalog-shadow-style">
             <ul>
                 <li><a href="/">Home</a></li>
                 <li>

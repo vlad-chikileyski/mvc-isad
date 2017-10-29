@@ -4,8 +4,7 @@ class PostController
 {
     public function actionIndex($categoryName)
     {
-        $categoryChecker = Category::categoryCheck($categoryName);
-
+        $categoryChecker = CategoryMain::categoryCheck($categoryName);
         if ($categoryChecker == false) {
             header("HTTP/1.0 404 Not Found");
             require_once(ROOT . '/views/error/404.php');
@@ -51,27 +50,39 @@ class PostController
                 $phone = $_POST['phone'];
                 $price = '12';
                 $subcategory = lcfirst($_POST['subcategory']);
-                $getTableName = Category::categoryCheckDoubleParam($categoryName, $subcategory);
+                $getTableName = CategoryMain::categoryCheckDoubleParam($categoryName, $subcategory);
                 if ($getTableName == false) {
                     header("HTTP/1.0 404 Not Found");
                     require_once(ROOT . '/views/error/404.php');
                 } else {
-
                     $errors = false;
                     if (!Post::checkEmail($notVerifyEmail)) {
                         $errors[] = 'Invalid email type!';
                     }
                     if ($errors == false) {
+                        echo 1;
+                        $ID_TOKEN = RandomSecure::genID();
+                        $KEY_TOKEN = RandomSecure::genKEY();
                         if ($userInfo != false && $userInfo['email'] != '') { //logged User
                             $incrementStatus = Catalog::incrementCountFromCategory($getTableName);
                             if (MailBuilder::configureMailForActivateAccount($userInfo['email'], $name)) { //send {activate your ads}
-                                $query = Post::save($getTableName, $title, $description, $userId, $postcode, $subcategory, '0', $price);
-                                echo 'user logged!';
-                                if ($query && $incrementStatus) {
-                                    header("Location: /activate-ad/200");
+                                $recordId = Post::save($getTableName, $title, $description, $userId, $postcode, $subcategory, '0', $price);
+                                if ($recordId != '') {
+                                    $incrementStatus = Catalog::incrementCountFromCategory($getTableName);
+                                    if ($incrementStatus) {
+                                        if (isset($paymentType) && $paymentType != false) {
+                                            $paymentInsert = PaymentAdult::updatePaymentInfo($userId, $recordId, $ID_TOKEN, $KEY_TOKEN, $getTableName, $paymentType);
+                                            if ($paymentInsert) {
+                                                header("Location: https://adtoday.co.uk/payment/pay/" . $ID_TOKEN . "/" . $KEY_TOKEN);
+                                                exit();
+                                            }
+                                        } else {
+                                            echo $recordId;
+                                            header("Location: https://adtoday.co.uk/activate-ad/200");
+                                        }
+                                    }
                                 }
                             }
-
                         } else { // Not logged
                             $thisUserExists = User::checkEmailExists($notVerifyEmail);
                             if ($thisUserExists != true) { //if NOT exists
@@ -107,14 +118,17 @@ class PostController
              * !submit only simple loading
              * @return page
              */
+            $paymentsBoxInfo = array();
+            $paymentsBoxInfo = Payment::getAllPayments();
             $subCategoryListMenu = array();
-            $subCategoryListMenu = Category::getSubcategyListByCategory($categoryName);
+            $subCategoryListMenu = CategoryMain::getSubcategyListByCategory($categoryName);
             require_once(ROOT . '/views/post/create.php');
             return true;
         }
     }
 
-    public function actionCategoryList()
+    public
+    function actionCategoryList()
     {
 
         require_once(ROOT . '/views/post/firststep.php');

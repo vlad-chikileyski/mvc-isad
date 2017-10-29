@@ -6967,6 +6967,10 @@ a.view-item, .contact-options li a, .listing-actions a, .listing-actions .fa,
     max-width: 720px;
 }
 
+.clad-setd{
+    background: rgb(247, 233, 197);
+}
+
 @media (max-width: 992px) {
     .item-spot .inner {
         padding-right: 0;

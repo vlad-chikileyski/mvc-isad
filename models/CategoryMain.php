@@ -1,6 +1,6 @@
 <?php
 
-class Category
+class CategoryMain
 {
     /**
      * Get sub-category list ?
@@ -18,6 +18,7 @@ class Category
                 $subcategory[$i]['menu-title'] = $row['menu-title'];
                 $subcategory[$i]['url-title'] = $row['url-title'];
                 $subcategory[$i]['category'] = $row['category'];
+                $subcategory[$i]['subcategory-name'] = $row['subcategory-name'];
                 $i++;
             }
             return $subcategory;

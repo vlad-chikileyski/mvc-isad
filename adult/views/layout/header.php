@@ -62,18 +62,18 @@
             <div class="inner">
                 <div class="app-logo">
                     <button class="mobile-control mob-menu-trigger"><i class="adicon-hamburger"></i></button>
-                    <a href="/"><img src="/template/assets/img/basic/logo.png" alt="adtoday"></a>
+                    <a href="https://adtoday.co.uk/"><img src="/template/assets/img/basic/logo.png" alt="adtoday"></a>
                 </div>
                 <ul class="quick-actions">
-                    <a href="/add/" class="btn btn-green pull-right quick-post">Post your ad</a>
+                    <a href="https://adtoday.co.uk/add/" class="btn btn-green pull-right quick-post">Post your ad</a>
 
                     <?php if (User::isGuest()): ?>
                         <li class="dropdown-wrap">
                             <a href="#">My account<i class="fa fa-caret-down"></i></a>
                             <div class="basic-dropdown">
                                 <ul class="country-list">
-                                    <li><a href="/account/">My account</a></li>
-                                    <li><a href="/account/logout">Logout</a></li>
+                                    <li><a href="https://adtoday.co.uk/account/">My account</a></li>
+                                    <li><a href="https://adtoday.co.uk/account/logout">Logout</a></li>
                                 </ul>
                             </div>
                         </li>

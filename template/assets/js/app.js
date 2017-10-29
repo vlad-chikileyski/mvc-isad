@@ -124,6 +124,16 @@ jQuery(function ($) {
         $("#ethnicity").val($this.data("value"));
     });
 
+    /*
+    * Sub-category
+    * */
+    $("#sub-category").on("click", "a", function (e) {
+        e.preventDefault();
+        var $this = $(this).parent();
+        $this.addClass("select").siblings().removeClass("select");
+        $("#subcategory").val($this.data("value"));
+    });
+
     /*============================
      List Settings end
      =============================*/

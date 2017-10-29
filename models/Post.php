@@ -16,7 +16,9 @@ class Post
         $result->bindParam(':status', $status, PDO::PARAM_STR);
         $result->bindParam(':subcategory', $subcategory, PDO::PARAM_STR);
         $result->bindParam(':price', $price, PDO::PARAM_STR);
-        return $result->execute();
+        $result->execute();
+        $id = $db->lastInsertId();
+        return $id;
     }
 
     /**

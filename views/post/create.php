@@ -81,9 +81,9 @@
     </div>
 </div>
 
-<div class="app-canvas">
+<div class="app-canvas app-canvas-modif">
     <div class="container">
-        <div class="breadcrumb">
+        <div class="breadcrumb catalog-shadow-style">
             <ul>
                 <li><a href="/">Home</a></li>
                 <li>
@@ -119,9 +119,9 @@
                                             <button>Select Subcategory</button>
                                             <i class="fa fa-navicon"></i>
                                             <div class="mega-content">
-                                                <ul class="sub-category">
+                                                <ul class="sub-category" id="sub-category">
                                                     <?php foreach ($subCategoryListMenu as $subcategory) : ?>
-                                                        <li><a href="#"><?php echo $subcategory['menu-title']; ?></a>
+                                                        <li data-value="<?php echo $subcategory['subcategory-name']; ?>"><a href="#"><?php echo $subcategory['menu-title']; ?></a>
                                                         </li>
                                                     <?php endforeach; ?>
                                                 </ul>
@@ -186,16 +186,16 @@
                                 </div>
                             </div>
                             <?php if (User::isGuest()): ?>
-                            <div class="row field-block">
-                                <div class="col-xs-12 col-md-3">
-                                    <label class="required" for="email">Your email</label>
+                                <div class="row field-block">
+                                    <div class="col-xs-12 col-md-3">
+                                        <label class="required" for="email">Your email</label>
+                                    </div>
+                                    <div class="col-xs-12 col-md-9">
+                                        <input class="input-sm" type="email" id="email" name="email"
+                                               placeholder="e.g. jon@got.com" value="<?php echo $userInfo['email']; ?>"
+                                               required readonly="readonly">
+                                    </div>
                                 </div>
-                                <div class="col-xs-12 col-md-9">
-                                    <input class="input-sm" type="email" id="email" name="email"
-                                           placeholder="e.g. jon@got.com" value="<?php echo $userInfo['email']; ?>"
-                                           required readonly="readonly">
-                                </div>
-                            </div>
                             <?php else: ?>
                                 <div class="row field-block">
                                     <div class="col-xs-12 col-md-3">
@@ -239,32 +239,41 @@
                                 <tr>
                                     <td>
                                         <div class="custom-checkbox">
-                                            <input checked="checked" class="showHideTarget"
+                                            <input class="showHideTarget"
                                                    data-target="#featured-paymentOptions" type="checkbox"
                                                    id="create42213" name="item-condition">
                                             <label class="big-font" for="create42213"> Featured Ad</label>
                                         </div>
                                     </td>
                                     <td class="text-right">
-                                        <strong>$2.90 per ad</strong>
+                                        <strong class="pricexs-s10948">Free</strong> <strong>per ad</strong>
                                     </td>
                                 </tr>
                                 </thead>
-                                <tbody id="featured-paymentOptions">
+                                <tbody id="featured-paymentOptions" style="display: none">
                                 <tr>
                                     <td>
-                                        <h5>Please select the preferred payment method.</h5>
-                                        <div class="custom-radio block-element">
-                                            <input type="radio" id="test-pay" name="payment-method-opt">
-                                            <label for="create422131"> Test-pay</label>
-                                        </div>
+                                        <h5>ENHANCE YOUR AD'S VISIBILITY (Optional)</h5>
+                                        <?php foreach ($paymentsBoxInfo as $boxInfoPayments) : ?>
+                                            <div class="custom-radio block-element">
+                                                <input type="radio" class="calculate-price"
+                                                       id="<?php echo "p31y323n-" . $boxInfoPayments["id"]; ?>"
+                                                       name="payment-method"
+                                                       data-value="<?php echo " £" . $boxInfoPayments["price_value_text"]; ?>"
+                                                       value="<?php echo "p31y323n-" . $boxInfoPayments["id"]; ?>">
+                                                <label
+                                                    for="<?php echo "p31y323n-" . $boxInfoPayments["id"]; ?>"> <?php echo $boxInfoPayments["payment_title_name"] . " - £" . $boxInfoPayments["price_value_text"]; ?> </label>
+                                            </div>
+                                        <?php endforeach; ?>
                                     </td>
                                 </tr>
                                 </tbody>
                                 <tfoot>
                                 <tr>
                                     <td>&emsp;</td>
-                                    <td class="text-right"><strong>Total : $2.90</strong></td>
+                                    <td class="text-right"><strong>Total : </strong><strong class="pricexs-s10948">
+                                            £0</strong>
+                                    </td>
                                 </tr>
                                 </tfoot>
                             </table>
@@ -277,7 +286,6 @@
                                         <a class="link" href="#">Posting Rules</a>.
                                         </span>
                             </div>
-
                         </div>
                     </div>
                 </form>
@@ -348,7 +356,7 @@
                     $('.ajax-loader-error').css("visibility", "hidden");
                 }, complete: function () {
                     $('.ajax-loader').css("visibility", "hidden");
-                },error: function () {
+                }, error: function () {
                     $('.ajax-loader-error').css("visibility", "visible");
                 }
             });
@@ -358,10 +366,29 @@
             var search = $(this).val();
             if (search != '') {
                 load_data(search);
-            }else {
+            } else {
                 $('.ajax-loader-status').css("visibility", "hidden");
             }
         });
+    });
+</script>
+<script type="text/javascript">
+    $("body").on("click", ".calculate-price", function () {
+        var $this = $(this),
+            datavalue = $this.attr("data-value");
+        if ($(this).is(":checked")) {
+            $(".pricexs-s10948").html(datavalue);
+        }
+    });
+</script>
+
+<script type="text/javascript">
+    $("body").on("click", ".showHideTarget", function () {
+        var $this = $(this),
+            datavalue = $this.attr("data-value");
+        if (!$(this).is(":checked")) {
+            $(".pricexs-s10948").html("£0");
+        }
     });
 </script>
 <?php include ROOT . '/views/layout/footer.php'; ?>
