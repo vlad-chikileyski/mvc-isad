@@ -249,7 +249,7 @@
                 <div class="container">
                     <header class="text-normal">
                         <h2>Buy &amp; Sell <strong>Anything</strong></h2>
-                        <p class="text-uppercase">UK Biggest Classified Marketplace</p>
+                        <p class="text-uppercase">UK Biggest Classified Marketplace!</p>
                     </header>
                 </div>
             </div>
