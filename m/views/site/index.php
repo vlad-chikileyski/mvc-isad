@@ -7,7 +7,7 @@
 	<meta content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" name="viewport">
 	<meta content="yes" name="apple-mobile-web-app-capable">
 	<meta content="yes" name="apple-touch-fullscreen">
-	
+
 	<link rel="stylesheet" type="text/css" href="/template/css/style.css">
 	<link rel="stylesheet" type="text/css" href="/template/css/responsive.css">
 	<link rel="shortcut icon" href="/template/images/favicon.png">
@@ -19,7 +19,7 @@
 
 	<!-- LEFT SIDEBAR -->
 	<div id="slide-out-left" class="side-nav">
-		
+
 		<!-- Form Search -->
 		<div class="top-left-nav">
 			<div class="searchbar">
@@ -28,7 +28,7 @@
 			</div>
 		</div>
 		<!-- End Form Search -->
-		
+
 		<!-- App/Site Menu -->
 		<div id="main-menu">
 			<ul>
@@ -131,22 +131,21 @@
 
 		<!-- TABS -->
 		<div class="sidebar-tabs">
-			
+
 			<!-- Tabs Menu -->
-			<ul class="tabs">
-				<li class="tab"><a class="active" href="#yourcart">Your Cart</a></li>
+			<!--<ul class="tabs">
 				<li class="tab"><a href="#latestblog">Latest blog</a></li>
-			</ul>
+			</ul>-->
 			<!-- End Tabs Menu -->
 
 		</div>
 
 		<!-- Right Sidebar Tabs Content -->
 		<div class="sidebar-tabs_content">
-			
+
 			<!-- Your Cart Tabs -->
-			<div id="yourcart">
-				
+<!--			<div id="yourcart">
+
 				<ol class="cart-item">
 					<li>
 						<div class="thumb">
@@ -224,11 +223,11 @@
 				</div>
 
 			</div>
-			<!-- End Your Cart Tabs -->
+-->			<!-- End Your Cart Tabs -->
 
 			<!-- Latest Blog Tabs -->
-			<div id="latestblog">
-				
+<!--			<div id="latestblog">
+
 				<div class="latest-blog-featured">
 					<div class="thumb">
 						<img src="/template/images/500x400-white.jpg" alt="">
@@ -253,7 +252,7 @@
 					</li>
 				</ol>
 			</div>
-			<!-- End Latest Blog Tabs -->
+-->			<!-- End Latest Blog Tabs -->
 
 		</div>
 		<!-- End Right Sidebar Tabs Content -->
@@ -263,7 +262,7 @@
 
 	<!-- MAIN PAGE -->
 	<div id="page">
-		
+
 		<!-- FIXED Top Navbar -->
 		<div class="top-navbar">
 			<div class="top-navbar-left">
@@ -274,7 +273,7 @@
 			<div class="top-navbar-right">
 				<a href="#" class="dropdown-button" data-activates="dropdown1">
 					<i class="fa fa-user-circle-o"></i>
-				</a>				
+				</a>
 				<ul id="dropdown1" class="dropdown-content">
 					<li><a href="panel-account.html"><i class="fa fa-server"></i> Panel Account</a></li>
 					<li><a href="form-account.html"><i class="fa fa-user"></i> My Profile</a></li>
@@ -283,13 +282,13 @@
 					<li><a href="tracking-order.html"><i class="fa fa-search"></i> Tracking Order</a></li>
 				</ul>
 
-				<a href="#" id="menu-right" data-activates="slide-out-right">
+				<!--<a href="#" id="menu-right" data-activates="slide-out-right">
 					<span class="cart-badge">3</span>
 					<i class="fa fa-shopping-basket"></i>
-				</a>
+				</a>-->
 			</div>
 			<div class="site-title">
-				<h1>Shofy</h1>
+				<h1>AdToday - Buy & Sell Anything</h1>
 			</div>
 		</div>
 		<!-- End FIXED Top Navbar -->
@@ -334,7 +333,7 @@
 					<a class="featured-btn green" href="#"><i class="fa fa-check-circle"></i> Discover Now</a>
 				</div>
 			</div><!-- 3. End Featured Slider Item -->
-					
+
 			<div class="featured-item"><!-- 4. Featured Slider Item -->
 				<div class="thumb">
 					<img src="/template/images/500x400-white.jpg" alt="">
@@ -353,11 +352,11 @@
 		<!-- CONTENT CONTAINER -->
 		<div class="content-container animated fadeInUp">
 
-			<!-- Category Section -->	
+			<!-- Category Section -->
 			<div class="page-block margin-bottom">
 
 				<h2 class="block-title">
-					<span>Main Category</span><!-- <span> tag to make blue border on this text only -->
+					<span>Category</span><!-- <span> tag to make blue border on this text only -->
 					<a href="#" class="list-all">
 						<i class="fa fa-th-list"></i>
 					</a>
@@ -366,7 +365,7 @@
 				<!-- Category Listing -->
 				<ol class="category-list">
 
-					
+
 					<li><!-- Category list item #1 -->
 						<div class="thumb">
 							<a href="product-list.html">
@@ -375,10 +374,9 @@
 						</div>
 						<div class="category-ctn">
 							<div class="cat-name">
-								<a href="product-list.html">Handphone & Tablet</a>
+								<a href="product-list.html">Vehicles</a>
 							</div>
 							<div class="cat-desc">
-								Gress and Up to date gadget
 							</div>
 						</div>
 					</li><!-- End Category list item #1 -->
@@ -391,10 +389,9 @@
 						</div>
 						<div class="category-ctn">
 							<div class="cat-name">
-								<a href="product-list.html">Otomotive</a>
+								<a href="product-list.html">Properties</a>
 							</div>
 							<div class="cat-desc">
-								Best choice for you, king of street
 							</div>
 						</div>
 					</li><!-- End Category list item #2 -->
@@ -407,10 +404,24 @@
 						</div>
 						<div class="category-ctn">
 							<div class="cat-name">
-								<a href="product-list.html">Fashion</a>
+								<a href="product-list.html">Adult</a>
 							</div>
 							<div class="cat-desc">
-								Fullfill your style with only the best item
+							</div>
+						</div>
+					</li><!-- End Category list item #3 -->
+
+					<li><!-- Category list item #3 -->
+						<div class="thumb">
+							<a href="product-list.html">
+								<img src="/template/images/240x240.png" alt="">
+							</a>
+						</div>
+						<div class="category-ctn">
+							<div class="cat-name">
+								<a href="product-list.html">Mobile Phones & Accessories</a>
+							</div>
+							<div class="cat-desc">
 							</div>
 						</div>
 					</li><!-- End Category list item #3 -->
@@ -423,10 +434,156 @@
 						</div>
 						<div class="category-ctn">
 							<div class="cat-name">
-								<a href="product-list.html">Computer & Laptop</a>
+								<a href="product-list.html">Electronics & Home Appliances</a>
 							</div>
 							<div class="cat-desc">
-								High quality assistant for your job
+							</div>
+						</div>
+					</li>
+
+					<!-- End Category list item #4 -->
+					<li><!-- Category list item #4 -->
+						<div class="thumb">
+							<a href="product-list.html">
+								<img src="/template/images/240x240.png" alt="">
+							</a>
+						</div>
+						<div class="category-ctn">
+							<div class="cat-name">
+								<a href="product-list.html">Home & Garden</a>
+							</div>
+							<div class="cat-desc">
+							</div>
+						</div>
+					</li>
+
+					<!-- End Category list item #4 -->
+					<li><!-- Category list item #4 -->
+						<div class="thumb">
+							<a href="product-list.html">
+								<img src="/template/images/240x240.png" alt="">
+							</a>
+						</div>
+						<div class="category-ctn">
+							<div class="cat-name">
+								<a href="product-list.html">Fashion & Beauty</a>
+							</div>
+							<div class="cat-desc">
+							</div>
+						</div>
+					</li>
+					<!-- End Category list item #4 -->
+					<li><!-- Category list item #4 -->
+						<div class="thumb">
+							<a href="product-list.html">
+								<img src="/template/images/240x240.png" alt="">
+							</a>
+						</div>
+						<div class="category-ctn">
+							<div class="cat-name">
+								<a href="product-list.html">Pets</a>
+							</div>
+							<div class="cat-desc">
+							</div>
+						</div>
+					</li><!-- End Category list item #4 -->
+
+					<!-- End Category list item #4 -->
+					<li><!-- Category list item #4 -->
+						<div class="thumb">
+							<a href="product-list.html">
+								<img src="/template/images/240x240.png" alt="">
+							</a>
+						</div>
+						<div class="category-ctn">
+							<div class="cat-name">
+								<a href="product-list.html">Kids & Babies</a>
+							</div>
+							<div class="cat-desc">
+							</div>
+						</div>
+					</li><!-- End Category list item #4 -->
+
+					<!-- End Category list item #4 -->
+					<li><!-- Category list item #4 -->
+						<div class="thumb">
+							<a href="product-list.html">
+								<img src="/template/images/240x240.png" alt="">
+							</a>
+						</div>
+						<div class="category-ctn">
+							<div class="cat-name">
+								<a href="product-list.html">Sporting Goods & Bikes</a>
+							</div>
+							<div class="cat-desc">
+							</div>
+						</div>
+					</li><!-- End Category list item #4 -->
+
+
+					<!-- End Category list item #4 -->
+					<li><!-- Category list item #4 -->
+						<div class="thumb">
+							<a href="product-list.html">
+								<img src="/template/images/240x240.png" alt="">
+							</a>
+						</div>
+						<div class="category-ctn">
+							<div class="cat-name">
+								<a href="product-list.html">Hobbies, Music, Art & Books</a>
+							</div>
+							<div class="cat-desc">
+							</div>
+						</div>
+					</li><!-- End Category list item #4 -->
+
+
+					<!-- End Category list item #4 -->
+					<li><!-- Category list item #4 -->
+						<div class="thumb">
+							<a href="product-list.html">
+								<img src="/template/images/240x240.png" alt="">
+							</a>
+						</div>
+						<div class="category-ctn">
+							<div class="cat-name">
+								<a href="product-list.html">Jobs</a>
+							</div>
+							<div class="cat-desc">
+							</div>
+						</div>
+					</li><!-- End Category list item #4 -->
+
+
+					<!-- End Category list item #4 -->
+					<li><!-- Category list item #4 -->
+						<div class="thumb">
+							<a href="product-list.html">
+								<img src="/template/images/240x240.png" alt="">
+							</a>
+						</div>
+						<div class="category-ctn">
+							<div class="cat-name">
+								<a href="product-list.html">Business & Industrial</a>
+							</div>
+							<div class="cat-desc">
+							</div>
+						</div>
+					</li><!-- End Category list item #4 -->
+
+
+					<!-- End Category list item #4 -->
+					<li><!-- Category list item #4 -->
+						<div class="thumb">
+							<a href="product-list.html">
+								<img src="/template/images/240x240.png" alt="">
+							</a>
+						</div>
+						<div class="category-ctn">
+							<div class="cat-name">
+								<a href="product-list.html">Services</a>
+							</div>
+							<div class="cat-desc">
 							</div>
 						</div>
 					</li><!-- End Category list item #4 -->
@@ -438,22 +595,16 @@
 			</div>
 			<!-- End Category Section -->
 
-			<!-- Top Product Section -->
-			<div class="page-block margin-bottom">
+<!--			<div class="page-block margin-bottom">
 
 				<h2 class="block-title">
-					<span>Top Product</span><!-- <span> tag to make blue border on this text only -->
+					<span>Top Product</span>
 					<a href="#" class="list-all">
 						<i class="fa fa-th-list"></i>
 					</a>
 				</h2>
-
-				<!-- Product Listing Slider -->
-				<!--
-				Use .top-product class to make blue border on each item
-				-->
 				<ol class="product-list-slider top-product">
-					<li><!-- 1. Product Slider item -->
+					<li>
 						<div class="thumb">
 							<a href="product.html">
 								<img src="/template/images/240x240.png" alt="">
@@ -477,8 +628,8 @@
 								<span class="price-current">$ 159.00</span>
 							</div>
 						</div>
-					</li><!-- 1. End Product Slider item -->
-					<li><!-- 2. Product Slider item -->
+					</li>
+					<li>
 						<div class="thumb">
 							<a href="product.html">
 								<img src="/template/images/240x240.png" alt="">
@@ -502,8 +653,8 @@
 								<span class="price-current">$ 965.12</span>
 							</div>
 						</div>
-					</li><!-- 2. End Product Slider item -->
-					<li><!-- 3. Product Slider item -->
+					</li>
+					<li>
 						<div class="thumb">
 							<a href="product.html">
 								<img src="/template/images/240x240.png" alt="">
@@ -526,8 +677,8 @@
 								<span class="price-current">$ 260.9</span>
 							</div>
 						</div>
-					</li><!-- 3. End Product Slider item -->
-					<li><!-- 4. Product Slider item -->
+					</li>
+					<li>
 						<div class="thumb">
 							<a href="product.html">
 								<img src="/template/images/240x240.png" alt="">
@@ -551,8 +702,8 @@
 								<span class="price-current">$ 18.5</span>
 							</div>
 						</div>
-					</li><!-- 4. End Product Slider item -->
-					<li><!-- 5. Product Slider item -->
+					</li>
+					<li>
 						<div class="thumb">
 							<a href="product.html">
 								<img src="/template/images/240x240.png" alt="">
@@ -576,20 +727,18 @@
 								<span class="price-current">$ 472.5</span>
 							</div>
 						</div>
-					</li><!-- 5. End Product Slider item -->
+					</li>
 				</ol>
-				<!-- End Product Listing Slider -->
 
-				<!-- Use this class (.clear) to clearing float -->
-				<div class="clear"></div>
+                <div class="clear"></div>
 
 			</div>
-			<!-- End Top Product Section -->
+-->			<!-- End Top Product Section -->
 
 
-			<!-- Product (Static) Section -->	
-			<div class="page-block">
-				
+			<!-- Product (Static) Section -->
+<!--			<div class="page-block">
+
 				<h2 class="block-title">
 					<span>New coming</span>
 					<a href="#" class="list-all">
@@ -697,19 +846,19 @@
 						</div>
 					</li>
 				</ol>
-				
-				<div class="clear"></div><!-- Use this class (.clear) to clearing float -->
+
+				<div class="clear"></div>
 
 			</div>
-			<!-- End Product (Static) Section -->	
+-->			<!-- End Product (Static) Section -->
 
 		</div>
 		<!-- END CONTENT CONTAINER -->
 
-		
+
 		<!-- FOOTER -->
 		<div class="footer">
-			
+
 			<!-- Footer main Section -->
 			<div class="footer-main">
 				<p>
@@ -725,7 +874,7 @@
 				</p>
 				<p>
 					<span class="block text-small">Having problem? Contact us</span>
-					+44 567 89 | ours@example.com | <a href="#">Live Chat</a>
+					+44 567 89 | help@adtoday.co.uk
 				</p>
 
 				<div class="social-footer">
@@ -738,7 +887,7 @@
 
 			<!-- Copyright Section -->
 			<div class="copyright">
-				<span class="block">&copy; 2016 Shofy Inc - Mobile Shop Template</span>
+				<span class="block">&copy; 2017 AdToday.co.uk</span>
 				<div class="navigation">
 					<a href="#">Term & Condition</a>
 					<a href="#">Privacy Policy</a>
