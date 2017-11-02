@@ -305,13 +305,15 @@
                 <?php foreach ($subCategoryListElements as $subcategory) : ?>
                     <li><!-- Category list item #4 -->
                         <div class="thumb">
-                            <a href="product-list.html">
+                            <a href="http://m.adtoday.co.uk/<?php echo  $subcategory['url']; ?>/">
                                 <img src="/template/images/240x240.png" alt="">
                             </a>
                         </div>
                         <div class="category-ctn">
                             <div class="cat-name">
-                                <a href="product-list.html"><?php echo $subcategory['sub_category_title']; ?></a>
+                                <a href="http://m.adtoday.co.uk/<?php echo  $subcategory['url']; ?>/">
+                                    <span><?php echo $subcategory['category']; ?></span>
+                               <!-- <a href="http://m.adtoday.co.uk/url"><?php /*echo $subcategory['sub_category_title']; */?></a>-->
                             </div>
                         </div>
                     </li><!-- End Category list item #4 -->
