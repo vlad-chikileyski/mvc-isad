@@ -312,8 +312,7 @@
                         <div class="category-ctn">
                             <div class="cat-name">
                                 <a href="http://m.adtoday.co.uk/<?php echo  $subcategory['url']; ?>/">
-                                    <span><?php echo $subcategory['category']; ?></span>
-                               <!-- <a href="http://m.adtoday.co.uk/url"><?php /*echo $subcategory['sub_category_title']; */?></a>-->
+                                    <span><?php echo $subcategory['sub_category_title']; ?></span>
                             </div>
                         </div>
                     </li><!-- End Category list item #4 -->
