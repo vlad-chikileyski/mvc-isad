@@ -16,6 +16,7 @@ class CategoryMobile
             while ($row = $result->fetch()) {
                 $subcategory[$i]['category'] = $row['category'];
                 $subcategory[$i]['sub_category_title'] = $row['sub_category_title'];
+                $subcategory[$i]['url'] = $row['url'];
                 $i++;
             }
             return $subcategory;
