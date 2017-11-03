@@ -27,9 +27,11 @@ class AccountController
                 UserMobile::auth($userId);
                 header("Location: http://m.adtoday.co.uk/");
             }
-            require_once(ROOT . '/views/login/login-mobile.php');
-            return true;
         }
+
+        require_once(ROOT . '/views/login/login-mobile.php');
+        return true;
+
     }
 
 }
