@@ -225,35 +225,6 @@
 			</div>
 -->			<!-- End Your Cart Tabs -->
 
-			<!-- Latest Blog Tabs -->
-<!--			<div id="latestblog">
-
-				<div class="latest-blog-featured">
-					<div class="thumb">
-						<img src="/template/images/500x400-white.jpg" alt="">
-					</div>
-					<span class="meta">05.10.2016 - Natalie Amyllia</span>
-					<h3 class="blog-title"><a href="#">End of year great discount at Shofy</a></h3>
-					<p>Until we open the shop, we always loose and like nothing to win...</p>
-				</div>
-
-				<ol class="latest-blog">
-					<li>
-						<span class="meta">05.10.2016 - Natalie Amyllia</span>
-						<h3 class="blog-title"><a href="#">End of year great discount at Shofy</a></h3>
-					</li>
-					<li>
-						<span class="meta">05.10.2016 - Natalie Amyllia</span>
-						<h3 class="blog-title"><a href="#">Happy Discount For All Our Customer</a></h3>
-					</li>
-					<li>
-						<span class="meta">05.10.2016 - Natalie Amyllia</span>
-						<h3 class="blog-title"><a href="#">Buy 1 Get 1 Free for all electronics product</a></h3>
-					</li>
-				</ol>
-			</div>
--->			<!-- End Latest Blog Tabs -->
-
 		</div>
 		<!-- End Right Sidebar Tabs Content -->
 
