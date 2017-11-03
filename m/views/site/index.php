@@ -93,14 +93,11 @@
 				<li class="has-sub"><a href="#"><i class="fa fa-google-wallet"></i> Order</a>
 					<ul>
 						<li><a href="payment-confirm.html">Payment Confirm</a></li>
-						<li><a href="tracking-order.html">Tracking Order</a></li>
 					</ul>
 				</li>
 				<li class="has-sub"><a href="#"><i class="fa fa-users"></i> Member</a>
 					<ul>
-						<li><a href="panel-account.html">Panel Account</a></li>
 						<li><a href="form-account.html">Form Account</a></li>
-						<li><a href="order-history.html">Order History</a></li>
 					</ul>
 				</li>
 				<li class="has-sub"><a href="#"><i class="fa fa-file-text-o"></i> Blog</a>
@@ -246,11 +243,8 @@
 					<i class="fa fa-user-circle-o"></i>
 				</a>
 				<ul id="dropdown1" class="dropdown-content">
-					<li><a href="panel-account.html"><i class="fa fa-server"></i> Panel Account</a></li>
-					<li><a href="form-account.html"><i class="fa fa-user"></i> My Profile</a></li>
-					<li><a href="order-history.html"><i class="fa fa-history"></i> Order History</a></li>
+					<li><a href="http://m.adtoday.co.uk/login"><i class="fa fa-user"></i> My Profile</a></li>
 					<li class="divider"></li>
-					<li><a href="tracking-order.html"><i class="fa fa-search"></i> Tracking Order</a></li>
 				</ul>
 
 				<!--<a href="#" id="menu-right" data-activates="slide-out-right">
