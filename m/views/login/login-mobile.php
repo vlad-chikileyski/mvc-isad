@@ -298,7 +298,7 @@
         <!-- CONTENT CONTAINER -->
         <div class="content-container">
 
-            <h1 class="page-title">Checkout</h1>
+            <h1 class="page-title">Login</h1>
 
             <!-- Login Section -->
             <?php if (isset($errors) && is_array($errors)): ?>
