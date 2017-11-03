@@ -244,6 +244,7 @@
 				</a>
 				<ul id="dropdown1" class="dropdown-content">
 					<li><a href="http://m.adtoday.co.uk/login"><i class="fa fa-user"></i> My Profile</a></li>
+                    <li><a href="http://m.adtoday.co.uk/register"><i class="fa fa-user"></i> Register</a></li>
 					<li class="divider"></li>
 				</ul>
 
