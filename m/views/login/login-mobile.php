@@ -289,7 +289,7 @@
                 </a>
             </div>
             <div class="site-title">
-                <h1>Shofy</h1>
+                <h1>AdToday - Buy & Sell Anything</h1>
             </div>
         </div>
         <!-- End FIXED Top Navbar -->
