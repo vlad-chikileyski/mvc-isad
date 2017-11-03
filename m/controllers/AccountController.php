@@ -34,4 +34,42 @@ class AccountController
 
     }
 
+    public function actionRegister()
+    {
+        $username = '';
+        $password = '';
+        $useremail = '';
+        $query_registration = false;
+        if (isset($_POST['signUp'])) {
+                $username = $_POST['username'];
+            $password = $_POST['password'];
+            $useremail = $_POST['useremail'];
+
+            $errors = false;
+
+            if (!UserMobile::checkName($username)) {
+                $errors[] = 'Name must be > 4 symbols';
+            }
+            if (!UserMobile::checkPassword($password)) {
+                $errors[] = 'Password must be > 5 symbols';
+            }
+            if (!UserMobile::checkEmail($useremail)) {
+                $errors[] = 'Invalid email type!';
+            }
+            if (UserMobile::checkEmailExists($useremail)) {
+                $errors[] = 'This email already exists!';
+            }
+            if ($errors == false) {
+                $query_registration = UserMobile::register($username, $useremail, $password);
+                if ($query_registration &&  MailBuilderMobile::configureMailForActivateAccount($useremail, $username)) {
+                    header("Location: /activate-account/200");
+                }
+            }
+        }
+
+        require_once(ROOT . '/views/register/register-mobile.php');
+        return true;
+
+
+    }
 }

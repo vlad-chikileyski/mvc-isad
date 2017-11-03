@@ -77,8 +77,9 @@ class UserMobile
         $result = $db->prepare($sql);
         $result->bindParam(':email', $email, PDO::PARAM_STR);
         $result->execute();
-        if ($result->fetchColumn())
+        if ($result->fetchColumn()) {
             return true;
+        }
         return false;
     }
 
