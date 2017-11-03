@@ -298,7 +298,7 @@
         <!-- CONTENT CONTAINER -->
         <div class="content-container">
 
-            <h1 class="page-title">Checkout</h1>
+            <h1 class="page-title">Login</h1>
 
             <!-- Login Section -->
             <?php if (isset($errors) && is_array($errors)): ?>
@@ -333,7 +333,7 @@
                 <span class="block semibold">Not registered yet? Register</span>
                 <p>Since the belonging of the record and having stupid apologize return can't be able and you always
                     mine.</p>
-                <button class="btn green block" type="button">register</button>
+                <button class="btn green block" type="button">Login</button>
             </div>
             <!-- End Register Section -->
 
