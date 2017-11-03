@@ -242,7 +242,7 @@
 				<a href="#" class="dropdown-button" data-activates="dropdown1">
 					<i class="fa fa-user-circle-o"></i>
 				</a>
-                <?php if (UserMobile::isGuest()): ?>
+        <?php if (UserMobile::isGuest()): ?>
                     <ul id="dropdown1" class="dropdown-content">
                         <li><a href="panel-account.html"><i class="fa fa-server"></i> Panel Account</a></li>
                         <li><a href="form-account.html"><i class="fa fa-user"></i> My Profile</a></li>
@@ -254,6 +254,8 @@
                 <?php else: ?>
                     <ul id="dropdown1" class="dropdown-content">
                         <li><a href="http://m.adtoday.co.uk/login"><i class="fa fa-user"></i> My Profile</a></li>
+                        <li><a href="http://m.adtoday.co.uk/register"><i class="fa fa-user"></i> Register</a></li>
+
                         <li class="divider"></li>
                     </ul>
                 <?php endif; ?>

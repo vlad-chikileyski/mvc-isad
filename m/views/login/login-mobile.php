@@ -278,6 +278,7 @@
                 <ul id="dropdown1" class="dropdown-content">
                     <li><a href="panel-account.html"><i class="fa fa-server"></i> Panel Account</a></li>
                     <li><a href="form-account.html"><i class="fa fa-user"></i> My Profile</a></li>
+                    <li><a href="form-account.html"><i class="fa fa-user"></i> Register</a></li>
                     <li><a href="order-history.html"><i class="fa fa-history"></i> Order History</a></li>
                     <li class="divider"></li>
                     <li><a href="tracking-order.html"><i class="fa fa-search"></i> Tracking Order</a></li>
