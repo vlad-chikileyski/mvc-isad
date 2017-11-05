@@ -192,9 +192,9 @@
                                     <i class="fa"></i>
                                     <span>Price High to Low</span>
                                     <ul>
-                                        <li><a href="#">Price Low to High</a></li>
-                                        <li><a href="#">Price High to Low</a></li>
-                                        <li><a href="#">Price High to Low</a></li>
+                                        <li id="test0"><a href="https://adtoday.co.uk/catalog/electronics?price-low">Price Low to High</a></li>
+                                        <li><a href="https://adtoday.co.uk/catalog/electronics/price-high">Price High to Low</a></li>
+                                        <li><a href="https://adtoday.co.uk/catalog/electronics">Price High to Low</a></li>
                                         <li><a href="#">Recently Published</a></li>
                                     </ul>
                                 </div>

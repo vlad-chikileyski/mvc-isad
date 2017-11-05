@@ -85,7 +85,7 @@
             <div class="breadcrumb catalog-shadow-style">
                 <ul>
                     <li><a href="https://adtoday.co.uk/">Home</a></li>
-                    category-menu
+                    <li><a href="https://adtoday.co.uk/catalog/<?php echo $urlParam; ?>/"><?php echo $urlParam; ?></a></li>
                     <li>
                         <a href="https://adtoday.co.uk/catalog/<?php echo $urlParam; ?>/<?php echo $urlSubParam; ?>/"><?php echo $urlSubParam; ?></a>
                     </li>

@@ -125,8 +125,8 @@ jQuery(function ($) {
     });
 
     /*
-    * Sub-category
-    * */
+     * Sub-category
+     * */
     $("#sub-category").on("click", "a", function (e) {
         e.preventDefault();
         var $this = $(this).parent();
@@ -212,6 +212,9 @@ jQuery(function ($) {
         e.preventDefault();
         var $this = $(this),
             newText = $this.text();
+        var href = $(this).attr('href');
+        alert(href);
+        window.location.href =href;
         $this.parents(".sort-action").children("span").text(newText);
     });
     $("body").on("click", ".sort-action", function (e) {
