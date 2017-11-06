@@ -4079,7 +4079,6 @@ body {
     background: #dfdfdf;
 }
 
-
 img {
     max-width: 100%;
 }
@@ -4245,7 +4244,6 @@ a.link.link-pink {
 
 .app-canvas-modif {
     padding: 130px 0 40px 0;
-    background: #ffffff;
 }
 
 @media (max-width: 1199px) {
@@ -6700,7 +6698,7 @@ a.view-item, .contact-options li a, .listing-actions a, .listing-actions .fa,
 }
 
 .search-widget input[type="text"] {
-    background: white;
+    background: none;
     border: none;
     width: 100%;
     height: 100%;
@@ -6774,7 +6772,7 @@ a.view-item, .contact-options li a, .listing-actions a, .listing-actions .fa,
 }
 
 .listing-filters {
-    width: 210px;
+    width: 230px;
     padding-right: 30px;
     float: left;
 }
@@ -6906,16 +6904,11 @@ a.view-item, .contact-options li a, .listing-actions a, .listing-actions .fa,
     position: relative;
     background: #ffffff;
     height: 180px;
-    /* min-height: 262px; */
+    /*
+    min-height: 262px;
+    */
     padding-left: 210px;
     padding-right: 30px;
-    /* position: relative; */
-    /* display: inline-block; */
-    box-shadow: 0 3px 5px #EEEEEE;
-    margin: 5px;
-    overflow: hidden;
-    border-radius: 3px;
-    transition: box-shadow 0.5s ease;
     padding-top: 2px;
     margin-bottom: 10px;
 }
@@ -6972,10 +6965,6 @@ a.view-item, .contact-options li a, .listing-actions a, .listing-actions .fa,
     padding-right: 135px;
     position: relative;
     max-width: 720px;
-}
-
-.clad-setd{
-    background: rgb(247, 233, 197);
 }
 
 @media (max-width: 992px) {
@@ -8276,7 +8265,7 @@ a.view-item, .contact-options li a, .listing-actions a, .listing-actions .fa,
 
 .category-search {
     padding: 40px 0;
-    background: #f4f4f4;
+    background: #ffffff;
     position: relative;
     z-index: 100;
     /*    -webkit-box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.14);
