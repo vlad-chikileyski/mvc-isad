@@ -1,0 +1,478 @@
+<form method="post">
+    <div class="elements-block">
+        <div class="inner">
+            <div class="row field-block">
+                <div class="col-xs-12 col-md-3">
+                    <label class="required" for="title">Title of your ad</label>
+                </div>
+                <div class="col-xs-12 col-md-9">
+                    <input type="text" id="title" name="title" required>
+                </div>
+            </div>
+            <div class="row field-block">
+                <div class="col-xs-12 col-md-3">
+                    <span class="required label">You are</span>
+                </div>
+                <div class="col-xs-12 col-md-9">
+                    <div class="mega-dropdown-wrap">
+                        <div class="mega-dropdown">
+                            <button>Select an option</button>
+                            <i class="fa fa-nafffffffff vicon"></i>
+                            <div class="mega-content">
+                                <ul class="sub-category" id="adtype-list">
+                                    <li data-value="independent"><a href="#">Independent</a></li>
+                                    <li data-value="agency"><a href="#">Agency</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <input id="adtype" name="adtype" type="hidden"/>
+            <hr>
+            <div class="row field-block">
+                <div class="col-xs-12 col-md-3">
+                    <label class="required" for="description">Ad Description</label>
+                </div>
+                <div class="col-xs-12 col-md-9">
+                                    <textarea id="description"
+                                              name="description"></textarea>
+                </div>
+            </div>
+            <hr>
+            <div class="row field-block">
+                <div class="col-xs-12 col-md-3">
+                    <span class="required label">Gender</span>
+                </div>
+                <div class="col-xs-12 col-md-9">
+                    <div class="mega-dropdown-wrap">
+                        <div class="mega-dropdown">
+                            <button>Select an option</button>
+                            <i class="fa fa-navicon"></i>
+                            <div class="mega-content">
+                                <ul class="sub-category" id="gender-list">
+                                    <li data-value="male"><a href="#">Male</a>
+                                    <li data-value="female"><a href="#">Female</a>
+                                    <li data-value="transgender"><a href="#">Transgender</a>
+                                    <li data-value="ts"><a href="#">TS</a>
+                                    <li data-value="tv"><a href="#">TV</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <input id="gender" name="gender" type="hidden"/>
+
+            <div class="row field-block">
+                <div class="col-xs-12 col-md-3">
+                    <span class="required label">Ethnicity</span>
+                </div>
+                <div class="col-xs-12 col-md-9">
+                    <div class="mega-dropdown-wrap">
+                        <div class="mega-dropdown">
+                            <button>Select an option</button>
+                            <i class="fa fa-navicon"></i>
+                            <div class="mega-content">
+                                <ul class="sub-category" id="ethnicity-list">
+                                    <li data-value="arabic"><a href="#">Arabic</a>
+                                    <li data-value="asian"><a href="#">Asian</a>
+                                    <li data-value="african-caribbean"><a href="#">African/Caribbean</a>
+                                    <li data-value="caucasian"><a href="#">Caucasian</a>
+                                    <li data-value="indian"><a href="#">Indian</a>
+                                    <li data-value="latina"><a href="#">Latina</a>
+                                    <li data-value="mixed"><a href="#">Mixed</a>
+                                    <li data-value="other"><a href="#">Other</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <input id="ethnicity" name="ethnicity" type="hidden"/>
+
+            <div class="row field-block">
+                <div class="col-xs-12 col-md-3">
+                    <span class="required label">Age</span>
+                </div>
+                <div class="col-xs-12 col-md-9">
+                    <div class="radio-dropdown">
+                        <i class="fa fa-bars"></i>
+                        <button>Select an option</button>
+                        <ul>
+                            <li class="custom-radio">
+                                <input name="item-age-value" type="radio" value="18" id="age-18">
+                                <label for="age-18">18</label>
+                            </li>
+                            <li class="custom-radio">
+                                <input name="item-age-value" type="radio" value="19" id="age-19">
+                                <label for="age-19">19</label>
+                            </li>
+                            <li class="custom-radio">
+                                <input name="item-age-value" type="radio" value="20" id="age-20">
+                                <label for="age-20">20</label>
+                            </li>
+                            <li class="custom-radio">
+                                <input name="item-age-value" type="radio" value="21" id="age-21">
+                                <label for="age-21">21</label>
+                            </li>
+                            <li class="custom-radio">
+                                <input name="item-age-value" type="radio" value="22" id="age-22">
+                                <label for="age-22">22</label>
+                            </li>
+                            <li class="custom-radio">
+                                <input name="item-age-value" type="radio" value="23" id="age-23">
+                                <label for="age-23">23</label>
+                            </li>
+                            <li class="custom-radio">
+                                <input name="item-age-value" type="radio" value="24" id="age-24">
+                                <label for="age-24">24</label>
+                            </li>
+                            <li class="custom-radio">
+                                <input name="item-age-value" type="radio" value="25" id="age-25">
+                                <label for="age-25">25</label>
+                            </li>
+                            <li class="custom-radio">
+                                <input name="item-age-value" type="radio" value="26" id="age-26">
+                                <label for="age-26">26</label>
+                            </li>
+                            <li class="custom-radio">
+                                <input name="item-age-value" type="radio" value="27" id="age-27">
+                                <label for="age-27">27</label>
+                            </li>
+                            <li class="custom-radio">
+                                <input name="item-age-value" type="radio" value="28" id="age-28">
+                                <label for="age-28">28</label>
+                            </li>
+                            <li class="custom-radio">
+                                <input name="item-age-value" type="radio" value="29" id="age-29">
+                                <label for="age-29">29</label>
+                            </li>
+                            <li class="custom-radio">
+                                <input name="item-age-value" type="radio" value="30" id="age-30">
+                                <label for="age-30">30</label>
+                            </li>
+                            <li class="custom-radio">
+                                <input name="item-age-value" type="radio" value="31" id="age-31">
+                                <label for="age-31">31</label>
+                            </li>
+                            <li class="custom-radio">
+                                <input name="item-age-value" type="radio" value="32" id="age-32">
+                                <label for="age-32">32</label>
+                            </li>
+                            <li class="custom-radio">
+                                <input name="item-age-value" type="radio" value="33" id="age-33">
+                                <label for="age-33">33</label>
+                            </li>
+                            <li class="custom-radio">
+                                <input name="item-age-value" type="radio" value="34" id="age-34">
+                                <label for="age-34">34</label>
+                            </li>
+                            <li class="custom-radio">
+                                <input name="item-age-value" type="radio" value="35" id="age-35">
+                                <label for="age-35">35</label>
+                            </li>
+                            <li class="custom-radio">
+                                <input name="item-age-value" type="radio" value="36" id="age-36">
+                                <label for="age-36">36</label>
+                            </li>
+                            <li class="custom-radio">
+                                <input name="item-age-value" type="radio" value="37" id="age-37">
+                                <label for="age-37">37</label>
+                            </li>
+                            <li class="custom-radio">
+                                <input name="item-age-value" type="radio" value="38" id="age-38">
+                                <label for="age-38">38</label>
+                            </li>
+                            <li class="custom-radio">
+                                <input name="item-age-value" type="radio" value="39" id="age-39">
+                                <label for="age-39">39</label>
+                            </li>
+                            <li class="custom-radio">
+                                <input name="item-age-value" type="radio" value="40" id="age-40">
+                                <label for="age-40">40</label>
+                            </li>
+                            <li class="custom-radio">
+                                <input name="item-age-value" type="radio" value="41" id="age-41">
+                                <label for="age-41">41</label>
+                            </li>
+                            <li class="custom-radio">
+                                <input name="item-age-value" type="radio" value="42" id="age-42">
+                                <label for="age-42">42</label>
+                            </li>
+                            <li class="custom-radio">
+                                <input name="item-age-value" type="radio" value="43" id="age-43">
+                                <label for="age-43">43</label>
+                            </li>
+                            <li class="custom-radio">
+                                <input name="item-age-value" type="radio" value="44" id="age-44">
+                                <label for="age-44">44</label>
+                            </li>
+                            <li class="custom-radio">
+                                <input name="item-age-value" type="radio" value="45" id="age-45">
+                                <label for="age-45">45</label>
+                            </li>
+                            <li class="custom-radio">
+                                <input name="item-age-value" type="radio" value="46" id="age-46">
+                                <label for="age-46">46</label>
+                            </li>
+                            <li class="custom-radio">
+                                <input name="item-age-value" type="radio" value="47" id="age-47">
+                                <label for="age-47">47</label>
+                            </li>
+                            <li class="custom-radio">
+                                <input name="item-age-value" type="radio" value="48" id="age-48">
+                                <label for="age-48">48</label>
+                            </li>
+                            <li class="custom-radio">
+                                <input name="item-age-value" type="radio" value="49" id="age-49">
+                                <label for="age-49">49</label>
+                            </li>
+                            <li class="custom-radio">
+                                <input name="item-age-value" type="radio" value="50" id="age-50">
+                                <label for="age-50">50</label>
+                            </li>
+                            <li class="custom-radio">
+                                <input name="item-age-value" type="radio" value="51" id="age-51">
+                                <label for="age-51">51</label>
+                            </li>
+                            <li class="custom-radio">
+                                <input name="item-age-value" type="radio" value="52" id="age-52">
+                                <label for="age-52">52</label>
+                            </li>
+                            <li class="custom-radio">
+                                <input name="item-age-value" type="radio" value="53" id="age-53">
+                                <label for="age-53">53</label>
+                            </li>
+                            <li class="custom-radio">
+                                <input name="item-age-value" type="radio" value="54" id="age-54">
+                                <label for="age-54">54</label>
+                            </li>
+                            <li class="custom-radio">
+                                <input name="item-age-value" type="radio" value="55" id="age-55">
+                                <label for="age-55">55</label>
+                            </li>
+                            <li class="custom-radio">
+                                <input name="item-age-value" type="radio" value="56" id="age-56">
+                                <label for="age-56">56</label>
+                            </li>
+                            <li class="custom-radio">
+                                <input name="item-age-value" type="radio" value="57" id="age-57">
+                                <label for="age-57">57</label>
+                            </li>
+                            <li class="custom-radio">
+                                <input name="item-age-value" type="radio" value="58" id="age-58">
+                                <label for="age-58">58</label>
+                            </li>
+                            <li class="custom-radio">
+                                <input name="item-age-value" type="radio" value="59" id="age-59">
+                                <label for="age-59">59</label>
+                            </li>
+                            <li class="custom-radio">
+                                <input name="item-age-value" type="radio" value="60" id="age-60">
+                                <label for="age-60">60+</label>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row field-block">
+                <div class="col-xs-12 col-md-3">
+                    <span class="required label">Language</span>
+                </div>
+                <div class="col-xs-12 col-md-6">
+                    <div class="custom-checkbox">
+                        <input type="checkbox" name="language[]" value="english" id="english">
+                        <label for="english">English</label>
+                    </div>
+                    <div class="custom-checkbox">
+                        <input type="checkbox" name="language[]" value="spanish" id="spanish">
+                        <label for="spanish">Spanish</label>
+                    </div>
+                    <div class="custom-checkbox">
+                        <input type="checkbox" name="language[]" value="french" id="french">
+                        <label for="french">French</label>
+                    </div>
+                    <div class="custom-checkbox">
+                        <input type="checkbox" name="language[]" value="italian" id="italian">
+                        <label for="italian">Italian</label>
+                    </div>
+                    <div class="custom-checkbox">
+                        <input type="checkbox" name="language[]" value="portugese" id="portugese">
+                        <label for="portugese">Portugese</label>
+                    </div>
+                    <div class="custom-checkbox">
+                        <input type="checkbox" name="language[]" value="german" id="german">
+                        <label for="german">German</label>
+                    </div>
+                    <div class="custom-checkbox">
+                        <input type="checkbox" name="language[]" value="russian" id="russian">
+                        <label for="russian">Russian</label>
+                    </div>
+                    <div class="custom-checkbox">
+                        <input type="checkbox" name="language[]" value="chinese" id="chinese">
+                        <label for="chinese">Chinese</label>
+                    </div>
+                    <div class="custom-checkbox">
+                        <input type="checkbox" name="language[]" value="other" id="other">
+                        <label for="other">Other</label>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="row field-block">
+                <div class="col-xs-12 col-md-3">
+                    <span class="required label">Likes/Interests</span>
+                </div>
+                <div class="col-xs-12 col-md-7">
+                    <div class="custom-checkbox">
+                        <input type="checkbox" name="interests[]" value="massage" id="massage">
+                        <label for="massage">Massage</label>
+                    </div>
+                    <div class="custom-checkbox">
+                        <input type="checkbox" name="interests[]" value="escorting" id="escorting">
+                        <label for="escorting">Escorting</label>
+                    </div>
+                    <div class="custom-checkbox">
+                        <input type="checkbox" name="interests[]" value="role-play-fantasy"
+                               id="role-play-fantasy">
+                        <label for="role-play-fantasy">Role play & Fantasy</label>
+                    </div>
+                    <div class="custom-checkbox">
+                        <input type="checkbox" name="interests[]" value="dinner-date" id="dinner-date">
+                        <label for="dinner-date">Dinner Date</label>
+                    </div>
+                    <div class="custom-checkbox">
+                        <input type="checkbox" name="interests[]" value="tantric-massage" id="tantric-massage">
+                        <label for="tantric-massage">Tantric Massage</label>
+                    </div>
+                    <div class="custom-checkbox">
+                        <input type="checkbox" name="interests[]" value="stress-relief" id="stress-relief">
+                        <label for="stress-relief">Stress relief</label>
+                    </div>
+                    <div class="custom-checkbox">
+                        <input type="checkbox" name="interests[]" value="travel-companion" id="travel-companion">
+                        <label for="travel-companion">Travel companion</label>
+                    </div>
+                    <div class="custom-checkbox">
+                        <input type="checkbox" name="interests[]" value="modelling" id="modelling">
+                        <label for="modelling">Modelling</label>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="row field-block">
+                <div class="col-xs-12 col-md-3">
+                    <span class="required label">My service is for</span>
+                </div>
+                <div class="col-xs-12 col-md-7">
+                    <div class="custom-checkbox">
+                        <input type="checkbox" name="servfor[]" value="men" id="men">
+                        <label for="men">Men</label>
+                    </div>
+                    <div class="custom-checkbox">
+                        <input type="checkbox" name="servfor[]" value="women" id="women">
+                        <label for="women">Women</label>
+                    </div>
+                    <div class="custom-checkbox">
+                        <input type="checkbox" name="servfor[]" value="couples"
+                               id="couples">
+                        <label for="couples">Couples</label>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="row field-block">
+                <div class="col-xs-12 col-md-3">
+                    <span class="required label">Rates</span>
+                </div>
+                <div class="col-xs-12 col-md-4">
+                    <table class="browserref notranslate"
+                           style="border-collapse: collapse; width: 100%; background-color: rgba(232, 232, 232, 0.73)">
+                        <tbody style="    display: table-row-group;vertical-align: middle;border-color: inherit;">
+                        <tr>
+                            <td style="border: 0px solid #d4d4d4;text-align: center;padding: 8px;vertical-align: top; background-color: white">
+                                x
+                            </td>
+                            <td style="border: 1px solid #d4d4d4;text-align: center;padding: 8px;vertical-align: top; background-color: white">
+                                incall
+                            </td>
+                            <td style="border: 1px solid #d4d4d4;text-align: center;padding: 8px;vertical-align: top; background-color: white">
+                                outcall
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #d4d4d4;padding: 0px;border-left: 0px; background-color: white">
+                                15 minutes
+                            </td>
+                            <td style="border: 1px solid #d4d4d4;text-align: center;padding: 0px;vertical-align: top; max-width: 10px;">
+                                <input type="text" name="col-1-incall-row-1" placeholder="£" style="width:100%;">
+                            </td>
+                            <td style="border: 1px solid #d4d4d4;text-align: center;padding: 0px;vertical-align: top; max-width: 10px;">
+                                <input type="text" name="col-2-outcall-row-1" placeholder="£" style="width:100%;">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #d4d4d4;padding: 0px;border-left: 0px; background-color: white">
+                                30 minutes
+                            </td>
+                            <td style="border: 1px solid #d4d4d4;text-align: center;padding: 0px;vertical-align: top; max-width: 10px;">
+                                <input type="text" name="col-1-incall-row-2" placeholder="£" style="width:100%;">
+                            </td>
+                            <td style="border: 1px solid #d4d4d4;text-align: center;padding: 0px;vertical-align: top; max-width: 10px;">
+                                <input type="text" name="col-2-outcall-row-2" placeholder="£" style="width:100%;">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #d4d4d4;padding: 0px;border-left: 0px; background-color: white">
+                                1 hour <a style="color: red">*</a>
+                            </td>
+                            <td style="border: 1px solid #d4d4d4;text-align: center;padding: 0px;vertical-align: top; max-width: 10px;">
+                                <input type="text" name="col-1-incall-row-3" placeholder="£" style="width:100%;">
+                            </td>
+                            <td style="border: 1px solid #d4d4d4;text-align: center;padding: 0px;vertical-align: top; max-width: 10px;">
+                                <input type="text" name="col-2-outcall-row-3" placeholder="£" style="width:100%;">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #d4d4d4;padding: 0px;border-left: 0px; background-color: white">
+                                2 hours
+                            </td>
+                            <td style="border: 1px solid #d4d4d4;text-align: center;padding: 0px;vertical-align: top; max-width: 10px;">
+                                <input type="text" name="col-1-incall-row-4" placeholder="£" style="width:100%;">
+                            </td>
+                            <td style="border: 1px solid #d4d4d4;text-align: center;padding: 0px;vertical-align: top; max-width: 10px;">
+                                <input type="text" name="col-2-outcall-row-4" placeholder="£" style="width:100%;">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #d4d4d4;padding: 0px;border-left: 0px;background-color: white">
+                                4 hours
+                            </td>
+                            <td style="border: 1px solid #d4d4d4;text-align: center;padding: 0px;vertical-align: top; max-width: 10px;">
+                                <input type="text" name="col-1-incall-row-5" placeholder="£" style="width:100%;">
+                            </td>
+                            <td style="border: 1px solid #d4d4d4;text-align: center;padding: 0px;vertical-align: top; max-width: 10px;">
+                                <input type="text" name="col-2-outcall-row-5" placeholder="£" style="width:100%;">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #d4d4d4;padding: 0px;border-left: 0px;background-color: white">
+                                overnight
+                            </td>
+                            <td style="border: 1px solid #d4d4d4;text-align: center;padding: 0px;vertical-align: top; max-width: 10px;">
+                                <input type="text" name="col-1-incall-row-6" placeholder="£" style="width:100%;">
+                            </td>
+                            <td style="border: 1px solid #d4d4d4;text-align: center;padding: 0px;vertical-align: top; max-width: 10px;">
+                                <input type="text" name="col-2-outcall-row-6" placeholder="£" style="width:100%;">
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <hr>
