@@ -299,7 +299,7 @@
         <!-- CONTENT CONTAINER -->
         <div class="content-container">
 
-            <h1 class="page-title">Login</h1>
+            <h1 class="page-title">Change password</h1>
 
             <!-- Login Section -->
             <?php if (isset($errors) && is_array($errors)): ?>
@@ -309,19 +309,13 @@
                     <?php endforeach; ?>
                 </ul>
             <?php endif; ?>
-            <form action="http://m.adtoday.co.uk/login" method="post">
+            <form action="http://m.adtoday.co.uk/forgot-password" method="post">
                 <div class="page-block margin-bottom">
-                    <span class="block semibold margin-bottom_low">Already member? Login</span>
                     <div class="input-field">
                         <input name="useremail" type="text" id="email">
                         <label for="email">Email</label>
                     </div>
-                    <div class="input-field">
-                        <input type="password" id="passwd" name="password">
-                        <label for="passwd">Password</label>
-                    </div>
-                    <button type="submit" class="btn orange margin-bottom_low" name="signIn">Login</button>
-                    <a href="http://m.adtoday.co.uk/forgot-password">Forgot password</a>
+                    <button type="submit" class="btn orange margin-bottom_low" name="signIn">Forgot password</button>
                 </div>
 
             </form>
@@ -335,7 +329,7 @@
                 <span class="block semibold">Not registered yet? Register</span>
                 <p>Since the belonging of the record and having stupid apologize return can't be able and you always
                     mine.</p>
-                <button class="btn green block" type="button">Login</button>
+                <button class="btn green block" type="button">Register</button>
             </div>
             <!-- End Register Section -->
 
