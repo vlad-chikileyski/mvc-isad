@@ -6,7 +6,8 @@ function __autoload($class_name)
     $array_paths = array(
         '/models/',
         '/components/',
-        '/moduls/'
+        '/moduls/',
+        '/security/filter/'
     );
 
     foreach ($array_paths as $path) {

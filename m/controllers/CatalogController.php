@@ -4,7 +4,7 @@ class  CatalogController
 {
     public function actionDouble($urlParam, $urlSubParam, $page = 1)
     {
-        $categoryExistDoubleParamName = CategoryMobile::categoryCheckDoubleParam($urlParam, $urlSubParam);
+        $categoryExistDoubleParamName = CategoryFilterMobile::categoryCheckDoubleParam($urlParam, $urlSubParam);
         if ($categoryExistDoubleParamName == false) {
             header("HTTP/1.0 404 Not Found");
             require_once(ROOT . '/views/error/404.php');

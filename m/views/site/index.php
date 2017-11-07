@@ -569,7 +569,7 @@
 
                     <li><!-- Category list item #3 -->
                         <div class="thumb">
-                            <a href="http://m.adtoday.co.uk/sub/mobile_phones_accessories">
+                            <a href="http://m.adtoday.co.uk/sub/mobile-phones-accessories">
                                 <img src="/template/images/240x240.png" alt="">
                             </a>
                         </div>
@@ -585,7 +585,7 @@
 
                     <li><!-- Category list item #4 -->
                         <div class="thumb">
-                            <a href="http://m.adtoday.co.uk/sub/electronics_home_appliances">
+                            <a href="http://m.adtoday.co.uk/sub/electronics-home-appliances">
                                 <img src="/template/images/240x240.png" alt="">
                             </a>
                         </div>
@@ -602,7 +602,7 @@
                     <!-- End Category list item #4 -->
                     <li><!-- Category list item #4 -->
                         <div class="thumb">
-                            <a href="http://m.adtoday.co.uk/sub/home_garden">
+                            <a href="http://m.adtoday.co.uk/sub/home-garden">
                                 <img src="/template/images/240x240.png" alt="">
                             </a>
                         </div>
@@ -618,7 +618,7 @@
                     <!-- End Category list item #4 -->
                     <li><!-- Category list item #4 -->
                         <div class="thumb">
-                            <a href="http://m.adtoday.co.uk/sub/fashion_beauty">
+                            <a href="http://m.adtoday.co.uk/sub/fashion-beauty">
                                 <img src="/template/images/240x240.png" alt="">
                             </a>
                         </div>
@@ -649,7 +649,7 @@
                     <!-- End Category list item #4 -->
                     <li><!-- Category list item #4 -->
                         <div class="thumb">
-                            <a href="http://m.adtoday.co.uk/sub/kids_babies">
+                            <a href="http://m.adtoday.co.uk/sub/kids-babies">
                                 <img src="/template/images/240x240.png" alt="">
                             </a>
                         </div>
@@ -665,7 +665,7 @@
                     <!-- End Category list item #4 -->
                     <li><!-- Category list item #4 -->
                         <div class="thumb">
-                            <a href="http://m.adtoday.co.uk/sub/sporting_goods_bikes">
+                            <a href="http://m.adtoday.co.uk/sub/sporting-goods-bikes">
                                 <img src="/template/images/240x240.png" alt="">
                             </a>
                         </div>
@@ -682,7 +682,7 @@
                     <!-- End Category list item #4 -->
                     <li><!-- Category list item #4 -->
                         <div class="thumb">
-                            <a href="http://m.adtoday.co.uk/sub/hobbies_music_art_books">
+                            <a href="http://m.adtoday.co.uk/sub/hobbies-music-art-books">
                                 <img src="/template/images/240x240.png" alt="">
                             </a>
                         </div>
@@ -717,7 +717,7 @@
                     <!-- End Category list item #4 -->
                     <li><!-- Category list item #4 -->
                         <div class="thumb">
-                            <a href="http://m.adtoday.co.uk/sub/business_industrial">
+                            <a href="http://m.adtoday.co.uk/sub/business-industrial">
                                 <img src="/template/images/240x240.png" alt="">
                             </a>
                         </div>
