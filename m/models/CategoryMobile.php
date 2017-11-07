@@ -6,23 +6,17 @@ class CategoryMobile
      * Get sub-category list ?
      * @return array
      */
-    /**
-     * Get sub-category list ?
-     * @return array
-     */
     public static function getSubcategyListByCategory($categoryName = false)
     {
         if ($categoryName) {
             $db = Db::getConnectionOnCatics();
             $subcategory = array();
-            $result = $db->query('SELECT * FROM `category-menu` WHERE category = "'.$categoryName.'" '
-                .'AND status = 1 ORDER BY position');
+            $result = $db->query('SELECT * FROM catalog_subcategory WHERE category = "'.$categoryName.'" ');
             $i = 0;
             while ($row = $result->fetch()) {
-                $subcategory[$i]['menu-title'] = $row['menu-title'];
-                $subcategory[$i]['url-title'] = $row['url-title'];
                 $subcategory[$i]['category'] = $row['category'];
-                $subcategory[$i]['subcategory-name'] = $row['subcategory-name'];
+                $subcategory[$i]['sub_category_title'] = $row['sub_category_title'];
+                $subcategory[$i]['url'] = $row['url'];
                 $i++;
             }
             return $subcategory;
