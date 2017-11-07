@@ -35,7 +35,6 @@
                 <li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
                 <li class="has-sub"><a href="#"><i class="fa fa-th-list"></i> Categories</a>
                     <ul>
-                        <li><a href="category.html">Category Page</a></li>
                         <li class="has-sub"><a href="http://m.adtoday.co.uk/sub/vehicles">Vehicles</a>
                             <ul>
                                 <li><a href="http://m.adtoday.co.uk/catalog/vehicle/cars/">Cars</a></li>
