@@ -575,7 +575,7 @@
                         </div>
                         <div class="category-ctn">
                             <div class="cat-name">
-                                <a href="http://m.adtoday.co.uk/sub/mobile_phones_accessories">Mobile Phones &
+                                <a href="http://m.adtoday.co.uk/sub/mobile-phones-accessories">Mobile Phones &
                                     Accessories</a>
                             </div>
                             <div class="cat-desc">
@@ -591,7 +591,7 @@
                         </div>
                         <div class="category-ctn">
                             <div class="cat-name">
-                                <a href="http://m.adtoday.co.uk/sub/electronics_home_appliances">Electronics & Home
+                                <a href="http://m.adtoday.co.uk/sub/electronics-home-appliances">Electronics & Home
                                     Appliances</a>
                             </div>
                             <div class="cat-desc">
@@ -608,7 +608,7 @@
                         </div>
                         <div class="category-ctn">
                             <div class="cat-name">
-                                <a href="http://m.adtoday.co.uk/sub/home_garden">Home & Garden</a>
+                                <a href="http://m.adtoday.co.uk/sub/home-garden">Home & Garden</a>
                             </div>
                             <div class="cat-desc">
                             </div>
@@ -624,7 +624,7 @@
                         </div>
                         <div class="category-ctn">
                             <div class="cat-name">
-                                <a href="http://m.adtoday.co.uk/sub/fashion_beauty">Fashion & Beauty</a>
+                                <a href="http://m.adtoday.co.uk/sub/fashion-beauty">Fashion & Beauty</a>
                             </div>
                             <div class="cat-desc">
                             </div>
@@ -655,7 +655,7 @@
                         </div>
                         <div class="category-ctn">
                             <div class="cat-name">
-                                <a href="http://m.adtoday.co.uk/sub/kids_babies">Kids & Babies</a>
+                                <a href="http://m.adtoday.co.uk/sub/kids-babies">Kids & Babies</a>
                             </div>
                             <div class="cat-desc">
                             </div>
@@ -671,7 +671,7 @@
                         </div>
                         <div class="category-ctn">
                             <div class="cat-name">
-                                <a href="http://m.adtoday.co.uk/sub/sporting_goods_bikes">Sporting Goods & Bikes</a>
+                                <a href="http://m.adtoday.co.uk/sub/sporting-goods-bikes">Sporting Goods & Bikes</a>
                             </div>
                             <div class="cat-desc">
                             </div>
@@ -688,7 +688,7 @@
                         </div>
                         <div class="category-ctn">
                             <div class="cat-name">
-                                <a href="http://m.adtoday.co.uk/sub/hobbies_music_art_books">Hobbies, Music, Art &
+                                <a href="http://m.adtoday.co.uk/sub/hobbies-music-art-books">Hobbies, Music, Art &
                                     Books</a>
                             </div>
                             <div class="cat-desc">
@@ -723,7 +723,7 @@
                         </div>
                         <div class="category-ctn">
                             <div class="cat-name">
-                                <a href="http://m.adtoday.co.uk/sub/business_industrial">Business & Industrial</a>
+                                <a href="http://m.adtoday.co.uk/sub/business-industrial">Business & Industrial</a>
                             </div>
                             <div class="cat-desc">
                             </div>
