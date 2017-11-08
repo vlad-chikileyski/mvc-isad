@@ -11,7 +11,7 @@ return array(
     'account' => 'account/index', //AccountController and actionIndex
     'add' => 'post/categoryList', // PostController and actionCategoryList
     'new-ads/([a-z]+)' => 'post/index/$1', //PostController and  actionIndex
-    'terms/list.html' => 'terms/index/$1',
+    'terms' => 'terms/index',
     'activate-account/([0-9+])' => 'activate/successregister/$1',
     'activate-ad/([0-9+])' => 'activate/index/$1',
     'payments/success/([0-9+])' => 'activate/successpayments/$1',

@@ -2,12 +2,12 @@
 
 class TermsController
 {
-    public function actionIndex($parameters)
+    public function actionIndex()
     {
-        $query_str = parse_url($parameters, PHP_URL_QUERY);
+        /*$query_str = parse_url($parameters, PHP_URL_QUERY);
         parse_str($query_str, $query_params);
 /*        print_r($query_params);*/
-        echo "PARAMETERS:";
+      /*  echo "PARAMETERS:";
         echo $query_params["fraza"]. "<br>";
         echo "data_dodania_od ->". $query_params["data_dodania_od"]. ";<br>";
         echo "typ ->". $query_params["typ"]. ";<br>";
@@ -19,7 +19,7 @@ class TermsController
         echo "kat ->". $query_params["kat"]. ";<br>";
         echo "ls ->". $query_params["ls"]. ";<br>";
         echo "ns ->". $query_params["ns"]. ";<br>";
-        echo "st ->". $query_params["st"]. ";<br>";
+        echo "st ->". $query_params["st"]. ";<br>";*/
 
         
         
