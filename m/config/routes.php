@@ -1,5 +1,7 @@
 <?php
 return array(
+    'new-ads/([a-z\-]+)' => 'post/index/$1',
+    'add' => 'post/categoryList',
     'terms' => 'terms/index',
     'forgot-password' => 'help/password',
     'account/ads' => 'account/ads', //AccountController and actionIndex
