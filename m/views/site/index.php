@@ -150,6 +150,8 @@
                 </a>
             </div>
             <div class="top-navbar-right">
+                <a href="#" class="dropdown-button"><i class="fa fa-plus"></i>
+                </a>
                 <a href="#" class="dropdown-button" data-activates="dropdown1">
                     <i class="fa fa-user-circle-o"></i>
                 </a>
