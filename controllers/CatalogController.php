@@ -2,9 +2,9 @@
 
 class  CatalogController
 {
-    public function actionIndex($categoryName, $page = 1)
+    /*public function actionIndex($categoryName, $page = 1)
     {
-        $categoryExistName = CategoryMain::categoryCheck($categoryName);
+        $categoryExistName = CategoryFilter::categoryCheckParam($categoryName);
         if ($categoryExistName == false) {
             header("HTTP/1.0 404 Not Found");
             require_once(ROOT . '/views/error/404.php');
@@ -18,11 +18,11 @@ class  CatalogController
             require_once(ROOT . '/views/catalog/catalog.php');
             return true;
         }
-    }
+    }*/
 
     public function actionDouble($urlParam, $urlSubParam, $page = 1)
     {
-        $categoryExistDoubleParamName = CategoryMain::categoryCheckDoubleParam($urlParam, $urlSubParam);
+        $categoryExistDoubleParamName = CategoryFilter::categoryCheckDoubleParam($urlParam, $urlSubParam);
         if ($categoryExistDoubleParamName == false) {
             header("HTTP/1.0 404 Not Found");
             require_once(ROOT . '/views/error/404.php');
