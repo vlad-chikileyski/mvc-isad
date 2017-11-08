@@ -100,10 +100,10 @@ class CategoryFilterMobile
             case 'mobile-phones-accessories':
                 switch ($urlSubParam) {
                     case 'mobile-phones':
-                        return 'MOBILE_PHONES_ACCESORIES_MOBILE_PHONES';
+                        return 'MOBILE_PHONES_ACCESSORIES_MOBILE_PHONES';
                         break;
                     case 'mobile-accessories':
-                        return 'MOBILE_PHONES_ACCESORIES_MOBILE_ACCESORIES';
+                        return 'MOBILE_PHONES_ACCESSORIES_MOBILE_ACCESSORIES';
                         break;
                     default:
                         return false;
