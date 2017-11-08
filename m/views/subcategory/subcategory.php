@@ -29,99 +29,8 @@
         </div>
         <!-- End Form Search -->
 
-        <!-- App/Site Menu -->
-        <div id="main-menu">
-            <ul>
-                <li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
-                <li class="has-sub"><a href="#"><i class="fa fa-th-list"></i> Categories</a>
-                    <ul>
-                        <li><a href="category.html">Category Page</a></li>
-                        <li class="has-sub"><a href="#">Computer & Laptop</a>
-                            <ul>
-                                <li><a href="#">Accesories</a></li>
-                                <li><a href="#">Laptop</a></li>
-                                <li><a href="#">Desktop Computer</a></li>
-                            </ul>
-                        </li>
-                        <li class="has-sub"><a href="#">Handphone & Tablet</a>
-                            <ul>
-                                <li><a href="#">Tablet</a></li>
-                                <li><a href="#">Handphone</a></li>
-                                <li><a href="#">Phablet</a></li>
-                                <li><a href="#">Accesories</a></li>
-                            </ul>
-                        </li>
-                        <li class="has-sub"><a href="#">Otomotive</a>
-                            <ul>
-                                <li><a href="#">Motorcycle</a></li>
-                                <li><a href="#">Car</a></li>
-                                <li><a href="#">Car Interior</a></li>
-                                <li><a href="#">Car Exterior</a></li>
-                                <li><a href="#">Accesories</a></li>
-                            </ul>
-                        </li>
-                        <li class="has-sub"><a href="#">Fashion</a>
-                            <ul>
-                                <li><a href="#">Male Pants</a></li>
-                                <li><a href="#">Female Pants</a></li>
-                                <li><a href="#">Shoes</a></li>
-                            </ul>
-                        </li>
-                        <li class="has-sub"><a href="#">Home & Living</a>
-                            <ul>
-                                <li><a href="#">Kitchen</a></li>
-                                <li><a href="#">Living Room</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-                <li class="has-sub"><a href="#"><i class="fa fa-briefcase"></i> Product</a>
-                    <ul>
-                        <li><a href="product-list.html">Product List</a></li>
-                        <li><a href="product-small-list.html">Product Small List</a></li>
-                        <li><a href="product.html">Product Detail</a></li>
-                    </ul>
-                </li>
-                <li><a href="cart.html"><i class="fa fa-shopping-bag"></i> Shopping Cart</a></li>
-                <li class="has-sub"><a href="#"><i class="fa fa-shopping-basket"></i> Checkout</a>
-                    <ul>
-                        <li><a href="checkout-sign.html">Sign Method</a></li>
-                        <li><a href="checkout-shipping.html">Shipping</a></li>
-                        <li><a href="checkout-payment.html">Payment</a></li>
-                    </ul>
-                </li>
-                <li class="has-sub"><a href="#"><i class="fa fa-google-wallet"></i> Order</a>
-                    <ul>
-                        <li><a href="payment-confirm.html">Payment Confirm</a></li>
-                        <li><a href="tracking-order.html">Tracking Order</a></li>
-                    </ul>
-                </li>
-                <li class="has-sub"><a href="#"><i class="fa fa-users"></i> Member</a>
-                    <ul>
-                        <li><a href="panel-account.html">Panel Account</a></li>
-                        <li><a href="form-account.html">Form Account</a></li>
-                        <li><a href="order-history.html">Order History</a></li>
-                    </ul>
-                </li>
-                <li class="has-sub"><a href="#"><i class="fa fa-file-text-o"></i> Blog</a>
-                    <ul>
-                        <li><a href="blog-list.html">Blog List</a></li>
-                        <li><a href="blog-inside.html">Blog Inside</a></li>
-                    </ul>
-                </li>
-                <li class="has-sub"><a href="#"><i class="fa fa-file"></i> Pages</a>
-                    <ul>
-                        <li><a href="standard-page.html">Standard Page</a></li>
-                        <li><a href="faq.html">FAQ</a></li>
-                        <li><a href="404.html">404</a></li>
-                        <li><a href="styling-guide.html">Styling Guide</a></li>
-                        <li><a href="shortcodes.html">Shortcodes</a></li>
-                    </ul>
-                </li>
-                <li><a href="contact.html"><i class="fa fa-envelope"></i> Contact</a></li>
-            </ul>
-        </div>
-        <!-- End Site/App Menu -->
+        <?php include ROOT . '/views/layout/main-menu.php'; ?>
+
 
     </div>
     <!-- END LEFT SIDEBAR -->
@@ -305,13 +214,13 @@
                 <?php foreach ($subCategoryListElements as $subcategory) : ?>
                     <li><!-- Category list item #4 -->
                         <div class="thumb">
-                            <a href="http://m.adtoday.co.uk/<?php echo  $subcategory['url']; ?>/">
+                            <a href="http://m.adtoday.co.uk/<?php echo $subcategory['url']; ?>/">
                                 <img src="/template/images/240x240.png" alt="">
                             </a>
                         </div>
                         <div class="category-ctn">
                             <div class="cat-name">
-                                <a href="http://m.adtoday.co.uk/<?php echo  $subcategory['url']; ?>/">
+                                <a href="http://m.adtoday.co.uk/<?php echo $subcategory['url']; ?>/">
                                     <span><?php echo $subcategory['sub_category_title']; ?></span>
                             </div>
                         </div>

@@ -2,29 +2,83 @@
 
 class CategoryFilterMobile
 {
+    /**
+     * Check - category exists ?
+     * @return bool
+     */
+    public static function categoryCheckParam($urlParam)
+    {
+        switch ($urlParam) {
+            case 'vehicles':
+                return 'vehicles';
+                break;
+            case 'properties':
+                return 'properties';
+                break;
+            case 'mobile-phones-accessories':
+                return 'mobile_phones_accessories';
+                break;
+            case 'electronics-home-appliances':
+                return 'electronics_home_appliances';
+                break;
+            case 'home-garden':
+                return 'home_garden';
+                break;
+            case 'fashion-beauty':
+                return 'fashion_beauty';
+                break;
+            case 'pets':
+                return 'pets';
+                break;
+            case 'kids-babies':
+                return 'kids_babies';
+                break;
+            case 'sporting-goods-bikes':
+                return 'sporting_goods_bikes';
+                break;
+            case 'hobbies-music-art-books':
+                return 'hobbies_music_art_books';
+                break;
+            case 'jobs':
+                return 'jobs';
+                break;
+            case 'business-industrial':
+                return 'business_industrial';
+                break;
+            case 'services':
+                return 'services';
+                break;
+            case 'adult':
+                return 'adult';
+                break;
+        }
+        return false;
+    }
+
+
     public static function categoryCheckDoubleParam($urlParam, $urlSubParam)
     {
         switch ($urlParam) {
             /*electronics*/
-            case 'vehicle':
+            case 'vehicles':
                 switch ($urlSubParam) {
                     case 'cars':
-                        return 'VEHICLE_CARS';
+                        return 'VEHICLES_CARS';
                         break;
                     case 'boats':
-                        return 'VEHICLE_BOATS';
+                        return 'VEHICLES_BOATS';
                         break;
                     case 'car-accessories':
-                        return 'VEHICLE_CAR_ACCESSORIES';
+                        return 'VEHICLES_CAR_ACCESSORIES';
                         break;
                     case 'trucks-buses':
-                        return 'VEHICLE_TRUCKS_BUSES';
+                        return 'VEHICLES_TRUCKS_BUSES';
                         break;
                     case 'motorcycles':
-                        return 'VEHICLE_MOTORCYCLES';
+                        return 'VEHICLES_MOTORCYCLES';
                         break;
                     case 'other-vehicles':
-                        return 'VEHICLE_OTHER_VEHICLES';
+                        return 'VEHICLES_OTHER_VEHICLES';
                         break;
                     default:
                         return false;
@@ -43,7 +97,7 @@ class CategoryFilterMobile
 
                 }
                 break;
-            case 'mobile_phones_accessories':
+            case 'mobile-phones-accessories':
                 switch ($urlSubParam) {
                     case 'mobile-phones':
                         return 'MOBILE_PHONES_ACCESORIES_MOBILE_PHONES';
@@ -51,28 +105,35 @@ class CategoryFilterMobile
                     case 'mobile-accessories':
                         return 'MOBILE_PHONES_ACCESORIES_MOBILE_ACCESORIES';
                         break;
+                    default:
+                        return false;
+                }
+                break;
+            case'electronics-home-appliances':
+                switch ($urlSubParam) {
                     case 'tv-audio-video':
-                        return 'MOBILE_PHONES_ACCESORIES_TV_AUDIO_VIDEO';
+                        return 'ELECTRONICS_HOME_APPLIANCES_TV_AUDIO_VIDEO';
                         break;
                     case 'cameras-imaging':
-                        return 'MOBILE_PHONES_ACCESORIES_CAMERAS_IMAGING';
+                        return 'ELECTRONICS_HOME_APPLIANCES_CAMERAS_IMAGING';
                         break;
                     case 'computers-tablets':
-                        return 'MOBILE_PHONES_ACCESORIES_COMPUTERS_TABLETS';
+                        return 'ELECTRONICS_HOME_APPLIANCES_COMPUTERS_TABLETS';
                         break;
                     default:
                     case 'home-appliances':
-                        return 'MOBILE_PHONES_ACCESORIES_HOME_APPLIANCES';
+                        return 'ELECTRONICS_HOME_APPLIANCES_HOME_APPLIANCES';
                         break;
                     default:
                     case 'video-games-consoles':
-                        return 'MOBILE_PHONES_ACCESORIES_VIDEO_GAMES_CONSOLES';
+                        return 'ELECTRONICS_HOME_APPLIANCES_VIDEO_GAMES_CONSOLES';
                         break;
                     default:
                         return false;
                 }
                 break;
-            case 'home_garden':
+            case
+            'home-garden':
                 switch ($urlSubParam) {
                     case 'decoration-accessories':
                         return 'HOME_GARDEN_DECORATION_ACCESSORIES';
@@ -93,7 +154,7 @@ class CategoryFilterMobile
                         return false;
                 }
                 break;
-            case 'fashion_beauty':
+            case 'fashion-beauty':
                 switch ($urlSubParam) {
                     case 'clothing-accessories':
                         return 'FUNCTION_BEAUTY_CLOTHING_ACCESSORIES';
@@ -133,7 +194,7 @@ class CategoryFilterMobile
                         return false;
                 }
                 break;
-            case 'kids_babies':
+            case 'kids-babies':
                 switch ($urlSubParam) {
                     case 'clothes-for-kids-and-babies':
                         return 'KIDS_BABIES_CLOTHES_FOR_KIDS_AND_BABIES';
@@ -154,7 +215,7 @@ class CategoryFilterMobile
                         return false;
                 }
                 break;
-            case 'sporting_goods_bikes':
+            case 'sporting-goods-bikes':
                 switch ($urlSubParam) {
                     case 'sporting-goods':
                         return
@@ -170,7 +231,7 @@ class CategoryFilterMobile
                         return false;
                 }
                 break;
-            case'hobbies_music_art_books':
+            case'hobbies-music-art-books':
                 switch ($urlSubParam) {
                     case'antiques-collectibles':
                         return 'HOBBIES_MUSIC_ART_BOOKS_ANTIQUES_COLLECTIBLES';
@@ -257,7 +318,7 @@ class CategoryFilterMobile
                         return false;
                 }
                 break;
-            case'business_industrial':
+            case'business-industrial':
                 switch ($urlSubParam) {
                     case'factories-equipment':
                         return 'BUSINESS_INDUSTRIAL_FACTORIES_EQUIPMENT';
@@ -351,5 +412,6 @@ class CategoryFilterMobile
                 }
                 break;
         }
+        return false;
     }
 }
