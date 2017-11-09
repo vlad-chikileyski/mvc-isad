@@ -1,5 +1,6 @@
 <?php
 return array(
+    'new-ads/([a-z\-]+)' => 'post/index/$1', //PostController and  actionIndex
     'new-ads/([a-z\-]+)' => 'post/index/$1',
     'add' => 'post/categoryList',
     'terms' => 'terms/index',

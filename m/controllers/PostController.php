@@ -2,9 +2,8 @@
 
 class PostController
 {
-    public function actionIndex($subcategory){
-        echo $subcategory;
-        return true;
+    public function actionIndex(){
+
     }
     public function actioncategoryList()
     {

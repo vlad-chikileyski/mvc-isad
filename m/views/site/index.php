@@ -184,6 +184,7 @@
         <!-- End FIXED Top Navbar -->
 
 
+
         <!-- Featured Slider -->
         <div class="featured-slider animated fadeInRight">
 
@@ -747,64 +748,9 @@
 
         </div>
         <!-- END CONTENT CONTAINER -->
-
-
-        <!-- FOOTER -->
-        <div class="footer">
-
-            <!-- Footer main Section -->
-            <div class="footer-main">
-                <p>
-                    <span class="block text-small">Secure shopping at shofy via</span>
-                    <i class="fa fa-cc-amex"></i>
-                    <i class="fa fa-cc-mastercard"></i>
-                    <i class="fa fa-credit-card"></i>
-                    <i class="fa fa-cc-paypal"></i>
-                    <i class="fa fa-cc-visa"></i>
-                    <i class="fa fa-google-wallet"></i>
-                    <i class="fa fa-cc-discover"></i>
-                    <i class="fa fa-cc-jcb"></i>
-                </p>
-                <p>
-                    <span class="block text-small">Having problem? Contact us</span>
-                    +44 567 89 | help@adtoday.co.uk
-                </p>
-
-                <div class="social-footer">
-                    <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
-                    <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
-                    <a href="#" class="gplus"><i class="fa fa-google-plus"></i></a>
-                </div>
-            </div>
-            <!-- End Footer main Section -->
-
-            <!-- Copyright Section -->
-            <div class="copyright">
-                <span class="block">&copy; 2017 AdToday.co.uk</span>
-                <div class="navigation">
-                    <a href="#">Term & Condition</a>
-                    <a href="#">Privacy Policy</a>
-                </div>
-            </div>
-            <!-- End Copyright Section -->
-
-        </div>
-        <!-- End FOOTER -->
-
-        <!-- Back to top Link -->
-        <div id="to-top" class="main-bg"><i class="fa fa-long-arrow-up"></i></div>
-
+        <?php include ROOT . '/views/layout/footer.php'; ?>
     </div>
     <!-- END MAIN PAGE -->
-
 </div><!-- #main -->
-
-<script type="text/javascript" src="/template/js/jquery-3.1.1.js"></script>
-<script type="text/javascript" src="/template/js/materialize.min.js"></script>
-<script type="text/javascript" src="/template/js/slick.min.js"></script>
-<script type="text/javascript" src="/template/js/jquery.slicknav.js"></script>
-<script type="text/javascript" src="/template/js/jquery.swipebox.js"></script>
-<script type="text/javascript" src="/template/js/custom.js"></script>
-
 </body>
 </html>
