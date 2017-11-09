@@ -1,3 +1,4 @@
+
 <!-- FOOTER -->
 <div class="footer">
 
@@ -16,16 +17,16 @@
         </p>
         <p>
             <span class="block text-small">Having problem? Contact us</span>
-            +44 567 89 | ours@example.com | <a href="#">Live Chat</a>
+            +44 567 89 | help@adtoday.co.uk
         </p>
     </div>
     <!-- End Footer main Section -->
 
     <!-- Copyright Section -->
     <div class="copyright">
-        <span class="block">&copy; 2016 Shofy Inc - Mobile Shop Template</span>
+        <span class="block">&copy; 2017 AdToday.co.uk</span>
         <div class="navigation">
-            <a href="http://m.adtoday.co.uk/terms/">Term & Condition</a>
+            <a href="#">Term & Condition</a>
             <a href="#">Privacy Policy</a>
         </div>
     </div>
@@ -33,3 +34,9 @@
 
 </div>
 <!-- End FOOTER -->
+<script type="text/javascript" src="/template/js/jquery-3.1.1.js"></script>
+<script type="text/javascript" src="/template/js/materialize.min.js"></script>
+<script type="text/javascript" src="/template/js/slick.min.js"></script>
+<script type="text/javascript" src="/template/js/jquery.slicknav.js"></script>
+<script type="text/javascript" src="/template/js/jquery.swipebox.js"></script>
+<script type="text/javascript" src="/template/js/custom.js"></script>
