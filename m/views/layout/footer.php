@@ -16,8 +16,7 @@
             <i class="fa fa-cc-jcb"></i>
         </p>
         <p>
-            <span class="block text-small">Having problem? Contact us</span>
-            +44 567 89 | help@adtoday.co.uk
+            <span class="block text-small">Having problem? <a href="http://m.adtoday.co.uk/contact">Contact us</a></span>
         </p>
     </div>
     <!-- End Footer main Section -->

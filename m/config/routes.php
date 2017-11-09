@@ -4,6 +4,7 @@ return array(
     'new-ads/([a-z\-]+)' => 'post/index/$1',
     'add' => 'post/categoryList',
     'terms' => 'terms/index',
+    'contact' => 'help/contact',
     'forgot-password' => 'help/password',
     'account/ads' => 'account/ads', //AccountController and actionIndex
     'ads/([a-z]+)/([a-z]+)/([0-9+])' => 'product/view/$1/$2/$3',
