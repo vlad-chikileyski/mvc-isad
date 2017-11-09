@@ -36,46 +36,8 @@
 	<!-- MAIN PAGE -->
 	<div id="page">
 
-        <!-- FIXED Top Navbar -->
-        <div class="top-navbar">
-            <div class="top-navbar-left">
-                <a href="#" id="menu-left" data-activates="slide-out-left">
-                    <i class="fa fa-bars"></i>
-                </a>
-            </div>
-            <div class="top-navbar-right">
-                <a href="#" class="dropdown-button"><i class="fa fa-plus"></i>
-                </a>
-                <a href="#" class="dropdown-button" data-activates="dropdown1">
-                    <i class="fa fa-user-circle-o"></i>
-                </a>
-                <?php if (UserMobile::isGuest()): ?>
-                    <ul id="dropdown1" class="dropdown-content">
-                        <li><a href="panel-account.html"><i class="fa fa-server"></i> Panel Account</a></li>
-                        <li><a href="form-account.html"><i class="fa fa-user"></i> My Profile</a></li>
-                        <li><a href="order-history.html"><i class="fa fa-history"></i> Order History</a></li>
-                        <li class="divider"></li>
-                        <li><a href="http://m.adtoday.co.uk/account/logout/"><i class="fa fa-user"></i>Logout</a></li>
+        <?php include ROOT . '/views/layout/top-navbar.php'; ?>
 
-                    </ul>
-                <?php else: ?>
-                    <ul id="dropdown1" class="dropdown-content">
-                        <li><a href="http://m.adtoday.co.uk/login"><i class="fa fa-user"></i> My Profile</a></li>
-                        <li><a href="http://m.adtoday.co.uk/register"><i class="fa fa-user"></i> Register</a></li>
-                        <li class="divider"></li>
-                    </ul>
-                <?php endif; ?>
-
-                <!--<a href="#" id="menu-right" data-activates="slide-out-right">
-                    <span class="cart-badge">3</span>
-                    <i class="fa fa-shopping-basket"></i>
-                </a>-->
-            </div>
-            <div class="site-title">
-                <h1>AdToday - Buy & Sell Anything</h1>
-            </div>
-        </div>
-        <!-- End FIXED Top Navbar -->
 
 
 
