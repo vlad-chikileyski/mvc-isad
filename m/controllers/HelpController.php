@@ -18,18 +18,25 @@ class HelpController
             /* if (!UserMobile::checkPassword($password)) {
                  $errors[] = 'Password must be > 5 symbols';
              }*/
-            /* $userId = UserMobile::checkUserData($useremail, $password);
+             /* $userId = UserMobile::checkUserData($useremail, $password);
 
-             if ($userId == false) {
-                 $errors[] = 'Login or password is incorrect!';
-             } else {
-                 UserMobile::auth($userId);
-                 header("Location: http://m.adtoday.co.uk/");
-             }*/
+              if ($userId == false) {
+                  $errors[] = 'Login or password is incorrect!';
+              } else {
+                  UserMobile::auth($userId);
+                  header("Location: http://m.adtoday.co.uk/");
+              }*/
          }
 
          require_once(ROOT . '/views/login/password-mobile.php');
          return true;
 
      }
+    public function actionContact()
+    {
+
+        require once(ROOT . '/views/login/password-mobile');
+        return true;
+
+    }
 }
