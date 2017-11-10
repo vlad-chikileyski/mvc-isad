@@ -35,6 +35,7 @@ class HelpController
 
     public function actionContact()
     {
+        $ACTIVE_FLAG = false;
         $username = '';
         $useremail = '';
         $userphone = '';
@@ -48,16 +49,14 @@ class HelpController
             $usercity = $_POST['usercity'];
             $usermassage = $_POST['usermassage'];
 
-            $errors = false;
-            if ($errors == false) {
-                $query_contact = HelpMobile::contact($username, $useremail, $userphone, $usercity, $usermassage);
-                if ($query_contact && MailBuilderMobile::configureMailForContact($username, $useremail, $userphone, $usercity, $usermassage)) {
-                    header("Location: /activate-account/200");
-                }
+            $query_contact = HelpMobile::contact($username, $useremail, $userphone, $usercity, $usermassage);
+            if ($query_contact ) {
+                $ACTIVE_FLAG = true;
             }
-            require_once(ROOT . '/views/help/contact.php');
-            return true;
+
         }
+        require_once(ROOT . '/views/help/contact.php');
+        return true;
     }
 }
 
