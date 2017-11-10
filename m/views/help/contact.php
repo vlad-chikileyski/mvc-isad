@@ -41,9 +41,9 @@
         <!-- CONTENT CONTAINER -->
         <div class="content-container">
 
-            <h1 class="page-title"align="center">Contact</h1>
+            <h1 class="page-title" align="center">Contact</h1>
             <?php if (isset($ACTIVE_FLAG) && $ACTIVE_FLAG): ?>
-                <span class="semibold block"align="center">Thanks for your massage!</span>
+                <span class="semibold block" align="center">Thanks for your massage!</span>
             <?php else: ?>
                 <form action="http://m.adtoday.co.uk/contact/" method="post">
                     <div class="page-block margin-bottom">
