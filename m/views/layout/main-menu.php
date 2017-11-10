@@ -6,14 +6,14 @@
             <ul>
                 <li class="has-sub"><a href="http://m.adtoday.co.uk/sub/vehicles">Vehicles</a>
                     <ul>
-                        <li><a href="http://m.adtoday.co.uk/catalog/vehicle/cars/">Cars</a></li>
-                        <li><a href="http://m.adtoday.co.uk/catalog/vehicle/boats/">Boats</a></li>
-                        <li><a href="http://m.adtoday.co.uk/catalog/vehicle/car-accessories/">Car
+                        <li><a href="http://m.adtoday.co.uk/catalog/vehicles/cars/">Cars</a></li>
+                        <li><a href="http://m.adtoday.co.uk/catalog/vehicles/boats/">Boats</a></li>
+                        <li><a href="http://m.adtoday.co.uk/catalog/vehicles/car-accessories/">Car
                                 Accessories</a></li>
-                        <li><a href="http://m.adtoday.co.uk/catalog/vehicle/trucks-buses/">Trucks & buses</a>
+                        <li><a href="http://m.adtoday.co.uk/catalog/vehicles/trucks-buses/">Trucks & buses</a>
                         </li>
-                        <li><a href="http://m.adtoday.co.uk/catalog/vehicle/motorcycles/">Motorcycles</a></li>
-                        <li><a href="http://m.adtoday.co.uk/catalog/vehicle/other-vehicles/">Other Vehicles</a>
+                        <li><a href="http://m.adtoday.co.uk/catalog/vehicles/motorcycles/">Motorcycles</a></li>
+                        <li><a href="http://m.adtoday.co.uk/catalog/vehicles/other-vehicles/">Other Vehicles</a>
                         </li>
                     </ul>
                 </li>
@@ -223,7 +223,7 @@
                 </li>
             </ul>
         </li>
-        <li><a href="cart.html"><i class="fa fa-plus"></i> Post add</a></li>
+        <li><a href="http://m.adtoday.co.uk/add/"><i class="fa fa-plus"></i> Post add</a></li>
         <li><a href="cart.html"><i class="fa fa-user-circle"></i> You account</a></li>
         <li><a href="cart.html"><i class="fa fa-envelope"></i> Contact</a></li>
         <li><a href="http://m.adtoday.co.uk/terms/"><i class="fa fa-paper-plane-o"></i> Terms</a></li>
@@ -240,7 +240,7 @@
         </a>
     </div>
     <div class="top-navbar-right">
-        <a href="#" class="dropdown-button"><i class="fa fa-plus"></i>
+        <a href="http://m.adtoday.co.uk/add/" class="button"><i class="fa fa-plus"></i>
         </a>
         <a href="#" class="dropdown-button" data-activates="dropdown1">
             <i class="fa fa-user-circle-o"></i>
