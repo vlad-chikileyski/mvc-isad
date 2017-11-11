@@ -84,7 +84,7 @@
 							<img src="/template/images/80x80.png" alt="img" />
 						</li>
 						<li>
-							<img src="/template/    images/80x80.png" alt="img" />
+							<img src="/template/images/80x80.png" alt="img" />
 						</li>
 					</ul>
 				</div><!-- End small thumb indicator -->
