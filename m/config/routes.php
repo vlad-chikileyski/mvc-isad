@@ -1,5 +1,6 @@
 <?php
 return array(
+    'payment' => 'post/charge', //PaymentController and actionCharge
     'contact' => 'help/contact',
     'new-ads/([a-z\-]+)' => 'post/index/$1', //PostController and  actionIndex
     'add' => 'post/categoryList',
