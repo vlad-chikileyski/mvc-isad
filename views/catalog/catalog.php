@@ -222,17 +222,6 @@
                                 </header>
                                 <div class="item-actions text-center">
                                     <div class="price-tag">£<?php echo $products['price']; ?></div>
-                                    <ul class="contact-options">
-                                        <li><a href="#" class="fa fa-envelope tooltip-parent">
-                                                <span class="tooltip">Send Message</span>
-                                            </a></li>
-                                        <li><a href="#" class="fa fa-phone tooltip-parent">
-                                                <span class="tooltip">Mobile Number</span>
-                                            </a></li>
-                                        <li><a href="#" class="fa fa-heart tooltip-parent">
-                                                <span class="tooltip">save ad</span>
-                                            </a></li>
-                                    </ul>
                                 </div>
                                 <div class="inner">
                                     <p>

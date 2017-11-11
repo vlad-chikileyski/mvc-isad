@@ -80,7 +80,7 @@
     </div>
 </div>
 
-<div class="app-canvas">
+<div class="app-canvas app-canvas-modif">
     <div class="container">
         <div class="breadcrumb">
             <ul>

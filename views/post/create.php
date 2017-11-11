@@ -121,7 +121,7 @@
                                             <div class="mega-content">
                                                 <ul class="sub-category" id="sub-category">
                                                     <?php foreach ($subCategoryListMenu as $subcategory) : ?>
-                                                        <li data-value="<?php echo $subcategory['subcategory-name']; ?>"><a href="#"><?php echo $subcategory['menu-title']; ?></a>
+                                                        <li data-value="<?php echo $subcategory['subcategory_name']; ?>"><a href="#"><?php echo $subcategory['sub_category_title']; ?></a>
                                                         </li>
                                                     <?php endforeach; ?>
                                                 </ul>

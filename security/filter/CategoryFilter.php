@@ -51,6 +51,7 @@ class CategoryFilter
             case 'adult':
                 return 'adult';
                 break;
+            default: return false;
         }
         return false;
     }
