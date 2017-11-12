@@ -647,13 +647,6 @@ Modals
                             } ?>">
                         </div>
                     </div>
-                    <div class="field-block">
-                        <div class="icon-field">
-                            <span>+44</span>
-                            <input type="text" name="phone" placeholder="Your Contact #">
-                        </div>
-                    </div>
-
 
                     <button type="submit" name="signUp" class="btn btn-md btn-green block-element">Signup Now</button>
                     <div class="login-cta text-center"><br>

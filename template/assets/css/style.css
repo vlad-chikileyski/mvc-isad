@@ -7193,7 +7193,7 @@ a.view-item, .contact-options li a, .listing-actions a, .listing-actions .fa,
 
 @media (min-width: 993px) {
     .items-grid-style .item-spot {
-        width: 33.3333334%;
+        width: 32%;
         float: left;
         height: auto;
         padding: 0 5px;
