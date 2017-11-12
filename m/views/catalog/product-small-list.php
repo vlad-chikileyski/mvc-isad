@@ -70,7 +70,7 @@
                 <?php foreach ($categoryProducts as $product) : ?>
                     <li>
                         <div class="thumb">
-                            <a href="product.html">
+                            <a href="/ads/<?php echo $product['category']; ?>/<?php echo $product['subcategory']; ?>/<?php echo $product['id']; ?>">
                                 <img src="/template/images/240x240.png" alt="">
                             </a>
                         </div>
