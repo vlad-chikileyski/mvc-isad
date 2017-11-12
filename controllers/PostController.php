@@ -4,7 +4,7 @@ class PostController
 {
     public function actionIndex($categoryName)
     {
-        $categoryChecker = CategoryMain::categoryCheck($categoryName);
+        $categoryChecker = CategoryFilter::categoryCheckParam($categoryName);
         if ($categoryChecker == false) {
             header("HTTP/1.0 404 Not Found");
             require_once(ROOT . '/views/error/404.php');
@@ -50,7 +50,7 @@ class PostController
                 $phone = $_POST['phone'];
                 $price = '12';
                 $subcategory = lcfirst($_POST['subcategory']);
-                $getTableName = CategoryMain::categoryCheckDoubleParam($categoryName, $subcategory);
+                $getTableName = CategoryFilter::categoryCheckDoubleParam($categoryName, $subcategory);
                 if ($getTableName == false) {
                     header("HTTP/1.0 404 Not Found");
                     require_once(ROOT . '/views/error/404.php');
@@ -121,7 +121,7 @@ class PostController
             $paymentsBoxInfo = array();
             $paymentsBoxInfo = Payment::getAllPayments();
             $subCategoryListMenu = array();
-            $subCategoryListMenu = CategoryMain::getSubcategyListByCategory($categoryName);
+            $subCategoryListMenu = CategoryMain::getSubcategyListByCategoryFilter($categoryChecker);
             require_once(ROOT . '/views/post/create.php');
             return true;
         }

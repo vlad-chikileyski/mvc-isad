@@ -6324,7 +6324,9 @@ a.view-item, .contact-options li a, .listing-actions a, .listing-actions .fa,
 
 .social_login_opt > div {
     position: relative;
+    /*
     padding-right: 55px;
+    */
 }
 
 .social_login_opt .opt-navigator {

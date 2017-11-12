@@ -117,29 +117,35 @@
                                 </ul>
                             </li>
                             <li><a href="https://jobs.adtoday.co.uk/catalog/properties"><i class="adicon-briefcase"></i>Jobs</a>
-                                <ul style="bottom: 9px;">
-                                    <li><a href="https://jobs.adtoday.co.uk/catalog/jobs/accounting/">Accounting</a></li>
-                                    <li><a href="https://jobs.adtoday.co.uk/catalog/jobs/business-development/">Business Development</a></li>
-                                    <li><a href="https://jobs.adtoday.co.uk/catalog/jobs/education/">Education</a></li>
-                                    <li><a href="https://jobs.adtoday.co.uk/catalog/jobs/hospitality/">Hospitality</a></li>
-                                    <li><a href="https://jobs.adtoday.co.uk/catalog/jobs/marketing-pr/">Marketing - PR</a></li>
-                                    <li><a href="https://jobs.adtoday.co.uk/catalog/jobs/retail/">Retail</a></li>
-                                    <li><a href="https://jobs.adtoday.co.uk/catalog/jobs/architecture-engineering/">Architecture - Engineering</a></li>
-                                    <li><a href="https://jobs.adtoday.co.uk/catalog/jobs/construction/">Construction</a></li>
-                                    <li><a href="https://jobs.adtoday.co.uk/catalog/jobs/executive/">Executive</a></li>
-                                    <li><a href="https://jobs.adtoday.co.uk/catalog/jobs/it-telecom/">IT - Telecom</a></li>
-                                    <li><a href="https://jobs.adtoday.co.uk/catalog/jobs/medical-health/">Medical - Health</a></li>
-                                    <li><a href="https://jobs.adtoday.co.uk/catalog/jobs/sales/">Sales</a></li>
-                                    <li><a href="https://jobs.adtoday.co.uk/catalog/jobs/art-design/">Art - Design</a></li>
-                                    <li><a href="https://jobs.adtoday.co.uk/catalog/jobs/consulting/">Consulting</a></li>
-                                    <li><a href="https://jobs.adtoday.co.uk/catalog/jobs/hr-recruiting/">HR - Recruiting</a></li>
-                                    <li><a href="https://jobs.adtoday.co.uk/catalog/jobs/jobs-wanted/">Jobs Wanted</a></li>
-                                    <li><a href="https://jobs.adtoday.co.uk/catalog/jobs/other/">Other</a></li>
-                                    <li><a href="https://jobs.adtoday.co.uk/catalog/jobs/secretarial/">Secretarial</a></li>
+                                <ul style=" width: 500px;">
+                                    <div class="e">
+                                        <div class="col-sm-6">
+                                            <li><a href="https://jobs.adtoday.co.uk/catalog/jobs/accounting/">Accounting</a></li>
+                                            <li><a href="https://jobs.adtoday.co.uk/catalog/jobs/business-development/">Business Development</a></li>
+                                            <li><a href="https://jobs.adtoday.co.uk/catalog/jobs/education/">Education</a></li>
+                                            <li><a href="https://jobs.adtoday.co.uk/catalog/jobs/hospitality/">Hospitality</a></li>
+                                            <li><a href="https://jobs.adtoday.co.uk/catalog/jobs/marketing-pr/">Marketing - PR</a></li>
+                                            <li><a href="https://jobs.adtoday.co.uk/catalog/jobs/retail/">Retail</a></li>
+                                            <li><a href="https://jobs.adtoday.co.uk/catalog/jobs/architecture-engineering/">Architecture - Engineering</a></li>
+                                            <li><a href="https://jobs.adtoday.co.uk/catalog/jobs/construction/">Construction</a></li>
+                                            <li><a href="https://jobs.adtoday.co.uk/catalog/jobs/executive/">Executive</a></li>
+                                            <li><a href="https://jobs.adtoday.co.uk/catalog/jobs/it-telecom/">IT - Telecom</a></li>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <li><a href="https://jobs.adtoday.co.uk/catalog/jobs/medical-health/">Medical - Health</a></li>
+                                            <li><a href="https://jobs.adtoday.co.uk/catalog/jobs/sales/">Sales</a></li>
+                                            <li><a href="https://jobs.adtoday.co.uk/catalog/jobs/art-design/">Art - Design</a></li>
+                                            <li><a href="https://jobs.adtoday.co.uk/catalog/jobs/consulting/">Consulting</a></li>
+                                            <li><a href="https://jobs.adtoday.co.uk/catalog/jobs/hr-recruiting/">HR - Recruiting</a></li>
+                                            <li><a href="https://jobs.adtoday.co.uk/catalog/jobs/jobs-wanted/">Jobs Wanted</a></li>
+                                            <li><a href="https://jobs.adtoday.co.uk/catalog/jobs/other/">Other</a></li>
+                                            <li><a href="https://jobs.adtoday.co.uk/catalog/jobs/secretarial/">Secretarial</a></li>
+                                        </div>
+                                    </div>
                                 </ul>
                             </li>
 
-                            <li><a href="https://adtoday.co.uk/catalog/vehicles"><i class="adicon-tv"></i>Vehicles</a>
+                            <li><a href="https://adtoday.co.uk/catalog/vehicles"><i class="adicon-car"></i>Vehicles</a>
                                 <ul>
                                     <li><a href="https://vehicle.adtoday.co.uk/catalog/vehicles/cars/">Cars</a></li>
                                     <li><a href="https://vehicle.adtoday.co.uk/catalog/vehicles/boats/">Boats</a></li>
@@ -177,7 +183,7 @@
                                 </ul>
                             </li>
 
-                            <li><a href="https://property.adtoday.co.uk/catalog/properties"><i class="adicon-tv"></i>Properties</a>
+                            <li><a href="https://property.adtoday.co.uk/catalog/properties"><i class="adicon-buildings"></i>Properties</a>
                                 <ul>
                                     <li><a href="https://property.adtoday.co.uk/catalog/properties/properties-for-rent/">Properties for Rent</a></li>
                                     <li><a href="https://property.adtoday.co.uk/catalog/properties/properties-for-sale/">Properties for Sale</a></li>
@@ -185,14 +191,14 @@
                             </li>
 
 
-                            <li><a href="https://adtoday.co.uk/catalog/mobile-phones-accessories"><i class="adicon-tv"></i>Mobile & Accessories</a>
+                            <li><a href="https://adtoday.co.uk/catalog/mobile-phones-accessories"><i class="adicon-tablet"></i>Mobile & Accessories</a>
                                 <ul>
                                     <li><a href="https://adtoday.co.uk/catalog/mobile-phones-accessories/mobile-phones/">Mobile Phones</a></li>
                                     <li><a href="https://adtoday.co.uk/catalog/mobile-phones-accessories/mobile-accessories/">Mobile Accessories</a></li>
                                 </ul>
                             </li>
 
-                            <li><a href="/catalog/home-garden"><i class="adicon-tv"></i>Home & Garden</a>
+                            <li><a href="/catalog/home-garden"><i class="adicon-sofa"></i>Home & Garden</a>
                                 <ul>
                                     <li><a href="https://adtoday.co.uk/catalog/home-garden/decoration-accessories/">Decoration - Accessories</a></li>
                                     <li><a href="https://adtoday.co.uk/catalog/home-garden/kitchenware/">Kitchenware</a></li>
@@ -202,7 +208,7 @@
                                 </ul>
                             </li>
 
-                            <li><a href="https://adtoday.co.uk/catalog/fashion-beauty"><i class="adicon-tv"></i>Fashion & Beauty</a>
+                            <li><a href="https://adtoday.co.uk/catalog/fashion-beauty"><i class="adicon-heal"></i>Fashion & Beauty</a>
                                 <ul>
                                     <li><a href="https://adtoday.co.uk/catalog/fashion-beauty/clothing-accessories/">Clothing - Accessories</a></li>
                                     <li><a href="https://adtoday.co.uk/catalog/fashion-beauty/jewelry-watches/">Jewelry - Watches</a></li>
@@ -210,7 +216,7 @@
                                 </ul>
                             </li>
 
-                            <li><a href="/catalog/services"><i class="adicon-tv"></i>Services</a>
+                            <li><a href="/catalog/services"><i class="adicon-bell"></i>Services</a>
                                 <ul style="bottom: 9px;">
                                     <li><a href="https://adtoday.co.uk/catalog/services/business-services/">Business Services</a></li>
                                     <li><a href="https://adtoday.co.uk/catalog/services/events/">Events</a></li>
@@ -222,7 +228,7 @@
                                     <li><a href="https://adtoday.co.uk/catalog/services/domestic-services/">Domestic Services</a></li>
                                 </ul>
                             </li>
-                            <li><a href="https://adtoday.co.uk/catalog/pets"><i class="adicon-tv"></i>Pets</a>
+                            <li><a href="https://adtoday.co.uk/catalog/pets"><i class="adicon-dog"></i>Pets</a>
                                 <ul style="bottom: 9px;">
                                     <li><a href="https://adtoday.co.uk/catalog/pets/cats/">Cats</a></li>
                                     <li><a href="https://adtoday.co.uk/catalog/pets/fishes/">Fishes</a></li>
@@ -233,7 +239,7 @@
                                 </ul>
                             </li>
 
-                            <li><a href="https://adtoday.co.uk/catalog/kids-babies"><i class="adicon-tv"></i>Kids & Babies</a>
+                            <li><a href="https://adtoday.co.uk/catalog/kids-babies"><i class="adicon-smile"></i>Kids & Babies</a>
                                 <ul style="bottom: 9px;">
                                     <li><a href="https://adtoday.co.uk/catalog/kids-babies/clothes-for-kids-and-babies/">Clothes for Kids and Babies</a></li>
                                     <li><a href="https://adtoday.co.uk/catalog/kids-babies/accessories/">Accessories</a></li>
@@ -243,7 +249,7 @@
                                 </ul>
                             </li>
 
-                            <li><a href="https://adtoday.co.uk/catalog/sporting-goods-bikes"><i class="adicon-tv"></i>Sporting & Bikes</a>
+                            <li><a href="https://adtoday.co.uk/catalog/sporting-goods-bikes"><i class="adicon-star-circle"></i>Sporting & Bikes</a>
                                 <ul style="bottom: 9px;">
                                     <li><a href="https://adtoday.co.uk/catalog/sporting-goods-bikes/sporting-goods/">Sporting Goods</a></li>
                                     <li><a href="https://adtoday.co.uk/catalog/sporting-goods-bikes/bikes/">Bikes</a></li>
@@ -251,7 +257,7 @@
                                 </ul>
                             </li>
 
-                            <li><a href="https://adtoday.co.uk/catalog/business-industrial"><i class="adicon-tv"></i>Business & Industrial</a>
+                            <li><a href="https://adtoday.co.uk/catalog/business-industrial"><i class="adicon-dollar"></i>Business & Industrial</a>
                                 <ul style="bottom: 9px;">
                                     <li><a href="https://adtoday.co.uk/catalog/business-industrial/factories-equipment/">Factories Equipment</a></li>
                                     <li><a href="https://adtoday.co.uk/catalog/business-industrial/restaurants-equipments/">Restaurants Equipments</a></li>
@@ -262,7 +268,7 @@
                                 </ul>
                             </li>
 
-                            <li><a href="https://adtoday.co.uk/catalog/hobbies-music-art-books"><i class="adicon-tv"></i>Music, Art & Books</a>
+                            <li><a href="https://adtoday.co.uk/catalog/hobbies-music-art-books"><i class="adicon-hat"></i>Music, Art & Books</a>
                                 <ul style="bottom: 9px;">
                                     <li><a href="https://adtoday.co.uk/catalog/hobbies-music-art-books/antiques-collectibles/">Antiques - Collectibles</a></li>
                                     <li><a href="https://adtoday.co.uk/catalog/hobbies-music-art-books/musical-instruments/">Musical instruments</a></li>
@@ -549,44 +555,6 @@ Modals
     <a href="#" class="modal-overlay"> click to close modal</a>
     <div class="inner">
         <button class="close_modal"><i class="fa fa-remove"></i></button>
-        <div class="social_login_opt">
-            <div>
-                <div class="opt-navigator dropdown-wrap">
-                    <button>open options</button>
-                    <div class="basic-dropdown">
-                        <ul class="social-drop-list">
-                            <li><a href="#"><i class="fa fa-twitter"></i>Twitter</a></li>
-                            <li><a href="#"><i class="fa fa-google-plus"></i>Google+</a></li>
-                            <li><a href="#"><i class="fa fa-instagram"></i>Instagram</a></li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i>Linkedin</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="social-opts">
-                    <a href="#" class="opt-fb-login active">
-                        <i class="fa fa-facebook"></i>
-                        <span>Sign in with facebook</span>
-                    </a>
-                    <a href="#" class="opt-gp-login">
-                        <i class="fa fa-google-plus"></i>
-                        <span>Sign in with Google+</span>
-                    </a>
-                    <a href="#" class="opt-twitter-login">
-                        <i class="fa fa-twitter"></i>
-                        <span>Sign in with Twitter</span>
-                    </a>
-                    <a href="#" class="opt-instagram-login">
-                        <i class="fa fa-instagram"></i>
-                        <span>Sign in with Instagram</span>
-                    </a>
-                    <a href="#" class="opt-linkedin-login">
-                        <i class="fa fa-linkedin"></i>
-                        <span>Sign in with Linkedin</span>
-                    </a>
-                </div>
-            </div>
-            <span class="split-opt">or</span>
-        </div>
         <div class="modal-content">
             <header>
                 <h4>Welcome Back!</h4>
@@ -621,14 +589,14 @@ Modals
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-6 xs-text-left text-right">
-                        <a href="#">Forgot Password?</a>
+                        <a href="https://adtoday.co.uk/forgot-password">Forgot Password?</a>
                     </div>
                 </div>
 
                 <button type="submit" name="signIn" class="btn btn-md btn-green block-element">Login Now</button>
                 <div class="login-cta text-center">
                     <p>Don't have an account?</p>
-                    <a href="#">Register here FREE</a>
+                    <a class="modal-trigger" href="#signUpModal">Register here FREE</a>
                 </div>
             </form>
         </div>
@@ -638,44 +606,6 @@ Modals
     <a href="#" class="modal-overlay"> click to close modal</a>
     <div class="inner">
         <button class="close_modal"><i class="fa fa-remove"></i></button>
-        <div class="social_login_opt">
-            <div>
-                <div class="opt-navigator dropdown-wrap">
-                    <button>open options</button>
-                    <div class="basic-dropdown">
-                        <ul class="social-drop-list">
-                            <li><a href="#"><i class="fa fa-twitter"></i>Twitter</a></li>
-                            <li><a href="#"><i class="fa fa-google-plus"></i>Google+</a></li>
-                            <li><a href="#"><i class="fa fa-instagram"></i>Instagram</a></li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i>Linkedin</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="social-opts">
-                    <a href="#" class="opt-fb-login active">
-                        <i class="fa fa-facebook"></i>
-                        <span>Sign in with facebook</span>
-                    </a>
-                    <a href="#" class="opt-gp-login">
-                        <i class="fa fa-google-plus"></i>
-                        <span>Sign in with Google+</span>
-                    </a>
-                    <a href="#" class="opt-twitter-login">
-                        <i class="fa fa-twitter"></i>
-                        <span>Sign in with Twitter</span>
-                    </a>
-                    <a href="#" class="opt-instagram-login">
-                        <i class="fa fa-instagram"></i>
-                        <span>Sign in with Instagram</span>
-                    </a>
-                    <a href="#" class="opt-linkedin-login">
-                        <i class="fa fa-linkedin"></i>
-                        <span>Sign in with Linkedin</span>
-                    </a>
-                </div>
-            </div>
-            <span class="split-opt">or</span>
-        </div>
         <div class="modal-content">
             <?php if ($query_registration): ?>
                 <p>You Are Successfully Registered!</p>
@@ -728,7 +658,7 @@ Modals
                     <button type="submit" name="signUp" class="btn btn-md btn-green block-element">Signup Now</button>
                     <div class="login-cta text-center"><br>
                         By clicking Signup Now, you agree to <br>
-                        <a href="#">our Terms</a> and <a href="#">Privacy Policy</a>.
+                        <a href="https://adtoday.co.uk/terms">our Terms</a>.
                     </div>
                 </form>
             <?php endif; ?>

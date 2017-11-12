@@ -8,7 +8,8 @@ function __autoload($class_name)
         '/components/',
         '/validate/',
         '/moduls/',
-        '/security/filter/'
+        '/security/filter/',
+        '/security/postcode/'
     );
 
     foreach ($array_paths as $path) {
