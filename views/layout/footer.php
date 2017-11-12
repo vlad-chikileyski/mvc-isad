@@ -85,44 +85,6 @@ Modals
     <a href="#" class="modal-overlay"> click to close modal</a>
     <div class="inner">
         <button class="close_modal"><i class="fa fa-remove"></i></button>
-        <div class="social_login_opt">
-            <div>
-                <div class="opt-navigator dropdown-wrap">
-                    <button>open options</button>
-                    <div class="basic-dropdown">
-                        <ul class="social-drop-list">
-                            <li><a href="#"><i class="fa fa-twitter"></i>Twitter</a></li>
-                            <li><a href="#"><i class="fa fa-google-plus"></i>Google+</a></li>
-                            <li><a href="#"><i class="fa fa-instagram"></i>Instagram</a></li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i>Linkedin</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="social-opts">
-                    <a href="#" class="opt-fb-login active">
-                        <i class="fa fa-facebook"></i>
-                        <span>Sign in with facebook</span>
-                    </a>
-                    <a href="#" class="opt-gp-login">
-                        <i class="fa fa-google-plus"></i>
-                        <span>Sign in with Google+</span>
-                    </a>
-                    <a href="#" class="opt-twitter-login">
-                        <i class="fa fa-twitter"></i>
-                        <span>Sign in with Twitter</span>
-                    </a>
-                    <a href="#" class="opt-instagram-login">
-                        <i class="fa fa-instagram"></i>
-                        <span>Sign in with Instagram</span>
-                    </a>
-                    <a href="#" class="opt-linkedin-login">
-                        <i class="fa fa-linkedin"></i>
-                        <span>Sign in with Linkedin</span>
-                    </a>
-                </div>
-            </div>
-            <span class="split-opt">or</span>
-        </div>
         <div class="modal-content">
             <header>
                 <h4>Welcome Back!</h4>
@@ -164,7 +126,7 @@ Modals
                 <button type="submit" name="signIn" class="btn btn-md btn-green block-element">Login Now</button>
                 <div class="login-cta text-center">
                     <p>Don't have an account?</p>
-                    <a href="#">Register here FREE</a>
+                    <a class="modal-trigger" href="#signUpModal">Register here FREE</a>
                 </div>
             </form>
         </div>
@@ -174,44 +136,6 @@ Modals
     <a href="#" class="modal-overlay"> click to close modal</a>
     <div class="inner">
         <button class="close_modal"><i class="fa fa-remove"></i></button>
-        <div class="social_login_opt">
-            <div>
-                <div class="opt-navigator dropdown-wrap">
-                    <button>open options</button>
-                    <div class="basic-dropdown">
-                        <ul class="social-drop-list">
-                            <li><a href="#"><i class="fa fa-twitter"></i>Twitter</a></li>
-                            <li><a href="#"><i class="fa fa-google-plus"></i>Google+</a></li>
-                            <li><a href="#"><i class="fa fa-instagram"></i>Instagram</a></li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i>Linkedin</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="social-opts">
-                    <a href="#" class="opt-fb-login active">
-                        <i class="fa fa-facebook"></i>
-                        <span>Sign in with facebook</span>
-                    </a>
-                    <a href="#" class="opt-gp-login">
-                        <i class="fa fa-google-plus"></i>
-                        <span>Sign in with Google+</span>
-                    </a>
-                    <a href="#" class="opt-twitter-login">
-                        <i class="fa fa-twitter"></i>
-                        <span>Sign in with Twitter</span>
-                    </a>
-                    <a href="#" class="opt-instagram-login">
-                        <i class="fa fa-instagram"></i>
-                        <span>Sign in with Instagram</span>
-                    </a>
-                    <a href="#" class="opt-linkedin-login">
-                        <i class="fa fa-linkedin"></i>
-                        <span>Sign in with Linkedin</span>
-                    </a>
-                </div>
-            </div>
-            <span class="split-opt">or</span>
-        </div>
         <div class="modal-content">
             <?php if (isset($query_registration)): ?>
                 <p>You Are Successfully Registered!</p>
@@ -263,7 +187,7 @@ Modals
                     <button type="submit" name="signUp" class="btn btn-md btn-green block-element">Signup Now</button>
                     <div class="login-cta text-center"><br>
                         By clicking Signup Now, you agree to <br>
-                        <a href="#">our Terms</a> and <a href="#">Privacy Policy</a>.
+                        <a href="https://adtoday.co.uk/terms">our Terms</a>.
                     </div>
                 </form>
             <?php endif; ?>
