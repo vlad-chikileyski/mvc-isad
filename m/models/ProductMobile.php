@@ -61,15 +61,18 @@ class ProductMobile
     /**
      * Returns total products
      */
-    public static function getSimilarAdsByCategoryAndSubcategory($getTableNameProduct){
+        public static function getSimilarAdsByCategoryAndSubcategory($getTableNameProduct,$categoryParam,$subcategoryParam){
         $db = Db::getConnectionOnCatics();
         $product = array();
         $result = $db->query('SELECT * FROM `' .$getTableNameProduct. '` ORDER BY id DESC LIMIT 5' );
         $i = 0;
         while ($row = $result->fetch()) {
             $product[$i]['id'] = $row['id'];
+            $product[$i]['image-0'] = $row['image-0'];
             $product[$i]['title'] = $row['title'];
             $product[$i]['price'] = $row['price'];
+            $product[$i]['category'] = $categoryParam;
+            $product[$i]['subcategory'] = $subcategoryParam;
             $i++;
         }
         return $product;
