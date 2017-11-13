@@ -13,6 +13,8 @@ class ProductController
             $categoryProduct = ProductMobile::getProductById($getTableNameProduct, $productId, $categoryParam, $subcategoryParam);
             $userId = $categoryProduct[0]['user_id'];
             $user = UserMobile::getUserById($userId);
+            $similarAds = array();
+            $similarAds = ProductMobile::getSimilarAdsByCategoryAndSubcategory($getTableNameProduct);
             require_once(ROOT . '/views/product/product.php');
             return true;
         }

@@ -7,7 +7,7 @@
 	<meta content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" name="viewport">
 	<meta content="yes" name="apple-mobile-web-app-capable">
 	<meta content="yes" name="apple-touch-fullscreen">
-	
+
 	<link rel="stylesheet" type="text/css" href="/template/css/style.css">
 	<link rel="stylesheet" type="text/css" href="/template/css/responsive.css">
 	<link rel="shortcut icon" href="/template/images/favicon.png">
@@ -19,7 +19,7 @@
 
 	<!-- LEFT SIDEBAR -->
 	<div id="slide-out-left" class="side-nav">
-		
+
 		<!-- Form Search -->
 		<div class="top-left-nav">
 			<div class="searchbar">
@@ -28,7 +28,7 @@
 			</div>
 		</div>
 		<!-- End Form Search -->
-		
+
 		<?php include ROOT .'/veiws/layout/main-menu.php';?>
 
 	</div>
@@ -36,13 +36,13 @@
 
 	<!-- MAIN PAGE -->
 	<div id="page">
-		
+
 		<?php include ROOT .'/views/layout/top-navbar.php';?>
 
 
 		<!-- CONTENT CONTAINER -->
 		<div class="content-container">
-			
+
 			<!-- Product Header -->
 			<div class="content-header">
 
@@ -91,7 +91,7 @@
 				<!-- End Product thumbnail slider -->
 
 				<!-- You can also use static thumbnail (without slider) via HTML tag below
-				---------------------------------------------------		
+				---------------------------------------------------
 				<div class="big-thumb">
 					<img src="images/1.jpg" alt="">
 				</div>
@@ -119,7 +119,7 @@
 
 			</div>
 			<!-- End Product Header -->
-			
+
 			<!-- Product tabs -->
 			<div class="product-tabs">
 				<ul class="tabs">
@@ -128,10 +128,10 @@
 				</ul>
 			</div>
 			<!-- End Product tabs -->
-			
+
 			<!-- Product content -->
 			<div class="product-content">
-				
+
 				<!-- Product detail tabs -->
 				<div class="tab-content" id="detail">
 					<p>The awesome can be light everything do shame in the house. After of all, we made beautiful design in small industry.</p>
@@ -141,7 +141,7 @@
 
 				<!-- Product review list tabs -->
 				<div class="tab-content" id="review">
-					
+
 					<ol class="product-review-list">
 						<li>
 							<div class="review-idty">
@@ -217,128 +217,60 @@
 
 			</div>
 			<!-- End Product content -->
-			
-			<!-- Product navigation -->
-			<div class="product-action margin-bottom">
-				<a class="btn green btn-block margin-bottom_low" href="#">Buy</a>
-				<a class="btn grey btn-block" href="#">Add to wishlist</a>
-			</div>
-			<!-- End Product navigation -->
-			<div class="line"></div>
-			
-			<!-- Related product section -->
-			<div class="page-block">
-				
-				<h2 class="block-title">
-					<span>You may like also</span>
-				</h2>
 
-				<ol class="product-list-slider">
-					<li>
-						<div class="thumb">
-							<a href="product.html">
-								<img src="images/240x240.png" alt="">
-							</a>
-						</div>
-						<div class="product-ctn">
-							<div class="product-name">
-								<a href="product.html">
-									Black Blazer
-								</a>
-							</div>
-							<div class="rating">
-								<i class="fa fa-star active"></i>
-								<i class="fa fa-star active"></i>
-								<i class="fa fa-star active"></i>
-								<i class="fa fa-star active"></i>
-								<i class="fa fa-star"></i>
-							</div>
-							<div class="price">
-								<span class="price-before">$ 178.23</span>
-								<span class="price-current">$ 159.00</span>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="thumb">
-							<a href="product.html">
-								<img src="images/240x240.png" alt="">
-							</a>
-						</div>
-						<div class="product-ctn">
-							<div class="product-name">
-								<a href="product.html">
-									Motorcycle 200cc
-								</a>
-							</div>
-							<div class="rating">
-								<i class="fa fa-star active"></i>
-								<i class="fa fa-star active"></i>
-								<i class="fa fa-star active"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-							</div>
-							<div class="price">
-								<span class="price-before">$ 1,021.33</span>
-								<span class="price-current">$ 965.12</span>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="thumb">
-							<a href="product.html">
-								<img src="images/240x240.png" alt="">
-							</a>
-						</div>
-						<div class="product-ctn">
-							<div class="product-name">
-								<a href="product.html">
-									Modern Watch
-								</a>
-							</div>
-							<div class="rating">
-								<i class="fa fa-star active"></i>
-								<i class="fa fa-star active"></i>
-								<i class="fa fa-star active"></i>
-								<i class="fa fa-star active"></i>
-								<i class="fa fa-star active"></i>
-							</div>
-							<div class="price">
-								<span class="price-current">$ 260.9</span>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="thumb">
-							<a href="product.html">
-								<img src="images/240x240.png" alt="">
-							</a>
-						</div>
-						<div class="product-ctn">
-							<div class="product-name">
-								<a href="product.html">
-									Tablet Mini 2
-								</a>
-							</div>
-							<div class="rating">
-								<i class="fa fa-star active"></i>
-								<i class="fa fa-star active"></i>
-								<i class="fa fa-star active"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-							</div>
-							<div class="price">
-								<span class="price-before">$ 499.00</span>
-								<span class="price-current">$ 472.5</span>
-							</div>
-						</div>
-					</li>
-				</ol>
+            <!-- Product navigation -->
+            <div class="product-action margin-bottom">
+                <a class="btn green btn-block margin-bottom_low" href="#">Buy</a>
+                <a class="btn grey btn-block" href="#">Add to wishlist</a>
+            </div>
+            <!-- End Product navigation -->
 
-				<div class="clear"></div><!-- Use this class (.clear) to clearing float -->
 
-			</div>
-			<!-- End Related product section -->
+
+            <div class="line"></div>
+
+            <!-- Related product section -->
+            <div class="page-block">
+
+                <h2 class="block-title">
+                    <span>You may like also</span>
+                </h2>
+
+                <ol class="product-list-slider">
+                    <?php foreach ($similarAds as $ads):?>
+                    <li>
+                        <div class="thumb">
+                            <a href="product.html">
+                                <img src="/template/images/240x240.png" <a href="http://m.adtoday.co.uk/<?php echo $ads['image']; ?>/">>
+                                    <span><?php echo $ads['id']; ?></span>
+                            </a>
+                        </div>
+                        <div class="product-ctn">
+                            <div class="product-name">
+                                <a href="product.html">
+                                    Black Blazer
+                                </a>
+                            </div>
+                            <div class="rating">
+                                <i class="fa fa-star active"></i>
+                                <i class="fa fa-star active"></i>
+                                <i class="fa fa-star active"></i>
+                                <i class="fa fa-star active"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                            <div class="price">
+                                <span class="price-before">$ 178.23</span>
+                                <span class="price-current">$ 159.00</span>
+                            </div>
+                        </div>
+                    </li>
+                    <?php endforeach; ?>
+                </ol>
+
+                <div class="clear"></div><!-- Use this class (.clear) to clearing float -->
+
+            </div>
+            <!-- End Related product section -->
 
 		</div>
 		<!-- END CONTENT CONTAINER -->
