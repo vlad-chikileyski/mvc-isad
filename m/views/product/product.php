@@ -123,22 +123,14 @@
 			<!-- Product tabs -->
 			<div class="product-tabs">
 				<ul class="tabs">
-					<li class="tab"><a class="active" href="#detail">Detail</a></li>
-					<li class="tab"><a href="#review">Review</a></li>
+					<li class="tab"><a href="#detail">Details</a></li>
+                    <li class="tab"><a class="active" href="#review">Description</a></li>
 				</ul>
 			</div>
 			<!-- End Product tabs -->
 
 			<!-- Product content -->
 			<div class="product-content">
-
-				<!-- Product detail tabs -->
-				<div class="tab-content" id="detail">
-					<p>The awesome can be light everything do shame in the house. After of all, we made beautiful design in small industry.</p>
-					<p>What its mean? Its mean if we could had delicious and money more, we can't stand on the right side.</p>
-				</div>
-				<!-- End Product detail tabs -->
-
 				<!-- Product review list tabs -->
 				<div class="tab-content" id="review">
 
@@ -214,14 +206,19 @@
 					</ol>
 				</div>
 				<!-- End Product review list tabs -->
+                <!-- Product detail tabs -->
+                <div class="tab-content" id="detail">
+                    <p>The awesome can be light everything do shame in the house. After of all, we made beautiful design in small industry.</p>
+                    <p>What its mean? Its mean if we could had delicious and money more, we can't stand on the right side.</p>
+                </div>
+                <!-- End Product detail tabs -->
 
 			</div>
 			<!-- End Product content -->
 
             <!-- Product navigation -->
             <div class="product-action margin-bottom">
-                <a class="btn green btn-block margin-bottom_low" href="#">Buy</a>
-                <a class="btn grey btn-block" href="#">Add to wishlist</a>
+                <a class="btn green btn-block margin-bottom_low" href="#">Add to wishlist</a>
             </div>
             <!-- End Product navigation -->
 
