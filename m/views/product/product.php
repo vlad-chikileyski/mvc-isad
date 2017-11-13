@@ -240,27 +240,16 @@
                     <?php foreach ($similarAds as $ads):?>
                     <li>
                         <div class="thumb">
-                            <a href="product.html">
-                                <img src="/template/images/240x240.png" <a href="http://m.adtoday.co.uk/<?php echo $ads['image']; ?>/">>
-                                    <span><?php echo $ads['id']; ?></span>
+                            <a href="http://m.adtoday.co.uk/ads/<?php echo $ads['category']; ?>/<?php echo $ads['subcategory']; ?>/<?php echo $ads['id']; ?>">
+                                <img src="<?php echo $ads['image-0']; ?>">
                             </a>
                         </div>
                         <div class="product-ctn">
                             <div class="product-name">
-                                <a href="product.html">
-                                    Black Blazer
-                                </a>
-                            </div>
-                            <div class="rating">
-                                <i class="fa fa-star active"></i>
-                                <i class="fa fa-star active"></i>
-                                <i class="fa fa-star active"></i>
-                                <i class="fa fa-star active"></i>
-                                <i class="fa fa-star"></i>
+                                <span><?php echo $ads['title']; ?></span>
                             </div>
                             <div class="price">
-                                <span class="price-before">$ 178.23</span>
-                                <span class="price-current">$ 159.00</span>
+                                <span class="price-current">£ <?php echo $ads['price']; ?></span>
                             </div>
                         </div>
                     </li>
