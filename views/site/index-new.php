@@ -116,7 +116,7 @@
                                     <li><a href="https://adtoday.co.uk/catalog/electronics-home-appliances/video-games-consoles/">Video games - Consoles</a></li>
                                 </ul>
                             </li>
-                            <li><a href="https://jobs.adtoday.co.uk/catalog/properties"><i class="adicon-briefcase"></i>Jobs</a>
+                            <li><a href="https://jobs.adtoday.co.uk/catalog/"><i class="adicon-briefcase"></i>Jobs</a>
                                 <ul style=" width: 500px;">
                                     <div class="e">
                                         <div class="col-sm-6">
