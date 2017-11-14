@@ -86,7 +86,7 @@
                 <h3>Select the category to which you want to add your listing!</h3>
             </header>
             <div class="cat-boxes">
-                <a href="https://adtoday.co.uk/new-ads/electronics" class="cat-box">
+                <a href="https://adtoday.co.uk/new-ads/electronics-home-appliances" class="cat-box">
                     <div class="inner">
                         <div class="adicon-tv bg1"></div>
                         <span>Electronics</span>
