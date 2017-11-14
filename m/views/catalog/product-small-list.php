@@ -40,12 +40,9 @@
         <?php include ROOT . '/views/layout/top-navbar.php'; ?>
 
 
-
         <!-- CONTENT CONTAINER -->
         <div class="content-container">
-
-            <h1 class="page-title animated fadeIn">Product Small List</h1>
-
+                <h1 class="page-title animated fadeIn"> <?php echo ucfirst($categoryProducts[0]['subcategory']); ?></h1>
             <!-- Product navigation -->
             <div class="product-list-navigation animated fadeInRight">
                 <div class="product-num">1-24 from 9661 product</div>
@@ -98,13 +95,13 @@
             <!-- Pagination -->
             <ul class="pagination">
                 <?php echo $pagination->get(); ?>
-               <!-- <li class="disabled"><a href="#!"><i class="fa fa-angle-double-left"></i></a></li>
-                <li class="active"><a href="#!">1</a></li>
-                <li class="waves-effect"><a href="#!">2</a></li>
-                <li class="waves-effect"><a href="#!">3</a></li>
-                <li class="waves-effect"><a href="#!">4</a></li>
-                <li class="waves-effect"><a href="#!">5</a></li>
-                <li class="waves-effect"><a href="#!"><i class="fa fa-angle-double-right"></i></a></li>-->
+                <!-- <li class="disabled"><a href="#!"><i class="fa fa-angle-double-left"></i></a></li>
+                 <li class="active"><a href="#!">1</a></li>
+                 <li class="waves-effect"><a href="#!">2</a></li>
+                 <li class="waves-effect"><a href="#!">3</a></li>
+                 <li class="waves-effect"><a href="#!">4</a></li>
+                 <li class="waves-effect"><a href="#!">5</a></li>
+                 <li class="waves-effect"><a href="#!"><i class="fa fa-angle-double-right"></i></a></li>-->
 
             </ul>
             <!-- End Pagination -->
