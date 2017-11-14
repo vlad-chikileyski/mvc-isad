@@ -28,8 +28,7 @@
             </div>
         </div>
         <!-- End Form Search -->
-
-        <?php include ROOT . '/veiws/layout/main-menu.php'; ?>
+        <?php include ROOT . '/views/layout/main-menu.php'; ?>
 
     </div>
     <!-- END LEFT SIDEBAR -->
@@ -47,12 +46,12 @@
             <div class="content-header">
                 <div class="breadcrumbs animated fadeIn"><!-- Product breadcrumb -->
                     <?php foreach ($mainAds as $mainAds): ?>
-                    <a href="http://m.adtoday.co.uk/ads/<?php echo $mainAds['category']; ?>"><?php echo $mainAds['category']; ?></a>
-                    <a href="http://m.adtoday.co.uk/ads/<?php echo $mainAds['category']; ?>/<?php echo $mainAds['subcategory']; ?>"><?php echo $mainAds['subcategory']; ?></a>
+                    <a href="http://m.adtoday.co.uk/ads/<?php echo $mainAds['category']; ?>"><?php echo ucfirst($mainAds['category']); ?></a>
+                    <a href="http://m.adtoday.co.uk/ads/<?php echo $mainAds['category']; ?>/<?php echo $mainAds['subcategory']; ?>"><?php echo ucfirst($mainAds['subcategory']); ?></a>
                     <a class="active"
-                       href="http://m.adtoday.co.uk/ads/<?php echo $mainAds['category']; ?>/<?php echo $mainAds['subcategory']; ?>/<?php echo $mainAds['id']; ?>"><?php echo $mainAds['id']; ?></a>
+                       href="http://m.adtoday.co.uk/ads/<?php echo $mainAds['category']; ?>/<?php echo $mainAds['subcategory']; ?>/<?php echo $mainAds['id']; ?>"><?php echo ucfirst($mainAds['id']); ?></a>
                 </div><!-- End Product breadcrumb -->
-                <h2 class="product-title animated fadeIn"></h2><?php echo $mainAds['title']; ?><!-- Product title -->
+                <h2 class="product-title animated fadeIn"></h2><?php echo ucfirst($mainAds['title']); ?><!-- Product title -->
                 <!-- Product thumbnail slider -->
                 <ul class="product-slider animated fadeInRight"><!-- Single thumbnail -->
                     <li>
@@ -102,7 +101,7 @@
 
                 <!-- Product meta -->
                 <div class="product-meta animated fadeInUp">
-                   <span><?php echo $mainAds['description']; ?></span>
+                   <span><?php echo ucfirst($mainAds['description']); ?></span>
                     <div class="price">
                         <span class="price"><?php echo $mainAds['price']; ?></span>
                     </div>
@@ -119,8 +118,8 @@
             <!-- Product tabs -->
             <div class="product-tabs">
                 <ul class="tabs">
-                    <li class="tab"><a class="active" href="#detail">Detail</a></li>
-                    <li class="tab"><a href="#review">Review</a></li>
+                    <li class="tab"><a class="active" href="#detail">Details</a></li>
+                    <li class="tab"><a href="#review">Description</a></li>
                 </ul>
             </div>
             <!-- End Product tabs -->
@@ -218,8 +217,7 @@
             <?php endforeach; ?>
             <!-- Product navigation -->
             <div class="product-action margin-bottom">
-                <a class="btn green btn-block margin-bottom_low" href="#">Buy</a>
-                <a class="btn grey btn-block" href="#">Add to wishlist</a>
+                <a class="btn green btn-block margin-bottom_low" href="#">Add to wishlist</a>
             </div>
             <!-- End Product navigation -->
 
@@ -243,7 +241,7 @@
                             </div>
                             <div class="product-ctn">
                                 <div class="product-name">
-                                    <span><?php echo $ads['title']; ?></span>
+                                    <span><?php echo ucfirst($ads['title']); ?></span>
                                 </div>
                                 <div class="price">
                                     <span class="price-current">£ <?php echo $ads['price']; ?></span>
