@@ -46,10 +46,10 @@
             <div class="content-header">
                 <div class="breadcrumbs animated fadeIn"><!-- Product breadcrumb -->
                     <?php foreach ($mainAds as $mainAds): ?>
-                    <a href="http://m.adtoday.co.uk/ads/<?php echo $mainAds['category']; ?>"><?php echo ucfirst($mainAds['category']); ?></a>
-                    <a href="http://m.adtoday.co.uk/ads/<?php echo $mainAds['category']; ?>/<?php echo $mainAds['subcategory']; ?>"><?php echo ucfirst($mainAds['subcategory']); ?></a>
+                    <a href="http://m.adtoday.co.uk/sub/<?php echo $mainAds['category']; ?>/"><?php echo ucfirst($mainAds['category']); ?></a>
+                    <a href="http://m.adtoday.co.uk/catalog/<?php echo $mainAds['category']; ?>/<?php echo $mainAds['subcategory']; ?>/"><?php echo ucfirst($mainAds['subcategory']); ?></a>
                     <a class="active"
-                       href="http://m.adtoday.co.uk/ads/<?php echo $mainAds['category']; ?>/<?php echo $mainAds['subcategory']; ?>/<?php echo $mainAds['id']; ?>"><?php echo ucfirst($mainAds['id']); ?></a>
+                       href="http://m.adtoday.co.uk/catalog/<?php echo $mainAds['category']; ?>/<?php echo $mainAds['subcategory']; ?>/<?php echo $mainAds['id']; ?>"><?php echo ucfirst($mainAds['title']); ?></a>
                 </div><!-- End Product breadcrumb -->
                 <h2 class="product-title animated fadeIn"></h2><?php echo ucfirst($mainAds['title']); ?><!-- Product title -->
                 <!-- Product thumbnail slider -->

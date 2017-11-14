@@ -15,14 +15,6 @@ class AccountController
         $i++;
     }
 
-    $getFavAdsByUserCreateId = array();
-    $getFavAdsByUserCreateId = ProductMobile::getFavAdsByCreatedUserId($userId);
-    $r = 0;
-    foreach ($getFavAdsByUserCreateId as $favItem) {
-        $userFavAd[$r] = ProductMobile::getFavAdsListByTableNameAndAdsId($favItem["subcategory_name"], $favItem["ads_id"], $favItem["category_name"]);
-        $r++;
-    }
-
     require_once(ROOT . '/views/account/account-ads.php');
     return true;
 }
