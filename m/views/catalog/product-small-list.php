@@ -42,14 +42,12 @@
 
         <!-- CONTENT CONTAINER -->
         <div class="content-container">
-            <?php foreach ($categoryProducts as $product): ?>
-                <h1 class="page-title animated fadeIn"><?php echo ucfirst($product['subcategory']);break;?></h1>
-            <?php endforeach; ?>
+                <h1 class="page-title animated fadeIn"> <?php echo ucfirst($categoryProducts[0]['subcategory']); ?></h1>
             <!-- Product navigation -->
             <div class="product-list-navigation animated fadeInRight">
                 <div class="product-num">1-24 from 9661 product</div>
                 <div class="sorting-nav">
-                    <span class="label">Sort</span>
+                    <span class="label">Sort by</span>
                     <div class="sorting-dropdown">
                         <select class="browser-default">
                             <option value="" selected>Latest</option>
