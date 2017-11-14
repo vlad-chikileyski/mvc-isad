@@ -86,78 +86,91 @@
                 <h3>Select the category to which you want to add your listing!</h3>
             </header>
             <div class="cat-boxes">
-                <a href="http://vehicle.adtoday.co.uk/new-ads/" class="cat-box">
+                <a href="https://adtoday.co.uk/new-ads/electronics" class="cat-box">
                     <div class="inner">
-                        <div class="adicon-car bg1"></div>
-                        <span>Vehicle</span>
+                        <div class="adicon-tv bg1"></div>
+                        <span>Electronics</span>
                     </div>
                 </a>
-                <a href="http://property.adtoday.co.uk/new-ads/" class="cat-box">
-                    <div class="inner">
-                        <div class="adicon-buildings bg6"></div>
-                        <span>Property</span>
-                    </div>
-                </a>
-                <a href="http://jobs.adtoday.co.uk/new-ads/" class="cat-box">
+                <a href="https://jobs.adtoday.co.uk/new-ads/" class="cat-box">
                     <div class="inner">
                         <div class="adicon-briefcase bg5"></div>
                         <span>Jobs</span>
                     </div>
                 </a>
-                <a href="/new-ads/mobiles/" class="cat-box">
+                <a href="https://vehicle.adtoday.co.uk/new-ads/" class="cat-box">
                     <div class="inner">
-                        <div class="adicon-tablet bg2"></div>
-                        <span>Mobiles</span>
+                        <div class="adicon-car bg2"></div>
+                        <span>Vehicles</span>
                     </div>
                 </a>
-                <a href="/new-ads/electronics/" class="cat-box">
+                <a href="https://adult.adtoday.co.uk/new-ads/" class="cat-box">
                     <div class="inner">
-                        <div class="adicon-tv bg3"></div>
-                        <span>Electronics</span>
+                        <div class="adicon-hearts bg3"></div>
+                        <span>Matrimony</span>
                     </div>
                 </a>
-                <a href="/new-ads/furniture/" class="cat-box">
+                <a href="https://property.adtoday.co.uk/new-ads/" class="cat-box">
                     <div class="inner">
-                        <div class="adicon-sofa bg4"></div>
-                        <span>Furniture</span>
+                        <div class="adicon-buildings bg4"></div>
+                        <span>Properties</span>
                     </div>
                 </a>
-                <a href="/new-ads/services/" class="cat-box">
+                <a href="https://adtoday.co.uk/new-ads/mobile-phones-accessories/" class="cat-box">
                     <div class="inner">
-                        <div class="adicon-bell bg7"></div>
+                        <div class="adicon-tablet bg7"></div>
+                        <span>Mobile & Accessories</span>
+                    </div>
+                </a>
+                <a href="https://adtoday.co.uk/new-ads/home-garden/" class="cat-box">
+                    <div class="inner">
+                        <div class="adicon-sofa bg8"></div>
+                        <span>Home & Garden</span>
+                    </div>
+                </a>
+                <a href="https://adtoday.co.uk/new-ads/fashion-beauty/" class="cat-box">
+                    <div class="inner">
+                        <div class="adicon-heal bg9"></div>
+                        <span>Fashion & Beauty</span>
+                    </div>
+                </a>
+                <a href="https://adtoday.co.uk/new-ads/services/" class="cat-box">
+                    <div class="inner">
+                        <div class="adicon-bell bg10"></div>
                         <span>Services</span>
                     </div>
                 </a>
-                <a href="/new-ads/education/" class="cat-box">
+                <a href="https://adtoday.co.uk/new-ads/pets" class="cat-box">
                     <div class="inner">
-                        <div class="adicon-hat bg8"></div>
-                        <span>Education</span>
+                        <div class="adicon-dog bg11"></div>
+                        <span>Pets</span>
                     </div>
                 </a>
-                <a href="/new-ads/animals/" class="cat-box">
+                <a href="https://adtoday.co.uk/new-ads/kids-babies" class="cat-box">
                     <div class="inner">
-                        <div class="adicon-dog bg9"></div>
-                        <span>animals</span>
+                        <div class="adicon-smile bg12"></div>
+                        <span>Kids & Babies</span>
                     </div>
                 </a>
-                <a href="/new-ads/fashion/" class="cat-box">
+                <a href="https://adtoday.co.uk/new-ads/sporting-goods-bikes" class="cat-box">
                     <div class="inner">
-                        <div class="adicon-heal bg10"></div>
-                        <span>Fashion</span>
+                        <div class="adicon-star-circle bg1"></div>
+                        <span>Sporting & Bikes</span>
                     </div>
                 </a>
-                <a href="/new-ads/baby-products/" class="cat-box">
+                <a href="https://adtoday.co.uk/new-ads/business-industrial" class="cat-box">
                     <div class="inner">
-                        <div class="adicon-smile bg11"></div>
-                        <span>Baby products</span>
+                        <div class="adicon-dollar bg2"></div>
+                        <span>Kids & Babies</span>
                     </div>
                 </a>
-                <a href="http://adult.adtoday.co.uk/add" class="cat-box">
+                <a href="https://adtoday.co.uk/new-ads/hobbies-music-art-books" class="cat-box">
                     <div class="inner">
-                        <div class="adicon-hearts bg12"></div>
-                        <span>adult</span>
+                        <div class="adicon-hat bg3"></div>
+                        <span>Music, Art & Books</span>
                     </div>
                 </a>
+
             </div>
         </div>
     </div>
