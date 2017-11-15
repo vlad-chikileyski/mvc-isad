@@ -2,25 +2,71 @@
 
 class AccountController
 {
-    public function actionAds()
-{
-    $userProduct = array();
-    $userId = UserMobile::checkLogged();
-    $user = UserMobile::getUserById($userId);
-    $getAdsIdByUserCreateId = array();
-    $getAdsIdByUserCreateId = ProductMobile::getAdsIdByUserId($userId);
-    $i = 0;
-    foreach ($getAdsIdByUserCreateId as $item){
-        $userProduct[$i] = ProductMobile::getProductListByTableNameAndAdsId($item["subcategory_name"], $item["adsId"], $item["category_name"]);
-        $i++;
+    public function actionPanel()
+    {
+        $userPanelProduct = array();
+        $userId = UserMobile::checkLogged();
+        $user = UserMobile::getUserById($userId);
+        if ($userId == false) {
+            header("Location: http://m.adtoday.co.uk/login");
+            require_once(ROOT . '/views/login/login-mobile.php');
+        } else {
+            $getPanelIdByUserCreateId = array();
+            $getPanelIdByUserCreateId = ProductMobile::getPanelIdByUserId($userId);
+            $user = UserMobile::getUserById($userId);
+            require_once(ROOT . '/views/account/panel-account.php');
+
+        }
+        return true;
     }
 
-    require_once(ROOT . '/views/account/account-ads.php');
-    return true;
-}
+    public function actionUser()
+    {
+        $username = '';
+        $email = '';
+        $phone = '';
+        $birthday = '';
+        $query_change = false;
+        $userId = UserMobile::checkLogged();
+        if ($userId == false) {
+            header("HTTP/1.0 404 Not Found");
+            require_once(ROOT . '/views/error/404.php');
+        } else {
+            if (isset($_POST['change'])) {
+                $username = $_POST['username'];
+                $email = $_POST['email'];
+                $phone = $_POST['phone'];
+                $query_change = array();
+                $query_change = ProductMobile::getUserByUserId($userId, $username, $email, $phone);
+
+            }
+            require_once(ROOT . '/views/account/form-account.php');
+            return true;
+        }
+    }
 
 
-    public function actionLogin()
+    public
+    function actionAds()
+    {
+        $userProduct = array();
+        $userId = UserMobile::checkLogged();
+        $user = UserMobile::getUserById($userId);
+        $getAdsIdByUserCreateId = array();
+        $getAdsIdByUserCreateId = ProductMobile::getAdsIdByUserId($userId);
+        $i = 0;
+        foreach ($getAdsIdByUserCreateId as $item) {
+            $userProduct[$i] = ProductMobile::getProductLiszztByTableNameAndAdsId($item["subcategory_name"], $item["adsId"], $item["category_name"]);
+            $i++;
+        }
+
+        require_once(ROOT . '/views/account/account-ads.php');
+        return true;
+    }
+
+
+    public
+    function actionLogin()
     {
         $useremail = '';
         $password = '';
@@ -51,14 +97,15 @@ class AccountController
 
     }
 
-    public function actionRegister()
+    public
+    function actionRegister()
     {
         $username = '';
         $password = '';
         $useremail = '';
         $query_registration = false;
         if (isset($_POST['signUp'])) {
-                $username = $_POST['username'];
+            $username = $_POST['username'];
             $password = $_POST['password'];
             $useremail = $_POST['useremail'];
 
@@ -78,7 +125,7 @@ class AccountController
             }
             if ($errors == false) {
                 $query_registration = UserMobile::register($username, $useremail, $password);
-                if ($query_registration &&  MailBuilderMobile::configureMailForActivateAccount($useremail, $username)) {
+                if ($query_registration && MailBuilderMobile::configureMailForActivateAccount($useremail, $username)) {
                     header("Location: /activate-account/200");
                 }
             }
