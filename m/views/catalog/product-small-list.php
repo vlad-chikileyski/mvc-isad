@@ -42,7 +42,11 @@
 
         <!-- CONTENT CONTAINER -->
         <div class="content-container">
-                <h1 class="page-title animated fadeIn"> <?php echo ucfirst($categoryProducts[0]['subcategory']); ?></h1>
+            <h1 class="page-title animated fadeIn"> <?php echo ucfirst($categoryProducts[0]['subcategory']); ?></h1>
+            <div class="breadcrumbs animated fadeIn"><!-- Product breadcrumb -->
+                    <a href="http://m.adtoday.co.uk/sub/<?php echo $categoryProducts[0]['category']; ?>/"><?php echo ucfirst($categoryProducts[0]['category']); ?></a>
+                    <a class="active" href="http://m.adtoday.co.uk/catalog/<?php echo $categoryProducts[0]['category']; ?>/<?php echo $categoryProducts[0]['subcategory']; ?>/"><?php echo ucfirst($categoryProducts[0]['subcategory']); ?></a>
+            </div><!-- End Product breadcrumb -->
             <!-- Product navigation -->
             <div class="product-list-navigation animated fadeInRight">
                 <div class="product-num">1-24 from 9661 product</div>
