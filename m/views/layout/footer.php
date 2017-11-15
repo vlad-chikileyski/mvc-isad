@@ -25,8 +25,7 @@
     <div class="copyright">
         <span class="block">&copy; 2017 AdToday.co.uk</span>
         <div class="navigation">
-            <a href="#">Term & Condition</a>
-            <a href="#">Privacy Policy</a>
+            <a href="http://m.adtoday.co.uk/terms/">Term & Condition</a>
         </div>
     </div>
     <!-- End Copyright Section -->
