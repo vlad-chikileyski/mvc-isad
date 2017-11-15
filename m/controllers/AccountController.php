@@ -22,27 +22,38 @@ class AccountController
 
     public function actionUser()
     {
-        $username = '';
-        $email = '';
-        $phone = '';
-        $birthday = '';
-        $query_change = false;
         $userId = UserMobile::checkLogged();
-        if ($userId == false) {
-            header("HTTP/1.0 404 Not Found");
-            require_once(ROOT . '/views/error/404.php');
-        } else {
-            if (isset($_POST['change'])) {
-                $username = $_POST['username'];
-                $email = $_POST['email'];
-                $phone = $_POST['phone'];
-                $query_change = array();
-                $query_change = ProductMobile::getUserByUserId($userId, $username, $email, $phone);
+        $user = UserMobile::getUserById($userId);
+        $name = $user['username'];
+        $email = $user['email'];
+        $phone = $user['phone'];
+        $result = false;
+        if (isset($_POST['change'])) {
+            $name = $_POST['username'];
+            $email = $_POST['email'];
+            $phone = $_POST['phone'];
 
+            $errors = false;
+
+            if (!UserMobile::checkName($name)) {
+                $errors[] = 'Имя не должно быть короче 2-х символов';
             }
-            require_once(ROOT . '/views/account/form-account.php');
-            return true;
+
+            if (!UserMobile::checkEmail($email)) {
+                $errors[] = 'Not correct email';
+            }
+            if (!UserMobile::checkEmailExists($email)) {
+                $errors[] = 'Not correct email';
+            }
+
+            if ($errors == false) {
+                $result = UserMobile::userChange($userId, $name, $email, $phone);
+            }
+
         }
+
+        require_once(ROOT . '/views/account/form-account.php');
+        return true;
     }
 
 

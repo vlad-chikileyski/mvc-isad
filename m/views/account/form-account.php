@@ -49,7 +49,7 @@
 
                     <div class="input-field">
                         <h3 class="out-label">Fullname</h3>
-                        <input type="text" name="username" id="username" value="<?php echo $getAdsIdByUserCreateId[0]['username'];?>">
+                        <input type="text" name="username" id="username" value="<?php echo $user['username'];?>">
                     </div>
 
                     <div class="row">
@@ -79,7 +79,7 @@
 
                     <div class="input-field">
                         <h3 class="out-label">Phone</h3>
-                        <input type="text" id="phone" name="phone"  value="+<?php echo $getAdsIdByUserCreateId[0]['phone'];?>">
+                        <input type="text" id="phone" name="phone"  value="+<?php echo $user['phone'];?>">
                     </div>
 
                     <div class="input-field">
@@ -94,7 +94,7 @@
 
                     <div class="input-field">
                         <h3 class="out-label">Email</h3>
-                        <input type="text" id="email" name="email" value="<?php echo $getAdsIdByUserCreateId[0]['email'];?>">
+                        <input type="text" id="email" name="email" value="<?php echo $user['email'];?>">
                     </div>
 
                     <div class="input-field">
