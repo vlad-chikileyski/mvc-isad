@@ -104,9 +104,8 @@
 
                 <!-- Product meta -->
                 <div class="product-meta animated fadeInUp">
-                    <span><?php echo ucfirst($mainAds['description']); ?></span>
                     <div class="price">
-                        <span class="price"><?php echo $mainAds['price']; ?></span>
+                        <span class="price">£ <?php echo $mainAds['price']; ?></span>
                     </div>
                     <!-- Beside .in-stock class, you can also use .out-of-stock class -->
                     <div class="availability in-stock">
@@ -132,10 +131,7 @@
 
                 <!-- Product detail tabs -->
                 <div class="tab-content" id="detail">
-                    <p>The awesome can be light everything do shame in the house. After of all, we made beautiful design
-                        in small industry.</p>
-                    <p>What its mean? Its mean if we could had delicious and money more, we can't stand on the right
-                        side.</p>
+                    <p><?php echo ucfirst($mainAds['description']); ?></p>
                 </div>
                 <!-- End Product detail tabs -->
 
