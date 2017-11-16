@@ -123,7 +123,7 @@ class PostController
     }
 
     public
-    function actioncategoryList()
+    function actionCategoryList()
     {
 
         require_once(ROOT . '/views/post/firststep.php');

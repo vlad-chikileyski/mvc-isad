@@ -9,15 +9,17 @@
 class UserMobile
 {
 
-    public static function userChange($userId, $name, $email, $phone)
+    public static function userChange($userId, $name, $email, $phone, $select_box_gender_var,$check_box_newsletter_var)
     {
         $db = Db::getConnection();
-        $sql = 'UPDATE user SET  username = :username, email = :email, phone = :phone WHERE id = :userId';
+        $sql = 'UPDATE `user` SET  `username` = :username, `email` = :email, `phone` = :phone, `gender` = :gender ,`newsletter` = :newsletter WHERE `id` = :userId';
         $result = $db->prepare($sql);
-        $result->bindParam(':id', $userId, PDO::PARAM_STR);
+        $result->bindParam(':userId', $userId, PDO::PARAM_STR);
         $result->bindParam(':username', $name, PDO::PARAM_STR);
         $result->bindParam(':email', $email, PDO::PARAM_STR);
         $result->bindParam(':phone', $phone, PDO::PARAM_STR);
+        $result->bindParam(':gender', $select_box_gender_var, PDO::PARAM_INT);
+        $result->bindParam(':newsletter', $check_box_newsletter_var, PDO::PARAM_INT);
         return $result->execute();
     }
 
