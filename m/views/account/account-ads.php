@@ -30,12 +30,6 @@
         <!-- End Form Search -->
 
         <?php include ROOT . '/views/layout/main-menu.php'; ?>
-        <li class="bg7-icon-wrap">
-            <a href="#tab002">
-                <span><i class="adicon-document"></i></span>
-                My Ads
-            </a>
-        </li>
 
     </div>
     <!-- END LEFT SIDEBAR -->
