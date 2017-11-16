@@ -1,4 +1,3 @@
-
 <!-- FOOTER -->
 <div class="footer">
 
@@ -16,7 +15,8 @@
             <i class="fa fa-cc-jcb"></i>
         </p>
         <p>
-            <span class="block text-small">Having problem? <a href="http://m.adtoday.co.uk/contact">Contact us</a></span>
+            <span class="block text-small">Having problem? <a
+                        href="http://m.adtoday.co.uk/contact">Contact us</a></span>
         </p>
     </div>
     <!-- End Footer main Section -->
@@ -25,8 +25,7 @@
     <div class="copyright">
         <span class="block">&copy; 2017 AdToday.co.uk</span>
         <div class="navigation">
-            <a href="#">Term & Condition</a>
-            <a href="#">Privacy Policy</a>
+            <a href="http://m.adtoday.co.uk/terms/">Term & Condition</a>
         </div>
     </div>
     <!-- End Copyright Section -->

@@ -9,6 +9,18 @@
 class UserMobile
 {
 
+    public static function userChange($userId, $name, $email, $phone)
+    {
+        $db = Db::getConnection();
+        $sql = 'UPDATE user SET  username = :username, email = :email, phone = :phone WHERE id = :userId';
+        $result = $db->prepare($sql);
+        $result->bindParam(':id', $userId, PDO::PARAM_STR);
+        $result->bindParam(':username', $name, PDO::PARAM_STR);
+        $result->bindParam(':email', $email, PDO::PARAM_STR);
+        $result->bindParam(':phone', $phone, PDO::PARAM_STR);
+        return $result->execute();
+    }
+
     public static function register($username, $email, $password)
     {
         $db = Db::getConnection();
@@ -20,6 +32,7 @@ class UserMobile
         $result->bindParam(':password', $password, PDO::PARAM_STR);
         return $result->execute();
     }
+
 
     /**
      * generate new password;
