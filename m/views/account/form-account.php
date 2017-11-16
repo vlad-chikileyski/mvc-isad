@@ -49,64 +49,81 @@
 
                     <div class="input-field">
                         <h3 class="out-label">Fullname</h3>
-                        <input type="text" name="username" id="username" value="<?php echo $user['username'];?>">
+                        <input type="text" name="username" id="username" value="<?php echo $user['username']; ?>">
                     </div>
 
-                    <div class="row">
-                        <h3 class="out-label">Birthday</h3>
-
-                        <div class="input-field col s4">
-                            <select>
-                                <option value="1">26</option>
-                                <option value="1" selected>27</option>
-                            </select>
-                        </div>
-
-                        <div class="input-field col s4">
-                            <select>
-                                <option value="">Mei</option>
-                                <option value="" selected>Apr</option>
-                            </select>
-                        </div>
-
-                        <div class="input-field col s4">
-                            <select>
-                                <option value="" selected>1988</option>
-                                <option value="">1989</option>
-                            </select>
-                        </div>
-                    </div><!-- .row -->
 
                     <div class="input-field">
                         <h3 class="out-label">Phone</h3>
-                        <input type="text" id="phone" name="phone"  value="+<?php echo $user['phone'];?>">
+                        <input type="text" id="phone" name="phone" value="+<?php echo $user['phone']; ?>">
                     </div>
 
                     <div class="input-field">
                         <h3 class="out-label">Gender</h3>
                         <p>
-                            <input name="group1" type="radio" id="test1"/>
-                            <label for="test1">Male</label>
-                            <input name="group1" checked="checked" type="radio" id="test2"/>
-                            <label for="test2">Female</label>
+                            <?php
+                            switch ($select_box_gender_var1) {
+                                case 0:
+                                    echo
+                                    '<input name="gender" type="radio" value="2" id="gender-male"/>
+                            <label for="gender-male">Male</label>
+                            <input name="gender" type="radio"  value="1" id="gender-female"/>
+                            <label for="gender-female">Female</label>
+                            <input name="gender" checked="checked" type="radio" value="0" id="gender-none"/>
+                            <label for="gender-none">None</label>';
+                                    break;
+                                case 1:
+                                    echo
+                                    '<input name="gender" type="radio"  value="2" id="gender-male"/>
+                            <label for="gender-male">Male</label>
+                            <input name="gender" checked="checked" value="1" type="radio" id="gender-female"/>
+                            <label for="gender-female">Female</label>
+                            <input name="gender" type="radio" value="0" id="gender-none"/>
+                            <label for="gender-none">None</label>';
+                                    break;
+                                case 2:
+                                    echo
+                                    '<input name="gender" checked="checked" value="2" type="radio" id="gender-male"/>
+                            <label for="gender-male">Male</label>
+                            <input name="gender" type="radio"  value="1" id="gender-female"/>
+                            <label for="gender-female">Female</label>
+                            <input name="gender" type="radio"  value="0" id="gender-none"/>
+                            <label for="gender-none">None</label>';
+                                    break;
+                            }
+                            ?>
+
                         </p>
                     </div>
 
                     <div class="input-field">
                         <h3 class="out-label">Email</h3>
-                        <input type="text" id="email" name="email" value="<?php echo $user['email'];?>">
+                        <input type="text" id="email" name="email" value="<?php echo $user['email']; ?>">
                     </div>
 
                     <div class="input-field">
                         <h3 class="out-label">Newsletter</h3>
                         <p>
-                            <input type="checkbox" id="test6" checked="checked"/>
-                            <label for="test6">Newsletter</label>
+                            <?php
+                            switch ($check_box_newsletter_var1) {
+                                case null:
+                                    echo
+                                    '<input type="checkbox" name="newsletter" value="1" id="newsletter"/>
+                            <label for="newsletter">Newsletter</label>';
+                                    break;
+                                case 1:
+                                    echo
+                                    '<input type="checkbox" id="newsletter" name="newsletter" value="2" checked="checked"/>
+                            <label for="newsletter">Newsletter</label>';
+                                    break;
+                            }
+                            ?>
                         </p>
                     </div>
 
                     <div class="input-field">
-                        <button type="submit" name="change" class="btn btn-block green"><i class="fa fa-save"></i> Save</button>
+                        <button type="submit" name="change" class="btn btn-block green"><i class="fa fa-save"></i> Save
+                        </button>
                     </div>
 
                 </div>
