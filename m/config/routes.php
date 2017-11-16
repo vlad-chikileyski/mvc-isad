@@ -1,5 +1,7 @@
 <?php
 return array(
+    'account/panel' => 'account/panel',
+    'account/user' => 'account/user',
     'ads/([a-z-]+)/([a-z-]+)/([0-9+])' => 'product/view/$1/$2/$3',
     'contact' => 'help/contact',
     'new-ads/([a-z\-]+)' => 'post/index/$1', //PostController and  actionIndex
