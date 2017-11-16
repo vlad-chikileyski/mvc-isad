@@ -45,13 +45,16 @@
             <!-- Product Header -->
             <div class="content-header">
                 <div class="breadcrumbs animated fadeIn"><!-- Product breadcrumb -->
-                    <?php foreach ($mainAds as $mainAds): ?>
+                    <?php foreach ($mainAds
+
+                    as $mainAds): ?>
                     <a href="http://m.adtoday.co.uk/sub/<?php echo $mainAds['category']; ?>/"><?php echo ucfirst($mainAds['category']); ?></a>
                     <a href="http://m.adtoday.co.uk/catalog/<?php echo $mainAds['category']; ?>/<?php echo $mainAds['subcategory']; ?>/"><?php echo ucfirst($mainAds['subcategory']); ?></a>
                     <a class="active"
                        href="http://m.adtoday.co.uk/catalog/<?php echo $mainAds['category']; ?>/<?php echo $mainAds['subcategory']; ?>/<?php echo $mainAds['id']; ?>"><?php echo ucfirst($mainAds['title']); ?></a>
                 </div><!-- End Product breadcrumb -->
-                <h2 class="product-title animated fadeIn"></h2><?php echo ucfirst($mainAds['title']); ?><!-- Product title -->
+                <h2 class="product-title animated fadeIn"></h2>
+                <?php echo ucfirst($mainAds['title']); ?><!-- Product title -->
                 <!-- Product thumbnail slider -->
                 <ul class="product-slider animated fadeInRight"><!-- Single thumbnail -->
                     <li>
@@ -101,9 +104,8 @@
 
                 <!-- Product meta -->
                 <div class="product-meta animated fadeInUp">
-                   <span><?php echo ucfirst($mainAds['description']); ?></span>
                     <div class="price">
-                        <span class="price"><?php echo $mainAds['price']; ?></span>
+                        <span class="price">£ <?php echo $mainAds['price']; ?></span>
                     </div>
                     <!-- Beside .in-stock class, you can also use .out-of-stock class -->
                     <div class="availability in-stock">
@@ -118,8 +120,8 @@
             <!-- Product tabs -->
             <div class="product-tabs">
                 <ul class="tabs">
-                    <li class="tab"><a class="active" href="#detail">Details</a></li>
-                    <li class="tab"><a href="#review">Description</a></li>
+                    <li class="tab"><a class="active" href="#detail">Description</a></li>
+                    <li class="tab"><a href="#review">Details</a></li>
                 </ul>
             </div>
             <!-- End Product tabs -->
@@ -129,10 +131,7 @@
 
                 <!-- Product detail tabs -->
                 <div class="tab-content" id="detail">
-                    <p>The awesome can be light everything do shame in the house. After of all, we made beautiful design
-                        in small industry.</p>
-                    <p>What its mean? Its mean if we could had delicious and money more, we can't stand on the right
-                        side.</p>
+                    <p><?php echo ucfirst($mainAds['description']); ?></p>
                 </div>
                 <!-- End Product detail tabs -->
 
@@ -145,13 +144,6 @@
                                 <div class="name">
                                     Andriy Sheva
                                 </div>
-                                <div class="product-rating">
-                                    <i class="fa fa-star active"></i>
-                                    <i class="fa fa-star active"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
                             </div>
                             <div class="review-ctn">
                                 awesome product
@@ -161,13 +153,6 @@
                             <div class="review-idty">
                                 <div class="name">
                                     Carlos de Mello
-                                </div>
-                                <div class="product-rating">
-                                    <i class="fa fa-star active"></i>
-                                    <i class="fa fa-star active"></i>
-                                    <i class="fa fa-star active"></i>
-                                    <i class="fa fa-star active"></i>
-                                    <i class="fa fa-star"></i>
                                 </div>
                             </div>
                             <div class="review-ctn">
@@ -179,13 +164,6 @@
                                 <div class="name">
                                     Jackson Thiago
                                 </div>
-                                <div class="product-rating">
-                                    <i class="fa fa-star active"></i>
-                                    <i class="fa fa-star active"></i>
-                                    <i class="fa fa-star active"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
                             </div>
                             <div class="review-ctn">
                                 No one doubt about quality of this product. Congratulations for all.
@@ -195,13 +173,6 @@
                             <div class="review-idty">
                                 <div class="name">
                                     Melanie Ricardo
-                                </div>
-                                <div class="product-rating">
-                                    <i class="fa fa-star active"></i>
-                                    <i class="fa fa-star active"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
                                 </div>
                             </div>
                             <div class="review-ctn">
