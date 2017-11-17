@@ -62,11 +62,11 @@
                 <form method="post">
                     <div class="page-block margin-bottom">
                         <div class="input-field">
-                            <input name="password" type="text" id="password">
+                            <input name="password" type="password" id="password">
                             <label for="password">Password</label>
                         </div>
                         <div class="input-field">
-                            <input name="repeat-password" type="text" id="repeat-password">
+                            <input name="repeat-password" type="password" id="repeat-password">
                             <label for="repeat-password">Repeat the password</label>
                         </div>
                         <button type="submit" class="btn orange block" name="change">Change password
