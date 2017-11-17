@@ -1,5 +1,6 @@
 <?php
 return array(
+    'change-password/([0-9]+)/([a-z0-9]+)' => 'help/changePassword/$1/$2',
     'account/panel' => 'account/panel',
     'account/user' => 'account/user',
     'ads/([a-z-]+)/([a-z-]+)/([0-9+])' => 'product/view/$1/$2/$3',
