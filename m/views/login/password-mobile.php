@@ -40,45 +40,51 @@
         <?php include ROOT . '/views/layout/top-navbar.php'; ?>
 
 
-
-
         <!-- CONTENT CONTAINER -->
         <div class="content-container">
-
-            <h1 class="page-title">Change password</h1>
-
-            <!-- Login Section -->
-            <?php if (isset($errors) && is_array($errors)): ?>
-                <ul>
-                    <?php foreach ($errors as $error): ?>
-                        <li> - <?php echo $error; ?></li>
-                    <?php endforeach; ?>
-                </ul>
-            <?php endif; ?>
-            <form action="http://m.adtoday.co.uk/forgot-password" method="post">
-                <div class="page-block margin-bottom">
-                    <div class="input-field">
-                        <input name="useremail" type="text" id="email">
-                        <label for="email">Email</label>
-                    </div>
-                    <button type="submit" class="btn orange margin-bottom_low" name="signIn">Forgot password</button>
-                </div>
-
-            </form>
-
-            <!-- End Login Section -->
-
-            <div class="line"></div>
-
-            <!-- Register Section -->
-            <div class="page-block">
-                <span class="block semibold">Not registered yet? Register</span>
-                <p>Since the belonging of the record and having stupid apologize return can't be able and you always
-                    mine.</p>
-                <button class="btn green block" type="button">Register</button>
+            <?php if (isset($ACTIVE_FLAG) && $ACTIVE_FLAG): ?>
+            <div class="not-found animated fadeIn">
+                <h2>Success</h2>
+                <p>We sent you a mail.<br> Please check your email!</p>
+                <a href="http://m.adtoday.co.uk/" class="btn blue"><i class="fa fa-home"></i> Back to homepage</a>
             </div>
-            <!-- End Register Section -->
+            <?php else: ?>
+                <h1 class="page-title">Forgot password</h1>
 
+                <!-- Login Section -->
+                <?php if (isset($errors) && is_array($errors)): ?>
+                    <ul>
+                        <?php foreach ($errors as $error): ?>
+                            <li> - <?php echo $error; ?></li>
+                        <?php endforeach; ?>
+                    </ul>
+                <?php endif; ?>
+                <form action="http://m.adtoday.co.uk/forgot-password" method="post">
+                    <div class="page-block margin-bottom">
+                        <div class="input-field">
+                            <input name="usermail" type="text" id="usermail">
+                            <label for="usermail">Email</label>
+                        </div>
+                        <button type="submit" class="btn orange margin-bottom_low" name="chekPass">Forgot password
+                        </button>
+                    </div>
+
+                </form>
+
+                <!-- End Login Section -->
+
+                <div class="line"></div>
+
+                <!-- Register Section -->
+                <div class="page-block">
+                    <span class="block semibold">Not registered yet? <a
+                                href="http://m.adtoday.co.uk/register">Register</a></span>
+                    <p>Since the belonging of the record and having stupid apologize return can't be able and you always
+                        mine.</p>
+                    <a class="btn green block" href="http://m.adtoday.co.uk/register">Register</a>
+                </div>
+                <!-- End Register Section -->
+            <?php endif; ?>
         </div>
         <!-- END CONTENT CONTAINER -->
         <?php include ROOT . '/views/layout/footer.php'; ?>
