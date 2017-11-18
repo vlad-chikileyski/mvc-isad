@@ -131,9 +131,6 @@
                                 </div>
                             </div>
                             <input id="subcategory" size="40" name="subcategory" type="hidden"/>
-                            <!--                            <script type='text/javascript' src='https://code.jquery.com/jquery-1.10.2.min.js'></script>
-                                                        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-                                                        <script src="/template/assets/js/script.js"></script-->
                             <hr>
                             <div class="row field-block">
                                 <div class="col-xs-12 col-md-3">
@@ -145,14 +142,19 @@
                                               name="description"></textarea>
                                 </div>
                             </div>
-                            <!--   <div class="row field-block">
-                                   <div class="col-xs-12 col-md-3">
-                                       <label class="required" for="image-block">Image</label>
-                                   </div>
-                                   <div class="col-xs-12 col-md-9">
-                                       <div id="filediv"><input name="file[]" type="file" id="file"/></div>
-                               </div>-->
                             <hr>
+                            <div class="row field-block">
+                                <div class="col-xs-12 col-md-3">
+                                    <label for="price">Price</label>
+                                </div>
+                                <div class="col-xs-12 col-md-9">
+                                    <div class="icon-field">
+                                        <span>£</span>
+                                        <input class="input-sm" type="tel" id="price" name="price"
+                                               placeholder="">
+                                    </div>
+                                </div>
+                            </div>
                             <div class="row field-block">
                                 <div class="col-xs-12 col-md-3">
                                     <label class="required" for="postcode">Post Code</label>
@@ -281,8 +283,7 @@
                             <div>
                                 <button type="submit" name="submit" class="btn btn-green btn-md">Create ad</button>
                                 <span class="termStatement">
-                                            By clicking 'Create Ad' you agree to <a class="link" href="/terms/">our  Terms & Condition</a> and
-                                        <a class="link" href="#">Posting Rules</a>.
+                                            By clicking 'Create Ad' you agree to <a class="link" href="/terms/">our  Terms & Condition</a>.
                                         </span>
                             </div>
                         </div>
@@ -335,42 +336,6 @@
     </div>
 </div>
 <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
-<script type="text/javascript">
-    $(document).ready(function () {
-
-        //load_data();
-
-        function load_data(query) {
-            $.ajax({
-                beforeSend: function () {
-                    $('.ajax-loader').css("visibility", "visible");
-                    $('.ajax-loader-status').css("visibility", "hidden");
-                },
-                url: "/request/validate.php",
-                method: "POST",
-                data: {query: query},
-                success: function (data) {
-                    $('#result').html(data);
-                    $('.ajax-loader-status').css("visibility", "visible");
-                    $('.ajax-loader-error').css("visibility", "hidden");
-                }, complete: function () {
-                    $('.ajax-loader').css("visibility", "hidden");
-                }, error: function () {
-                    $('.ajax-loader-error').css("visibility", "visible");
-                }
-            });
-        }
-
-        $('#search_postcode').keyup(function () {
-            var search = $(this).val();
-            if (search != '') {
-                load_data(search);
-            } else {
-                $('.ajax-loader-status').css("visibility", "hidden");
-            }
-        });
-    });
-</script>
 <script type="text/javascript">
     $("body").on("click", ".calculate-price", function () {
         var $this = $(this),
