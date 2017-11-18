@@ -262,7 +262,7 @@
                                                        data-value="<?php echo " £" . $boxInfoPayments["price_value_text"]; ?>"
                                                        value="<?php echo "p31y323n-" . $boxInfoPayments["id"]; ?>">
                                                 <label
-                                                    for="<?php echo "p31y323n-" . $boxInfoPayments["id"]; ?>"> <?php echo $boxInfoPayments["payment_title_name"] . " - £" . $boxInfoPayments["price_value_text"]; ?> </label>
+                                                    for="<?php echo "p31y323n-" . $boxInfoPayments["id"]; ?>"> <?php echo $boxInfoPayments["payment_title_name"] . " - £" . $boxInfoPayments["price_value_text"] ; ?> </label>
                                             </div>
                                         <?php endforeach; ?>
                                     </td>
@@ -271,8 +271,7 @@
                                 <tfoot>
                                 <tr>
                                     <td>&emsp;</td>
-                                    <td class="text-right"><strong>Total : </strong><strong class="pricexs-s10948">
-                                            £0</strong>
+                                    <td class="text-right"><strong>Total : </strong><strong class="pricexs-s10948"> £0</strong>
                                     </td>
                                 </tr>
                                 </tfoot>

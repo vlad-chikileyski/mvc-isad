@@ -284,11 +284,12 @@
                 </div>
                 <div class="col-sm-9">
                     <div class="category-search-tabbed">
-
-                        <div class="search-widget">
-                            <input type="text" id="typed4">
-                            <button type="submit"><i class="fa fa-search"></i></button>
-                        </div>
+                            <form method="post" action="https://adtoday.co.uk/search" enctype="multipart/form-data">
+                                <div class="search-widget">
+                                    <input name="search-criteria" type="text" id="typed4">
+                                    <button name="search-widget" type="submit"><i class="fa fa-search"></i></button>
+                                </div>
+                            </form>
                     </div>
                 </div>
                 <div id="typed-strings">

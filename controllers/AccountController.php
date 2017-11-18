@@ -16,13 +16,13 @@ class AccountController
             $i++;
         }
 
-        $getFavAdsByUserCreateId = array();
+     /*   $getFavAdsByUserCreateId = array();
         $getFavAdsByUserCreateId = Product::getFavAdsByCreatedUserId($userId);
         $r = 0;
         foreach ($getFavAdsByUserCreateId as $favItem) {
             $userFavAd[$r] = Product::getFavAdsListByTableNameAndAdsId($favItem["subcategory_name"], $favItem["ads_id"], $favItem["category_name"]);
             $r++;
-        }
+        }*/
 
         require_once(ROOT . '/views/account/index.php');
         return true;
