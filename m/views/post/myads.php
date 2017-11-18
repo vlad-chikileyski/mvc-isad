@@ -50,46 +50,23 @@
 
                 <!-- Custom (shofy) form container -->
                 <div class="shofy-form">
-                    <div class="input-field">
-                        <label for="title" style="color: black">Ad Title</label>
-                        <input type="text" name="title" id="title">
-                    </div>
+                    <form action="http://m.adtoday.co.uk/my-ads/edit/<?php echo $getTableBySubcatName['id'] ?>"
+                          method="post">
+                        <div class="input-field">
+                            <label for="title" style="color: black">Ad title</label>
+                            <input type="text" name="title" value="<?php echo $getTableBySubcatName['title'] ?>"
+                                   id="title">
+                        </div>
 
-                    <div class="input-field">
-                        <h3 class="out-label">Subcategory</h3>
-                        <select>
-                            <?php foreach ($subCategoryListMenu as $subcategory) : ?>
-                                <option value="<?php echo $subcategory['subcategory_name']; ?>"><?php echo $subcategory['sub_category_title']; ?></option>
-                            <?php endforeach; ?>
-                        </select>
-                    </div>
-                    <div class="input-field">
-                        <textarea name="description" id="description" class="materialize-textarea"></textarea>
-                        <label for="description" style="color: black">Ad Description</label>
-                    </div>
+                        <div class="input-field">
+                            <textarea name="description" id="description"
+                                      class="materialize-textarea"><?php echo $getTableBySubcatName['description'] ?></textarea>
+                            <label for="description" style="color: black">Ad Description</label>
+                        </div>
+                    </form>
                     <div class="input-field">
                         <label for="postcode" style="color: black">Post Code</label>
-                        <input type="text" name="postcode" id="search_postcode">
-                    </div>
-                    <div class="input-field">
-                        <label for="name" style="color: black">Your Name</label>
-                        <input type="text" name="name" id="name">
-                    </div>
-                    <?php if (UserMobile::isGuest()): ?>
-                        <div class="input-field">
-                            <label for="email" style="color: black">Your email</label>
-                            <input type="text" name="email" id="email" value="<?php echo $userInfo['email']; ?>"
-                                   readonly="readonly" style="color: blue">
-                        </div>
-                    <?php else: ?>
-                        <div class="input-field">
-                            <label for="email" style="color: black">Your email</label>
-                            <input type="text" name="email" id="email">
-                        </div>
-                    <?php endif; ?>
-                    <div class="input-field">
-                        <label for="phone" style="color: black">Phone number</label>
-                        <input type="text" name="phone" id="phone">
+                        <input type="text" value="QW.plks" readonly id="search_postcode">
                     </div>
                     <!-- Payment Method Section -->
                     <div class="page-block checkout-shipping-block">
@@ -174,7 +151,7 @@
                                     href="http://m.adtoday.co.uk/terms/">our Terms & Condition</a></span>
                     </p>
                     <br/>
-                    <button class="btn block green" type="submit">Create Ads</button>
+                    <button class="btn block green" type="submit"  name="createAds">Create Ads</button>
                 </div>
             </form>
             <!-- End Custom Form -->
@@ -222,7 +199,6 @@
         <script type="text/javascript" src="/template/js/jquery.slicknav.js"></script>
         <script type="text/javascript" src="/template/js/jquery.swipebox.js"></script>
         <script type="text/javascript" src="/template/js/custom.js"></script>
-        <script type="text/javascript" src="/template/js/app.js"></script>
 
     </div>
     <!-- END MAIN PAGE -->

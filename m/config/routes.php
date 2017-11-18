@@ -6,7 +6,7 @@ return array(
     'account/user' => 'account/user',
     'ads/([a-z-]+)/([a-z-]+)/([0-9+])' => 'product/view/$1/$2/$3',
     'contact' => 'help/contact',
-    'my-ads/([a-z\-]+)' => 'edit/index/$1', //EditController and  actionIndex
+    'my-ads/edit/([0-9+])' => 'edit/index/$1', //EditController and  actionIndex
     'new-ads/([a-z\-]+)' => 'post/index/$1', //PostController and  actionIndex
     'add' => 'post/categoryList',
     'terms' => 'terms/index',
