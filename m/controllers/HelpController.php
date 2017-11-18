@@ -2,7 +2,36 @@
 
 class HelpController
 {
-    public function actionChangePassword($key, $token)
+    public function actionChangePasswordUser()
+    {
+
+        $password = '';
+        $repeat_password = '';
+        $result = array();
+        $ACTIVE_FLAG = false;
+        if (isset($_POST['reset'])) {
+            $password = $_POST['password'];
+            $repeat_password = $_POST['repeat-password'];
+            if ($password == $repeat_password) {
+                if (!UserMobile::checkPassword($password)) {
+                    $errors[] = 'Password must be > 5 symbols';
+                } else {
+                    $userId = UserMobile::checkId();
+                    $userInfo = UserMobile::getUserById($userId);
+                    $result = UserMobile::userChangePassword($userInfo['id'], $password);
+                    $ACTIVE_FLAG = true;
+                }
+            } else {
+                $errors[] = 'Passwords do not match';
+            }
+        }
+        require_once(ROOT . '/views/login/change_password_if_user_loged-mobile.php');
+        return true;
+    }
+
+
+    public
+    function actionChangePassword($key, $token)
     {
         if (isset($key) && isset($token)) {
             $user = UserMobile::checkToken($key, $token);
@@ -51,7 +80,8 @@ class HelpController
 
     }
 
-    public function actionPassword()
+    public
+    function actionPassword()
     {
         $usermail = '';
         $result = false;
@@ -68,8 +98,8 @@ class HelpController
                 $username = UserMobile::getUserByEmail($usermail);
                 $ID_TOKEN = RandomSecureMobile::genID();
                 $KEY_TOKEN = RandomSecureMobile::genKEY();
-                $delete_key = UserMobile::generateToken($username['id'],$ID_TOKEN,$KEY_TOKEN);
-                MailBuilderMobile::configureMailForChangePassword($usermail, $username['username'],$ID_TOKEN,$KEY_TOKEN);
+                $delete_key = UserMobile::generateToken($username['id'], $ID_TOKEN, $KEY_TOKEN);
+                MailBuilderMobile::configureMailForChangePassword($usermail, $username['username'], $ID_TOKEN, $KEY_TOKEN);
                 $ACTIVE_FLAG = true;
             }
         }
