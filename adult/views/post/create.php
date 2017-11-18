@@ -207,7 +207,7 @@
                                            data-value="<?php echo " £" . $boxInfoPayments["price_value_text"]; ?>"
                                            value="<?php echo "p31y323n-" . $boxInfoPayments["id"]; ?>">
                                     <label
-                                        for="<?php echo "p31y323n-" . $boxInfoPayments["id"]; ?>"> <?php echo $boxInfoPayments["payment_title_name"] . " - £" . $boxInfoPayments["price_value_text"] ; ?> </label>
+                                        for="<?php echo "p31y323n-" . $boxInfoPayments["id"]; ?>"> <?php echo $boxInfoPayments["payment_title_name"] . " - £" . $boxInfoPayments["price_value_text"]; ?> </label>
                                 </div>
                             <?php endforeach; ?>
                         </td>

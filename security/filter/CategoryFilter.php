@@ -56,12 +56,50 @@ class CategoryFilter
         return false;
     }
 
+    public static function categoryCheckParamForMainSite($urlParam)
+    {
+        switch ($urlParam) {
+            case 'mobile-phones-accessories':
+                return 'mobile_phones_accessories';
+                break;
+            case 'electronics-home-appliances':
+                return 'electronics_home_appliances';
+                break;
+            case 'home-garden':
+                return 'home_garden';
+                break;
+            case 'fashion-beauty':
+                return 'fashion_beauty';
+                break;
+            case 'pets':
+                return 'pets';
+                break;
+            case 'kids-babies':
+                return 'kids_babies';
+                break;
+            case 'sporting-goods-bikes':
+                return 'sporting_goods_bikes';
+                break;
+            case 'hobbies-music-art-books':
+                return 'hobbies_music_art_books';
+                break;
+            case 'business-industrial':
+                return 'business_industrial';
+                break;
+            case 'services':
+                return 'services';
+                break;
+            default: return false;
+        }
+        return false;
+    }
+
+
 
     public static function categoryCheckDoubleParam($urlParam, $urlSubParam)
     {
         switch ($urlParam) {
-            /*electronics*/
-            case 'vehicles':
+           /* case 'vehicles':
                 switch ($urlSubParam) {
                     case 'cars':
                         return 'VEHICLES_CARS';
@@ -84,8 +122,8 @@ class CategoryFilter
                     default:
                         return false;
                 }
-                break;
-            case 'properties':
+                break;*/
+           /* case 'properties':
                 switch ($urlSubParam) {
                     case 'properties-for-rent':
                         return 'PROPERTIES_PROPERTIES_FOR_RENT';
@@ -97,7 +135,7 @@ class CategoryFilter
                         return false;
 
                 }
-                break;
+                break;*/
             case 'mobile-phones-accessories':
                 switch ($urlSubParam) {
                     case 'mobile-phones':
@@ -257,7 +295,7 @@ class CategoryFilter
                         return false;
                 }
                 break;
-            case'jobs':
+           /* case'jobs':
                 switch ($urlSubParam) {
                     case'accounting':
                         return 'JOBS_ACCOUNTING';
@@ -316,7 +354,7 @@ class CategoryFilter
                     default:
                         return false;
                 }
-                break;
+                break;*/
             case'business-industrial':
                 switch ($urlSubParam) {
                     case'factories-equipment':
