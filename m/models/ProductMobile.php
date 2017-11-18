@@ -135,6 +135,28 @@ class ProductMobile
         return $ads;
     }
 
+    public static function getTableBySubcatName($getAdsIdByUserCreateId,$userId,$adsId)
+    {
+        $db = Db::getConnectionOnCatics();
+        $ads = array();
+        $result = $db->query('SELECT * FROM ' .$getAdsIdByUserCreateId. ' WHERE `id` =' .$adsId. ' AND `user_id` =' . $userId);
+        $result->execute();
+        $row = $result->fetch();
+        return $row;
+    }
+
+    public static function getAdsIdByUserIdAndAdsId($userId,$adsId)
+    {
+        $db = Db::getConnection();
+        $ads = array();
+        $result = $db->query('SELECT `subcategory_name` FROM `dashboard_user_ads` WHERE `userId` =' . $userId . ' AND `adsId` =' . $adsId);
+        $result->execute();
+        $row = $result->fetch();
+        $page = ($row[0]);
+        return $page;
+    }
+
+
     public static function getUserByUserId($userId,$username,$email,$phone)
     {
         $db = Db::getConnection();

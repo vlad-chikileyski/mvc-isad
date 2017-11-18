@@ -9,7 +9,7 @@
 class UserMobile
 {
 
-    public static function userChange($userId, $name, $email, $phone, $select_box_gender_var,$check_box_newsletter_var)
+    public static function userChange($userId, $name, $email, $phone, $select_box_gender_var, $check_box_newsletter_var)
     {
         $db = Db::getConnection();
         $sql = 'UPDATE `user` SET  `username` = :username, `email` = :email, `phone` = :phone, `gender` = :gender ,`newsletter` = :newsletter WHERE `id` = :userId';
@@ -23,7 +23,7 @@ class UserMobile
         return $result->execute();
     }
 
-    public static function userChangePassword($userId,$password)
+    public static function userChangePassword($userId, $password)
     {
         $db = Db::getConnection();
         $sql = 'UPDATE `user` SET  `password` = :password  WHERE `id` = :userId';
@@ -33,7 +33,19 @@ class UserMobile
         return $result->execute();
     }
 
-    public static function userChangeToken($userId,$token_password)
+    public static function userChangeAdsInfo($getTableBySubcatName, $title, $description, $userId, $adsId)
+    {
+        $db = Db::getConnectionOnCatics();
+        $sql = 'UPDATE  `' . $getTableBySubcatName . '` SET  `title`=:title, `description`=:description WHERE `user_id`=:user_id  AND `id`=:adsId';
+        $result = $db->prepare($sql);
+        $result->bindParam(':user_id', $userId, PDO::PARAM_INT);
+        $result->bindParam(':adsId', $adsId, PDO::PARAM_STR);
+        $result->bindParam(':title', $title, PDO::PARAM_STR);
+        $result->bindParam(':description', $description, PDO::PARAM_STR);
+        return $result->execute();
+    }
+
+    public static function userChangeToken($userId, $token_password)
     {
         $db = Db::getConnection();
         $sql = 'UPDATE `user` SET  `reset_password` = :token  WHERE `id` = :userId';
@@ -64,7 +76,7 @@ class UserMobile
         return $result->execute();
     }
 
-    public static function generateToken($userId,$ID_TOKEN,$KEY_TOKEN)
+    public static function generateToken($userId, $ID_TOKEN, $KEY_TOKEN)
     {
         $db = Db::getConnection();
         $sql = 'INSERT INTO USER_CHANGE_PASSWORD (`user_id` , `key-token` , `id-token`)'
@@ -139,7 +151,7 @@ class UserMobile
         return false;
     }
 
-    public static function checkToken($key,$token)
+    public static function checkToken($key, $token)
     {
         $db = Db::getConnection();
         $sql = 'SELECT * FROM USER_CHANGE_PASSWORD WHERE `key-token` = :key AND `id-token` =:token';

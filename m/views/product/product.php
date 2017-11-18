@@ -186,12 +186,6 @@
             </div>
             <!-- End Product content -->
             <?php endforeach; ?>
-            <!-- Product navigation -->
-            <div class="product-action margin-bottom">
-                <a class="btn green btn-block margin-bottom_low" href="#">Add to wishlist</a>
-            </div>
-            <!-- End Product navigation -->
-
 
             <div class="line"></div>
 
