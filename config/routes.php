@@ -1,5 +1,8 @@
 <?php
 return array(
+    'search/([a-zA-Z0-9\-\%20\%27]+)/page-([0-9]+)' => 'search/parameters/$1/$2', //SearchController and actionParameter
+    'search/([a-zA-Z0-9\-\%20\%27]+)' => 'search/parameters/$1', //CatalogController and actionIndex
+    'search' => 'search/validate',
     'contact' => 'help/contact',
     'forgot-password' => 'help/password',
     'ads/([a-z\-]+)/([a-z\-]+)/([0-9+])' => 'product/view/$1/$2/$3',

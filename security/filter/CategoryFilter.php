@@ -172,7 +172,7 @@ class CategoryFilter
             case 'pets':
                 switch ($urlSubParam) {
                     case 'cats':
-                        return 'PETS_CARS';
+                        return 'PETS_CATS';
                         break;
                     case 'fishes':
                         return 'PETS_FISHES';

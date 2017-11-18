@@ -191,4 +191,42 @@ class Product
             return $products;
         }
     }
+
+    public static function getProductListBySearchCriteria($criteria, $page = 1)
+    {
+        $page = intval($page);
+        $offset = ($page - 1) * self::SHOW_BY_DEFAULT;
+        $db = Db::getConnectionOnCatics();
+        $products = array();
+        $result = $db->query('SELECT * FROM PETS_BIRDS WHERE title LIKE "%' . $criteria . '%" AND status = 1 
+        UNION SELECT * FROM PETS_CATS WHERE title LIKE "%' . $criteria . '%" AND status = 1 
+        ORDER BY id DESC LIMIT 30 OFFSET ' . $offset);
+        $i = 0;
+        while ($row = $result->fetch()) {
+            $products[$i]['id'] = $row['id'];
+            $products[$i]['title'] = $row['title'];
+            $products[$i]['description'] = $row['description'];
+            $products[$i]['price'] = $row['price'];
+            $products[$i]['highlight'] = $row['highlight'];
+            $products[$i]['subcategory'] = $row['subcategory'];
+            $products[$i]['category'] = "test";
+            $products[$i]['date'] = $row['date'];
+            $i++;
+        }
+        return $products;
+
+    }
+
+
+    public static function getProductCountBySearchCriteria($criteria)
+    {
+        $db = Db::getConnectionOnCatics();
+        $result = $db->query('SELECT * FROM PETS_BIRDS WHERE title LIKE "%' . $criteria . '%" AND status = 1 
+        UNION SELECT * FROM PETS_CATS WHERE title LIKE "%' . $criteria . '%" AND status = 1 
+        ORDER BY id DESC');
+        $count = $result->rowCount();
+
+        return $count;
+
+    }
 }

@@ -106,7 +106,7 @@
                 </a>
                 <a href="https://adult.adtoday.co.uk/new-ads/" class="cat-box">
                     <div class="inner">
-                        <div class="adicon-hearts bg3"></div>
+                        <div class="adicon-hearts bg12"></div>
                         <span>Matrimony</span>
                     </div>
                 </a>
@@ -148,25 +148,25 @@
                 </a>
                 <a href="https://adtoday.co.uk/new-ads/kids-babies" class="cat-box">
                     <div class="inner">
-                        <div class="adicon-smile bg12"></div>
+                        <div class="adicon-smile bg2"></div>
                         <span>Kids & Babies</span>
                     </div>
                 </a>
                 <a href="https://adtoday.co.uk/new-ads/sporting-goods-bikes" class="cat-box">
                     <div class="inner">
-                        <div class="adicon-star-circle bg1"></div>
+                        <div class="adicon-star-circle bg3"></div>
                         <span>Sporting & Bikes</span>
                     </div>
                 </a>
                 <a href="https://adtoday.co.uk/new-ads/business-industrial" class="cat-box">
                     <div class="inner">
-                        <div class="adicon-dollar bg2"></div>
-                        <span>Kids & Babies</span>
+                        <div class="adicon-dollar bg6"></div>
+                        <span>Business & industrial</span>
                     </div>
                 </a>
                 <a href="https://adtoday.co.uk/new-ads/hobbies-music-art-books" class="cat-box">
                     <div class="inner">
-                        <div class="adicon-hat bg3"></div>
+                        <div class="adicon-hat bg4"></div>
                         <span>Music, Art & Books</span>
                     </div>
                 </a>
