@@ -55,7 +55,7 @@
                 <div class="heading">Contact Information</div>
                 <div class="body">
                     <span class="block"><?php echo $getPanelIdByUserCreateId[0]['username']; ?></span>
-                    <p><?php echo $getPanelIdByUserCreateId[0]['email']; ?><a
+                    <p><?php echo $getPanelIdByUserCreateId[0]['email']; ?> <a
                                 href="http://m.adtoday.co.uk/account/user"> Change email</a></p>
                 </div>
             </div>
@@ -66,8 +66,9 @@
                 <div class="heading">Your account</div>
                 <div class="body">
                     <ul><span class="block"><?php echo $getPanelIdByUserCreateId[0]['username']; ?></span></ul>
-                    <ul>Birthday: <?php echo $getPanelIdByUserCreateId[0]['birthday']; ?><br/></ul>
-                    <ul>Phone: <abbr title="Phone"></abbr> <?php echo $getPanelIdByUserCreateId[0]['phone']; ?></ul>
+                    <ul>Password: <a
+                                href="http://m.adtoday.co.uk/change-password-user"> Change your password</a></p></ul>
+                    <ul>Phone: +<abbr title="Phone"></abbr><?php echo $getPanelIdByUserCreateId[0]['phone']; ?></ul>
                     <div class="action">
                         <a href="http://m.adtoday.co.uk/account/user">change</a>
                     </div>
