@@ -46,30 +46,39 @@ class PostController
                     require_once(ROOT . '/views/error/404.php');
                 } else {
                     /*GENERATE RANDOM SECURE VALUE - START*/
-                    $ID_TOKEN = RandomSecure::genID();
-                    $KEY_TOKEN = RandomSecure::genKEY();
+                    $PAYMENT_ID_TOKEN = RandomSecure::genID();
+                    $PAYMENT_KEY_TOKEN = RandomSecure::genKEY();
+                    /*END.*/
+                    /*GENERATE RANDOM SECURE VALUE - START*/
+                    $ADS_ID_TOKEN = RandomSecure::genID();
+                    $ADS_KEY_TOKEN = RandomSecure::genKEY();
                     /*END.*/
                     if ($userInfo != false && $userInfo['email'] != '') { //logged User
-                        if (MailBuilder::configureMailForActivateAccount($userInfo['email'], $name)) { //send {activate your ads}
-                            $recordId = PostMain::save($tableName, $title, $description, $userId, $postcode, $subcategory, '0', $price, $category);
-                            if ($recordId != '') {
-                                $incrementStatus = Catalog::incrementCountFromCategory($subcategory);
-                                if ($incrementStatus) {
+                        //send {activate your ads}
+                        $recordId = PostMain::save($tableName, $title, $description, $userId, $postcode, $subcategory, '0', $price, $category);
+                        if ($recordId != '') {
+                            $incrementStatus = Catalog::incrementCountFromCategory($subcategory);
+                            $userAddAction = Catalog::postAddAction($userId, $recordId, $tableName, $subcategory);
+                            $userTokenDashboardAction = Catalog::postAddInsertTokenDashboard($ADS_ID_TOKEN, $ADS_KEY_TOKEN, $userId, $recordId);
+                            if ($incrementStatus && $userAddAction && $userTokenDashboardAction) {
+                                if (MailBuilderMain::configureMailForActivateAds($userInfo['email'], $name, $ADS_ID_TOKEN, $ADS_KEY_TOKEN)) {
                                     if (isset($paymentType) && $paymentType != false) {
-                                        $paymentInsert = PaymentAdult::updatePaymentInfo($userId, $recordId, $ID_TOKEN, $KEY_TOKEN, $tableName, $paymentType);
+                                        $paymentInsert = PaymentAdult::updatePaymentInfo($userId, $recordId, $PAYMENT_ID_TOKEN, $PAYMENT_KEY_TOKEN, $tableName, $paymentType);
                                         if ($paymentInsert) {
-                                            header("Location: https://adtoday.co.uk/payment/pay/" . $ID_TOKEN . "/" . $KEY_TOKEN);
+                                            header("Location: https://adtoday.co.uk/payment/pay/" . $PAYMENT_ID_TOKEN . "/" . $PAYMENT_KEY_TOKEN);
                                             exit();
                                         }
                                     } else {
                                         echo $recordId;
                                         header("Location: https://adtoday.co.uk/activate-ad/200");
+                                        exit();
                                     }
                                 }
                             }
                         }
+
                     } else {
-                       echo "NO";
+                        echo "NO";
                     }
                 }
 

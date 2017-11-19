@@ -30,8 +30,7 @@ class HelpController
     }
 
 
-    public
-    function actionChangePassword($key, $token)
+    public function actionChangePassword($key, $token)
     {
         if (isset($key) && isset($token)) {
             $user = UserMobile::checkToken($key, $token);
