@@ -3,6 +3,7 @@
 class Product
 {
     const SHOW_BY_DEFAULT = 30;
+    const ACTIVE_FLAG = 1;
 
     public static function getProductsListByCategory($categoryExistName = false, $page = 1)
     {
@@ -29,10 +30,18 @@ class Product
         }
     }
 
-    /**
-     * @returns product item by id
-     * @param integer $id
-     */
+    public static function userActivateAds($table, $userId, $adsId)
+    {
+        $ACTIVE_FLAG = self::ACTIVE_FLAG;
+        $db = Db::getConnectionOnCatics();
+        $sql = 'UPDATE  `' . $table . '` SET `status`=:status WHERE `user_id`=:user_id  AND `id`=:adsId';
+        $result = $db->prepare($sql);
+        $result->bindParam(':user_id', $userId, PDO::PARAM_INT);
+        $result->bindParam(':adsId', $adsId, PDO::PARAM_INT);
+        $result->bindParam(':status', $ACTIVE_FLAG, PDO::PARAM_STR);
+        return $result->execute();
+    }
+
 
     public static function getProductById($tableNameProduct, $productId, $categoryParam, $subCategoryParam)
     {
@@ -72,6 +81,17 @@ class Product
         $result->execute();
         $row = $result->fetch();
         return $row['count-val'];
+    }
+
+
+    public static function getAdsIdByUserIdAndAdsId($userId, $adsId)
+    {
+        $db = Db::getConnection();
+        $ads = array();
+        $result = $db->query('SELECT `subcategory_name` FROM `dashboard_user_ads` WHERE `userId` =' . $userId . ' AND `adsId` =' . $adsId);
+        $result->execute();
+        $row = $result->fetch();
+        return $row;
     }
 
     public static function getAdsIdByUserId($userId)

@@ -94,11 +94,11 @@
 
         <div class="page row">
             <header class="heading style-bg big text-center">
-                <h1>World’s <strong>Biggest</strong> Classified Marketplace</h1>
+                <h1>UK <strong>Biggest</strong> Classified Marketplace</h1>
                 <p class="text-uppercase">sell &amp; purchase anything</p>
             </header>
             <div class="form-wrapper">
-                <form method="post">
+                <form method="post" enctype="multipart/form-data">
                     <div class="elements-block">
                         <div class="inner">
                             <div class="row field-block">
