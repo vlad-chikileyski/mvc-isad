@@ -17,14 +17,15 @@ class ActivateController
                 } else {
                     $userId = $userInfo["USER_ID"];
                     $adsId = $userInfo["USER_ADS_ID"];
+                    $tableName = $userInfo["TABLE_NAME"];
                     $getAdsIdByUserCreateId = Product::getAdsIdByUserIdAndAdsId($userId, $adsId);
-                    $tableName = $getAdsIdByUserCreateId["subcategory_name"];
                     if ($getAdsIdByUserCreateId) {
                         $result = Product::userActivateAds($tableName, $userId, $adsId);
                         if ($result) {
                             $disableKeyAndTokenForThisAds = User::disableTokenAndKeyForAds($adsId, $userId, $user_auth_key, $user_auth_token);
-                            var_dump($disableKeyAndTokenForThisAds);
-                            echo "OK!";
+                            if ($disableKeyAndTokenForThisAds) {
+                                require_once(ROOT . '/views/post/ads_active_success.php');
+                            }
                         }
                     } else {
                         header("HTTP/1.0 404 Not Found");
@@ -32,33 +33,6 @@ class ActivateController
                     }
 
                 }
-                /* $password = '';
-                 $repeat_password = '';
-                 $result = array();
-                 $ACTIVE_FLAG = false;
-                 if (isset($_POST['change'])) {
-                     $password = $_POST['password'];
-                     $repeat_password = $_POST['repeat-password'];
-                     if ($password == $repeat_password) {
-                         if (!UserMobile::checkPassword($password)) {
-                             $errors[] = 'Password must be > 5 symbols';
-                         } else {
-                             $result = UserMobile::userChangePassword($userId, $password);
-                             if ($result == true) {
-                                 $token_password = 1;
-                                 $token = UserMobile::userChangeToken($userId, $token_password);
-                             }
-                             if ($token = true) {
-                                 $delete_key = UserMobile::userDeleteKey($userId);
-                                 $ACTIVE_FLAG = true;
-                             }
-                         }
-                     } else {
-                         $errors[] = 'Passwords do not match';
-                     }
-                 }
-                 require_once(ROOT . '/views/login/change_password-mobile.php');
-             }*/
             }
 
         }

@@ -30,7 +30,6 @@ class SearchController
             $count = array();
             $categoryProducts = Product::getProductListBySearchCriteria($search, $pageparam);
             $count = Product::getProductCountBySearchCriteria($search);
-/*            $total = Product::getTotalProductsInCategory($categoryExistDoubleParamName);*/
             $pagination = new Pagination($count, $pageparam, Product::SHOW_BY_DEFAULT, 'page-');
             require_once(ROOT . '/views/catalog/search.php');
 

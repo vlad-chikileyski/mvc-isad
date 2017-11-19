@@ -26,16 +26,17 @@ class Catalog
         return $result->execute();
     }
 
-    public static function postAddInsertTokenDashboard($authKey, $authToken, $userId, $adsId)
+    public static function postAddInsertTokenDashboard($authKey, $authToken, $userId, $adsId, $tableName)
     {
         $db = Db::getConnection();
-        $sql = 'INSERT INTO `USER_ACTIVATE_ADS`(`USER_AUTH_ID`, `USER_AUTH_TOKEN`, `USER_ID`, `USER_ADS_ID`) 
-        VALUES (:authKey,:authToken,:userId,:adsId)';
+        $sql = 'INSERT INTO `USER_ACTIVATE_ADS`(`USER_AUTH_ID`, `USER_AUTH_TOKEN`, `USER_ID`, `USER_ADS_ID`, `TABLE_NAME`) 
+        VALUES (:authKey,:authToken,:userId,:adsId,:tableName)';
         $result = $db->prepare($sql);
         $result->bindParam(':authKey', $authKey, PDO::PARAM_STR);
         $result->bindParam(':authToken', $authToken, PDO::PARAM_STR);
         $result->bindParam(':userId', $userId, PDO::PARAM_STR);
         $result->bindParam(':adsId', $adsId, PDO::PARAM_STR);
+        $result->bindParam(':tableName', $tableName, PDO::PARAM_STR);
         return $result->execute();
     }
 }

@@ -11,7 +11,7 @@ class User
     public static function getUserIdByTokenAndId($key, $token)
     {
         $db = Db::getConnection();
-        $sql = 'SELECT USER_ID, USER_ADS_ID FROM USER_ACTIVATE_ADS WHERE `USER_AUTH_ID` = :key AND `USER_AUTH_TOKEN` =:token';
+        $sql = 'SELECT `USER_ID`, `USER_ADS_ID`, `TABLE_NAME` FROM USER_ACTIVATE_ADS WHERE `USER_AUTH_ID` = :key AND `USER_AUTH_TOKEN` =:token';
         $result = $db->prepare($sql);
         $result->bindParam(':key', $key, PDO::PARAM_STR);
         $result->bindParam(':token', $token, PDO::PARAM_STR);

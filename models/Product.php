@@ -3,7 +3,6 @@
 class Product
 {
     const SHOW_BY_DEFAULT = 30;
-    const ACTIVE_FLAG = 1;
 
     public static function getProductsListByCategory($categoryExistName = false, $page = 1)
     {
@@ -32,7 +31,7 @@ class Product
 
     public static function userActivateAds($table, $userId, $adsId)
     {
-        $ACTIVE_FLAG = self::ACTIVE_FLAG;
+        $ACTIVE_FLAG = 1;
         $db = Db::getConnectionOnCatics();
         $sql = 'UPDATE  `' . $table . '` SET `status`=:status WHERE `user_id`=:user_id  AND `id`=:adsId';
         $result = $db->prepare($sql);
@@ -220,6 +219,7 @@ class Product
         $products = array();
         $result = $db->query('SELECT * FROM PETS_BIRDS WHERE title LIKE "%' . $criteria . '%" AND status = 1 
         UNION SELECT * FROM PETS_CATS WHERE title LIKE "%' . $criteria . '%" AND status = 1 
+        UNION SELECT * FROM PETS_DOGS WHERE title LIKE "%' . $criteria . '%" AND status = 1 
         ORDER BY id DESC LIMIT 30 OFFSET ' . $offset);
         $i = 0;
         while ($row = $result->fetch()) {
@@ -229,7 +229,7 @@ class Product
             $products[$i]['price'] = $row['price'];
             $products[$i]['highlight'] = $row['highlight'];
             $products[$i]['subcategory'] = $row['subcategory'];
-            $products[$i]['category'] = "test";
+            $products[$i]['category'] = $row['category'];
             $products[$i]['date'] = $row['date'];
             $i++;
         }
@@ -243,6 +243,7 @@ class Product
         $db = Db::getConnectionOnCatics();
         $result = $db->query('SELECT * FROM PETS_BIRDS WHERE title LIKE "%' . $criteria . '%" AND status = 1 
         UNION SELECT * FROM PETS_CATS WHERE title LIKE "%' . $criteria . '%" AND status = 1 
+        UNION SELECT * FROM PETS_DOGS WHERE title LIKE "%' . $criteria . '%" AND status = 1 
         ORDER BY id DESC');
         $count = $result->rowCount();
 
