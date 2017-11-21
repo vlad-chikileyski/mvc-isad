@@ -9,12 +9,12 @@ class CategoryFilter
     public static function categoryCheckParam($urlParam)
     {
         switch ($urlParam) {
-            case 'vehicles':
+           /* case 'vehicles':
                 return 'vehicles';
                 break;
             case 'properties':
                 return 'properties';
-                break;
+                break;*/
             case 'mobile-phones-accessories':
                 return 'mobile_phones_accessories';
                 break;
@@ -39,18 +39,18 @@ class CategoryFilter
             case 'hobbies-music-art-books':
                 return 'hobbies_music_art_books';
                 break;
-            case 'jobs':
+            /*case 'jobs':
                 return 'jobs';
-                break;
+                break;*/
             case 'business-industrial':
                 return 'business_industrial';
                 break;
             case 'services':
                 return 'services';
                 break;
-            case 'adult':
+           /* case 'adult':
                 return 'adult';
-                break;
+                break;*/
             default: return false;
         }
         return false;

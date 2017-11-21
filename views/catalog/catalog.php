@@ -159,8 +159,8 @@
                                 <ul>
                                     <?php foreach ($subCategoryListMenu as $subcategory) : ?>
                                         <li>
-                                            <a href="https://adtoday.co.uk/catalog/<?php echo $subcategory['category'] . '/' . $subcategory['url-title']; ?>/">
-                                                <span><?php echo $subcategory['menu-title']; ?></span>
+                                            <a href="https://adtoday.co.uk/<?php echo $subcategory['url']; ?>/">
+                                                <span><?php echo $subcategory['sub_category_title']; ?></span>
                                             </a></li>
                                     <?php endforeach; ?>
                                 </ul>
@@ -225,7 +225,17 @@
                                 </div>
                                 <div class="inner">
                                     <p>
-                                        <?php echo $products['description']; ?>
+                                        <?php
+                                        if (strlen($products['description']) >= 160) {
+                                            $string = strip_tags($products['description']);
+                                            $string = substr($string, 0, 160);
+                                            $string = rtrim($string, "!,.-");
+                                            $string = substr($string, 0, strrpos($string, ' '));
+                                            echo $string . "… ";
+                                        } else {
+                                            echo $products['description'];
+                                        }
+                                        ?>
                                     </p>
                                 </div>
                                 <div class="breadcrumb">

@@ -4,29 +4,35 @@ class Product
 {
     const SHOW_BY_DEFAULT = 30;
 
-    public static function getProductsListByCategory($categoryExistName = false, $page = 1)
+    public static function getProductCountBySearchCriteriaSingleParam($sqlSelect)
     {
-        if ($categoryExistName) {
-            $page = intval($page);
-            $offset = ($page - 1) * self::SHOW_BY_DEFAULT;
-            $db = Db::getConnectionOnCatics();
-            $products = array();
-            /*SELECT * FROM electrTabletsNics UNION ALL*/
-            $result = $db->query(' SELECT * FROM electrAccessoriesNics ORDER BY id DESC LIMIT 30 OFFSET ' . $offset);
-            $i = 0;
-            while ($row = $result->fetch()) {
-                $products[$i]['id'] = $row['id'];
-                $products[$i]['title'] = $row['title'];
-                $products[$i]['description'] = $row['description'];
-                $products[$i]['price'] = $row['price'];
-                $products[$i]['subcategory'] = $row['subcategory'];
-                $products[$i]['highlight'] = $row['highlight'];
-                $products[$i]['category'] = $categoryExistName;
-                $products[$i]['date'] = $row['date'];
-                $i++;
-            }
-            return $products;
+        $db = Db::getConnectionOnCatics();
+        $result = $db->query($sqlSelect . ' ORDER BY id DESC');
+        $count = $result->rowCount();
+        return $count;
+
+    }
+
+    public static function getProductsListByCategory($sqlSelect, $page = 1)
+    {
+        $page = intval($page);
+        $offset = ($page - 1) * self::SHOW_BY_DEFAULT;
+        $db = Db::getConnectionOnCatics();
+        $products = array();
+        $result = $db->query($sqlSelect);
+        $i = 0;
+        while ($row = $result->fetch()) {
+            $products[$i]['id'] = $row['id'];
+            $products[$i]['title'] = $row['title'];
+            $products[$i]['description'] = $row['description'];
+            $products[$i]['price'] = $row['price'];
+            $products[$i]['highlight'] = $row['highlight'];
+            $products[$i]['subcategory'] = $row['subcategory'];
+            $products[$i]['category'] = $row['category'];
+            $products[$i]['date'] = $row['date'];
+            $i++;
         }
+        return $products;
     }
 
     public static function userActivateAds($table, $userId, $adsId)
@@ -187,7 +193,7 @@ class Product
      * @param int $page
      * @return array
      */
-    public static function getProductListByCategory($urlParam, $categoryExistDoubleParamName = false, $page = 1)
+    public static function getProductListByCategory($categoryExistDoubleParamName = false, $page = 1)
     {
         if ($categoryExistDoubleParamName) {
             $page = intval($page);
@@ -203,7 +209,7 @@ class Product
                 $products[$i]['price'] = $row['price'];
                 $products[$i]['highlight'] = $row['highlight'];
                 $products[$i]['subcategory'] = $row['subcategory'];
-                $products[$i]['category'] = $urlParam;
+                $products[$i]['category'] = $row['category'];
                 $products[$i]['date'] = $row['date'];
                 $i++;
             }

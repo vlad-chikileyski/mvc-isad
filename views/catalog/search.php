@@ -186,13 +186,21 @@
                                     </ul>
                                 </header>
                                 <div class="item-actions text-center">
-                                    <div class="price-tag">£<?php echo $product['price']; ?></div>
+                                    <div class="price-tag">£ <?php echo $product['price']; ?></div>
                                 </div>
-                                <div class="inner">
                                     <p>
-                                        <?php echo $product['description']; ?>
+                                        <?php
+                                        if (strlen($product['description']) >= 160) {
+                                            $string = strip_tags($product['description']);
+                                            $string = substr($string, 0, 160);
+                                            $string = rtrim($string, "!,.-");
+                                            $string = substr($string, 0, strrpos($string, ' '));
+                                            echo $string . "… ";
+                                        } else {
+                                            echo $product['description'];
+                                        }
+                                        ?>
                                     </p>
-                                </div>
                                 <div class="breadcrumb">
                                     <ul>
                                         <li>

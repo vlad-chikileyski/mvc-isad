@@ -85,7 +85,8 @@
             <div class="breadcrumb catalog-shadow-style">
                 <ul>
                     <li><a href="https://adtoday.co.uk/">Home</a></li>
-                    <li><a href="https://adtoday.co.uk/catalog/<?php echo $urlParam; ?>/"><?php echo $urlParam; ?></a></li>
+                    <li><a href="https://adtoday.co.uk/catalog/<?php echo $urlParam; ?>/"><?php echo $urlParam; ?></a>
+                    </li>
                     <li>
                         <a href="https://adtoday.co.uk/catalog/<?php echo $urlParam; ?>/<?php echo $urlSubParam; ?>/"><?php echo $urlSubParam; ?></a>
                     </li>
@@ -96,41 +97,31 @@
                 <div class="listing-filters">
                     <div class="listing-filter-block">
                         <header>
-                            <h6>Model</h6>
-                            <a class="trigger-filter-block" href="#"><i class="fa fa-navicon"></i></a>
+                            <h6>Subcategory</h6>
+                            <a class="trigger-filter-block" href="/"><i class="fa fa-reply fa-rotate-90"></i></a>
                         </header>
                         <div class="inner">
                             <div class="filter-options-widget">
                                 <ul>
-                                    <li class="active"><a href="#">
-                                            <span>All Models</span>
-                                        </a></li>
-                                    <li><a href="#">
-                                            <span>Samsung</span>
-                                        </a></li>
-                                    <li><a href="#">
-                                            <span>Apple</span>
-                                        </a></li>
-                                    <li><a href="#">
-                                            <span>Nokia</span>
-                                        </a></li>
-                                    <li><a href="#">
-                                            <span>Blackberry</span>
-                                        </a></li>
-                                    <li><a href="#">
-                                            <span>Sony Ericsson</span>
-                                        </a></li>
-                                    <li><a href="#">
-                                            <span>HTC</span>
-                                        </a></li>
-                                    <li><a href="#">
-                                            <span>Motorola</span>
-                                        </a></li>
+                                    <?php foreach ($subCategoryListMenu as $subcategory) : ?>
+                                        <?php if ($subcategory["subcategory_name"] == $urlSubParam): ?>
+                                            <li class="active">
+                                                <a href="https://adtoday.co.uk/<?php echo $subcategory['url']; ?>/">
+                                                    <span><?php echo $subcategory['sub_category_title']; ?></span>
+                                                </a>
+                                            </li>
+                                        <?php else: ?>
+                                            <li>
+                                                <a href="https://adtoday.co.uk/<?php echo $subcategory['url']; ?>/">
+                                                    <span><?php echo $subcategory['sub_category_title']; ?></span>
+                                                </a>
+                                            </li>
+                                        <?php endif; ?>
+                                    <?php endforeach; ?>
                                 </ul>
                             </div>
                         </div>
                     </div>
-
                 </div>
                 <div id="items-listing-area" class="items-list">
                     <article class="main-filters-list">
@@ -189,7 +180,17 @@
                                 </div>
                                 <div class="inner">
                                     <p>
-                                        <?php echo $product['description']; ?>
+                                        <?php
+                                        if (strlen($product['description']) >= 160) {
+                                            $string = strip_tags($product['description']);
+                                            $string = substr($string, 0, 160);
+                                            $string = rtrim($string, "!,.-");
+                                            $string = substr($string, 0, strrpos($string, ' '));
+                                            echo $string . "… ";
+                                        } else {
+                                            echo $product['description'];
+                                        }
+                                        ?>
                                     </p>
                                 </div>
                                 <div class="breadcrumb">
