@@ -57,24 +57,14 @@
 
                     <div class="input-field">
                         <h3 class="out-label">Subcategory</h3>
-                        <select>
+                        <select id = "change_chekbox">
                             <?php foreach ($subCategoryListMenu as $subcategory) : ?>
-                                <option value="<?php echo $subcategory['subcategory_name']; ?>"><?php echo $subcategory['sub_category_title']; ?></option>
+                                <option value="<?php echo $subcategory['subcategory_name']; ?>" data-value="<?php echo $subcategory['category']; ?>"><?php echo $subcategory['sub_category_title']; ?></option>
                             <?php endforeach; ?>
                         </select>
                     </div>
-                    <div class="input-field">
-                        <textarea name="description" id="description" class="materialize-textarea"></textarea>
-                        <label for="description" style="color: black">Ad Description</label>
-                    </div>
-                    <div class="input-field">
-                        <label for="postcode" style="color: black">Post Code</label>
-                        <input type="text" name="postcode" id="search_postcode">
-                    </div>
-                    <div class="input-field">
-                        <label for="name" style="color: black">Your Name</label>
-                        <input type="text" name="name" id="name">
-                    </div>
+
+                    <div id="result"></div>
                     <?php if (UserMobile::isGuest()): ?>
                         <div class="input-field">
                             <label for="email" style="color: black">Your email</label>
@@ -84,12 +74,12 @@
                     <?php else: ?>
                         <div class="input-field">
                             <label for="email" style="color: black">Your email</label>
-                            <input type="text" name="email" id="email">
+                            <input type="text" name="email" id="emaill">
                         </div>
                     <?php endif; ?>
                     <div class="input-field">
-                        <label for="phone" style="color: black">Phone number</label>
-                        <input type="text" name="phone" id="phone">
+                        <label for="postcode" style="color: black">Post Code</label>
+                        <input type="text" name="postcode" id="search_postcode">
                     </div>
                     <!-- Payment Method Section -->
                     <div class="page-block checkout-shipping-block">
