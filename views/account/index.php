@@ -246,27 +246,34 @@
                                     <div class="inner">
                                         <div class="row">
                                             <div class="col-xs-12 col-md-6">
-                                                <form action="/">
+                                                <?php if (isset($errors) && is_array($errors)): ?>
+                                                    <ul>
+                                                        <?php foreach ($errors as $error): ?>
+                                                            <li> <?php echo $error; ?></li>
+                                                        <?php endforeach; ?>
+                                                    </ul>
+                                                <?php endif; ?>
+                                                <form method="post">
                                                     <div class="field-block">
                                                         <div class="labeled-input">
-                                                            <label>Enter old password</label>
-                                                            <input title="title here" type="password">
+                                                            <input title="title here" name="old-password" type="password" id="old-password">
+                                                            <label for="old-password">Enter old password</label>
                                                         </div>
                                                     </div>
                                                     <div class="field-block">
                                                         <div class="labeled-input">
-                                                            <label>Enter new password</label>
-                                                            <input title="title here" type="password">
+                                                            <input title="title here" name="password" type="password" id="password">
+                                                            <label for="password">Enter new password</label>
                                                         </div>
                                                     </div>
                                                     <div class="field-block">
                                                         <div class="labeled-input">
-                                                            <label>Confirm new password</label>
-                                                            <input title="title here" type="password">
+                                                            <input title="title here" name="repeat-password" type="password" id="repeat-password">
+                                                            <label for="repeat-password">Confirm new password</label>
                                                         </div>
                                                     </div>
                                                     <div class="field-block">
-                                                        <button class="btn btn-small btn-green">
+                                                        <button type="submit" class="btn btn-small btn-green" name="change-password">
                                                             save
                                                         </button>
                                                     </div>

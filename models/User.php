@@ -8,6 +8,16 @@
  */
 class User
 {
+    public static function userChangePassword($userId, $password)
+    {
+        $db = Db::getConnection();
+        $sql = 'UPDATE `user` SET  `password` = :password  WHERE `id` = :userId';
+        $result = $db->prepare($sql);
+        $result->bindParam(':userId', $userId, PDO::PARAM_INT);
+        $result->bindParam(':password', $password, PDO::PARAM_STR);
+        return $result->execute();
+    }
+
     public static function getUserIdByTokenAndId($key, $token)
     {
         $db = Db::getConnection();
