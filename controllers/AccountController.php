@@ -20,6 +20,7 @@ class AccountController
         $password = '';
         $repeat_password = '';
         $check_box_newsletter_var = '';
+        $email_subscribe = '';
         $result = array();
         $ACTIVE_FLAG_PASSWORD = false;
         $ACTIVE_FLAG_EMAIL = false;
@@ -59,13 +60,31 @@ class AccountController
                     } else {
                         $error[] = 'Email is not correct';
                     }
-                }else {
+                } else {
                     $error[] = 'Empty email';
+                }
+            } else {
+                if (isset($_POST['submit-subscribe'])) {
+                    $email_subscribe = $_POST['email-subscribe'];
+                    $userEmail = User::checkName($email_subscribe);
+                    if ($userEmail == true) {
+                        $myEmail = User::checkEmail($userEmail);
+                        if ($newEmail = true) {
+                            $subEmail = User::checkSubEmail($email_subscribe);
+                            if($subEmail !== $email_subscribe ) {
+                                $result = User::userSubscribe($email_subscribe);
+                            }else{
+                                $errorr[] = 'You just subscribed';
+                            }
+                        } else {
+                            $errorr[] = 'Email is not correct';
+                        }
+                    } else {
+                        $errorr[] = 'Empty email';
+                    }
+                }
             }
-            }
-
         }
-
 
         /*   $getFavAdsByUserCreateId = array();
            $getFavAdsByUserCreateId = Product::getFavAdsByCreatedUserId($userId);
