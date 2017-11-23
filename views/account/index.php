@@ -310,6 +310,13 @@
                                             <h5>Email Settings</h5>
                                         </header>
                                         <div class="inner">
+                                            <?php if (isset($error) && is_array($error)): ?>
+                                                <ul>
+                                                    <?php foreach ($error as $errors): ?>
+                                                        <li> <?php echo $errors; ?></li>
+                                                    <?php endforeach; ?>
+                                                </ul>
+                                            <?php endif; ?>
                                             <form method="post">
                                                 <div class="row">
                                                     <div class="col-xs-12 col-md-6">
@@ -328,9 +335,22 @@
                                                     <div class="radio-accordion">
                                                         <header>
                                                             <div class="custom-checkbox">
-                                                                <input type="checkbox" id="select002178419">
-                                                                <label for="select002178419">Get email
-                                                                    notifications</label>
+                                                                <?php
+                                                                switch ($check_box_newsletter_var) {
+                                                                    case 0:
+                                                                        echo
+                                                                        '<input type="checkbox" name="newsletter" value="1" id="newsletter"/>
+                                                                <label for="newsletter">Get email
+                                                                    notifications</label>';
+                                                                        break;
+                                                                    case 1:
+                                                                        echo
+                                                                        '<input type="checkbox" id="newsletter1" name="newsletter" value="2" checked="checked"/>
+                                                                <label for="newsletter1">Get email
+                                                                    notifications</label>';
+                                                                        break;
+                                                                }
+                                                                ?>
                                                             </div>
                                                         </header>
                                                         <div class="inner">
