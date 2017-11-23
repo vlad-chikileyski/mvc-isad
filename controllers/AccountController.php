@@ -19,6 +19,7 @@ class AccountController
         $old_password = '';
         $password = '';
         $repeat_password = '';
+        $check_box_newsletter_var = '';
         $result = array();
         $ACTIVE_FLAG_PASSWORD = false;
         $ACTIVE_FLAG_EMAIL = false;
@@ -46,15 +47,21 @@ class AccountController
         } else {
             if (isset($_POST['change-email'])) {
                 $email = $_POST['email'];
-                $newEmail = User::checkEmail($email);
-                if ($newEmail = true) {
-                    $userId = User::checkId();
-                    $userInfo = User::getUserById($userId);
-                    $result = User::userChangeEmail($userInfo['id'], $email);
-                    $ACTIVE_FLAG_EMAIL = true;
-                } else {
-                    $errors[] = 'Email is not correct';
-                }
+                $check_box_newsletter_var = $_POST['newsletter'];
+                $userEmail = User::checkName($email);
+                if ($userEmail == true) {
+                    $newEmail = User::checkEmail($email);
+                    if ($newEmail = true) {
+                        $userId = User::checkId();
+                        $userInfo = User::getUserById($userId);
+                        $result = User::userChangeEmail($userInfo['id'], $email, $check_box_newsletter_var);
+                        $ACTIVE_FLAG_EMAIL = true;
+                    } else {
+                        $error[] = 'Email is not correct';
+                    }
+                }else {
+                    $error[] = 'Empty email';
+            }
             }
 
         }
