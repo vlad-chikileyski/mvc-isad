@@ -18,6 +18,16 @@ class User
         return $result->execute();
     }
 
+    public static function userChangeEmail($userId, $email)
+    {
+        $db = Db::getConnection();
+        $sql = 'UPDATE `user` SET  `email` = :email  WHERE `id` = :userId';
+        $result = $db->prepare($sql);
+        $result->bindParam(':userId', $userId, PDO::PARAM_INT);
+        $result->bindParam(':email', $email, PDO::PARAM_STR);
+        return $result->execute();
+    }
+
     public static function getUserIdByTokenAndId($key, $token)
     {
         $db = Db::getConnection();

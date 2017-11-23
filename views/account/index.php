@@ -207,10 +207,10 @@
                                                             <li><a class="tc" href="#"><i class="adicon-eye"></i></a>
                                                             </li>
                                                             <li><a class="tc6-hover" href="#"><i
-                                                                        class="adicon-edit"></i></a></li>
+                                                                            class="adicon-edit"></i></a></li>
                                                             <li><a href="#"><i class="adicon-activate"></i></a></li>
                                                             <li><a class="tc12-hover" href="#"><i
-                                                                        class="adicon-recyclebin"></i></a></li>
+                                                                            class="adicon-recyclebin"></i></a></li>
                                                         </ul>
                                                     </div>
 
@@ -240,6 +240,14 @@
                             </header>
                             <div class="inner">
                                 <div class="basic-card">
+                                    <?php if (isset($ACTIVE_FLAG_PASSWORD) && $ACTIVE_FLAG_PASSWORD): ?>
+                                        <div class=field-block">
+                                            <h2>Success</h2>
+                                            <p>You change your password</p>
+                                            <a href="https://adtoday.co.uk/account/" class="btn blue"><i
+                                                        class="fa fa-home"></i> Back to homepage</a>
+                                        </div>
+                                    <?php else: ?>
                                     <header>
                                         <h5>Change Password</h5>
                                     </header>
@@ -256,108 +264,93 @@
                                                 <form method="post">
                                                     <div class="field-block">
                                                         <div class="labeled-input">
-                                                            <input title="title here" name="old-password" type="password" id="old-password">
+                                                            <input title="title here" name="old-password"
+                                                                   type="password" id="old-password">
                                                             <label for="old-password">Enter old password</label>
                                                         </div>
                                                     </div>
                                                     <div class="field-block">
                                                         <div class="labeled-input">
-                                                            <input title="title here" name="password" type="password" id="password">
+                                                            <input title="title here" name="password"
+                                                                   type="password" id="password">
                                                             <label for="password">Enter new password</label>
                                                         </div>
                                                     </div>
                                                     <div class="field-block">
                                                         <div class="labeled-input">
-                                                            <input title="title here" name="repeat-password" type="password" id="repeat-password">
-                                                            <label for="repeat-password">Confirm new password</label>
+                                                            <input title="title here" name="repeat-password"
+                                                                   type="password" id="repeat-password">
+                                                            <label for="repeat-password">Confirm new
+                                                                password</label>
                                                         </div>
                                                     </div>
                                                     <div class="field-block">
-                                                        <button type="submit" class="btn btn-small btn-green" name="change-password">
+                                                        <button type="submit" class="btn btn-small btn-green"
+                                                                name="change-password">
                                                             save
                                                         </button>
                                                     </div>
                                                 </form>
                                             </div>
+                                            <?php endif; ?>
                                         </div>
                                     </div>
                                 </div><!--basic-card-->
 
                                 <div class="basic-card">
-                                    <header>
-                                        <h5>Email Settings</h5>
-                                    </header>
-                                    <div class="inner">
-                                        <form action="/">
-
-                                            <div class="row">
-                                                <div class="col-xs-12 col-md-6">
-                                                    <div class="field-block">
-                                                        <div class="labeled-input">
-                                                            <label>Enter New Email</label>
-                                                            <input title="title here" type="email">
+                                    <?php if (isset($ACTIVE_FLAG_EMAIL) && $ACTIVE_FLAG_EMAIL): ?>
+                                        <div class=field-block">
+                                            <h2>Success</h2>
+                                            <p>You change your email</p>
+                                            <a href="https://adtoday.co.uk/account/" class="btn blue"><i
+                                                        class="fa fa-home"></i> Back to homepage</a>
+                                        </div>
+                                    <?php else: ?>
+                                        <header>
+                                            <h5>Email Settings</h5>
+                                        </header>
+                                        <div class="inner">
+                                            <form method="post">
+                                                <div class="row">
+                                                    <div class="col-xs-12 col-md-6">
+                                                        <div class="field-block">
+                                                            <h6>Your current email: <?php echo $user['email']; ?></h6>
+                                                            <div class="labeled-input">
+                                                                <input title="title here" name="email" type="email"
+                                                                       id="email">
+                                                                <label for="email">Enter New Email</label>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
 
-                                            <div class="radio-accordion-wrap">
-                                                <div class="radio-accordion">
-                                                    <header>
-                                                        <div class="custom-checkbox">
-                                                            <input type="checkbox" id="select002178419">
-                                                            <label for="select002178419">Get email notifications</label>
+                                                <div class="radio-accordion-wrap">
+                                                    <div class="radio-accordion">
+                                                        <header>
+                                                            <div class="custom-checkbox">
+                                                                <input type="checkbox" id="select002178419">
+                                                                <label for="select002178419">Get email
+                                                                    notifications</label>
+                                                            </div>
+                                                        </header>
+                                                        <div class="inner">
+                                                            Every few weeks we send newsletters to all users in which we
+                                                            inform about changes in services, new products and our
+                                                            promotional campaigns. If you want to keep up with what is
+                                                            happening on the site subsribe to the newsletter.
                                                         </div>
-                                                    </header>
-                                                    <div class="inner">
-                                                        Every few weeks we send newsletters to all users in which we
-                                                        inform about changes in services, new products and our
-                                                        promotional campaigns. If you want to keep up with what is
-                                                        happening on the site subsribe to the newsletter.
                                                     </div>
                                                 </div>
 
-                                                <div class="radio-accordion">
-                                                    <header>
-                                                        <div class="custom-checkbox">
-                                                            <input type="checkbox" id="select002178412">
-                                                            <label for="select002178412">Yes I want to receive email
-                                                                notifications of messages.</label>
-                                                        </div>
-                                                    </header>
-                                                    <div class="inner">
-                                                        Every few weeks we send newsletters to all users in which we
-                                                        inform about changes in services, new products and our
-                                                        promotional campaigns. If you want to keep up with what is
-                                                        happening on the site subsribe to the newsletter.
-                                                    </div>
+                                                <div class="field-block">
+                                                    <button type="submit" class="btn btn-small btn-green"
+                                                            name="change-email">
+                                                        save
+                                                    </button>
                                                 </div>
-
-                                                <div class="radio-accordion">
-                                                    <header>
-                                                        <div class="custom-checkbox">
-                                                            <input type="checkbox" id="select002178414">
-                                                            <label for="select002178414">Yes I want to receive latest
-                                                                news and updates from adsport</label>
-                                                        </div>
-                                                    </header>
-                                                    <div class="inner">
-                                                        Every few weeks we send newsletters to all users in which we
-                                                        inform about changes in services, new products and our
-                                                        promotional campaigns. If you want to keep up with what is
-                                                        happening on the site subsribe to the newsletter.
-                                                    </div>
-                                                </div>
-
-                                            </div>
-
-                                            <div class="field-block">
-                                                <button class="btn btn-small btn-green">
-                                                    save
-                                                </button>
-                                            </div>
-                                        </form>
-                                    </div>
+                                            </form>
+                                        </div>
+                                    <?php endif; ?>
                                 </div><!--basic-card-->
 
                             </div>
