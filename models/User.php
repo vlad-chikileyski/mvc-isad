@@ -18,6 +18,15 @@ class User
         return $result->execute();
     }
 
+    public static function userSubscribe($email)
+    {
+        $db = Db::getConnection();
+        $sql = 'INSERT INTO `USER_SUBSCRIBE` (email)'.'VALUES (:email)';
+        $result = $db->prepare($sql);
+        $result->bindParam(':email', $email, PDO::PARAM_STR);
+        return $result->execute();
+    }
+
     public static function userChangeEmail($userId, $email,$check_box_newsletter_var)
     {
         $db = Db::getConnection();
@@ -55,6 +64,20 @@ class User
         $result->execute();
         if ($result->fetchColumn()) {
             return true;
+        }
+        return false;
+    }
+
+    public static function checkSubEmail($email_subscribe)
+    {
+        $db = Db::getConnection();
+        $sql = 'SELECT * FROM `USER_SUBSCRIBE` WHERE `email` = :email';
+        $result = $db->prepare($sql);
+        $result->bindParam(':email', $email_subscribe, PDO::PARAM_STR);
+        $result->execute();
+        $user = $result->fetch();
+        if ($user) {
+            return $user['email'];
         }
         return false;
     }
