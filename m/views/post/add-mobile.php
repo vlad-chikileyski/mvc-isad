@@ -97,90 +97,103 @@
                         <h2 class="block-title">
                             <span>Make Your Ad Featured</span>
                         </h2>
+                        <div class="custom-checkbox">
+                            <input class="showHideTarget"
+                                   data-target="#featured-paymentOptions" type="checkbox"
+                                   id="create42213" name="item-condition">
+                            <label class="big-font" for="create42213"> Featured Ad</label> <strong class="pricexs-s10948">Free</strong> <strong>per ad</strong>
+                        </div>
+                        <?php foreach ($paymentsBoxInfo
+
+                        as $boxInfoPayments) : ?>
 
                         <ol class="payment-method">
-                            <li>
-                                <input name="group1" type="radio" id="test1"/>
-                                <label for="test1">Cash on Delivery</label>
-                            </li>
-                            <li>
-                                <input name="group1" type="radio" id="test2"/>
-                                <label for="test2">Internet Banking</label>
-                            </li>
-                            <li>
-                                <input name="group1" type="radio" id="test3"/>
-                                <label for="test3">Credit/Debit Card</label>
-                                <span>All Visa and Mastercard</span>
-                            </li>
-                            <li>
-                                <input name="group1" type="radio" id="test4"/>
-                                <label for="test4">Transfer</label>
-                                <span>Time limit payment only 24 hour</span>
-                            </li>
-                            <li>
-                                <input name="group1" type="radio" id="test5"/>
-                                <label for="test5">Electronic Money</label>
-                            </li>
-                            <li>
-                                <input name="group1" type="radio" id="test6"/>
-                                <label for="test6">Paypal</label>
-                            </li>
-                        </ol>
+                            <input type="radio" class="calculate-price"
+                                   id="<?php echo "p31y323n-" . $boxInfoPayments["id"]; ?>"
+                                   name="payment-method"
+                                   data-value="<?php echo " £" . $boxInfoPayments["price_value_text"]; ?>"
+                                   value="<?php echo "p31y323n-" . $boxInfoPayments["id"]; ?>">
+                            <label
+                                    for="<?php echo "p31y323n-" . $boxInfoPayments["id"]; ?>"> <?php echo $boxInfoPayments["payment_title_name"] . " - £" . $boxInfoPayments["price_value_text"]; ?> </label>
+
+
+                            <?php endforeach; ?>
                     </div>
-                    <!-- END Payment Method Section -->
+                    <td class="text-right"><strong>Total : </strong><strong class="pricexs-s10948"> £0</strong>
 
-                    <!-- Coupon & Promo Section -->
-                    <!-- <div class="page-block checkout-shipping-block">
+                        <!-- END Payment Method Section -->
 
-                         <h2 class="block-title">
-                             <span>Coupon & Promo</span>
-                         </h2>
+                        <!-- Coupon & Promo Section -->
+                        <!-- <div class="page-block checkout-shipping-block">
 
-                         <span class="block semibold">Coupon</span>
-                         <ol class="payment-method">
-                             <li>
-                                 <input name="group1" type="radio" id="test1"/>
-                                 <label for="test1">$ 5.0</label>
-                                 <span>Until end of this month</span>
-                             </li>
-                             <li>
-                                 <input name="group1" type="radio" id="test2"/>
-                                 <label for="test2">$ 10.0</label>
-                                 <span>For total shopping $ 200.0 above</span>
-                             </li>
-                         </ol>
+                             <h2 class="block-title">
+                                 <span>Coupon & Promo</span>
+                             </h2>
 
-                         <span class="block semibold">Promo ID</span>
-                         <div class="checkout-promoID">
-                             <input type="text" placeholder="Ex : YY567-201">
-                             <button type="button">Send</button>
-                         </div>
-                     </div>
-                     <div class="input-field">
-                         <h3 class="out-label">Upload evidance of transfer</h3>
-                         <span class="desc">Max upload file is 2MB</span>
-                         <div class="file-field">
-                             <div class="btn grey">
-                                 <span>File</span>
-                                 <input type="file">
-                             </div>
-                             <div class="file-path-wrapper">
-                                 <input class="file-path validate" type="text">
+                             <span class="block semibold">Coupon</span>
+                             <ol class="payment-method">
+                                 <li>
+                                     <input name="group1" type="radio" id="test1"/>
+                                     <label for="test1">$ 5.0</label>
+                                     <span>Until end of this month</span>
+                                 </li>
+                                 <li>
+                                     <input name="group1" type="radio" id="test2"/>
+                                     <label for="test2">$ 10.0</label>
+                                     <span>For total shopping $ 200.0 above</span>
+                                 </li>
+                             </ol>
+
+                             <span class="block semibold">Promo ID</span>
+                             <div class="checkout-promoID">
+                                 <input type="text" placeholder="Ex : YY567-201">
+                                 <button type="button">Send</button>
                              </div>
                          </div>
-                     </div>-->
-                    <p>
+                         <div class="input-field">
+                             <h3 class="out-label">Upload evidance of transfer</h3>
+                             <span class="desc">Max upload file is 2MB</span>
+                             <div class="file-field">
+                                 <div class="btn grey">
+                                     <span>File</span>
+                                     <input type="file">
+                                 </div>
+                                 <div class="file-path-wrapper">
+                                     <input class="file-path validate" type="text">
+                                 </div>
+                             </div>
+                         </div>-->
+                        <p>
                         <span class="block text-small">By clicking 'Create Ad' you agree <to></to> <a
                                     href="http://m.adtoday.co.uk/terms/">our Terms & Condition</a></span>
-                    </p>
-                    <br/>
-                    <button class="btn block green" type="submit">Create Ads</button>
+                        </p>
+                        <br/>
+                        <button class="btn block green" type="submit">Create Ads</button>
                 </div>
             </form>
             <!-- End Custom Form -->
         </div>
         <!-- END CONTENT CONTAINER -->
+        <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script type="text/javascript">
+            $("body").on("click", ".calculate-price", function () {
+                var $this = $(this),
+                    datavalue = $this.attr("data-value");
+                if ($(this).is(":checked")) {
+                    $(".pricexs-s10948").html(datavalue);
+                }
+            });
+        </script>
 
+        <script type="text/javascript">
+            $("body").on("click", ".showHideTarget", function () {
+                var $this = $(this),
+                    datavalue = $this.attr("data-value");
+                if (!$(this).is(":checked")) {
+                    $(".pricexs-s10948").html("£0");
+                }
+            });
+        </script>
         <!-- FOOTER -->
         <div class="footer">
 

@@ -4,6 +4,7 @@ class PostController
 {
     public function actionIndex($categoryName)
     {
+        $pattrenPaymentValue = "/(?<=-)[0-9]+$/";
         $categoryChecker = CategoryFilterMobile::categoryCheckParam($categoryName);
         if ($categoryChecker == false) {
             header("HTTP/1.0 404 Not Found");
@@ -42,6 +43,17 @@ class PostController
              * @return: redirect to success page
              */
             if (isset($_POST['submit'])) {
+                if (isset($_POST['payment-method'])) {
+                    $paymentMethod = $_POST['payment-method'];
+                    preg_match($pattrenPaymentValue, $paymentMethod, $matches, PREG_OFFSET_CAPTURE);
+                    if (isset($matches[0][0])) {
+                        //CHANGE IT -> next release
+                        $paymentType = $matches[0][0];
+                        print_r($matches[0][0]);
+                    } else {
+                        $paymentType = false;
+                    }
+                }
                 $title = $_POST['title'];
                 $description = $_POST['description'];
                 $postcode = $_POST['postcode'];
@@ -112,7 +124,8 @@ class PostController
                     }
                 }
             }
-
+            $paymentsBoxInfo = array();
+            $paymentsBoxInfo = PaymentMobile::getAllPayments();
             $subCategoryListMenu = array();
             $subCategoryListMenu = CategoryMobile::getSubcategyListByCategory($categoryName);
             require_once(ROOT . '/views/post/add-mobile.php');
