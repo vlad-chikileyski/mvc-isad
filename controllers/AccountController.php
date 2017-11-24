@@ -48,7 +48,9 @@ class AccountController
         } else {
             if (isset($_POST['change-email'])) {
                 $email = $_POST['email'];
-                $check_box_newsletter_var = $_POST['newsletter'];
+                if (isset($_POST['newsletter'])){
+                    $check_box_newsletter_var = $_POST['newsletter'];
+            }
                 $userEmail = User::checkName($email);
                 if ($userEmail == true) {
                     $newEmail = User::checkEmail($email);
