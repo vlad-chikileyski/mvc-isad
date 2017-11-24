@@ -340,15 +340,15 @@
                         and we will email you relevant ads.</p>
                 </div>
                 <div class="col-xs-12 col-md-5">
+                    <?php if (isset($errors) && is_array($errors)): ?>
+                        <ul>
+                            <?php foreach ($errors as $error): ?>
+                                <li> - <?php echo $error; ?></li>
+                            <?php endforeach; ?>
+                        </ul>
+                    <?php endif; ?>
                     <form method="post">
                         <div class="field-block-md">
-                            <?php if (isset($errors) && is_array($errors)): ?>
-                                <ul>
-                                    <?php foreach ($errors as $error): ?>
-                                        <li> - <?php echo $error; ?></li>
-                                    <?php endforeach; ?>
-                                </ul>
-                            <?php endif; ?>
                             <div class="labeled-input">
                                 <label>Email address</label>
                                 <input title="enter your email" type="email" name="email" id="email">
