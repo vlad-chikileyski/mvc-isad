@@ -14,14 +14,27 @@ class ProductController
             $userId = $categoryProduct[0]['user_id'];
             $user = User::getUserById($userId);
             $similarAds = Product::getSimilarAdsByCategoryAndSubcategory($getTableNameProduct, $categoryParam, $subcategoryParam);
-            if ($productId == false) {
-                header("HTTP/1.0 404 Not Found");
-                require_once(ROOT . '/views/error/404.php');
-            }
 
-            //  var_dump(PostCodeChecker::valid("OX49 5NU"));
-            require_once(ROOT . '/views/product/view.php');
-            return true;
+            $email = '';
+            $frequency = '';
+            if (isset($_POST['createAlert'])) {
+                $email = $_POST['email'];
+                $frequency = $_POST['create'];
+                $emailExist = User::checkEmailExistsAlert($email);
+                if ($emailExist = true) {
+                    $errors[] = 'You already create alert.';
+                } else {
+                    $save_changes = User::saveCreateAlert($email, $frequency);
+                }
+            }
         }
+        if ($productId == false) {
+            header("HTTP/1.0 404 Not Found");
+            require_once(ROOT . '/views/error/404.php');
+        }
+
+        //  var_dump(PostCodeChecker::valid("OX49 5NU"));
+        require_once(ROOT . '/views/product/view.php');
+        return true;
     }
 }

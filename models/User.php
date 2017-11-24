@@ -108,6 +108,17 @@ class User
         return $result->execute();
     }
 
+    public static function saveCreateAlert($email,$frequency)
+    {
+        $db = Db::getConnection();
+        $sql = 'INSERT INTO newsletter_subscribe (email,frequency)'
+            . 'VALUES (:email, :frequency)';
+        $result = $db->prepare($sql);
+        $result->bindParam(':email', $email, PDO::PARAM_STR);
+        $result->bindParam(':frequency', $frequency, PDO::PARAM_STR);
+        return $result->execute();
+    }
+
     /**
      * generate new password;
      */
@@ -161,6 +172,18 @@ class User
     {
         $db = Db::getConnection();
         $sql = 'SELECT COUNT(*) FROM user WHERE email = :email';
+        $result = $db->prepare($sql);
+        $result->bindParam(':email', $email, PDO::PARAM_STR);
+        $result->execute();
+        if ($result->fetchColumn())
+            return true;
+        return false;
+    }
+
+    public static function checkEmailExistsAlert($email)
+    {
+        $db = Db::getConnection();
+        $sql = 'SELECT * FROM newsletter_subscribe WHERE email = :email';
         $result = $db->prepare($sql);
         $result->bindParam(':email', $email, PDO::PARAM_STR);
         $result->execute();
