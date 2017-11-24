@@ -26,10 +26,10 @@ class ProductController
                     if ($emailExist !== $email) {
                         $save_changes = User::saveCreateAlert($email, $frequency);
                     } else {
-                        $errors[] = 'You already create alert';
+                        $errors[] = 'You already create alert!';
                     }
                 } else {
-                    $errors[] = 'Empty user email';
+                    $errors[] = 'Empty user email!';
                 }
             }
         }
