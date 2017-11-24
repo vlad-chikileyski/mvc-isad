@@ -97,12 +97,6 @@
                         <h2 class="block-title">
                             <span>Make Your Ad Featured</span>
                         </h2>
-                        <div class="custom-checkbox">
-                            <input class="showHideTarget"
-                                   data-target="#featured-paymentOptions" type="checkbox"
-                                   id="create42213" name="item-condition">
-                            <label class="big-font" for="create42213"> Featured Ad</label> <strong class="pricexs-s10948">Free</strong> <strong>per ad</strong>
-                        </div>
                         <?php foreach ($paymentsBoxInfo
 
                         as $boxInfoPayments) : ?>
