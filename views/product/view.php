@@ -411,8 +411,8 @@
     </div>
     <div class="number-widget short-widget">
         <i class="adicon-phone"></i>
-        <strong>£<?php echo $product['price']; ?></strong>
-        <span>Negotiable Price</span>
+        <strong>+<?php echo $user['phone']; ?></strong>
+        <span>Phone</span>
     </div>
 <?php endforeach; ?>
     <div class="user-widget text-center">
