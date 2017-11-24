@@ -377,92 +377,38 @@
         </div>
 
         <div class="items-list-md single-similar-items">
-            <h4>Similar ads</h4>
+            <h4>You may like also</h4>
             <div class="items-list">
-                <article class="item-spot">
-                    <a href="#" class="imgAsBg">
-                        <img src="/template/assets/img/items/ad1.png" alt="dummy data">
-                    </a>
-                    <div class="item-content">
-                        <header>
-                            <h5><a href="single.html">Canon SX Powershot A Great D-SLR</a></h5>
-                            <span class="item-info-short">2:49 pm in Melbourne</span>
-                        </header>
-                        <div class="price-tag">$229.9</div>
-                        <div class="item-actions text-center">
-                            <ul class="contact-options">
-                                <li><a href="#" class="fa fa-envelope tooltip-parent">
-                                        <span class="tooltip">Send Message</span>
-                                    </a></li>
-                                <li><a href="#" class="fa fa-phone tooltip-parent">
-                                        <span class="tooltip">Mobile Number</span>
-                                    </a></li>
-                                <li><a href="#" class="fa fa-heart tooltip-parent">
-                                        <span class="tooltip">save ad</span>
-                                    </a></li>
-                            </ul>
-                            <a class="view-item" href="single.html">view ad</a>
+                <?php foreach ($similarAds as $ads): ?>
+                    <article class="item-spot">
+                        <a href="#" class="imgAsBg">
+                            <img src="/template/assets/img/items/ad2.jpg" alt="dummy data">
+                        </a>
+                        <div class="item-content">
+                            <header>
+                                <h5><a href="https://adtoday.co.uk/ads/<?php echo $ads['category']; ?>/<?php echo $ads['subcategory']; ?>/<?php echo $ads['id']; ?>"><?php echo ucfirst($ads['subcategory']); ?></a></h5>
+                                <span class="item-info-short"><?php echo ucfirst($ads['title']); ?></span>
+                            </header>
+                            <div class="price-tag">$ <?php echo $ads['price']; ?></div>
+                            <div class="item-actions text-center">
+                                <ul class="contact-options">
+                                    <li><a href="#" class="fa fa-envelope tooltip-parent">
+                                            <span class="tooltip">Send Message</span>
+                                        </a></li>
+                                    <li><a href="#" class="fa fa-phone tooltip-parent">
+                                            <span class="tooltip">Mobile Number</span>
+                                        </a></li>
+                                    <li><a href="#" class="fa fa-heart tooltip-parent">
+                                            <span class="tooltip">save ad</span>
+                                        </a></li>
+                                </ul>
+                                <a class="view-item" href="https://adtoday.co.uk/ads/<?php echo $ads['category']; ?>/<?php echo $ads['subcategory']; ?>/<?php echo $ads['id']; ?>">view ad</a>
+
+                            </div>
 
                         </div>
-
-                    </div>
-                </article>
-                <article class="item-spot">
-                    <a href="#" class="imgAsBg">
-                        <img src="/template/assets/img/items/ad2.jpg" alt="dummy data">
-                    </a>
-                    <div class="item-content">
-                        <header>
-                            <h5><a href="single.html">Canon SX Powershot A Great D-SLR</a></h5>
-                            <span class="item-info-short">2:49 pm in Melbourne</span>
-                        </header>
-                        <div class="price-tag">$229.9</div>
-                        <div class="item-actions text-center">
-                            <ul class="contact-options">
-                                <li><a href="#" class="fa fa-envelope tooltip-parent">
-                                        <span class="tooltip">Send Message</span>
-                                    </a></li>
-                                <li><a href="#" class="fa fa-phone tooltip-parent">
-                                        <span class="tooltip">Mobile Number</span>
-                                    </a></li>
-                                <li><a href="#" class="fa fa-heart tooltip-parent">
-                                        <span class="tooltip">save ad</span>
-                                    </a></li>
-                            </ul>
-                            <a class="view-item" href="single.html">view ad</a>
-
-                        </div>
-
-                    </div>
-                </article>
-                <article class="item-spot">
-                    <a href="#" class="imgAsBg">
-                        <img src="/template/assets/img/items/ad3.jpg" alt="dummy data">
-                    </a>
-                    <div class="item-content">
-                        <header>
-                            <h5><a href="single.html">Canon SX Powershot A Great D-SLR</a></h5>
-                            <span class="item-info-short">2:49 pm in Melbourne</span>
-                        </header>
-                        <div class="price-tag">$229.9</div>
-                        <div class="item-actions text-center">
-                            <ul class="contact-options">
-                                <li><a href="#" class="fa fa-envelope tooltip-parent">
-                                        <span class="tooltip">Send Message</span>
-                                    </a></li>
-                                <li><a href="#" class="fa fa-phone tooltip-parent">
-                                        <span class="tooltip">Mobile Number</span>
-                                    </a></li>
-                                <li><a href="#" class="fa fa-heart tooltip-parent">
-                                        <span class="tooltip">save ad</span>
-                                    </a></li>
-                            </ul>
-                            <a class="view-item" href="single.html">view ad</a>
-
-                        </div>
-
-                    </div>
-                </article>
+                    </article>
+                <?php endforeach; ?>
             </div>
         </div>
 
