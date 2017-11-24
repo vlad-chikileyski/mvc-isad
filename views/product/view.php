@@ -391,17 +391,6 @@
                             </header>
                             <div class="price-tag">$ <?php echo $ads['price']; ?></div>
                             <div class="item-actions text-center">
-                                <ul class="contact-options">
-                                    <li><a href="#" class="fa fa-envelope tooltip-parent">
-                                            <span class="tooltip">Send Message</span>
-                                        </a></li>
-                                    <li><a href="#" class="fa fa-phone tooltip-parent">
-                                            <span class="tooltip">Mobile Number</span>
-                                        </a></li>
-                                    <li><a href="#" class="fa fa-heart tooltip-parent">
-                                            <span class="tooltip">save ad</span>
-                                        </a></li>
-                                </ul>
                                 <a class="view-item" href="https://adtoday.co.uk/ads/<?php echo $ads['category']; ?>/<?php echo $ads['subcategory']; ?>/<?php echo $ads['id']; ?>">view ad</a>
 
                             </div>
