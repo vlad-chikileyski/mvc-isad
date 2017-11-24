@@ -289,8 +289,8 @@
                     </li>
                     <li>
                         <div class="inner clearfix">
-                            <span class="label">Type of ad:</span>
-                            <span class="desc">{Type of ad}</span>
+                            <span class="label">Category:</span>
+                            <span class="desc"><?php echo ucfirst($product['category']); ?></span>
                         </div>
                     </li>
                     <li>
@@ -301,14 +301,14 @@
                     </li>
                     <li>
                         <div class="inner clearfix">
-                            <span class="label">Member since:</span>
-                            <span class="desc">{Member since}</span>
+                            <span class="label">Type of ad:</span>
+                            <span class="desc"><?php echo ucfirst($product['subcategory']); ?></span>
                         </div>
                     </li>
                 </ul>
             </div>
             <div class="text-widget">
-                <header><h4>Product Description</h4></header>
+                <header><h4>Description</h4></header>
                 <div class="inner">
                     <?php echo $product['description']; ?>
 
