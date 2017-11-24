@@ -86,9 +86,9 @@
     <div class="container">
     <div class="breadcrumb">
         <ul>
-            <li><a href="/">Home</a></li>
-            <li><?php echo $product['category']; ?></li>
-            <li><?php echo $product['subcategory']; ?></li>
+            <li><a href="https://adtoday.co.uk/">Home</a></li>
+            <li><a href="https://adtoday.co.uk/catalog/<?php echo $product['category']; ?>"><?php echo $product['category']; ?></a></li>
+            <li><a href="https://adtoday.co.uk/catalog/<?php echo $product['category']; ?>/<?php echo $product['subcategory']; ?>"><?php echo $product['subcategory']; ?></a></li>
             <li><?php echo $product['title']; ?></li>
         </ul>
     </div>
@@ -389,7 +389,7 @@
                                 <h5><a href="https://adtoday.co.uk/ads/<?php echo $ads['category']; ?>/<?php echo $ads['subcategory']; ?>/<?php echo $ads['id']; ?>"><?php echo ucfirst($ads['subcategory']); ?></a></h5>
                                 <span class="item-info-short"><?php echo ucfirst($ads['title']); ?></span>
                             </header>
-                            <div class="price-tag">$ <?php echo $ads['price']; ?></div>
+                            <div class="price-tag">£ <?php echo $ads['price']; ?></div>
                             <div class="item-actions text-center">
                                 <a class="view-item" href="https://adtoday.co.uk/ads/<?php echo $ads['category']; ?>/<?php echo $ads['subcategory']; ?>/<?php echo $ads['id']; ?>">view ad</a>
 
@@ -405,7 +405,7 @@
     <aside class="sidebar col-xs-12 col-sm-5 col-md-4">
     <div class="inner">
     <div class="price-widget short-widget">
-        <i class="adicon-dollar"></i>
+        <i class="fa fa-gbp"></i>
         <strong>£<?php echo $product['price']; ?></strong>
         <span>Negotiable Price</span>
     </div>
