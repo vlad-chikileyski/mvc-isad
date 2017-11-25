@@ -80,7 +80,7 @@
                                         <img src="/template/images/80x80.png" alt="">
                                     </div>
                                     <div class="ctn">
-                                        <h3><a href="#"/></h3><?php echo $ads[0]['title']; ?></a></h3></br>
+                                        <h3><a href="http://m.adtoday.co.uk/ads/<?php echo $ads[0]['category']; ?>/<?php echo $ads[0]['subcategory']; ?>/<?php echo $ads[0]['id']; ?>"/></h3><?php echo $ads[0]['title']; ?></a></h3></br>
                                         <span>Description: <?php echo $ads[0]['description']; ?></span>
                                         <p><a href="#" class="track-order">Edit</a></p>
                                     </div>
