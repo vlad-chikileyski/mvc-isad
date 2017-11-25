@@ -142,41 +142,51 @@
                         <li>
                             <div class="review-idty">
                                 <div class="name">
-                                    Andriy Sheva
+                                    Postcode
                                 </div>
                             </div>
                             <div class="review-ctn">
-                                awesome product
+                                <?php echo $categoryProduct[0]['postcode']; ?>
                             </div>
                         </li>
                         <li>
                             <div class="review-idty">
                                 <div class="name">
-                                    Carlos de Mello
+                                    Posted by:
                                 </div>
                             </div>
                             <div class="review-ctn">
-                                The product has come softly, thank you maleo.
+                                <?php echo $categoryProduct[0]['date']; ?>
                             </div>
                         </li>
                         <li>
                             <div class="review-idty">
                                 <div class="name">
-                                    Jackson Thiago
+                                    Category
                                 </div>
                             </div>
                             <div class="review-ctn">
-                                No one doubt about quality of this product. Congratulations for all.
+                                <?php echo ucfirst($categoryProduct[0]['category']); ?>
                             </div>
                         </li>
                         <li>
                             <div class="review-idty">
                                 <div class="name">
-                                    Melanie Ricardo
+                                    Subcategory
                                 </div>
                             </div>
                             <div class="review-ctn">
-                                Only one thing, please give us some explanation more.
+                                <?php echo ucfirst($categoryProduct[0]['subcategory']); ?>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="review-idty">
+                                <div class="name">
+                                    Posted by
+                                </div>
+                            </div>
+                            <div class="review-ctn">
+                                <a href="http://m.adtoday.co.uk/user/<?php echo $user['id']; ?>"><?php echo ucfirst($user['username']); ?></a>
                             </div>
                         </li>
                     </ol>
