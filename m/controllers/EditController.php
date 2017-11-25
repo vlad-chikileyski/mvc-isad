@@ -21,9 +21,10 @@ class EditController
                 $title = $_POST['title'];
                 $description = $_POST['description'];
                 $result = UserMobile::userChangeAdsInfo($getAdsIdByUserCreateId, $title, $description, $userId, $adsId);
-                header("Location: http://m.adtoday.co.uk/my-ads/edit/".$adsId);
+                header("Location: http://m.adtoday.co.uk/my-ads/edit/" . $adsId);
             }
-
+            $paymentsBoxInfo = array();
+            $paymentsBoxInfo = PaymentMobile::getAllPayments();
             require_once(ROOT . '/views/post/myads.php');
         }
         return true;
