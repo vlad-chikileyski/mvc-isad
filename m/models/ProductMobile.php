@@ -108,11 +108,47 @@ class ProductMobile
         return $product;
     }
 
+    public static function getAdsByCategoryAndUserId($getAdsIdByUserCreateId,$userId)
+    {
+        $db = Db::getConnectionOnCatics();
+        $product = array();
+        $result = $db->query('SELECT * FROM `' . $getAdsIdByUserCreateId . '`WHERE id =' . $userId);
+        $i = 0;
+        while ($row = $result->fetch()) {
+            $product[$i]['id'] = $row['id'];
+            $product[$i]['image-0'] = $row['image-0'];
+            $product[$i]['image-1'] = $row['image-1'];
+            $product[$i]['image-2'] = $row['image-2'];
+            $product[$i]['image-3'] = $row['image-3'];
+            $product[$i]['image-4'] = $row['image-4'];
+            $product[$i]['title'] = $row['title'];
+            $product[$i]['date'] = $row['date'];
+            $product[$i]['price'] = $row['price'];
+            $product[$i]['category'] = $row['category'];
+            $product[$i]['subcategory'] = $row['subcategory'];
+            $product[$i]['description'] = $row['description'];
+            $i++;
+        }
+        return $product;
+    }
+
     public static function getTotalProductsInCategory($subCategoryName)
     {
         $db = Db::getConnectionOnCatics();
         $sql = 'SELECT `count-val` FROM `category-count`'
             . 'WHERE `sub-category`=:subCategory';
+        $result = $db->prepare($sql);
+        $result->bindParam(':subCategory', $subCategoryName, PDO::PARAM_STR);
+        $result->execute();
+        $row = $result->fetch();
+        return $row['count-val'];
+    }
+
+    public static function getNameAdsIdByUserId($userId)
+    {
+        $db = Db::getConnection();
+        $sql = 'SELECT `subcategory_name` FROM `dashboard_user_ads`'
+            . 'WHERE `user-`=:subCategory';
         $result = $db->prepare($sql);
         $result->bindParam(':subCategory', $subCategoryName, PDO::PARAM_STR);
         $result->execute();
@@ -145,11 +181,12 @@ class ProductMobile
         return $row;
     }
 
-    public static function getAdsIdByUserIdAndAdsId($userId,$adsId)
+    public static function getAdsIdByUserIdAndAdsId($userId,$adsId,$category)
     {
         $db = Db::getConnection();
         $ads = array();
-        $result = $db->query('SELECT `subcategory_name` FROM `dashboard_user_ads` WHERE `userId` =' . $userId . ' AND `adsId` =' . $adsId);
+        $result = $db->query('SELECT `subcategory_name` FROM `dashboard_user_ads` WHERE `userId` =' . $userId . ' AND `adsId` =' . $adsId.
+        'AND `subcategory_name` =' .$category);
         $result->execute();
         $row = $result->fetch();
         $page = ($row[0]);
@@ -234,7 +271,7 @@ class ProductMobile
         return $panelUser;
     }
 
-    public static function getProductLiszztByTableNameAndAdsId($table_name, $adsId, $category)
+    public static function getProductLiszztByTableNameAndAdsId($table_name, $adsId)
     {
         $db = Db::getConnectionOnCatics();
         $favAds = array();
@@ -246,7 +283,7 @@ class ProductMobile
             $favAds[$i]['description'] = $row['description'];
             $favAds[$i]['price'] = $row['price'];
             $favAds[$i]['subcategory'] = $row['subcategory'];
-            $favAds[$i]['category'] = $category;
+            $favAds[$i]['category'] = $row['category'];
             $favAds[$i]['date'] = $row['date'];
             $i++;
         }

@@ -2,7 +2,7 @@
 
 class EditController
 {
-    public function actionIndex($adsId)
+    public function actionIndex($category,$subcategory,$adsId)
     {
 
         $userId = UserMobile::checkLogged();
@@ -12,16 +12,17 @@ class EditController
             require_once(ROOT . '/views/error/404.php');
         } else {
             $getTableBySubcatName = array();
-            $getAdsIdByUserCreateId = ProductMobile::getAdsIdByUserIdAndAdsId($userId, $adsId);
-            $getTableBySubcatName = ProductMobile::getTableBySubcatName($getAdsIdByUserCreateId, $userId, $adsId);
+            $categoryMain = CategoryFilterMobile::categoryCheckDoubleParam($category,$subcategory);
+           // $getAdsIdByUserCreateId = ProductMobile::getAdsIdByUserIdAndAdsId($userId, $adsId,$categoryMain);
+            $getTableBySubcatName = ProductMobile::getTableBySubcatName($categoryMain, $userId, $adsId);
             $title = '';
             $description = '';
             $result = array();
             if (isset($_POST['createAds'])) {
                 $title = $_POST['title'];
                 $description = $_POST['description'];
-                $result = UserMobile::userChangeAdsInfo($getAdsIdByUserCreateId, $title, $description, $userId, $adsId);
-                header("Location: http://m.adtoday.co.uk/my-ads/edit/" . $adsId);
+                $result = UserMobile::userChangeAdsInfo($categoryMain, $title, $description, $userId, $adsId);
+                header("Location: http://m.adtoday.co.uk/my-ads/edit/".$category."/".$subcategory."/" . $adsId);
             }
             $paymentsBoxInfo = array();
             $paymentsBoxInfo = PaymentMobile::getAllPayments();
