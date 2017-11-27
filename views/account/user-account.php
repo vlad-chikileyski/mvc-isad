@@ -3,7 +3,7 @@
         <div class="container">
             <div class="breadcrumb">
                 <ul>
-                    <li><a href="#">Home</a></li>
+                    <li><a href="https://adtoday.co.uk/">Home</a></li>
                     <li>Blog</li>
                 </ul>
             </div>
@@ -14,30 +14,49 @@
                     <div class="col-xs-12 col-md-8">
                         <div class="blog-posts">
                             <article class="blog-post">
-                                <figure>
-                                    <img src="assets/img/b1.jpg" alt="dummy">
-                                    <time datetime="2017-02-14">04<br>DEC</time>
-                                </figure>
                                 <header>
-                                    <h3>Five Safety Tips For Buying</h3>
-                                    <ul class="info-list">
-                                        <li><i class="fa fa-user"></i> <a href="#">by adspot</a></li>
-                                        <li><i class="fa fa-comments"></i> <a href="#">33 comments</a></li>
-                                    </ul>
+                                    <h3>All <?php echo $user['username']; ?> ads:</h3>
                                 </header>
-                                <div class="blog-content">
+                                <div class="inner">
+                                    <div class="items-list-md style2 pad-top-0">
+                                        <div class="items-list">
+                                            <?php foreach ($allAds as $ads) : ?>
+                                                <article class="item-spot <!--item-moderated-->">
+                                                    <a href="/ads/<?php echo $ads[0]['category']; ?>/<?php echo $ads[0]['subcategory']; ?>/<?php echo $ads[0]['id']; ?>"
+                                                       class="imgAsBg">
+                                                        <img src="/template/assets/img/items/ad1.png" alt="dummy data">
+                                                    </a>
+                                                    <div class="item-content">
+                                                        <header>
+                                                            <h6><a href="https://adtoday.co.uk/ads/<?php echo $ads[0]['category']; ?>/<?php echo $ads[0]['subcategory']; ?>/<?php echo $ads[0]['id']; ?>"><?php echo $ads[0]['title']; ?></a>
+                                                            </h6>
+                                                            <ul class="item-info">
+                                                                <li><i class="fa fa-clock-o"></i>From: <?php echo $ads[0]['date']; ?>
+                                                                </li>
+                                                                <li><i class="fa fa-eye"></i>4,226</li>
 
-                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form by injected humour or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition injected humour or non-characteristic words etc.</p>
-                                    <br>
-                                    <p>There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form by injected humour or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
-                                    <br>
-                                    <blockquote>
-                                        “Lorem Ipsum is simply dummy text of the printing industry standard dummy text ever since the when an unknown printer took galley”
-                                    </blockquote>
-                                    <br>
-                                    <p>There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form by injected humour or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
+                                                            </ul>
+                                                        </header>
+                                                        <div class="price-tag">£ <?php echo $ads[0]['price']; ?></div>
+                                                        <div class="item-admin-actions text-center">
+                                                            <ul>
+                                                                <li><a class="tc" href="#"><i class="adicon-eye"></i></a>
+                                                                </li>
+                                                                <li><a class="tc6-hover" href="#"><i
+                                                                                class="adicon-edit"></i></a></li>
+                                                                <li><a href="#"><i class="adicon-activate"></i></a></li>
+                                                                <li><a class="tc12-hover" href="#"><i
+                                                                                class="adicon-recyclebin"></i></a></li>
+                                                            </ul>
+                                                        </div>
 
-                                    <hr>
+                                                    </div>
+                                                </article>
+                                            <?php endforeach; ?>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <a href="#" class="btn btn-white block-element btn-md text-center">load more ads</a>
                                 </div>
                             </article>
                         </div>
@@ -46,16 +65,13 @@
                     <div class="col-xs-12 col-md-4">
                         <aside class="sidebar">
                             <div class="widget-about widget">
+                                <figure><img src="<?php echo $user['img']; ?>" alt="dummy"></figure>
                                 <header>
                                     <h4>About Me:</h4>
-                                    <h3>Username: <?php echo $user['username']; ?></h3>
-                                    <h4>Phone: +<?php echo $user['phone']; ?></h4>
-                                    <h4>Phone: +<?php echo $user['phone']; ?></h4>
+                                    <h5>Username: <?php echo $user['username']; ?></h5>
+                                    <h5>Contact phone number is: +<?php echo $user['phone']; ?></h5>
+                                    <h5>Contact email address is: <a style="color: blue"><?php echo $user['email']; ?></a></h5>
                                 </header>
-                                <figure><img src="assets/img/aboutm.jpg" alt="dummy"></figure>
-                                <p>Meh synth Schlitz, tempor duis single
-                                    origin coffee ea next level ethnic fine
-                                    gerstache fanny pack nostrud. Seitan High Life reprehenderit.</p>
                                 <footer>
                                     <img src="/template/assets/img/basic/logo.png" alt="dummy">
                                 </footer>
@@ -82,7 +98,6 @@
                 </div>
 
             </div>
-
         </div>
         <div class="call-to-action">
             <div class="container">
@@ -95,21 +110,21 @@
                         <div class="row inner">
                             <div class="col-xs-4">
                                 <a href="#" class="app-store">
-                                    <img src="assets/img/android.png" alt="Google play">
+                                    <img src="/template/assets/img/android.png" alt="Google play">
                                     <span>download on</span>
                                     <h4>Google Play</h4>
                                 </a>
                             </div>
                             <div class="col-xs-4">
                                 <a href="#" class="app-store">
-                                    <img src="assets/img/apple.png" alt="Apple store">
+                                    <img src="/template/assets/img/apple.png" alt="Apple store">
                                     <span>download on</span>
                                     <h4>Apple Store</h4>
                                 </a>
                             </div>
                             <div class="col-xs-4">
                                 <a href="#" class="app-store">
-                                    <img src="assets/img/win.png" alt="windows store">
+                                    <img src="/template/assets/img/win.png" alt="windows store">
                                     <span>download on</span>
                                     <h4>Windows Store</h4>
                                 </a>
@@ -118,7 +133,7 @@
                     </div>
                     <div class="hidden-xs col-sm-4 col-md-5 pull-right">
                         <div class="action-mock">
-                            <img src="assets/img/app-mock.png" alt="download apps">
+                            <img src="/template/assets/img/app-mock.png" alt="download apps">
                         </div>
                     </div>
                 </div>
