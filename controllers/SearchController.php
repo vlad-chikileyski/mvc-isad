@@ -12,9 +12,13 @@ class SearchController
     {
         if (isset($_POST["search-widget"]) && isset($_POST["search-criteria"])) {
             $value = UtilsFilter::SecReqFilterSearchMainPage($_POST["search-criteria"]);
-            echo $value;
-            header('Location: https://adtoday.co.uk/search/' . $value . '/page-1');
-            exit;
+            if (isset($value) && $value != '') {
+                header('Location: https://adtoday.co.uk/search/' . $value . '/page-1');
+                exit;
+            } else {
+                header("HTTP/1.0 404 Not Found");
+                require_once(ROOT . '/views/error/404.php');
+            }
         } else {
             header("HTTP/1.0 404 Not Found");
             require_once(ROOT . '/views/error/404.php');
@@ -32,7 +36,6 @@ class SearchController
             $count = Product::getProductCountBySearchCriteria($search);
             $pagination = new Pagination($count, $pageparam, Product::SHOW_BY_DEFAULT, 'page-');
             require_once(ROOT . '/views/catalog/search.php');
-
         } else {
             header("HTTP/1.0 404 Not Found");
             require_once(ROOT . '/views/error/404.php');

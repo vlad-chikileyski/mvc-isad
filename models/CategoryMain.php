@@ -7,12 +7,12 @@ class CategoryMain
     {
         switch ($category) {
             case 'mobile-phones-accessories':
-                return "SELECT * FROM MOBILE_PHONES_ACCESSORIES_MOBILE_PHONES WHERE title AND status = 1 
+                return "SELECT * FROM MOBILE_PHONES_ACCESSORIES_MOBILE_PHONES WHERE status = 1 
                   UNION SELECT * FROM MOBILE_PHONES_ACCESSORIES_MOBILE_ACCESORIES WHERE status = 1";
                 break;
 
             case 'electronics-home-appliances':
-                return "SELECT * FROM ELECTRONICS_HOME_APPLIANCES_TV_AUDIO_VIDEO WHERE title AND status = 1 
+                return "SELECT * FROM ELECTRONICS_HOME_APPLIANCES_TV_AUDIO_VIDEO WHERE status = 1 
                   UNION SELECT * FROM ELECTRONICS_HOME_APPLIANCES_CAMERAS_IMAGING WHERE status = 1
                   UNION SELECT * FROM ELECTRONICS_HOME_APPLIANCES_COMPUTERS_TABLETS WHERE status = 1
                   UNION SELECT * FROM ELECTRONICS_HOME_APPLIANCES_HOME_APPLIANCES WHERE status = 1
@@ -20,7 +20,7 @@ class CategoryMain
                 break;
 
             case 'home-garden':
-                return "SELECT * FROM HOME_GARDEN_DECORATION_ACCESSORIES WHERE title AND status = 1 
+                return "SELECT * FROM HOME_GARDEN_DECORATION_ACCESSORIES WHERE status = 1 
                   UNION SELECT * FROM HOME_GARDEN_KITCHENWARE WHERE status = 1
                   UNION SELECT * FROM HOME_GARDEN_FURNITURE WHERE status = 1
                   UNION SELECT * FROM HOME_GARDEN_OTHER_HOME_GARDEN WHERE status = 1
@@ -28,7 +28,7 @@ class CategoryMain
                 break;
 
             case 'fashion-beauty':
-                return "SELECT * FROM FUNCTION_BEAUTY_CLOTHING_ACCESSORIES WHERE title AND status = 1 
+                return "SELECT * FROM FUNCTION_BEAUTY_CLOTHING_ACCESSORIES WHERE status = 1 
                   UNION SELECT * FROM FUNCTION_BEAUTY_JEWELRY_WATCHES WHERE status = 1
                   UNION SELECT * FROM FUNCTION_BEAUTY_HEALTH_BEAUTY_COSMETICS WHERE status = 1";
                 break;
@@ -43,7 +43,7 @@ class CategoryMain
                 break;
 
             case 'kids-babies':
-                return "SELECT * FROM KIDS_BABIES_CLOTHES_FOR_KIDS_AND_BABIES WHERE title AND status = 1 
+                return "SELECT * FROM KIDS_BABIES_CLOTHES_FOR_KIDS_AND_BABIES WHERE status = 1 
                   UNION SELECT * FROM KIDS_BABIES_ACCESSORIES WHERE status = 1
                   UNION SELECT * FROM KIDS_BABIES_TOYS WHERE status = 1
                   UNION SELECT * FROM KIDS_BABIES_OTHER_KIDS_BABIES WHERE status = 1
@@ -51,13 +51,13 @@ class CategoryMain
                 break;
 
             case 'sporting-goods-bikes':
-                return "SELECT * FROM SPORTING_GOODS_BIKES_SPORTING_GOODS WHERE title AND status = 1 
+                return "SELECT * FROM SPORTING_GOODS_BIKES_SPORTING_GOODS WHERE status = 1 
                   UNION SELECT * FROM SPORTING_GOODS_BIKES_BIKES WHERE status = 1
                   UNION SELECT * FROM SPORTING_GOODS_BIKES_OUTDOOR_EQUIPMENT WHERE status = 1";
                 break;
 
             case 'hobbies-music-art-books':
-                return "SELECT * FROM HOBBIES_MUSIC_ART_BOOKS_ANTIQUES_COLLECTIBLES WHERE title AND status = 1 
+                return "SELECT * FROM HOBBIES_MUSIC_ART_BOOKS_ANTIQUES_COLLECTIBLES WHERE status = 1 
                   UNION SELECT * FROM HOBBIES_MUSIC_ART_BOOKS_TICKETS_VOUCHERS WHERE status = 1
                   UNION SELECT * FROM HOBBIES_MUSIC_ART_BOOKS_BOOKS WHERE status = 1
                   UNION SELECT * FROM HOBBIES_MUSIC_ART_BOOKS_OTHER_ITEMS WHERE status = 1
@@ -67,7 +67,7 @@ class CategoryMain
                 break;
 
             case 'business-industrial':
-                return "SELECT * FROM BUSINESS_INDUSTRIAL_FACTORIES_EQUIPMENT WHERE title AND status = 1 
+                return "SELECT * FROM BUSINESS_INDUSTRIAL_FACTORIES_EQUIPMENT WHERE status = 1 
                   UNION SELECT * FROM BUSINESS_INDUSTRIAL_RESTAURANTS_EQUIPMENT WHERE status = 1
                   UNION SELECT * FROM BUSINESS_INDUSTRIAL_MEDICAL_EQUIPMENT WHERE status = 1
                   UNION SELECT * FROM BUSINESS_INDUSTRIAL_SHOPS_LIQUIDATION WHERE status = 1
@@ -76,7 +76,7 @@ class CategoryMain
                 break;
 
             case 'services':
-                return "SELECT * FROM SERVICES_BUSINESS_SERVICES WHERE title AND status = 1 
+                return "SELECT * FROM SERVICES_BUSINESS_SERVICES WHERE status = 1 
                   UNION SELECT * FROM SERVICES_EVENTS WHERE status = 1
                   UNION SELECT * FROM SERVICES_OTHER_SERVICES WHERE status = 1
                   UNION SELECT * FROM SERVICES_PRIVATE_TUTORS WHERE status = 1

@@ -223,9 +223,49 @@ class Product
         $offset = ($page - 1) * self::SHOW_BY_DEFAULT;
         $db = Db::getConnectionOnCatics();
         $products = array();
-        $result = $db->query('SELECT * FROM PETS_BIRDS WHERE title LIKE "%' . $criteria . '%" AND status = 1 
-        UNION SELECT * FROM PETS_CATS WHERE title LIKE "%' . $criteria . '%" AND status = 1 
-        UNION SELECT * FROM PETS_DOGS WHERE title LIKE "%' . $criteria . '%" AND status = 1 
+        $result = $db->query('
+        SELECT * FROM MOBILE_PHONES_ACCESSORIES_MOBILE_PHONES WHERE title LIKE "%' . $criteria . '%" AND status = 1 UNION
+        SELECT * FROM MOBILE_PHONES_ACCESSORIES_MOBILE_ACCESORIES WHERE title LIKE "%' . $criteria . '%" AND status = 1 UNION
+        
+        SELECT * FROM ELECTRONICS_HOME_APPLIANCES_TV_AUDIO_VIDEO WHERE title LIKE "%' . $criteria . '%" AND status = 1 UNION
+        SELECT * FROM ELECTRONICS_HOME_APPLIANCES_CAMERAS_IMAGING WHERE title LIKE "%' . $criteria . '%" AND status = 1 UNION
+        SELECT * FROM ELECTRONICS_HOME_APPLIANCES_COMPUTERS_TABLETS WHERE title LIKE "%' . $criteria . '%" AND status = 1 UNION
+        SELECT * FROM ELECTRONICS_HOME_APPLIANCES_HOME_APPLIANCES WHERE title LIKE "%' . $criteria . '%" AND status = 1 UNION
+        SELECT * FROM ELECTRONICS_HOME_APPLIANCES_VIDEO_GAMES_CONSOLES WHERE title LIKE "%' . $criteria . '%" AND status = 1 UNION
+        SELECT * FROM HOME_GARDEN_DECORATION_ACCESSORIES WHERE title LIKE "%' . $criteria . '%" AND status = 1 UNION
+        SELECT * FROM HOME_GARDEN_KITCHENWARE WHERE title LIKE "%' . $criteria . '%" AND status = 1 UNION
+        SELECT * FROM HOME_GARDEN_FURNITURE WHERE title LIKE "%' . $criteria . '%" AND status = 1 UNION
+        SELECT * FROM HOME_GARDEN_OTHER_HOME_GARDEN WHERE title LIKE "%' . $criteria . '%" AND status = 1 UNION
+        SELECT * FROM HOME_GARDEN_GARDEN_OUTDOOR WHERE title LIKE "%' . $criteria . '%" AND status = 1 UNION
+        SELECT * FROM FUNCTION_BEAUTY_CLOTHING_ACCESSORIES WHERE title LIKE "%' . $criteria . '%" AND status = 1 UNION
+        SELECT * FROM FUNCTION_BEAUTY_JEWELRY_WATCHES WHERE title LIKE "%' . $criteria . '%" AND status = 1 UNION
+        SELECT * FROM FUNCTION_BEAUTY_HEALTH_BEAUTY_COSMETICS WHERE title LIKE "%' . $criteria . '%" AND status = 1 UNION
+        SELECT * FROM PETS_CATS WHERE title LIKE "%' . $criteria . '%" AND status = 1 UNION
+        SELECT * FROM PETS_FISHES WHERE title LIKE "%' . $criteria . '%" AND status = 1 UNION
+        
+        SELECT * FROM PETS_DOGS WHERE title LIKE "%' . $criteria . '%" AND status = 1 UNION
+        SELECT * FROM PETS_HORSES WHERE title LIKE "%' . $criteria . '%" AND status = 1 UNION
+        SELECT * FROM PETS_BIRDS WHERE title LIKE "%' . $criteria . '%" AND status = 1 UNION
+        SELECT * FROM PETS_OTHER_PETS WHERE title LIKE "%' . $criteria . '%" AND status = 1 UNION
+        
+        SELECT * FROM KIDS_BABIES_CLOTHES_FOR_KIDS_AND_BABIES WHERE title LIKE "%' . $criteria . '%" AND status = 1 UNION
+        SELECT * FROM KIDS_BABIES_ACCESSORIES WHERE title LIKE "%' . $criteria . '%" AND status = 1 UNION
+        SELECT * FROM KIDS_BABIES_TOYS WHERE title LIKE "%' . $criteria . '%" AND status = 1 UNION
+        SELECT * FROM KIDS_BABIES_OTHER_KIDS_BABIES WHERE title LIKE "%' . $criteria . '%" AND status = 1 UNION
+        SELECT * FROM KIDS_BABIES_CRIBS_STROLLERS WHERE title LIKE "%' . $criteria . '%" AND status = 1 UNION
+        
+        SELECT * FROM SPORTING_GOODS_BIKES_SPORTING_GOODS WHERE title LIKE "%' . $criteria . '%" AND status = 1 UNION
+        SELECT * FROM SPORTING_GOODS_BIKES_BIKES WHERE title LIKE "%' . $criteria . '%" AND status = 1 UNION
+        SELECT * FROM SPORTING_GOODS_BIKES_OUTDOOR_EQUIPMENT WHERE title LIKE "%' . $criteria . '%" AND status = 1 UNION
+        
+        SELECT * FROM HOBBIES_MUSIC_ART_BOOKS_ANTIQUES_COLLECTIBLES WHERE title LIKE "%' . $criteria . '%" AND status = 1 UNION
+        SELECT * FROM HOBBIES_MUSIC_ART_BOOKS_TICKETS_VOUCHERS WHERE title LIKE "%' . $criteria . '%" AND status = 1 UNION
+        SELECT * FROM HOBBIES_MUSIC_ART_BOOKS_BOOKS WHERE title LIKE "%' . $criteria . '%" AND status = 1 UNION
+        
+        
+        SELECT * FROM KIDS_BABIES_CRIBS_STROLLERS WHERE title LIKE "%' . $criteria . '%" AND status = 1 UNION
+        SELECT * FROM KIDS_BABIES_CRIBS_STROLLERS WHERE title LIKE "%' . $criteria . '%" AND status = 1 UNION
+        SELECT * FROM KIDS_BABIES_CRIBS_STROLLERS WHERE title LIKE "%' . $criteria . '%" AND status = 1 
         ORDER BY id DESC LIMIT 30 OFFSET ' . $offset);
         $i = 0;
         while ($row = $result->fetch()) {
