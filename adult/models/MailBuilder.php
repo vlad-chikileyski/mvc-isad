@@ -20,6 +20,7 @@ class MailBuilder
         return false;
     }
 
+
     /**
      * Information builder & for sending mail
      * {activate your ads}

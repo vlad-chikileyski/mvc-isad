@@ -2,6 +2,22 @@
 
 class AccountController
 {
+    public function actionUserPage($userId)
+            {
+        $allAds=array();
+        $user = UserMobile::getUserById($userId);
+        $getAdsIdByUserCreateId=array();
+        $getAdsIdByUserCreateId = ProductMobile::getAdsIdByUserId($userId);
+        $i = 0;
+        foreach ($getAdsIdByUserCreateId as $item) {
+            $allAds[$i] = ProductMobile::getAdsByCategoryAndUserId($item['subcategory_name'], $item['adsId']);
+            $i++;
+        }
+
+        require_once(ROOT . '/views/account/user-account.php');
+        return true;
+    }
+
     public function actionPanel()
     {
         $userPanelProduct = array();
@@ -31,7 +47,7 @@ class AccountController
             $select_box_gender_var = $_POST['gender'];
             $check_box_newsletter_var = $_POST['newsletter'];
             $result = UserMobile::userChange($userId, $name_param, $email_param, $phone_param, $select_box_gender_var, $check_box_newsletter_var);
-           header("Location: http://m.adtoday.co.uk/account/user");
+            header("Location: http://m.adtoday.co.uk/account/user");
         } else {
             $check_box_newsletter_var1 = $user['newsletter'];
             $select_box_gender_var1 = $user['gender'];
@@ -54,7 +70,7 @@ class AccountController
         $getAdsIdByUserCreateId = ProductMobile::getAdsIdByUserId($userId);
         $i = 0;
         foreach ($getAdsIdByUserCreateId as $item) {
-            $userProduct[$i] = ProductMobile::getProductLiszztByTableNameAndAdsId($item["subcategory_name"], $item["adsId"], $item["category_name"]);
+            $userProduct[$i] = ProductMobile::getProductLiszztByTableNameAndAdsId($item["subcategory_name"], $item["adsId"]);
             $i++;
         }
 

@@ -1,5 +1,7 @@
 <?php
 return array(
+    'account/user-contact/([0-9]+)' => 'user/contact/$1', //AccountController and actionLogout
+    'account/user/([0-9]+)' => 'user/account/$1', //AccountController and actionLogout
     'search/([a-zA-Z0-9\-\%20\%27]+)/page-([0-9]+)' => 'search/parameters/$1/$2', //SearchController and actionParameter
     'search/([a-zA-Z0-9\-\%20\%27]+)' => 'search/parameters/$1', //CatalogController and actionIndex
     'search' => 'search/validate',
