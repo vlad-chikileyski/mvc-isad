@@ -12,6 +12,29 @@ class Product
         return $count;
 
     }
+    public static function getAdsByCategoryAndUserId($getAdsIdByUserCreateId,$userId)
+    {
+        $db = Db::getConnectionOnCatics();
+        $product = array();
+        $result = $db->query('SELECT * FROM `' . $getAdsIdByUserCreateId . '`WHERE id =' . $userId);
+        $i = 0;
+        while ($row = $result->fetch()) {
+            $product[$i]['id'] = $row['id'];
+            $product[$i]['image-0'] = $row['image-0'];
+            $product[$i]['image-1'] = $row['image-1'];
+            $product[$i]['image-2'] = $row['image-2'];
+            $product[$i]['image-3'] = $row['image-3'];
+            $product[$i]['image-4'] = $row['image-4'];
+            $product[$i]['title'] = $row['title'];
+            $product[$i]['date'] = $row['date'];
+            $product[$i]['price'] = $row['price'];
+            $product[$i]['category'] = $row['category'];
+            $product[$i]['subcategory'] = $row['subcategory'];
+            $product[$i]['description'] = $row['description'];
+            $i++;
+        }
+        return $product;
+    }
 
     public static function getProductsListByCategory($sqlSelect, $page = 1)
     {
@@ -47,6 +70,28 @@ class Product
         return $result->execute();
     }
 
+    public static function getSimilarAdsByCategoryAndSubcategory($getTableNameProduct, $categoryParam, $subcategoryParam)
+    {
+        $db = Db::getConnectionOnCatics();
+        $product = array();
+        $result = $db->query('SELECT * FROM `' . $getTableNameProduct . '` ORDER BY id DESC LIMIT 5');
+        $i = 0;
+        while ($row = $result->fetch()) {
+            $product[$i]['id'] = $row['id'];
+            $product[$i]['image-0'] = $row['image-0'];
+            $product[$i]['image-1'] = $row['image-1'];
+            $product[$i]['image-2'] = $row['image-2'];
+            $product[$i]['image-3'] = $row['image-3'];
+            $product[$i]['image-4'] = $row['image-4'];
+            $product[$i]['title'] = $row['title'];
+            $product[$i]['price'] = $row['price'];
+            $product[$i]['category'] = $categoryParam;
+            $product[$i]['subcategory'] = $subcategoryParam;
+            $product[$i]['description'] = $row['description'];
+            $i++;
+        }
+        return $product;
+    }
 
     public static function getProductById($tableNameProduct, $productId, $categoryParam, $subCategoryParam)
     {

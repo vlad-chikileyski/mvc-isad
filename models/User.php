@@ -8,6 +8,36 @@
  */
 class User
 {
+    public static function userChangePassword($userId, $password)
+    {
+        $db = Db::getConnection();
+        $sql = 'UPDATE `user` SET  `password` = :password  WHERE `id` = :userId';
+        $result = $db->prepare($sql);
+        $result->bindParam(':userId', $userId, PDO::PARAM_INT);
+        $result->bindParam(':password', $password, PDO::PARAM_STR);
+        return $result->execute();
+    }
+
+    public static function userSubscribe($email)
+    {
+        $db = Db::getConnection();
+        $sql = 'INSERT INTO `USER_SUBSCRIBE` (email)' . 'VALUES (:email)';
+        $result = $db->prepare($sql);
+        $result->bindParam(':email', $email, PDO::PARAM_STR);
+        return $result->execute();
+    }
+
+    public static function userChangeEmail($userId, $email, $check_box_newsletter_var)
+    {
+        $db = Db::getConnection();
+        $sql = 'UPDATE `user` SET  `email` = :email , `newsletter` = :newsletter  WHERE `id` = :userId';
+        $result = $db->prepare($sql);
+        $result->bindParam(':userId', $userId, PDO::PARAM_INT);
+        $result->bindParam(':email', $email, PDO::PARAM_STR);
+        $result->bindParam(':newsletter', $check_box_newsletter_var, PDO::PARAM_STR);
+        return $result->execute();
+    }
+
     public static function getUserIdByTokenAndId($key, $token)
     {
         $db = Db::getConnection();
@@ -38,6 +68,20 @@ class User
         return false;
     }
 
+    public static function checkSubEmail($email_subscribe)
+    {
+        $db = Db::getConnection();
+        $sql = 'SELECT * FROM `USER_SUBSCRIBE` WHERE `email` = :email';
+        $result = $db->prepare($sql);
+        $result->bindParam(':email', $email_subscribe, PDO::PARAM_STR);
+        $result->execute();
+        $user = $result->fetch();
+        if ($user) {
+            return $user['email'];
+        }
+        return false;
+    }
+
     public static function disableTokenAndKeyForAds($adsId, $userId, $user_auth_key, $user_auth_token)
     {
         $db = Db::getConnection();
@@ -61,6 +105,17 @@ class User
         $result->bindParam(':username', $username, PDO::PARAM_STR);
         $result->bindParam(':email', $email, PDO::PARAM_STR);
         $result->bindParam(':password', $password, PDO::PARAM_STR);
+        return $result->execute();
+    }
+
+    public static function saveCreateAlert($email, $frequency)
+    {
+        $db = Db::getConnection();
+        $sql = 'INSERT INTO newsletter_subscribe (email,frequency)'
+            . 'VALUES (:email, :frequency)';
+        $result = $db->prepare($sql);
+        $result->bindParam(':email', $email, PDO::PARAM_STR);
+        $result->bindParam(':frequency', $frequency, PDO::PARAM_STR);
         return $result->execute();
     }
 
@@ -122,6 +177,20 @@ class User
         $result->execute();
         if ($result->fetchColumn())
             return true;
+        return false;
+    }
+
+    public static function checkEmailExistsAlert($email)
+    {
+        $db = Db::getConnection();
+        $sql = 'SELECT * FROM newsletter_subscribe WHERE email = :email';
+        $result = $db->prepare($sql);
+        $result->bindParam(':email', $email, PDO::PARAM_STR);
+        $result->execute();
+        $emails = $result->fetch();
+        if ($emails) {
+            return $emails['email'];
+        }
         return false;
     }
 

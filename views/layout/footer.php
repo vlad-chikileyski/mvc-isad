@@ -5,12 +5,19 @@
                 <a href="#"><img src="/template/assets/img/basic/logo.png" alt="adspotlogo"></a>
             </div>
             <div class="col-xs-12 col-sm-6 col-md-5">
-                <form action="/" class="widget-subscribe-2">
+                <?php if (isset($errorr) && is_array($errorr)): ?>
+                    <ul>
+                        <?php foreach ($errorr as $error): ?>
+                            <li> <?php echo $error; ?></li>
+                        <?php endforeach; ?>
+                    </ul>
+                <?php endif; ?>
+                <form method="post" class="widget-subscribe-2">
                     <div class="labeled-input">
-                        <label>Enter your email address</label>
-                        <input title="title here" type="email">
+                        <input title="title here" type="email" name="email-subscribe" id="email-subscribe">
+                        <label for="email-subscribe">Enter your email address</label>
                     </div>
-                    <button class="btn btn-blue">subscribe</button>
+                    <button type="submit" class="btn btn-blue" name="submit-subscribe">subscribe</button>
                 </form>
             </div>
         </div>

@@ -38,4 +38,27 @@ jQuery(function ($) {
             }
         }
     });
+
+    function check_param(value, cat) {
+        $.ajax({
+            url: "/request/get-form.php",
+            method: "POST",
+            data: {
+                formtype: value,
+                formmain: cat
+            },
+            success: function (data) {
+                $('#result').html(data);
+
+            }
+        })
+
+    };
+
+    $('#change_chekbox').change(function () {
+        var value = $(this).val();
+        var cat = $(this).find(':selected').attr('data-value');
+        check_param(value, cat);
+    });
+
 });

@@ -38,6 +38,21 @@ class MailBuilderMain
         }
         return false;
     }
+    public static function configureMailForContact($username, $email , $title , $comment,$user)
+    {
+        // Retrieve the email template required
+        $message = file_get_contents(ROOT . '/views/mail/Qaccount_contact.html');
+        $message = str_replace('%username%', $username, $message);
+        $message = str_replace('%user_email%', $email, $message);
+        $message = str_replace('%user_title%', $title, $message);
+        $message = str_replace('%user_comment%', $comment, $message);
+        $message = str_replace('%user%', $user, $message);
+        $messageTitle = 'You have a letter from user  -' .$username;
+        if (Mail::sendEmail($user, $message, $messageTitle)) {
+            return true;
+        }
+        return false;
+    }
 
     /**
      * Information builder & for sending mail
