@@ -473,12 +473,18 @@
 <?php endforeach; ?>
     <div class="user-widget text-center">
         <img src="/template/assets/img/basic/user-thumb.png" alt="asd">
-        <h4><a href="https://adtoday.co.uk/account/user/<?php echo $user['id']; ?>"><?php echo $user['username']; ?></a></h4>
+        <h4><?php echo $user['username']; ?></h4>
         <div>Member Since 2013</div>
-        <a href="#" class="link">More Ads</a>
+        <a href="https://adtoday.co.uk/account/user/<?php echo $user['id']; ?>" class="link">More Ads</a>
         <ul class="clearfix">
-            <li><a class="btn btn-transparent" href="#">Send Message</a></li>
-            <li><a class="btn btn-transparent" href="#">Report Ad</a></li>
+            <?php if (User::isGuest()): ?>
+                <li><a class="btn btn-transparent" href="https://adtoday.co.uk/account/user-contact/<?php echo $user['id'];?>">Send Message</a></li>
+                <li><a class="btn btn-transparent" href="#">Report Ad</a></li>
+            <?php else: ?>
+                <li><a class="btn btn-transparent">Send Message</a></li>
+                <li><a class="btn btn-transparent">Report Ad</a></li>
+                <label>You must be logged</label>
+            <?php endif; ?>
         </ul>
     </div>
     <div class="share-widget">
