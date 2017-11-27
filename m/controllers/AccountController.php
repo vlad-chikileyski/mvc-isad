@@ -3,7 +3,7 @@
 class AccountController
 {
     public function actionUserPage($userId)
-    {
+            {
         $allAds=array();
         $user = UserMobile::getUserById($userId);
         $getAdsIdByUserCreateId=array();
