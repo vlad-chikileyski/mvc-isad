@@ -45,9 +45,7 @@
             <!-- Product Header -->
             <div class="content-header">
                 <div class="breadcrumbs animated fadeIn"><!-- Product breadcrumb -->
-                    <?php foreach ($mainAds
-
-                    as $mainAds): ?>
+                    <?php foreach ($mainAds as $mainAds): ?>
                     <a href="http://m.adtoday.co.uk/sub/<?php echo $mainAds['category']; ?>/"><?php echo ucfirst($mainAds['category']); ?></a>
                     <a href="http://m.adtoday.co.uk/catalog/<?php echo $mainAds['category']; ?>/<?php echo $mainAds['subcategory']; ?>/"><?php echo ucfirst($mainAds['subcategory']); ?></a>
                     <a class="active"
@@ -113,7 +111,6 @@
                     </div>
                 </div>
                 <!-- End Product meta -->
-
             </div>
             <!-- End Product Header -->
 
