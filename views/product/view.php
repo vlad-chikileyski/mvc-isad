@@ -473,7 +473,7 @@
 <?php endforeach; ?>
     <div class="user-widget text-center">
         <img src="/template/assets/img/basic/user-thumb.png" alt="asd">
-        <h4><a href="#"><?php echo $user['username']; ?></a></h4>
+        <h4><a href="https://adtoday.co.uk/account/user/<?php echo $user['id']; ?>"><?php echo $user['username']; ?></a></h4>
         <div>Member Since 2013</div>
         <a href="#" class="link">More Ads</a>
         <ul class="clearfix">
