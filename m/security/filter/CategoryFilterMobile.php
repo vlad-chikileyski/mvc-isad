@@ -157,13 +157,13 @@ class CategoryFilterMobile
             case 'fashion-beauty':
                 switch ($urlSubParam) {
                     case 'clothing-accessories':
-                        return 'FUNCTION_BEAUTY_CLOTHING_ACCESSORIES';
+                        return 'FASHION_BEAUTY_CLOTHING_ACCESSORIES';
                         break;
                     case 'jewelry-watches':
-                        return 'FUNCTION_BEAUTY_JEWELRY_WATCHES';
+                        return 'FASHION_BEAUTY_JEWELRY_WATCHES';
                         break;
                     case 'health-beauty-cosmetics':
-                        return 'FUNCTION_BEAUTY_HEALTH_BEAUTY_COSMETICS';
+                        return 'FASHION_BEAUTY_HEALTH_BEAUTY_COSMETICS';
                         break;
                     default:
                         return false;
@@ -173,7 +173,7 @@ class CategoryFilterMobile
             case 'pets':
                 switch ($urlSubParam) {
                     case 'cats':
-                        return 'PETS_CARS';
+                        return 'PETS_CATS';
                         break;
                     case 'fishes':
                         return 'PETS_FISHES';
@@ -267,7 +267,7 @@ class CategoryFilterMobile
                         return 'JOBS_BUSINESS_DEVELOPMENT';
                         break;
                     case'education':
-                        return 'JOBS_ADUCATION';
+                        return 'JOBS_EDUCATION';
                         break;
                     case'hospitality':
                         return 'JOBS_HOSPITALITY';
@@ -291,9 +291,9 @@ class CategoryFilterMobile
                         return 'JOBS_IT_TELECOM';
                         break;
                     case'medical-health':
-                        return 'JOBS_MADICAL_HEALTH';
+                        return 'JOBS_MEDICAL_HEALTH';
                         break;
-                    case'seles':
+                    case'sales':
                         return 'JOBS_SALES';
                         break;
                     case'art-design':
@@ -324,7 +324,7 @@ class CategoryFilterMobile
                         return 'BUSINESS_INDUSTRIAL_FACTORIES_EQUIPMENT';
                         break;
                     case'restaurants-equipments':
-                        return 'BUSINESS_INDUSTRIAL_RESTAURANTS_EQUIPMENT';
+                        return 'BUSINESS_INDUSTRIAL_RESTAURANTS_EQUIPMENTS';
                         break;
                     case'medical-equipment':
                         return 'BUSINESS_INDUSTRIAL_MEDICAL_EQUIPMENT';
@@ -369,7 +369,7 @@ class CategoryFilterMobile
                         return 'SERVICES_DOMESTIC_SERVICES';
                         break;
                     case'movers':
-                        return 'SERCVICES_MOVERS';
+                        return 'SERVICES_MOVERS';
                         break;
                     case'pets':
                         return 'SERVICES_PETS';
@@ -386,8 +386,8 @@ class CategoryFilterMobile
                     case'swingers':
                         return 'ADULT_SWINGERS';
                         break;
-                    case'gay-escort':
-                        return 'ADULT_GAY_ESCORT';
+                    case'gay-escorts':
+                        return 'ADULT_GAY_ESCORTS';
                         break;
                     case'escorts-and-massages':
                         return 'ADULT_ESCORT_AND_MASSAGES';

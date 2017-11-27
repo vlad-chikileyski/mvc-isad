@@ -30,12 +30,6 @@
         <!-- End Form Search -->
 
         <?php include ROOT . '/views/layout/main-menu.php'; ?>
-        <li class="bg7-icon-wrap">
-            <a href="#tab002">
-                <span><i class="adicon-document"></i></span>
-                My Ads
-            </a>
-        </li>
 
     </div>
     <!-- END LEFT SIDEBAR -->
@@ -86,9 +80,9 @@
                                         <img src="/template/images/80x80.png" alt="">
                                     </div>
                                     <div class="ctn">
-                                        <h3><a href="#"/></h3><?php echo $ads[0]['title']; ?></a></h3></br>
+                                        <h3><a href="http://m.adtoday.co.uk/ads/<?php echo $ads[0]['category']; ?>/<?php echo $ads[0]['subcategory']; ?>/<?php echo $ads[0]['id']; ?>"/></h3><?php echo $ads[0]['title']; ?></a></h3></br>
                                         <span>Description: <?php echo $ads[0]['description']; ?></span>
-                                        <p><a href="#" class="track-order">Edit</a></p>
+                                        <p><a href="http://m.adtoday.co.uk/my-ads/edit/<?php echo $ads[0]['category']; ?>/<?php echo $ads[0]['subcategory']; ?>/<?php echo $ads[0]['id']; ?>" class="track-order">Edit</a></p>
                                     </div>
                                 </li>
                             </ol>

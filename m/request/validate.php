@@ -5,7 +5,7 @@ if (isset($_POST["query"])) {
     if (strlen($data)>4) {
         start($data);
     } else {
-       header("HTTP/1.0 404 Not Found");
+        header("HTTP/1.0 404 Not Found");
     }
 }
 ?>

@@ -38,14 +38,21 @@
     <div id="page">
 
         <?php include ROOT . '/views/layout/top-navbar.php'; ?>
-
-
-
+        <?php if (isset($errors) && is_array($errors)): ?>
+            <ul>
+                <?php foreach ($errors as $error): ?>
+                    <li> - <?php echo $error; ?></li>
+                <?php endforeach; ?>
+            </ul>
+        <?php endif; ?>
         <!-- CONTENT CONTAINER -->
         <div class="content-container">
-
-            <h1 class="page-title animated fadeIn">Product Small List</h1>
-
+            <h1 class="page-title animated fadeIn"> <?php echo ucfirst($categoryProducts[0]['subcategory']); ?></h1>
+            <div class="breadcrumbs animated fadeIn"><!-- Product breadcrumb -->
+                <a href="http://m.adtoday.co.uk/sub/<?php echo $categoryProducts[0]['category']; ?>/"><?php echo ucfirst($categoryProducts[0]['category']); ?></a>
+                <a class="active"
+                   href="http://m.adtoday.co.uk/catalog/<?php echo $categoryProducts[0]['category']; ?>/<?php echo $categoryProducts[0]['subcategory']; ?>/"><?php echo ucfirst($categoryProducts[0]['subcategory']); ?></a>
+            </div><!-- End Product breadcrumb -->
             <!-- Product navigation -->
             <div class="product-list-navigation animated fadeInRight">
                 <div class="product-num">1-24 from 9661 product</div>
@@ -98,13 +105,13 @@
             <!-- Pagination -->
             <ul class="pagination">
                 <?php echo $pagination->get(); ?>
-               <!-- <li class="disabled"><a href="#!"><i class="fa fa-angle-double-left"></i></a></li>
-                <li class="active"><a href="#!">1</a></li>
-                <li class="waves-effect"><a href="#!">2</a></li>
-                <li class="waves-effect"><a href="#!">3</a></li>
-                <li class="waves-effect"><a href="#!">4</a></li>
-                <li class="waves-effect"><a href="#!">5</a></li>
-                <li class="waves-effect"><a href="#!"><i class="fa fa-angle-double-right"></i></a></li>-->
+                <!-- <li class="disabled"><a href="#!"><i class="fa fa-angle-double-left"></i></a></li>
+                 <li class="active"><a href="#!">1</a></li>
+                 <li class="waves-effect"><a href="#!">2</a></li>
+                 <li class="waves-effect"><a href="#!">3</a></li>
+                 <li class="waves-effect"><a href="#!">4</a></li>
+                 <li class="waves-effect"><a href="#!">5</a></li>
+                 <li class="waves-effect"><a href="#!"><i class="fa fa-angle-double-right"></i></a></li>-->
 
             </ul>
             <!-- End Pagination -->

@@ -2,33 +2,85 @@
 
 class AccountController
 {
-    public function actionAds()
-{
-    $userProduct = array();
-    $userId = UserMobile::checkLogged();
-    $user = UserMobile::getUserById($userId);
-    $getAdsIdByUserCreateId = array();
-    $getAdsIdByUserCreateId = ProductMobile::getAdsIdByUserId($userId);
-    $i = 0;
-    foreach ($getAdsIdByUserCreateId as $item){
-        $userProduct[$i] = ProductMobile::getProductListByTableNameAndAdsId($item["subcategory_name"], $item["adsId"], $item["category_name"]);
-        $i++;
+    public function actionUserPage($userId)
+            {
+        $allAds=array();
+        $user = UserMobile::getUserById($userId);
+        $getAdsIdByUserCreateId=array();
+        $getAdsIdByUserCreateId = ProductMobile::getAdsIdByUserId($userId);
+        $i = 0;
+        foreach ($getAdsIdByUserCreateId as $item) {
+            $allAds[$i] = ProductMobile::getAdsByCategoryAndUserId($item['subcategory_name'], $item['adsId']);
+            $i++;
+        }
+
+        require_once(ROOT . '/views/account/user-account.php');
+        return true;
     }
 
-    $getFavAdsByUserCreateId = array();
-    $getFavAdsByUserCreateId = ProductMobile::getFavAdsByCreatedUserId($userId);
-    $r = 0;
-    foreach ($getFavAdsByUserCreateId as $favItem) {
-        $userFavAd[$r] = ProductMobile::getFavAdsListByTableNameAndAdsId($favItem["subcategory_name"], $favItem["ads_id"], $favItem["category_name"]);
-        $r++;
+    public function actionPanel()
+    {
+        $userPanelProduct = array();
+        $userId = UserMobile::checkLogged();
+        $user = UserMobile::getUserById($userId);
+        if ($userId == false) {
+            header("Location: http://m.adtoday.co.uk/login");
+            require_once(ROOT . '/views/login/login-mobile.php');
+        } else {
+            $getPanelIdByUserCreateId = array();
+            $getPanelIdByUserCreateId = ProductMobile::getPanelIdByUserId($userId);
+            $user = UserMobile::getUserById($userId);
+            require_once(ROOT . '/views/account/panel-account.php');
+
+        }
+        return true;
     }
 
-    require_once(ROOT . '/views/account/account-ads.php');
-    return true;
-}
+    public function actionUser()
+    {
+        $userId = UserMobile::checkLogged();
+        $user = UserMobile::getUserById($userId);
+        if (isset($_POST['change'])) {
+            $name_param = $_POST['username'];
+            $email_param = $_POST['email'];
+            $phone_param = $_POST['phone'];
+            $select_box_gender_var = $_POST['gender'];
+            $check_box_newsletter_var = $_POST['newsletter'];
+            $result = UserMobile::userChange($userId, $name_param, $email_param, $phone_param, $select_box_gender_var, $check_box_newsletter_var);
+            header("Location: http://m.adtoday.co.uk/account/user");
+        } else {
+            $check_box_newsletter_var1 = $user['newsletter'];
+            $select_box_gender_var1 = $user['gender'];
+            $name = $user['username'];
+            $email = $user['email'];
+            $phone = $user['phone'];
+        }
+        require_once(ROOT . '/views/account/form-account.php');
+        return true;
+    }
 
 
-    public function actionLogin()
+    public
+    function actionAds()
+    {
+        $userProduct = array();
+        $userId = UserMobile::checkLogged();
+        $user = UserMobile::getUserById($userId);
+        $getAdsIdByUserCreateId = array();
+        $getAdsIdByUserCreateId = ProductMobile::getAdsIdByUserId($userId);
+        $i = 0;
+        foreach ($getAdsIdByUserCreateId as $item) {
+            $userProduct[$i] = ProductMobile::getProductLiszztByTableNameAndAdsId($item["subcategory_name"], $item["adsId"]);
+            $i++;
+        }
+
+        require_once(ROOT . '/views/account/account-ads.php');
+        return true;
+    }
+
+
+    public
+    function actionLogin()
     {
         $useremail = '';
         $password = '';
@@ -59,14 +111,15 @@ class AccountController
 
     }
 
-    public function actionRegister()
+    public
+    function actionRegister()
     {
         $username = '';
         $password = '';
         $useremail = '';
         $query_registration = false;
         if (isset($_POST['signUp'])) {
-                $username = $_POST['username'];
+            $username = $_POST['username'];
             $password = $_POST['password'];
             $useremail = $_POST['useremail'];
 
@@ -86,7 +139,7 @@ class AccountController
             }
             if ($errors == false) {
                 $query_registration = UserMobile::register($username, $useremail, $password);
-                if ($query_registration &&  MailBuilderMobile::configureMailForActivateAccount($useremail, $username)) {
+                if ($query_registration && MailBuilderMobile::configureMailForActivateAccount($useremail, $username)) {
                     header("Location: /activate-account/200");
                 }
             }

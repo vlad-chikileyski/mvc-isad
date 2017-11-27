@@ -1,13 +1,13 @@
 <?php
 
-class Post
+class PostMain
 {
 
-    public static function save($tableName, $title, $description, $userId, $postcode, $subcategory, $status, $price)
+    public static function save($tableName, $title, $description, $userId, $postcode, $subcategory, $status, $price, $category)
     {
         $db = Db::getConnectionOnCatics();
-        $sql = 'INSERT INTO ' . $tableName . ' (title, description, user_id, postcode, status, subcategory, price)'
-            . 'VALUES (:title, :description, :user_id, :postcode, :status, :subcategory, :price)';
+        $sql = 'INSERT INTO ' . $tableName . ' (title, description, user_id, postcode, status, subcategory, price, category)'
+            . 'VALUES (:title, :description, :user_id, :postcode, :status, :subcategory, :price, :category)';
         $result = $db->prepare($sql);
         $result->bindParam(':title', $title, PDO::PARAM_STR);
         $result->bindParam(':description', $description, PDO::PARAM_STR);
@@ -16,6 +16,7 @@ class Post
         $result->bindParam(':status', $status, PDO::PARAM_STR);
         $result->bindParam(':subcategory', $subcategory, PDO::PARAM_STR);
         $result->bindParam(':price', $price, PDO::PARAM_STR);
+        $result->bindParam(':category', $category, PDO::PARAM_STR);
         $result->execute();
         $id = $db->lastInsertId();
         return $id;

@@ -86,9 +86,13 @@
     <div class="container">
     <div class="breadcrumb">
         <ul>
-            <li><a href="/">Home</a></li>
-            <li><?php echo $product['category']; ?></li>
-            <li><?php echo $product['subcategory']; ?></li>
+            <li><a href="https://adtoday.co.uk/">Home</a></li>
+            <li>
+                <a href="https://adtoday.co.uk/catalog/<?php echo $product['category']; ?>"><?php echo $product['category']; ?></a>
+            </li>
+            <li>
+                <a href="https://adtoday.co.uk/catalog/<?php echo $product['category']; ?>/<?php echo $product['subcategory']; ?>"><?php echo $product['subcategory']; ?></a>
+            </li>
             <li><?php echo $product['title']; ?></li>
         </ul>
     </div>
@@ -289,8 +293,8 @@
                     </li>
                     <li>
                         <div class="inner clearfix">
-                            <span class="label">Type of ad:</span>
-                            <span class="desc">{Type of ad}</span>
+                            <span class="label">Category:</span>
+                            <span class="desc"><?php echo ucfirst($product['category']); ?></span>
                         </div>
                     </li>
                     <li>
@@ -301,14 +305,14 @@
                     </li>
                     <li>
                         <div class="inner clearfix">
-                            <span class="label">Member since:</span>
-                            <span class="desc">{Member since}</span>
+                            <span class="label">Type of ad:</span>
+                            <span class="desc"><?php echo ucfirst($product['subcategory']); ?></span>
                         </div>
                     </li>
                 </ul>
             </div>
             <div class="text-widget">
-                <header><h4>Product Description</h4></header>
+                <header><h4>Description</h4></header>
                 <div class="inner">
                     <?php echo $product['description']; ?>
 
@@ -336,11 +340,18 @@
                         and we will email you relevant ads.</p>
                 </div>
                 <div class="col-xs-12 col-md-5">
-                    <form action="/">
+                    <?php if (isset($errors) && is_array($errors)): ?>
+                        <ul>
+                            <?php foreach ($errors as $error): ?>
+                                <li> - <?php echo $error; ?></li>
+                            <?php endforeach; ?>
+                        </ul>
+                    <?php endif; ?>
+                    <form method="post">
                         <div class="field-block-md">
                             <div class="labeled-input">
                                 <label>Email address</label>
-                                <input title="enter your email" type="email">
+                                <input title="enter your email" type="email" name="email" id="email">
                             </div>
                         </div>
                         <div class="field-block-md">
@@ -348,27 +359,68 @@
                                 <i class="fa fa-bars"></i>
                                 <button>Frequency</button>
                                 <ul>
-                                    <li class="custom-radio">
-                                        <input type="radio" id="create0021" name="item-brand-name">
+                                    <?php
+                                    switch ($frequency) {
+                                        case 0:
+                                            echo
+                                            '<li class="custom-radio">
+                                        <input checked="checked" type="radio" id="create1" value="Once a day" name="create">
                                         <label for="create0021">Once a day</label>
-                                    </li>
-                                    <li class="custom-radio">
-                                        <input type="radio" id="create0031" name="item-brand-name">
+                                        <input type="radio" id="create2" value="Once a week" name="create">
                                         <label for="create0031">Once a week</label>
-                                    </li>
-                                    <li class="custom-radio">
-                                        <input type="radio" id="create0041" name="item-brand-name">
+                                        <input type="radio" id="create3" value="Twice a month" name="create">
                                         <label for="create0041">Twice a month</label>
-                                    </li>
-                                    <li class="custom-radio">
-                                        <input type="radio" id="create0051" name="item-brand-name">
+                                        <input type="radio" id="create4" value="Once a month" name="create4">
                                         <label for="create0051">Once a month</label>
-                                    </li>
+                                    </li>';
+                                            break;
+                                        case 1:
+                                            echo
+                                            '<li class="custom-radio">
+                                        <input  type="radio" id="create1" value="Once a day" name="create">
+                                        <label for="create0021">Once a day</label>
+                                        <input checked="checked" type="radio" id="create2" value="Once a week" name="create">
+                                        <label for="create0031">Once a week</label>
+                                        <input type="radio" id="create3" value="Twice a month" name="create">
+                                        <label for="create0041">Twice a month</label>
+                                        <input type="radio" id="create4" value="Once a month" name="create4">
+                                        <label for="create0051">Once a month</label>
+                                    </li>';
+                                            break;
+                                        case 2:
+                                            echo
+                                            '<li class="custom-radio">
+                                        <input  type="radio" id="create1" value="Once a day" name="create">
+                                        <label for="create0021">Once a day</label>
+                                        <input  type="radio" id="create2" value="Once a week" name="create">
+                                        <label for="create0031">Once a week</label>
+                                        <input checked="checked" type="radio" id="create3" value="Twice a month" name="create">
+                                        <label for="create0041">Twice a month</label>
+                                        <input type="radio" id="create4" value="Once a month" name="create4">
+                                        <label for="create0051">Once a month</label>
+                                    </li>';
+                                            break;
+                                        case 3:
+                                            echo
+                                            '<li class="custom-radio">
+                                        <input  type="radio" id="create1" value="Once a day" name="create">
+                                        <label for="create0021">Once a day</label>
+                                        <input  type="radio" id="create2" value="Once a week" name="create">
+                                        <label for="create0031">Once a week</label>
+                                        <input  type="radio" id="create3" value="Twice a month" name="create">
+                                        <label for="create0041">Twice a month</label>
+                                        <input checked="checked" type="radio" id="create4" value="Once a month" name="create4">
+                                        <label for="create0051">Once a month</label>
+                                    </li>';
+                                            break;
+                                    }
+                                    ?>
                                 </ul>
                             </div>
                         </div>
                         <div class="field-block-md">
-                            <button class="btn btn-small btn-blue block-element danger-hover">Create Alert
+                            <button type="submit" name="createAlert"
+                                    class="btn btn-small btn-blue block-element danger-hover">Create Alert
                             </button>
                         </div>
                     </form>
@@ -377,92 +429,31 @@
         </div>
 
         <div class="items-list-md single-similar-items">
-            <h4>Similar ads</h4>
+            <h4>You may like also</h4>
             <div class="items-list">
-                <article class="item-spot">
-                    <a href="#" class="imgAsBg">
-                        <img src="/template/assets/img/items/ad1.png" alt="dummy data">
-                    </a>
-                    <div class="item-content">
-                        <header>
-                            <h5><a href="single.html">Canon SX Powershot A Great D-SLR</a></h5>
-                            <span class="item-info-short">2:49 pm in Melbourne</span>
-                        </header>
-                        <div class="price-tag">$229.9</div>
-                        <div class="item-actions text-center">
-                            <ul class="contact-options">
-                                <li><a href="#" class="fa fa-envelope tooltip-parent">
-                                        <span class="tooltip">Send Message</span>
-                                    </a></li>
-                                <li><a href="#" class="fa fa-phone tooltip-parent">
-                                        <span class="tooltip">Mobile Number</span>
-                                    </a></li>
-                                <li><a href="#" class="fa fa-heart tooltip-parent">
-                                        <span class="tooltip">save ad</span>
-                                    </a></li>
-                            </ul>
-                            <a class="view-item" href="single.html">view ad</a>
+                <?php foreach ($similarAds as $ads): ?>
+                    <article class="item-spot">
+                        <a href="#" class="imgAsBg">
+                            <img src="/template/assets/img/items/ad2.jpg" alt="dummy data">
+                        </a>
+                        <div class="item-content">
+                            <header>
+                                <h5>
+                                    <a href="https://adtoday.co.uk/ads/<?php echo $ads['category']; ?>/<?php echo $ads['subcategory']; ?>/<?php echo $ads['id']; ?>"><?php echo ucfirst($ads['subcategory']); ?></a>
+                                </h5>
+                                <span class="item-info-short"><?php echo ucfirst($ads['title']); ?></span>
+                            </header>
+                            <div class="price-tag">£ <?php echo $ads['price']; ?></div>
+                            <div class="item-actions text-center">
+                                <a class="view-item"
+                                   href="https://adtoday.co.uk/ads/<?php echo $ads['category']; ?>/<?php echo $ads['subcategory']; ?>/<?php echo $ads['id']; ?>">view
+                                    ad</a>
+
+                            </div>
 
                         </div>
-
-                    </div>
-                </article>
-                <article class="item-spot">
-                    <a href="#" class="imgAsBg">
-                        <img src="/template/assets/img/items/ad2.jpg" alt="dummy data">
-                    </a>
-                    <div class="item-content">
-                        <header>
-                            <h5><a href="single.html">Canon SX Powershot A Great D-SLR</a></h5>
-                            <span class="item-info-short">2:49 pm in Melbourne</span>
-                        </header>
-                        <div class="price-tag">$229.9</div>
-                        <div class="item-actions text-center">
-                            <ul class="contact-options">
-                                <li><a href="#" class="fa fa-envelope tooltip-parent">
-                                        <span class="tooltip">Send Message</span>
-                                    </a></li>
-                                <li><a href="#" class="fa fa-phone tooltip-parent">
-                                        <span class="tooltip">Mobile Number</span>
-                                    </a></li>
-                                <li><a href="#" class="fa fa-heart tooltip-parent">
-                                        <span class="tooltip">save ad</span>
-                                    </a></li>
-                            </ul>
-                            <a class="view-item" href="single.html">view ad</a>
-
-                        </div>
-
-                    </div>
-                </article>
-                <article class="item-spot">
-                    <a href="#" class="imgAsBg">
-                        <img src="/template/assets/img/items/ad3.jpg" alt="dummy data">
-                    </a>
-                    <div class="item-content">
-                        <header>
-                            <h5><a href="single.html">Canon SX Powershot A Great D-SLR</a></h5>
-                            <span class="item-info-short">2:49 pm in Melbourne</span>
-                        </header>
-                        <div class="price-tag">$229.9</div>
-                        <div class="item-actions text-center">
-                            <ul class="contact-options">
-                                <li><a href="#" class="fa fa-envelope tooltip-parent">
-                                        <span class="tooltip">Send Message</span>
-                                    </a></li>
-                                <li><a href="#" class="fa fa-phone tooltip-parent">
-                                        <span class="tooltip">Mobile Number</span>
-                                    </a></li>
-                                <li><a href="#" class="fa fa-heart tooltip-parent">
-                                        <span class="tooltip">save ad</span>
-                                    </a></li>
-                            </ul>
-                            <a class="view-item" href="single.html">view ad</a>
-
-                        </div>
-
-                    </div>
-                </article>
+                    </article>
+                <?php endforeach; ?>
             </div>
         </div>
 
@@ -470,24 +461,30 @@
     <aside class="sidebar col-xs-12 col-sm-5 col-md-4">
     <div class="inner">
     <div class="price-widget short-widget">
-        <i class="adicon-dollar"></i>
+        <i class="fa fa-gbp"></i>
         <strong>£<?php echo $product['price']; ?></strong>
         <span>Negotiable Price</span>
     </div>
     <div class="number-widget short-widget">
         <i class="adicon-phone"></i>
-        <strong>£<?php echo $product['price']; ?></strong>
-        <span>Negotiable Price</span>
+        <strong>+<?php echo $user['phone']; ?></strong>
+        <span>Phone</span>
     </div>
 <?php endforeach; ?>
     <div class="user-widget text-center">
         <img src="/template/assets/img/basic/user-thumb.png" alt="asd">
-        <h4><a href="#"><?php echo $user['username']; ?></a></h4>
+        <h4><?php echo $user['username']; ?></h4>
         <div>Member Since 2013</div>
-        <a href="#" class="link">More Ads</a>
+        <a href="https://adtoday.co.uk/account/user/<?php echo $user['id']; ?>" class="link">More Ads</a>
         <ul class="clearfix">
-            <li><a class="btn btn-transparent" href="#">Send Message</a></li>
-            <li><a class="btn btn-transparent" href="#">Report Ad</a></li>
+            <?php if (User::isGuest()): ?>
+                <li><a class="btn btn-transparent" href="https://adtoday.co.uk/account/user-contact/<?php echo $user['id'];?>">Send Message</a></li>
+                <li><a class="btn btn-transparent" href="#">Report Ad</a></li>
+            <?php else: ?>
+                <li><a class="btn btn-transparent">Send Message</a></li>
+                <li><a class="btn btn-transparent">Report Ad</a></li>
+                <label>You must be logged</label>
+            <?php endif; ?>
         </ul>
     </div>
     <div class="share-widget">

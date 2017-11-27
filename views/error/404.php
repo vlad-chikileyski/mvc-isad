@@ -41,7 +41,7 @@
               <h2>page not found</h2>
               <p class="nrml-txt">We Couldn’t Find This Page</p>
           </div>
-          <a href="index.html" class="back-btn"><i class="fa fa-home"></i> Back To Home</a>
+          <a href="https://adtoday.co.uk" class="back-btn"><i class="fa fa-home"></i> Back To Home</a>
       </section>
 
     </div>

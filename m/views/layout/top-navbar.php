@@ -13,9 +13,9 @@
         </a>
         <?php if (UserMobile::isGuest()): ?>
             <ul id="dropdown1" class="dropdown-content">
-                <li><a href="panel-account.html"><i class="fa fa-server"></i> Panel Account</a></li>
-                <li><a href="form-account.html"><i class="fa fa-user"></i> My Profile</a></li>
-                <li><a href="order-history.html"><i class="fa fa-history"></i> Order History</a></li>
+                <li><a href="http://m.adtoday.co.uk/account/panel"><i class="fa fa-server"></i> Panel Account</a></li>
+                <li><a href="http://m.adtoday.co.uk/account/user"><i class="fa fa-user"></i> My Profile</a></li>
+                <li><a href="http://m.adtoday.co.uk/account/ads"><i class="fa fa-history"></i> My ads</a></li>
                 <li class="divider"></li>
                 <li><a href="http://m.adtoday.co.uk/account/logout/"><i class="fa fa-user"></i>Logout</a></li>
 
@@ -34,7 +34,7 @@
         </a>-->
     </div>
     <div class="site-title">
-        <h1>AdToday - Buy & Sell Anything</h1>
+        <h1>AdToday</h1>
     </div>
 </div>
 <!-- End FIXED Top Navbar -->

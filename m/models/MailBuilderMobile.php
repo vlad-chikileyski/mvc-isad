@@ -39,6 +39,22 @@ class MailBuilderMobile
         return false;
     }
 
+    public static function configureMailForChangePassword($usermail,$username,$ID_TOKEN,$KEY_TOKEN)
+    {
+        // Retrieve the email template required
+        $message = file_get_contents(ROOT . '/views/mail/Qchange_password.html');
+        $message = str_replace('%username%', $username, $message);
+        $message = str_replace('%user_login%', $usermail, $message);
+        $message = str_replace('%key%', $ID_TOKEN, $message);
+        $message = str_replace('%token%', $KEY_TOKEN, $message);
+        $message = str_replace('%mobile_number%', '+00000000000', $message);
+        $messageTitle = 'Confirmation of password change on AdToday.co.uk';
+        if (MailMobile::sendEmail($usermail, $message, $messageTitle)) {
+            return true;
+        }
+        return false;
+    }
+
     /**
      * Information builder & for sending mail
      * {activate your ads}

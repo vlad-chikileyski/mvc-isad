@@ -67,7 +67,7 @@ class PostController
                                     if ($recordId != '') {
                                         $incrementStatus = Catalog::incrementCountFromCategory($tableName);
                                         if ($incrementStatus) {
-                                            if (isset($paymentType) && $paymentType!=false) {
+                                            if (isset($paymentType) && $paymentType != false) {
                                                 $paymentInsert = PaymentAdult::updatePaymentInfo($userId, $recordId, $ID_TOKEN, $KEY_TOKEN, $tableName, $paymentType);
                                                 if ($paymentInsert) {
                                                     header("Location: https://adtoday.co.uk/payment/pay/" . $ID_TOKEN . "/" . $KEY_TOKEN);

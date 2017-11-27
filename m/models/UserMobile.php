@@ -9,6 +9,61 @@
 class UserMobile
 {
 
+    public static function userChange($userId, $name, $email, $phone, $select_box_gender_var, $check_box_newsletter_var)
+    {
+        $db = Db::getConnection();
+        $sql = 'UPDATE `user` SET  `username` = :username, `email` = :email, `phone` = :phone, `gender` = :gender ,`newsletter` = :newsletter WHERE `id` = :userId';
+        $result = $db->prepare($sql);
+        $result->bindParam(':userId', $userId, PDO::PARAM_STR);
+        $result->bindParam(':username', $name, PDO::PARAM_STR);
+        $result->bindParam(':email', $email, PDO::PARAM_STR);
+        $result->bindParam(':phone', $phone, PDO::PARAM_STR);
+        $result->bindParam(':gender', $select_box_gender_var, PDO::PARAM_INT);
+        $result->bindParam(':newsletter', $check_box_newsletter_var, PDO::PARAM_INT);
+        return $result->execute();
+    }
+
+    public static function userChangePassword($userId, $password)
+    {
+        $db = Db::getConnection();
+        $sql = 'UPDATE `user` SET  `password` = :password  WHERE `id` = :userId';
+        $result = $db->prepare($sql);
+        $result->bindParam(':userId', $userId, PDO::PARAM_INT);
+        $result->bindParam(':password', $password, PDO::PARAM_STR);
+        return $result->execute();
+    }
+
+    public static function userChangeAdsInfo($getTableBySubcatName, $title, $description, $userId, $adsId)
+    {
+        $db = Db::getConnectionOnCatics();
+        $sql = 'UPDATE  `' . $getTableBySubcatName . '` SET  `title`=:title, `description`=:description WHERE `user_id`=:user_id  AND `id`=:adsId';
+        $result = $db->prepare($sql);
+        $result->bindParam(':user_id', $userId, PDO::PARAM_INT);
+        $result->bindParam(':adsId', $adsId, PDO::PARAM_STR);
+        $result->bindParam(':title', $title, PDO::PARAM_STR);
+        $result->bindParam(':description', $description, PDO::PARAM_STR);
+        return $result->execute();
+    }
+
+    public static function userChangeToken($userId, $token_password)
+    {
+        $db = Db::getConnection();
+        $sql = 'UPDATE `user` SET  `reset_password` = :token  WHERE `id` = :userId';
+        $result = $db->prepare($sql);
+        $result->bindParam(':userId', $userId, PDO::PARAM_INT);
+        $result->bindParam(':token', $token_password, PDO::PARAM_STR);
+        return $result->execute();
+    }
+
+    public static function userDeleteKey($userId)
+    {
+        $db = Db::getConnection();
+        $sql = 'DELETE FROM `USER_CHANGE_PASSWORD` WHERE `user_id`=:user_id';
+        $result = $db->prepare($sql);
+        $result->bindParam(':user_id', $userId, PDO::PARAM_STR);
+        return $result->execute();
+    }
+
     public static function register($username, $email, $password)
     {
         $db = Db::getConnection();
@@ -20,6 +75,19 @@ class UserMobile
         $result->bindParam(':password', $password, PDO::PARAM_STR);
         return $result->execute();
     }
+
+    public static function generateToken($userId, $ID_TOKEN, $KEY_TOKEN)
+    {
+        $db = Db::getConnection();
+        $sql = 'INSERT INTO USER_CHANGE_PASSWORD (`user_id` , `key-token` , `id-token`)'
+            . 'VALUES (:user_id, :key_token, :id_token)';
+        $result = $db->prepare($sql);
+        $result->bindParam(':user_id', $userId, PDO::PARAM_STR);
+        $result->bindParam(':key_token', $ID_TOKEN, PDO::PARAM_STR);
+        $result->bindParam(':id_token', $KEY_TOKEN, PDO::PARAM_STR);
+        return $result->execute();
+    }
+
 
     /**
      * generate new password;
@@ -79,6 +147,35 @@ class UserMobile
         $result->execute();
         if ($result->fetchColumn()) {
             return true;
+        }
+        return false;
+    }
+
+    public static function checkToken($key, $token)
+    {
+        $db = Db::getConnection();
+        $sql = 'SELECT * FROM USER_CHANGE_PASSWORD WHERE `key-token` = :key AND `id-token` =:token';
+        $result = $db->prepare($sql);
+        $result->bindParam(':key', $key, PDO::PARAM_STR);
+        $result->bindParam(':token', $token, PDO::PARAM_STR);
+        $result->execute();
+        if ($result->fetchColumn()) {
+            return true;
+        }
+        return false;
+    }
+
+    public static function getUserIdByToken($key, $token)
+    {
+        $db = Db::getConnection();
+        $sql = 'SELECT user_id FROM USER_CHANGE_PASSWORD WHERE `key-token` = :key AND `id-token` =:token';
+        $result = $db->prepare($sql);
+        $result->bindParam(':key', $key, PDO::PARAM_STR);
+        $result->bindParam(':token', $token, PDO::PARAM_STR);
+        $result->execute();
+        $user = $result->fetch();
+        if ($user) {
+            return $user['user_id'];
         }
         return false;
     }

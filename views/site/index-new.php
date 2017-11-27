@@ -116,7 +116,7 @@
                                     <li><a href="https://adtoday.co.uk/catalog/electronics-home-appliances/video-games-consoles/">Video games - Consoles</a></li>
                                 </ul>
                             </li>
-                            <li><a href="https://jobs.adtoday.co.uk/catalog/properties"><i class="adicon-briefcase"></i>Jobs</a>
+                            <li><a href="https://jobs.adtoday.co.uk/catalog/"><i class="adicon-briefcase"></i>Jobs</a>
                                 <ul style=" width: 500px;">
                                     <div class="e">
                                         <div class="col-sm-6">
@@ -284,11 +284,12 @@
                 </div>
                 <div class="col-sm-9">
                     <div class="category-search-tabbed">
-
-                        <div class="search-widget">
-                            <input type="text" id="typed4">
-                            <button type="submit"><i class="fa fa-search"></i></button>
-                        </div>
+                            <form method="post" action="https://adtoday.co.uk/search" enctype="multipart/form-data">
+                                <div class="search-widget">
+                                    <input name="search-criteria" type="text" autocomplete="off" autofocus="autofocus" id="typed4">
+                                    <button name="search-widget" type="submit"><i class="fa fa-search"></i></button>
+                                </div>
+                            </form>
                     </div>
                 </div>
                 <div id="typed-strings">
@@ -393,6 +394,52 @@
                 </div>
             </div>
         </div>
+        <section class="section pb-0 white-bg">
+
+            <div class="heading small text-center">
+                <h2>Work Process</h2>
+                4 easy steps to go
+            </div>
+
+            <div class="container">
+                <div class="walk-through style2">
+
+                    <div class="text-with-icons style2">
+                        <div class="widget-icon">
+                            <span class="fa fa-key"></span>
+                        </div>
+                        <h6>Join Us</h6>
+                        <p>Lorem ipsum dolor amet potenti simply free esquam.</p>
+                    </div>
+
+                    <div class="text-with-icons style2">
+                        <div class="widget-icon">
+                            <span class="fa fa-pencil"></span>
+                        </div>
+                        <h6>Create Ad</h6>
+                        <p>Lorem ipsum dolor amet potenti simply free esquam.</p>
+                    </div>
+
+                    <div class="text-with-icons style2">
+                        <div class="widget-icon">
+                            <span class="fa fa-bullhorn"></span>
+                        </div>
+                        <h6>Get Offers</h6>
+                        <p>Lorem ipsum dolor amet potenti simply free esquam.</p>
+                    </div>
+
+                    <div class="text-with-icons style2">
+                        <div class="widget-icon">
+                            <span class="fa fa-check"></span>
+                        </div>
+                        <h6>Sell It</h6>
+                        <p>Lorem ipsum dolor amet potenti simply free esquam.</p>
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
         <div class="section">
             <div class="container">
                 <div class="row">
@@ -421,46 +468,6 @@
                                 <p>Morbi ut tellus ac leo molestie luctus nec vehicula sed justo ut varius onec tempor
                                     rhoncus volutpat ras lorem.</p>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="call-to-action">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xs-12 col-sm-8 col-md-7 pull-right">
-                        <header>
-                            <span class="text-uppercase">Make Your Phone a classified machine</span>
-                            <h2>Download Free Classified App</h2>
-                        </header>
-                        <div class="row inner">
-                            <div class="col-xs-4">
-                                <a href="#" class="app-store">
-                                    <img src="template/assets/img/android.png" alt="Google play">
-                                    <span>download on</span>
-                                    <h4>Google Play</h4>
-                                </a>
-                            </div>
-                            <div class="col-xs-4">
-                                <a href="#" class="app-store">
-                                    <img src="template/assets/img/apple.png" alt="Apple store">
-                                    <span>download on</span>
-                                    <h4>Apple Store</h4>
-                                </a>
-                            </div>
-                            <div class="col-xs-4">
-                                <a href="#" class="app-store">
-                                    <img src="template/assets/img/win.png" alt="windows store">
-                                    <span>download on</span>
-                                    <h4>Windows Store</h4>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="hidden-xs col-sm-4 col-md-5 pull-right">
-                        <div class="action-mock">
-                            <img src="template/assets/img/app-mock.png" alt="download apps">
                         </div>
                     </div>
                 </div>

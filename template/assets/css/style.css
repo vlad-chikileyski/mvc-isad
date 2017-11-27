@@ -7197,7 +7197,6 @@ a.view-item, .contact-options li a, .listing-actions a, .listing-actions .fa,
         float: left;
         height: auto;
         padding: 0 5px;
-        background: none;
     }
 }
 
@@ -7229,7 +7228,6 @@ a.view-item, .contact-options li a, .listing-actions a, .listing-actions .fa,
     }
 
     .items-grid-style .item-spot .item-content {
-        background: #ffffff;
         padding: 10px 30px 30px;
     }
 

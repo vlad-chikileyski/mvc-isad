@@ -223,10 +223,17 @@
                 </li>
             </ul>
         </li>
+        <?php if (UserMobile::isGuest()): ?>
         <li><a href="http://m.adtoday.co.uk/add/"><i class="fa fa-plus"></i> Post add</a></li>
-        <li><a href="cart.html"><i class="fa fa-user-circle"></i> You account</a></li>
+        <li><a href="http://m.adtoday.co.uk/account/user"><i class="fa fa-user-circle"></i> You account</a></li>
         <li><a href="http://m.adtoday.co.uk/contact/"><i class="fa fa-envelope"></i> Contact</a></li>
         <li><a href="http://m.adtoday.co.uk/terms/"><i class="fa fa-paper-plane-o"></i> Terms</a></li>
+        <?php else: ?>
+        <li><a href="http://m.adtoday.co.uk/add/"><i class="fa fa-plus"></i> Post add</a></li>
+        <li><a href="http://m.adtoday.co.uk/login"><i class="fa fa-user-circle"></i> You account</a></li>
+        <li><a href="http://m.adtoday.co.uk/contact/"><i class="fa fa-envelope"></i> Contact</a></li>
+        <li><a href="http://m.adtoday.co.uk/terms/"><i class="fa fa-paper-plane-o"></i> Terms</a></li>
+        <?php endif; ?>
     </ul>
 </div>
 <!-- End Site/App Menu -->

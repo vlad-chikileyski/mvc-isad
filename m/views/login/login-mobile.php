@@ -40,8 +40,6 @@
         <?php include ROOT . '/views/layout/top-navbar.php'; ?>
 
 
-
-
         <!-- CONTENT CONTAINER -->
         <div class="content-container">
 
@@ -78,10 +76,10 @@
 
             <!-- Register Section -->
             <div class="page-block">
-                <span class="block semibold">Not registered yet? Register</span>
+                <span class="block semibold">Not registered yet?<a href="http://m.adtoday.co.uk/register"> Register</a></span>
                 <p>Since the belonging of the record and having stupid apologize return can't be able and you always
                     mine.</p>
-                <button class="btn green block" type="button">Login</button>
+                <a class="btn green block"  href="http://m.adtoday.co.uk/register">Register</a>
             </div>
             <!-- End Register Section -->
 
@@ -92,7 +90,6 @@
     <!-- END MAIN PAGE -->
 
 </div><!-- #main -->
-
 
 
 </body>

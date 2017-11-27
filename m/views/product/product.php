@@ -1,228 +1,198 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-	<title>Shofy - Mobile Shop Template</title>
-	<meta charset="utf-8">
-	<meta content="IE=edge" http-equiv="x-ua-compatible">
-	<meta content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" name="viewport">
-	<meta content="yes" name="apple-mobile-web-app-capable">
-	<meta content="yes" name="apple-touch-fullscreen">
+    <title>Shofy - Mobile Shop Template</title>
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="x-ua-compatible">
+    <meta content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
 
-	<link rel="stylesheet" type="text/css" href="/template/css/style.css">
-	<link rel="stylesheet" type="text/css" href="/template/css/responsive.css">
-	<link rel="shortcut icon" href="/template/images/favicon.png">
+    <link rel="stylesheet" type="text/css" href="/template/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/template/css/responsive.css">
+    <link rel="shortcut icon" href="/template/images/favicon.png">
 </head>
 
 <body>
 
 <div id="main">
 
-	<!-- LEFT SIDEBAR -->
-	<div id="slide-out-left" class="side-nav">
+    <!-- LEFT SIDEBAR -->
+    <div id="slide-out-left" class="side-nav">
 
-		<!-- Form Search -->
-		<div class="top-left-nav">
-			<div class="searchbar">
-				<i class="fa fa-search"></i>
-				<input type="text" placeholder="Search">
-			</div>
-		</div>
-		<!-- End Form Search -->
+        <!-- Form Search -->
+        <div class="top-left-nav">
+            <div class="searchbar">
+                <i class="fa fa-search"></i>
+                <input type="text" placeholder="Search">
+            </div>
+        </div>
+        <!-- End Form Search -->
+        <?php include ROOT . '/views/layout/main-menu.php'; ?>
 
-		<?php include ROOT .'/veiws/layout/main-menu.php';?>
+    </div>
+    <!-- END LEFT SIDEBAR -->
 
-	</div>
-	<!-- END LEFT SIDEBAR -->
+    <!-- MAIN PAGE -->
+    <div id="page">
 
-	<!-- MAIN PAGE -->
-	<div id="page">
-
-		<?php include ROOT .'/views/layout/top-navbar.php';?>
+        <?php include ROOT . '/views/layout/top-navbar.php'; ?>
 
 
-		<!-- CONTENT CONTAINER -->
-		<div class="content-container">
+        <!-- CONTENT CONTAINER -->
+        <div class="content-container">
 
-			<!-- Product Header -->
-			<div class="content-header">
+            <!-- Product Header -->
+            <div class="content-header">
+                <div class="breadcrumbs animated fadeIn"><!-- Product breadcrumb -->
+                    <?php foreach ($mainAds as $mainAds): ?>
+                    <a href="http://m.adtoday.co.uk/sub/<?php echo $mainAds['category']; ?>/"><?php echo ucfirst($mainAds['category']); ?></a>
+                    <a href="http://m.adtoday.co.uk/catalog/<?php echo $mainAds['category']; ?>/<?php echo $mainAds['subcategory']; ?>/"><?php echo ucfirst($mainAds['subcategory']); ?></a>
+                    <a class="active"
+                       href="http://m.adtoday.co.uk/catalog/<?php echo $mainAds['category']; ?>/<?php echo $mainAds['subcategory']; ?>/<?php echo $mainAds['id']; ?>"><?php echo ucfirst($mainAds['title']); ?></a>
+                </div><!-- End Product breadcrumb -->
+                <h2 class="product-title animated fadeIn"></h2>
+                <?php echo ucfirst($mainAds['title']); ?><!-- Product title -->
+                <!-- Product thumbnail slider -->
+                <ul class="product-slider animated fadeInRight"><!-- Single thumbnail -->
+                    <li>
+                        <a class="fullscreen-icon swipebox" href="<?php echo $mainAds['image-1']; ?>"
+                           title="<?php echo $mainAds['title']; ?>">
+                            <i class="fa fa-expand"></i>
+                        </a>
+                        <img src="<?php echo $mainAds['image-1']; ?>" alt="img"/>
+                    </li>
+                    <li>
+                        <a class="fullscreen-icon swipebox" href="<?php echo $mainAds['image-2']; ?>"
+                           title="<?php echo $mainAds['title']; ?>">
+                            <i class="fa fa-expand"></i>
+                        </a>
+                        <img src="<?php echo $mainAds['image-2']; ?>" alt="img"/>
+                    </li>
+                    <li>
+                        <a class="fullscreen-icon swipebox" href="<?php echo $mainAds['image-3']; ?>"
+                           title="<?php echo $mainAds['title']; ?>">
+                            <i class="fa fa-expand"></i>
+                        </a>
+                        <img src="<?php echo $mainAds['image-3']; ?>" alt="img"/>
+                    </li>
+                </ul><!-- End single thumbnail -->
+                <div class="slick-thumbs"><!-- Small thumb indicator -->
+                    <ul>
+                        <li>
+                            <img src="<?php echo $mainAds['image-1']; ?>" alt="img"/>
+                        </li>
+                        <li>
+                            <img src="<?php echo $mainAds['image-2']; ?>" alt="img"/>
+                        </li>
+                        <li>
+                            <img src="<?php echo $mainAds['image-3']; ?>" alt="img"/>
+                        </li>
+                    </ul>
+                </div><!-- End small thumb indicator -->
+                <!-- End Product thumbnail slider -->
 
-				<div class="breadcrumbs animated fadeIn"><!-- Product breadcrumb -->
-					<a href="#!">Fashion</a>
-					<a href="#!">Female Pants</a>
-					<a class="active" href="#!">Blues</a>
-				</div><!-- End Product breadcrumb -->
+                <!-- You can also use static thumbnail (without slider) via HTML tag below
+                ---------------------------------------------------
+                <div class="big-thumb">
+                    <img src="images/1.jpg" alt="">
+                </div>
+                -------------------------------------------------
+                -->
 
-				<h2 class="product-title animated fadeIn">Jeans Import HQ</h2><!-- Product title -->
+                <!-- Product meta -->
+                <div class="product-meta animated fadeInUp">
+                    <div class="price">
+                        <span class="price">£ <?php echo $mainAds['price']; ?></span>
+                    </div>
+                    <!-- Beside .in-stock class, you can also use .out-of-stock class -->
+                    <div class="availability in-stock">
+                        <?php echo $mainAds['date']; ?>
+                    </div>
+                </div>
+                <!-- End Product meta -->
+            </div>
+            <!-- End Product Header -->
 
-				<!-- Product thumbnail slider -->
-				<ul class="product-slider animated fadeInRight"><!-- Single thumbnail -->
-					<li>
-						<a class="fullscreen-icon swipebox" href="/template/images/shop3.jpg" title="This is dummy caption.">
-							<i class="fa fa-expand"></i>
-						</a>
-						<img src="/template/images/240x240.png" alt="img" />
-					</li>
-					<li>
-						<a class="fullscreen-icon swipebox" href="/template/images/shop12.jpg" title="This is dummy caption.">
-							<i class="fa fa-expand"></i>
-						</a>
-						<img src="/template/images/240x240.png" alt="img" />
-					</li>
-					<li>
-						<a class="fullscreen-icon swipebox" href="/template/images/shop6.jpg" title="This is dummy caption.">
-							<i class="fa fa-expand"></i>
-						</a>
-						<img src="/template/images/240x240.png" alt="img" />
-					</li>
-				</ul><!-- End single thumbnail -->
-				<div class="slick-thumbs"><!-- Small thumb indicator -->
-					<ul>
-						<li>
-							<img src="/template/images/80x80.png" alt="img" />
-						</li>
-						<li>
-							<img src="/template/images/80x80.png" alt="img" />
-						</li>
-						<li>
-							<img src="/template/images/80x80.png" alt="img" />
-						</li>
-					</ul>
-				</div><!-- End small thumb indicator -->
-				<!-- End Product thumbnail slider -->
+            <!-- Product tabs -->
+            <div class="product-tabs">
+                <ul class="tabs">
+                    <li class="tab"><a class="active" href="#detail">Description</a></li>
+                    <li class="tab"><a href="#review">Details</a></li>
+                </ul>
+            </div>
+            <!-- End Product tabs -->
 
-				<!-- You can also use static thumbnail (without slider) via HTML tag below
-				---------------------------------------------------
-				<div class="big-thumb">
-					<img src="images/1.jpg" alt="">
-				</div>
-				-------------------------------------------------
-				-->
+            <!-- Product content -->
+            <div class="product-content">
 
-				<!-- Product meta -->
-				<div class="product-meta animated fadeInUp">
-					<div class="rating">
-						<i class="fa fa-star active"></i>
-						<i class="fa fa-star active"></i>
-						<i class="fa fa-star active"></i>
-						<i class="fa fa-star"></i>
-						<i class="fa fa-star"></i>
-					</div>
-					<div class="price">
-						<span class="price-before">$ 101.1</span>$ 96.24
-					</div>
-					<!-- Beside .in-stock class, you can also use .out-of-stock class -->
-					<div class="availability in-stock">
-						In Stock
-					</div>
-				</div>
-				<!-- End Product meta -->
-
-			</div>
-			<!-- End Product Header -->
-
-			<!-- Product tabs -->
-			<div class="product-tabs">
-				<ul class="tabs">
-					<li class="tab"><a href="#detail">Details</a></li>
-                    <li class="tab"><a class="active" href="#review">Description</a></li>
-				</ul>
-			</div>
-			<!-- End Product tabs -->
-
-			<!-- Product content -->
-			<div class="product-content">
-				<!-- Product review list tabs -->
-				<div class="tab-content" id="review">
-
-					<ol class="product-review-list">
-						<li>
-							<div class="review-idty">
-								<div class="name">
-									Andriy Sheva
-								</div>
-								<div class="product-rating">
-									<i class="fa fa-star active"></i>
-									<i class="fa fa-star active"></i>
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star"></i>
-								</div>
-							</div>
-							<div class="review-ctn">
-								awesome product
-							</div>
-						</li>
-						<li>
-							<div class="review-idty">
-								<div class="name">
-									Carlos de Mello
-								</div>
-								<div class="product-rating">
-									<i class="fa fa-star active"></i>
-									<i class="fa fa-star active"></i>
-									<i class="fa fa-star active"></i>
-									<i class="fa fa-star active"></i>
-									<i class="fa fa-star"></i>
-								</div>
-							</div>
-							<div class="review-ctn">
-								The product has come softly, thank you maleo.
-							</div>
-						</li>
-						<li>
-							<div class="review-idty">
-								<div class="name">
-									Jackson Thiago
-								</div>
-								<div class="product-rating">
-									<i class="fa fa-star active"></i>
-									<i class="fa fa-star active"></i>
-									<i class="fa fa-star active"></i>
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star"></i>
-								</div>
-							</div>
-							<div class="review-ctn">
-								No one doubt about quality of this product. Congratulations for all.
-							</div>
-						</li>
-						<li>
-							<div class="review-idty">
-								<div class="name">
-									Melanie Ricardo
-								</div>
-								<div class="product-rating">
-									<i class="fa fa-star active"></i>
-									<i class="fa fa-star active"></i>
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star"></i>
-								</div>
-							</div>
-							<div class="review-ctn">
-								Only one thing, please give us some explanation more.
-							</div>
-						</li>
-					</ol>
-				</div>
-				<!-- End Product review list tabs -->
                 <!-- Product detail tabs -->
                 <div class="tab-content" id="detail">
-                    <p>The awesome can be light everything do shame in the house. After of all, we made beautiful design in small industry.</p>
-                    <p>What its mean? Its mean if we could had delicious and money more, we can't stand on the right side.</p>
+                    <p><?php echo ucfirst($mainAds['description']); ?></p>
                 </div>
                 <!-- End Product detail tabs -->
 
-			</div>
-			<!-- End Product content -->
+                <!-- Product review list tabs -->
+                <div class="tab-content" id="review">
 
-            <!-- Product navigation -->
-            <div class="product-action margin-bottom">
-                <a class="btn green btn-block margin-bottom_low" href="#">Add to wishlist</a>
+                    <ol class="product-review-list">
+                        <li>
+                            <div class="review-idty">
+                                <div class="name">
+                                    Postcode
+                                </div>
+                            </div>
+                            <div class="review-ctn">
+                                <?php echo $categoryProduct[0]['postcode']; ?>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="review-idty">
+                                <div class="name">
+                                    Posted by:
+                                </div>
+                            </div>
+                            <div class="review-ctn">
+                                <?php echo $categoryProduct[0]['date']; ?>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="review-idty">
+                                <div class="name">
+                                    Category
+                                </div>
+                            </div>
+                            <div class="review-ctn">
+                                <?php echo ucfirst($categoryProduct[0]['category']); ?>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="review-idty">
+                                <div class="name">
+                                    Subcategory
+                                </div>
+                            </div>
+                            <div class="review-ctn">
+                                <?php echo ucfirst($categoryProduct[0]['subcategory']); ?>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="review-idty">
+                                <div class="name">
+                                    Posted by
+                                </div>
+                            </div>
+                            <div class="review-ctn">
+                                <a href="http://m.adtoday.co.uk/user/<?php echo $user['id']; ?>"><?php echo ucfirst($user['username']); ?></a>
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+                <!-- End Product review list tabs -->
+
             </div>
-            <!-- End Product navigation -->
-
-
+            <!-- End Product content -->
+            <?php endforeach; ?>
 
             <div class="line"></div>
 
@@ -234,22 +204,22 @@
                 </h2>
 
                 <ol class="product-list-slider">
-                    <?php foreach ($similarAds as $ads):?>
-                    <li>
-                        <div class="thumb">
-                            <a href="http://m.adtoday.co.uk/ads/<?php echo $ads['category']; ?>/<?php echo $ads['subcategory']; ?>/<?php echo $ads['id']; ?>">
-                                <img src="<?php echo $ads['image-0']; ?>">
-                            </a>
-                        </div>
-                        <div class="product-ctn">
-                            <div class="product-name">
-                                <span><?php echo $ads['title']; ?></span>
+                    <?php foreach ($similarAds as $ads): ?>
+                        <li>
+                            <div class="thumb">
+                                <a href="http://m.adtoday.co.uk/ads/<?php echo $ads['category']; ?>/<?php echo $ads['subcategory']; ?>/<?php echo $ads['id']; ?>">
+                                    <img src="<?php echo $ads['image-0']; ?>">
+                                </a>
                             </div>
-                            <div class="price">
-                                <span class="price-current">£ <?php echo $ads['price']; ?></span>
+                            <div class="product-ctn">
+                                <div class="product-name">
+                                    <span><?php echo ucfirst($ads['title']); ?></span>
+                                </div>
+                                <div class="price">
+                                    <span class="price-current">£ <?php echo $ads['price']; ?></span>
+                                </div>
                             </div>
-                        </div>
-                    </li>
+                        </li>
                     <?php endforeach; ?>
                 </ol>
 
@@ -258,12 +228,12 @@
             </div>
             <!-- End Related product section -->
 
-		</div>
-		<!-- END CONTENT CONTAINER -->
-        <?php include ROOT .'/views/layout/footer.php';?>
+        </div>
+        <!-- END CONTENT CONTAINER -->
+        <?php include ROOT . '/views/layout/footer.php'; ?>
 
-	</div>
-	<!-- END MAIN PAGE -->
+    </div>
+    <!-- END MAIN PAGE -->
 
 </div><!-- #main -->
 </body>
