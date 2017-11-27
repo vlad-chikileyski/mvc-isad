@@ -80,12 +80,12 @@
     </div>
 </div>
 
-    <div class="app-canvas">
+    <div class="app-canvas-modif">
         <div class="container">
             <div class="breadcrumb">
                 <ul>
                     <li><a href="https://adtoday.co.uk/">Home</a></li>
-                    <li>Blog</li>
+                    <li>User <?php echo $user['username']; ?></li>
                 </ul>
             </div>
 
@@ -94,68 +94,58 @@
                 <div class="row">
                     <div class="col-xs-12 col-md-8">
                         <div class="blog-posts">
-                            <article class="blog-post">
-                                <header>
-                                    <h3>All <?php echo $user['username']; ?> ads:</h3>
-                                </header>
-                                <div class="inner">
-                                    <div class="items-list-md style2 pad-top-0">
-                                        <div class="items-list">
-                                            <?php foreach ($allAds as $ads) : ?>
-                                                <article class="item-spot <!--item-moderated-->">
-                                                    <a href="/ads/<?php echo $ads[0]['category']; ?>/<?php echo $ads[0]['subcategory']; ?>/<?php echo $ads[0]['id']; ?>"
-                                                       class="imgAsBg">
-                                                        <img src="/template/assets/img/items/ad1.png" alt="dummy data">
-                                                    </a>
-                                                    <div class="item-content">
-                                                        <header>
-                                                            <h6><a href="https://adtoday.co.uk/ads/<?php echo $ads[0]['category']; ?>/<?php echo $ads[0]['subcategory']; ?>/<?php echo $ads[0]['id']; ?>"><?php echo $ads[0]['title']; ?></a>
-                                                            </h6>
-                                                            <ul class="item-info">
-                                                                <li><i class="fa fa-clock-o"></i>From: <?php echo $ads[0]['date']; ?>
-                                                                </li>
-                                                                <li><i class="fa fa-eye"></i>4,226</li>
+                            <header>
+                                <h3>All <?php echo $user['username']; ?> ads:</h3>
+                            </header>
+                            <div class="inner">
+                                <div class="items-list-md style2 pad-top-0">
+                                    <div class="items-list">
+                                        <?php foreach ($allAds as $ads) : ?>
+                                            <article class="item-spot <!--item-moderated-->">
+                                                <a href="/ads/<?php echo $ads[0]['category']; ?>/<?php echo $ads[0]['subcategory']; ?>/<?php echo $ads[0]['id']; ?>"
+                                                   class="imgAsBg">
+                                                    <img src="/template/assets/img/items/ad1.png" alt="dummy data">
+                                                </a>
+                                                <div class="item-content">
+                                                    <header>
+                                                        <h6><a href="https://adtoday.co.uk/ads/<?php echo $ads[0]['category']; ?>/<?php echo $ads[0]['subcategory']; ?>/<?php echo $ads[0]['id']; ?>"><?php echo $ads[0]['title']; ?></a>
+                                                        </h6>
+                                                        <ul class="item-info">
+                                                            <li><i class="fa fa-clock-o"></i>From: <?php echo $ads[0]['date']; ?>
+                                                            </li>
+                                                            <li><i class="fa fa-eye"></i>4,226</li>
 
-                                                            </ul>
-                                                        </header>
-                                                        <div class="price-tag">£ <?php echo $ads[0]['price']; ?></div>
-                                                        <div class="item-admin-actions text-center">
-                                                            <ul>
-                                                                <li><a class="tc" href="#"><i class="adicon-eye"></i></a>
-                                                                </li>
-                                                                <li><a class="tc6-hover" href="#"><i
-                                                                                class="adicon-edit"></i></a></li>
-                                                                <li><a href="#"><i class="adicon-activate"></i></a></li>
-                                                                <li><a class="tc12-hover" href="#"><i
-                                                                                class="adicon-recyclebin"></i></a></li>
-                                                            </ul>
-                                                        </div>
-
+                                                        </ul>
+                                                    </header>
+                                                    <div class="price-tag">£ <?php echo $ads[0]['price']; ?></div>
+                                                    <div class="item-admin-actions text-center">
                                                     </div>
-                                                </article>
-                                            <?php endforeach; ?>
-                                        </div>
+
+                                                </div>
+                                            </article>
+                                        <?php endforeach; ?>
                                     </div>
-                                    <br>
-                                    <a href="#" class="btn btn-white block-element btn-md text-center">load more ads</a>
                                 </div>
-                            </article>
+                            </div>
                         </div>
 
                     </div>
                     <div class="col-xs-12 col-md-4">
                         <aside class="sidebar">
-                            <div class="widget-about widget">
-                                <figure><img src="<?php echo $user['img']; ?>" alt="dummy"></figure>
-                                <header>
-                                    <h4>About Me:</h4>
-                                    <h5>Username: <?php echo $user['username']; ?></h5>
-                                    <h5>Contact phone number is: +<?php echo $user['phone']; ?></h5>
-                                    <h5>Contact email address is: <a style="color: blue"><?php echo $user['email']; ?></a></h5>
-                                </header>
-                                <footer>
-                                    <img src="/template/assets/img/basic/logo.png" alt="dummy">
-                                </footer>
+                            <div class="user-widget text-center">
+                                <img src="/template/assets/img/basic/user-thumb.png" alt="asd">
+                                <h4><?php echo $user['username']; ?></h4>
+                                <div>Member Since 2013</div>
+                                <ul class="clearfix">
+                                    <?php if (User::isGuest()): ?>
+                                        <li><a class="btn btn-transparent" href="https://adtoday.co.uk/account/user-contact/<?php echo $user['id'];?>">Send Message</a></li>
+                                        <li><a class="btn btn-transparent" href="#">Report Ad</a></li>
+                                    <?php else: ?>
+                                        <li><a class="btn btn-transparent">Send Message</a></li>
+                                        <li><a class="btn btn-transparent">Report Ad</a></li>
+                                        <label>You must be logged</label>
+                                    <?php endif; ?>
+                                </ul>
                             </div>
 
 
