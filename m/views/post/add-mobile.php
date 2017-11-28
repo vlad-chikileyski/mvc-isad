@@ -43,118 +43,152 @@
         <!-- CONTENT CONTAINER -->
         <div class="content-container">
 
-            <h1 class="page-title">Post Your Ad</h1>
+            <?php if (isset($ACTIVE_FLAG) && $ACTIVE_FLAG): ?>
+                <div class="not-found animated fadeIn">
+                    <h3 align="center">Thank you for adding ads on the website Adtoday.co.uk</h3>
+                    <p align="center">Your ad is not yet visible on the website
+                        The ad will be active when you click on the link in the email
+                        Check your e-mail and activate ad!</p>
+                    <a href="http://m.adtoday.co.uk/" class="btn btn-blue block-element"><i class="fa fa-home"></i> Back
+                        to homepage</a>
+                </div>
+            <?php else: ?>
+                <?php if (isset($errors) && is_array($errors)): ?>
+                    <ul>
+                        <?php foreach ($errors as $error): ?>
+                            <li> - <?php echo $error; ?></li>
+                        <?php endforeach; ?>
+                    </ul>
+                <?php endif; ?>
+                <h1 class="page-title">Post Your Ad</h1>
 
-            <form method="post">
+                <form method="post">
 
 
-                <!-- Custom (shofy) form container -->
-                <div class="shofy-form">
-                    <div class="input-field">
-                        <label for="title" style="color: black">Ad Title</label>
-                        <input type="text" name="title" id="title">
-                    </div>
-
-                    <div class="input-field">
-                        <h3 class="out-label">Subcategory</h3>
-                        <select id = "change_chekbox">
-                            <?php foreach ($subCategoryListMenu as $subcategory) : ?>
-                                <option value="<?php echo $subcategory['subcategory_name']; ?>" data-value="<?php echo $subcategory['category']; ?>"><?php echo $subcategory['sub_category_title']; ?></option>
-                            <?php endforeach; ?>
-                        </select>
-                    </div>
-
-                    <div id="result"></div>
-                    <?php if (UserMobile::isGuest()): ?>
+                    <!-- Custom (shofy) form container -->
+                    <div class="shofy-form">
                         <div class="input-field">
-                            <label for="email" style="color: black">Your email</label>
-                            <input type="text" name="email" id="email" value="<?php echo $userInfo['email']; ?>"
-                                   readonly="readonly" style="color: blue">
+                            <label for="title" style="color: black">Ad Title</label>
+                            <input type="text" name="title" id="title">
                         </div>
-                    <?php else: ?>
+
                         <div class="input-field">
-                            <label for="email" style="color: black">Your email</label>
-                            <input type="text" name="email" id="emaill">
+                            <h3 class="out-label">Subcategory</h3>
+                            <select id="change_chekbox" name="subcategory">
+                                <?php foreach ($subCategoryListMenu as $subcategory) : ?>
+                                    <option value="<?php echo $subcategory['subcategory_name']; ?>"><a
+                                                href="#"><?php echo $subcategory['sub_category_title']; ?></a></option>
+                                <?php endforeach; ?>
+                            </select>
                         </div>
-                    <?php endif; ?>
-                    <div class="input-field">
-                        <label for="postcode" style="color: black">Post Code</label>
-                        <input type="text" name="postcode" id="search_postcode">
-                    </div>
-                    <!-- Payment Method Section -->
-                    <div class="page-block checkout-shipping-block">
+                        <div id="result"></div>
+                        <div class="input-field">
+                            <textarea name="description" id="description" class="materialize-textarea"></textarea>
+                            <label for="description" style="color: black">Ad Description</label>
+                        </div>
+                        <div class="input-field">
+                            <label for="price" style="color: black">Price £ </label>
+                            <input type="text" name="price" id="price">
+                        </div>
+                        <div class="input-field">
+                            <label for="postcode" style="color: black">Post Code</label>
+                            <input type="text" name="postcode" id="search_postcode">
+                        </div>
+                        <div class="input-field">
+                            <label for="name" style="color: black">Your Name</label>
+                            <input type="text" name="name" id="name">
+                        </div>
+                        <?php if (UserMobile::isGuest()): ?>
+                            <div class="input-field">
+                                <label for="email" style="color: black">Your email</label>
+                                <input type="text" name="email" id="email" value="<?php echo $userInfo['email']; ?>"
+                                       readonly="readonly" style="color: blue">
+                            </div>
+                        <?php else: ?>
+                            <div class="input-field">
+                                <label for="email" style="color: black">Your email</label>
+                                <input type="text" name="email" id="emaill">
+                            </div>
+                        <?php endif; ?>
+                        <div class="input-field">
+                            <label for="phone" style="color: black">Phone number</label>
+                            <input type="tel" name="phone" id="phone">
+                        </div>
+                        <!-- Payment Method Section -->
+                        <div class="page-block checkout-shipping-block">
 
-                        <h2 class="block-title">
-                            <span>Make Your Ad Featured</span>
-                        </h2>
-                        <?php foreach ($paymentsBoxInfo
+                            <h2 class="block-title">
+                                <span>Make Your Ad Featured</span>
+                            </h2>
+                            <?php foreach ($paymentsBoxInfo
 
-                        as $boxInfoPayments) : ?>
+                            as $boxInfoPayments) : ?>
 
-                        <ol class="payment-method">
-                            <input type="radio" class="calculate-price"
-                                   id="<?php echo "p31y323n-" . $boxInfoPayments["id"]; ?>"
-                                   name="payment-method"
-                                   data-value="<?php echo " £" . $boxInfoPayments["price_value_text"]; ?>"
-                                   value="<?php echo "p31y323n-" . $boxInfoPayments["id"]; ?>">
-                            <label
-                                    for="<?php echo "p31y323n-" . $boxInfoPayments["id"]; ?>"> <?php echo $boxInfoPayments["payment_title_name"] . " - £" . $boxInfoPayments["price_value_text"]; ?> </label>
+                            <ol class="payment-method">
+                                <input type="radio" class="calculate-price"
+                                       id="<?php echo "p31y323n-" . $boxInfoPayments["id"]; ?>"
+                                       name="payment-method"
+                                       data-value="<?php echo " £" . $boxInfoPayments["price_value_text"]; ?>"
+                                       value="<?php echo "p31y323n-" . $boxInfoPayments["id"]; ?>">
+                                <label
+                                        for="<?php echo "p31y323n-" . $boxInfoPayments["id"]; ?>"> <?php echo $boxInfoPayments["payment_title_name"] . " - £" . $boxInfoPayments["price_value_text"]; ?> </label>
 
 
-                            <?php endforeach; ?>
-                    </div>
-                    <td class="text-right"><strong>Total : </strong><strong class="pricexs-s10948"> £0</strong>
+                                <?php endforeach; ?>
+                        </div>
+                        <td class="text-right"><strong>Total : </strong><strong class="pricexs-s10948"> £0</strong>
 
-                        <!-- END Payment Method Section -->
+                            <!-- END Payment Method Section -->
 
-                        <!-- Coupon & Promo Section -->
-                        <!-- <div class="page-block checkout-shipping-block">
+                            <!-- Coupon & Promo Section -->
+                            <!-- <div class="page-block checkout-shipping-block">
 
-                             <h2 class="block-title">
-                                 <span>Coupon & Promo</span>
-                             </h2>
+                                 <h2 class="block-title">
+                                     <span>Coupon & Promo</span>
+                                 </h2>
 
-                             <span class="block semibold">Coupon</span>
-                             <ol class="payment-method">
-                                 <li>
-                                     <input name="group1" type="radio" id="test1"/>
-                                     <label for="test1">$ 5.0</label>
-                                     <span>Until end of this month</span>
-                                 </li>
-                                 <li>
-                                     <input name="group1" type="radio" id="test2"/>
-                                     <label for="test2">$ 10.0</label>
-                                     <span>For total shopping $ 200.0 above</span>
-                                 </li>
-                             </ol>
+                                 <span class="block semibold">Coupon</span>
+                                 <ol class="payment-method">
+                                     <li>
+                                         <input name="group1" type="radio" id="test1"/>
+                                         <label for="test1">$ 5.0</label>
+                                         <span>Until end of this month</span>
+                                     </li>
+                                     <li>
+                                         <input name="group1" type="radio" id="test2"/>
+                                         <label for="test2">$ 10.0</label>
+                                         <span>For total shopping $ 200.0 above</span>
+                                     </li>
+                                 </ol>
 
-                             <span class="block semibold">Promo ID</span>
-                             <div class="checkout-promoID">
-                                 <input type="text" placeholder="Ex : YY567-201">
-                                 <button type="button">Send</button>
-                             </div>
-                         </div>
-                         <div class="input-field">
-                             <h3 class="out-label">Upload evidance of transfer</h3>
-                             <span class="desc">Max upload file is 2MB</span>
-                             <div class="file-field">
-                                 <div class="btn grey">
-                                     <span>File</span>
-                                     <input type="file">
+                                 <span class="block semibold">Promo ID</span>
+                                 <div class="checkout-promoID">
+                                     <input type="text" placeholder="Ex : YY567-201">
+                                     <button type="button">Send</button>
                                  </div>
-                                 <div class="file-path-wrapper">
-                                     <input class="file-path validate" type="text">
-                                 </div>
                              </div>
-                         </div>-->
-                        <p>
+                             <div class="input-field">
+                                 <h3 class="out-label">Upload evidance of transfer</h3>
+                                 <span class="desc">Max upload file is 2MB</span>
+                                 <div class="file-field">
+                                     <div class="btn grey">
+                                         <span>File</span>
+                                         <input type="file">
+                                     </div>
+                                     <div class="file-path-wrapper">
+                                         <input class="file-path validate" type="text">
+                                     </div>
+                                 </div>
+                             </div>-->
+                            <p>
                         <span class="block text-small">By clicking 'Create Ad' you agree <to></to> <a
                                     href="http://m.adtoday.co.uk/terms/">our Terms & Condition</a></span>
-                        </p>
-                        <br/>
-                        <button class="btn block green" type="submit">Create Ads</button>
-                </div>
-            </form>
+                            </p>
+                            <br/>
+                            <button class="btn block green" type="submit" name="submit">Create Ads</button>
+                    </div>
+                </form>
+            <?php endif; ?>
             <!-- End Custom Form -->
         </div>
         <!-- END CONTENT CONTAINER -->

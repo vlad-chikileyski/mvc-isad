@@ -59,7 +59,7 @@ class PostController
                         if ($recordId != '') {
                             $incrementStatus = Catalog::incrementCountFromCategory($subcategory);
                             $userAddAction = Catalog::postAddAction($userId, $recordId, $tableName, $subcategory);
-                            $userTokenDashboardAction = Catalog::postAddInsertTokenDashboard($ADS_ID_TOKEN, $ADS_KEY_TOKEN, $userId, $recordId,$tableName);
+                            $userTokenDashboardAction = Catalog::postAddInsertTokenDashboard($ADS_ID_TOKEN, $ADS_KEY_TOKEN, $userId, $recordId, $tableName);
                             if ($incrementStatus && $userAddAction && $userTokenDashboardAction) {
                                 if (MailBuilderMain::configureMailForActivateAds($userInfo['email'], $name, $ADS_ID_TOKEN, $ADS_KEY_TOKEN)) {
                                     if (isset($paymentType) && $paymentType != false) {
