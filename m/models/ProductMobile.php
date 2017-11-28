@@ -285,6 +285,8 @@ class ProductMobile
             $favAds[$i]['subcategory'] = $row['subcategory'];
             $favAds[$i]['category'] = $row['category'];
             $favAds[$i]['date'] = $row['date'];
+            $favAds[$i]['status'] = $row['status'];
+
             $i++;
         }
         return $favAds;

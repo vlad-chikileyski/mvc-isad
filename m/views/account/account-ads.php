@@ -40,7 +40,6 @@
         <?php include ROOT . '/views/layout/top-navbar.php'; ?>
 
 
-
         <!-- CONTENT CONTAINER -->
         <div class="content-container">
 
@@ -65,7 +64,16 @@
                         <div class="collapsible-header">
                             <span class="indicator fa fa-caret-right"></span>
                             <div class="order-status">
-                                Done <span class="fa fa-check"></span>
+                                <?php
+                                switch ($ads[0]['status']) {
+                                    case 1:
+                                        echo 'Active';
+                                        break;
+                                    case 0:
+                                        echo 'Not active';
+                                        break;
+                                }
+                                ?><span class="fa fa-check"></span>
                             </div>
                             <div class="order-no">
                                 <span class="block bold"><?php echo $ads[0]['title']; ?> # <a
@@ -80,9 +88,13 @@
                                         <img src="/template/images/80x80.png" alt="">
                                     </div>
                                     <div class="ctn">
-                                        <h3><a href="http://m.adtoday.co.uk/ads/<?php echo $ads[0]['category']; ?>/<?php echo $ads[0]['subcategory']; ?>/<?php echo $ads[0]['id']; ?>"/></h3><?php echo $ads[0]['title']; ?></a></h3></br>
+                                        <h3>
+                                            <a href="http://m.adtoday.co.uk/ads/<?php echo $ads[0]['category']; ?>/<?php echo $ads[0]['subcategory']; ?>/<?php echo $ads[0]['id']; ?>"/>
+                                        </h3><?php echo $ads[0]['title']; ?></a></h3></br>
                                         <span>Description: <?php echo $ads[0]['description']; ?></span>
-                                        <p><a href="http://m.adtoday.co.uk/my-ads/edit/<?php echo $ads[0]['category']; ?>/<?php echo $ads[0]['subcategory']; ?>/<?php echo $ads[0]['id']; ?>" class="track-order">Edit</a></p>
+                                        <p>
+                                            <a href="http://m.adtoday.co.uk/my-ads/edit/<?php echo $ads[0]['category']; ?>/<?php echo $ads[0]['subcategory']; ?>/<?php echo $ads[0]['id']; ?>"
+                                               class="track-order">Edit</a></p>
                                     </div>
                                 </li>
                             </ol>
