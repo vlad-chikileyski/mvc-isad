@@ -142,7 +142,7 @@ class CategoryFilter
                         return 'MOBILE_PHONES_ACCESSORIES_MOBILE_PHONES';
                         break;
                     case 'mobile-accessories':
-                        return 'MOBILE_PHONES_ACCESSORIES_MOBILE_ACCESORIES';
+                        return 'MOBILE_PHONES_ACCESSORIES_MOBILE_ACCESSORIES';
                         break;
                     default:
                         return false;

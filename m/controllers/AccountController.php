@@ -68,6 +68,7 @@ class AccountController
         $user = UserMobile::getUserById($userId);
         $getAdsIdByUserCreateId = array();
         $getAdsIdByUserCreateId = ProductMobile::getAdsIdByUserId($userId);
+
         $i = 0;
         foreach ($getAdsIdByUserCreateId as $item) {
             $userProduct[$i] = ProductMobile::getProductLiszztByTableNameAndAdsId($item["subcategory_name"], $item["adsId"]);
